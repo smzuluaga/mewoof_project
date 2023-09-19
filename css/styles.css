@@ -1,0 +1,356 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,400;0,700;1,200&family=Poppins:wght@500&display=swap');
+
+* {
+    box-sizing: content-box;
+    margin:0;
+    padding:0;
+}
+
+:root { 
+    --red1: rgba(239, 65, 71);
+    --red: rgba(239, 65, 71, 0.85);
+    --pink1: #F7ABB2;
+    --pink2: rgba(240, 83, 115);
+    --beige: rgba(200, 174, 125, 1);
+    --yellow: #E8B77E;
+    --green: #E9EFC1;
+    --white: #FFFFFF;
+    --grey: #333333;
+    --blac: #000000;
+}
+
+body {
+    font-family: 'Montserrat';
+    width: 100%; 
+}
+
+
+.mw-head {
+    width: 100%; 
+    box-shadow: 0 4px 3px rgba(0, 0, 0, 0.4);
+}
+
+
+.mw-navcontainer {
+    display: flex;
+    width: 100%;
+    height:3vh;
+    justify-content: space-around;
+    padding: 1%;
+    background: var(--pink1);
+    color: var(--white);
+    
+}
+
+.mw-navcontainer div{
+    display: flex;
+    margin:5px 8px;
+    padding:10px;
+}
+
+.mw-navcontainer img{
+    display: flex;
+    align-items: center;
+    width: 40px;
+    text-shadow: 8px 8px 8px rgba(0, 0, 0, 0.6);
+}
+
+.mw-navcontainer h1{
+    display: flex;
+    margin:10px;
+    align-content: center;
+    color: var(--red);
+    font-family: futura;
+    font-size: 30px;
+}
+
+.mw-navcontainer-logo {
+    margin: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.mw-navcontainer-menu {
+    display:flex;
+    width: 30%;
+    justify-content: space-around;
+    align-items: center;
+    font-weight: bold;
+    font-size: 15px;
+    margin: 10px;
+    padding:10px
+
+}
+
+.mw-navcontainer-menu a {
+    text-decoration: none;
+    color: var(--grey);
+    font-size: 18px;
+    margin: 20px;
+    
+}
+
+.mw-navcontainer-menu a:hover {
+    font-size: 15px;
+}
+
+.login-modifier {
+    color:white;
+}
+
+.mw-about {
+    margin:20px 0;
+
+}
+
+.mv-aboutflex {
+    display: flex;
+    flex-direction: column;
+    width: auto;
+}
+
+.mw-aboutcontainer1 {
+    display: flex;
+    padding: 0px;
+    margin-top: 0px;
+    justify-content: center;
+    font-size: 14%;
+    color:var(--grey);
+    
+}
+
+.mw-aboutcontainer1 div{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding:39px;
+    margin:20px;
+    width: 20%;
+    height: 20vh;
+    border-radius: 30px;
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    /* overflow: scroll; */
+}
+
+.mw-aboutcontainer1 h3 {
+    text-align: center;
+    margin: 2px;
+    font-size: 30px;
+    color: var(--pink2);
+}
+
+.mw-aboutcontainer1 p {
+    display: flex;
+    text-align: justify;
+    align-items: center;
+    font-size: 17px;
+    font-family:'Montserrat';
+}
+
+.mw-aboutcontainer2 {
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+    height: auto;
+}
+
+.mw-aboutcontainer2-head {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.mw-aboutcontainer2-head span{
+    color: var(--grey);
+    font-weight: bold;
+}
+/* .mw-abouthead-style{
+
+} */
+
+.mw-aboutcontainer2-head h3 {
+    color: var(--red1);
+    font-size: 35px;
+    margin: 35px;
+    margin-bottom: 116;
+}
+
+.mw-aboutcontainer2-head p {
+    color: var(--grey);
+    font-size: 17px;
+    font-family: 'Montserrat';
+    letter-spacing: 0.2px;
+    padding:15px;
+}
+    
+
+.mw-aboutcontainer2-cards {
+    display: flex;
+    justify-content: center;
+    margin: 3px;
+    padding:0px;
+    height: auto;
+    
+}
+
+
+.mw-teamcard {
+    display: flex;
+    flex-direction: column;
+    align-items: center ;
+    margin: 80px 66px;
+    padding: 0px;
+    height: 400px;
+    width: 300px;
+    font-size: 16px; 
+    color: var(--grey);
+    
+}
+
+.mw-teamcard div{
+    margin:5px;
+    padding: 5px
+}
+
+.mw-teamcard button{
+    align-items: baseline;
+    border: none;
+    margin:5px;
+    padding: 5px;
+    border-radius: 20px;
+    width: 80%;
+    height: 40px;
+    background: var(--pink2);
+    color: white;
+    font-family: 'poppins';
+    font-size: 16px; 
+    font-weight: bold;
+    box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.6);
+}
+
+.mw-teamcard button:hover {
+    background-color: #FFC859;
+    height: 45px ;
+    font-size:20px;
+}
+
+.mw-teamcard img {
+    border-radius: 1000px;
+    height: 150px;
+    margin:10px;
+    box-shadow: 0px 6px 6px rgba(183, 181, 181, 0.5);
+    border: none;
+    
+}
+
+.mw-teamcard h4 {
+    margin: 0px 0px 15px;
+    text-align: center;
+    font-size: 14px;
+    width: 100%;
+    color: var(--pink2);
+}
+
+.mw-cardhead {
+    text-align: center;
+}
+.mw-cardhead p{
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.mw-cardtext {
+    text-align: justify;
+    display: none;
+
+}
+
+.mw-teamcard:hover  {
+    text-align: justify;
+    color: var(--beige);
+    display:flex;/**/
+    flex-grow:0.2; /**/
+    font-size: 16px;
+    /* box-shadow: 0px 8px 8px rgba(0, 0, 0, 0.4); */
+    
+}
+
+
+.mostrar-menos {
+    display:none;
+}
+
+div {
+ /* border: 1px solid #000; */
+}
+
+
+/*1200 900 600 400*/
+@media screen and (max-width: 1200px) {
+
+    body {
+        width: 1200px;
+        height: auto;
+    }
+
+    
+    .mw-navcontainer h1 {
+        font-size: 20px;
+    }
+
+    .mw-navcontainer img{
+        width: 25px;
+    }
+
+    .mw-navcontainer-menu a {
+        font-size: 12px;
+    }
+
+    .mw-aboutcontainer1 p {
+        font-size: 10px;
+    }
+
+    .mw-aboutcontainer1 h3 {
+        font-size: 20px;
+    }
+}
+
+@media screen and (max-width: 900px) {
+
+    body {
+        width: 900px;
+        height: auto;
+    }
+    
+    .mw-aboutcontainer2-cards {
+        display: flex;
+        flex-flow: row wrap;
+        align-items: center;
+        margin: 10%;
+        padding:0;
+    }
+    
+    .mw-teamcard {
+        margin: 0;
+        padding:0;
+    }
+    
+}
+
+@media screen and (max-width: 600px) {
+
+    body {
+        width: 600px;
+        height: auto;
+    }
+}
+
+@media screen and (max-width: 400px) {
+
+    body {
+        width: 400px;
+        height: auto;
+    }
+}
