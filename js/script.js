@@ -59,4 +59,9 @@ function mostrarMenos4() {
     document.getElementById("mostrar-mas4").style="display: block";
 }
 
+const navCont = document.querySelector(".mw-navcontainer-menu");
+const botonNav = document.querySelector(".toggle");
 
+botonNav.addEventListener("click", () => {
+    navCont.classList.toggle("nav-menu-visible")
+})
