@@ -3,29 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mewoof</title>
     <link rel="icon" type="icon" href="img/adopcion_mascotas_perros_gatos_cat_miau.png">
     <link href="css/styles.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100&family=Poppins:wght@100&display=swap" rel="stylesheet">
     <script defer src="js/script.js"></script>
-    <title>Mewoof</title>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://kit.fontawesome.com/a37bb3c75c.js" crossorigin="anonymous"></script>
 </head>
 
 <body class="mw-main">
     <header class="mw-head">
         <nav class="mw-nav">
             <div class="mw-navcontainer"> 
-                <div class="mw-navcontainer-logo"></divclass>
+                <div class="mw-navcontainer-logo">
                     <img src="img/adopcion_mascotas_perros_gatos_cat_miau.png" alt="patita">
                     <h1>MeWoof</h1>
                 </div>
-                <div class="mw-navcontainer-menu">
-                    <a href="#">Home</a>
-                    <a href="#mw-linkto_aboutsection">AboutUs</a>
-                    <a href="#">ContactUs</a>
-                    <a href="#"><span class="login-modifier">LogIn</span></a>
-                </div>
+                <button class="toggle"><i class="fa-solid fa-bars"></i></button>
+                <ul class="mw-navcontainer-menu nav-menu-visible">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#mw-linkto_aboutsection">AboutUs</a></li>
+                    <li><a href="#">ContactUs</a></li>
+                    <li><a href="#"><span class="login-modifier">LogIn</span></a></li>
+                </ul>
             </div>
         </nav>
     </header>
@@ -102,9 +105,22 @@
                         <button onclick="mostrarMenos4()" id="mostrar-menos4" class="mostrar-menos mw-st-button">Ver menos</button>
                     </div>
                 </div>
-            </div>
-        </div>
-    </section>
+                        <div class="mw-info"
+                          <h2 id="contact">Contacténos</h2>
+                        <div class="content-icons">
+                           <i class='bx bxl-linkedin-square iconLink' >Mewoof Project</i>
+                           <i class='bx bxl-instagram-alt iconLink'>Mewoof.app</i>
+                           <i class='bx bxs-envelope iconLink'>Mewoofproject@gmail.com</i>
+                        <footer class="container-main">
+                           <div class="container">
+                               <p class="text-white">MeWoof © 2023 Todos los derechos reservados  
+                           </div>
+                        </div>
+                        </footer>
+                    </div>
+                </div>
+        </section>
     
 </body>
 </html>
+

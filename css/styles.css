@@ -25,20 +25,23 @@ body {
 }
 
 
-.mw-head {
-    width: 100%; 
+/*BARRA DE NAVEGACION*/
+.mw-head { 
     box-shadow: 0 4px 3px rgba(0, 0, 0, 0.4);
 }
 
 
 .mw-navcontainer {
     display: flex;
-    width: 100%;
-    height:3vh;
+    height:3.5%;
     justify-content: space-around;
+    align-items: center;
     padding: 1%;
     background: var(--pink1);
     color: var(--white);
+    width: 100%;
+    position: fixed;
+    height: 25px;
     
 }
 
@@ -51,13 +54,12 @@ body {
 .mw-navcontainer img{
     display: flex;
     align-items: center;
-    width: 40px;
-    text-shadow: 8px 8px 8px rgba(0, 0, 0, 0.6);
+    width: 5%;
 }
 
 .mw-navcontainer h1{
     display: flex;
-    margin:10px;
+    padding: 10px;
     align-content: center;
     color: var(--red);
     font-family: futura;
@@ -76,43 +78,52 @@ body {
     justify-content: space-around;
     align-items: center;
     font-weight: bold;
-    font-size: 15px;
     margin: 10px;
-    padding:10px
+    padding:10px;
+    left:0
 
+}
+
+.mw-navcontainer-menu li {
+    list-style: none;
 }
 
 .mw-navcontainer-menu a {
     text-decoration: none;
     color: var(--grey);
-    font-size: 18px;
+    font-size: 15px;
     margin: 20px;
     
 }
 
 .mw-navcontainer-menu a:hover {
-    font-size: 15px;
+    font-size: 16px;
 }
 
 .login-modifier {
     color:white;
 }
 
-.mw-about {
-    margin:20px 0;
-
+.toggle {
+    background: none;
+    border: none;
+    font-size: 20px;
+    padding: 0 20px;
+    display: none;
 }
+
+
+/* ABOUT */
+
 
 .mv-aboutflex {
     display: flex;
     flex-direction: column;
-    width: auto;
 }
 
 .mw-aboutcontainer1 {
     display: flex;
-    padding: 0px;
-    margin-top: 0px;
+    padding: 2%;
     justify-content: center;
     font-size: 14%;
     color:var(--grey);
@@ -123,10 +134,10 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    padding:39px;
-    margin:20px;
+    padding:3%;
+    margin:5%;
     width: 20%;
-    height: 20vh;
+    height: auto;
     border-radius: 30px;
     box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
     /* overflow: scroll; */
@@ -134,7 +145,7 @@ body {
 
 .mw-aboutcontainer1 h3 {
     text-align: center;
-    margin: 2px;
+    margin: 2px 0 25px;
     font-size: 30px;
     color: var(--pink2);
 }
@@ -143,14 +154,15 @@ body {
     display: flex;
     text-align: justify;
     align-items: center;
-    font-size: 17px;
+    font-size: 15px;
     font-family:'Montserrat';
 }
+
+/*ABOUT US -TEAM*/
 
 .mw-aboutcontainer2 {
     display: flex;
     flex-direction: column;
-    padding: 30px;
     height: auto;
 }
 
@@ -172,8 +184,7 @@ body {
 .mw-aboutcontainer2-head h3 {
     color: var(--red1);
     font-size: 35px;
-    margin: 35px;
-    margin-bottom: 116;
+    margin: 3%;
 }
 
 .mw-aboutcontainer2-head p {
@@ -181,46 +192,36 @@ body {
     font-size: 17px;
     font-family: 'Montserrat';
     letter-spacing: 0.2px;
-    padding:15px;
+    padding: 5px 80px; 
 }
     
-
 .mw-aboutcontainer2-cards {
     display: flex;
     justify-content: center;
-    margin: 3px;
-    padding:0px;
     height: auto;
     
 }
-
 
 .mw-teamcard {
     display: flex;
     flex-direction: column;
     align-items: center ;
-    margin: 80px 66px;
-    padding: 0px;
-    height: 400px;
-    width: 300px;
+    margin: 3% 2%;
+    height: 30%;
+    width: 15%;
     font-size: 16px; 
     color: var(--grey);
     
 }
 
-.mw-teamcard div{
-    margin:5px;
-    padding: 5px
-}
-
 .mw-teamcard button{
     align-items: baseline;
     border: none;
-    margin:5px;
+    margin: 10px;
     padding: 5px;
     border-radius: 20px;
-    width: 80%;
-    height: 40px;
+    width: 70%;
+    height: 30px;
     background: var(--pink2);
     color: white;
     font-family: 'poppins';
@@ -231,7 +232,7 @@ body {
 
 .mw-teamcard button:hover {
     background-color: #FFC859;
-    height: 45px ;
+    height: 40px ;
     font-size:20px;
 }
 
@@ -247,7 +248,7 @@ body {
 .mw-teamcard h4 {
     margin: 0px 0px 15px;
     text-align: center;
-    font-size: 14px;
+    font-size: 15px;
     width: 100%;
     color: var(--pink2);
 }
@@ -255,6 +256,7 @@ body {
 .mw-cardhead {
     text-align: center;
 }
+
 .mw-cardhead p{
     text-align: center;
     font-weight: bold;
@@ -264,6 +266,7 @@ body {
 .mw-cardtext {
     text-align: justify;
     display: none;
+    font-size: 15px;
 
 }
 
@@ -271,7 +274,7 @@ body {
     text-align: justify;
     color: var(--beige);
     display:flex;/**/
-    flex-grow:0.2; /**/
+    /* flex-grow:0got ba.2;  */
     font-size: 16px;
     /* box-shadow: 0px 8px 8px rgba(0, 0, 0, 0.4); */
     
@@ -290,22 +293,86 @@ div {
 /*1200 900 600 400*/
 @media screen and (max-width: 1200px) {
 
-    body {
-        width: 1200px;
-        height: auto;
+    .mw-navcontainer h1 {
+        font-size: 25px;
     }
 
+    .mw-navcontainer img{
+        width: 4.5%;
+    }
+
+    .mw-navcontainer-menu a {
+        font-size: 12px;
+        margin: 10px;
+    }
+
+    .mw-aboutcontainer1 p {
+        font-size: 11px;
+    }
+
+    .mw-aboutcontainer1 h3 {
+        font-size: 20px;
+    }
+
+    .mw-aboutcontainer2-head h3 {
+        font-size: 25px;
+    }
     
+    .mw-aboutcontainer2-head p {
+        font-size: 13px;
+        text-align: center;
+    }
+    
+    .mw-teamcard {
+        font-size: 12px;
+    }
+    
+    .mw-teamcard img {
+        height: 105px;
+    }
+    
+    .mw-teamcard h4 {
+        font-size: 13px;
+        font-weight: 1px;
+    }
+
+    .mw-teamcard button {
+        height: 20px;
+        font-size: 13px;
+    }
+
+    .mw-teamcard button:hover {
+        height: 25px ;
+        font-size:16px;
+    }
+  
+    .mw-navcontainer-menu a:hover {
+        font-size: 13px;
+    }
+
+    .mw-teamcard:hover {
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width: 900px) {
+   
     .mw-navcontainer h1 {
         font-size: 20px;
     }
 
     .mw-navcontainer img{
-        width: 25px;
+        width: 4%;
+        margin: 0;
+    }
+    
+    .mw-navcontainer-menu {
+        left: 50px;
     }
 
     .mw-navcontainer-menu a {
-        font-size: 12px;
+        font-size: 11px;
+        
     }
 
     .mw-aboutcontainer1 p {
@@ -313,44 +380,163 @@ div {
     }
 
     .mw-aboutcontainer1 h3 {
-        font-size: 20px;
+        font-size: 18px;
     }
+
+    .mw-aboutcontainer2-head p {
+        font-size: 11px;
+        text-align: center;
+    }
+
+    .mw-aboutcontainer2-cards {
+        flex-wrap: wrap;
+    }
+
+    .mw-teamcard {
+        font-size: 11px;
+        width: 40%;
+    }
+
+    .mw-teamcard {
+        font-size: 11px;
+    }
+    
+    .mw-teamcard img {
+        height: 80px;
+    }
+    
+    .mw-teamcard h4 {
+        font-size: 12px;
+    
+    }
+
+    .mw-teamcard button {
+        height: 17px;
+        font-size: 11px;
+    }
+
+    .mw-teamcard button:hover {
+        height: 21px ;
+        font-size:12px;
+    }
+
+    .mw-navcontainer-menu a:hover {
+    font-size: 11px;
+    }
+
+    .mw-teamcard:hover {
+        font-size: 13px;
+    }
+    
 }
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 768px) {
 
-    body {
-        width: 900px;
-        height: auto;
+    .mw-navcontainer-menu {
+        position: relative;
+        flex-direction: column;
+        margin-right: 20px;
+        background-color:#888888 ;
+        height: 80px;
+        transition: left 0.30s;
+        top: 65px;
+        margin-right: 70px ;
+    }
+
+    .mw-navcontainer img{
+        width: 6%;
+        margin: 0;
+    }
+    
+
+    .mw-navcontainer-menu a {
+        font-size: 9px;
+        margin: 10px;
+    }
+    
+    .mw-aboutcontainer1 {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .mw-aboutcontainer1 div {
+        width: 80%
+    }  
+
+    .mw-aboutcontainer1 p {
+        font-size: 9px;
+    }
+
+    .mw-aboutcontainer1 h3 {
+        font-size: 18px;
+    }
+
+    .mw-aboutcontainer2-head h3 {
+        font-size: 22px;
+        margin-top: 30px;
+    }
+
+    .mw-aboutcontainer2-head p {
+        font-size: 11px;
+        text-align: center;
+        margin-bottom: 20px;
+        
     }
     
     .mw-aboutcontainer2-cards {
-        display: flex;
-        flex-flow: row wrap;
-        align-items: center;
-        margin: 10%;
-        padding:0;
+        flex-wrap: wrap;
     }
-    
+
     .mw-teamcard {
-        margin: 0;
-        padding:0;
+        font-size: 11px;
+        width: 40%;
     }
     
-}
-
-@media screen and (max-width: 600px) {
-
-    body {
-        width: 600px;
-        height: auto;
+    .mw-teamcard img {
+        height: 60px;
     }
+    
+    .mw-teamcard h4 {
+        font-size: 12px;
+    
+    }
+
+    .mw-teamcard button {
+        height: 17px;
+        font-size: 11px;
+    }
+
+    .mw-teamcard button:hover {
+        height: 21px ;
+        font-size:12px;
+    }
+  
+    .mw-navcontainer-menu a:hover {
+    font-size: 11px;
+    }
+
+    .mw-teamcard:hover {
+        font-size: 13px;
+    }
+
+    .toggle {
+        position: relative;
+        display: block;
+        left: 25%;
+        cursor: pointer
+    }
+
+    .nav-menu-visible {
+        left:100%
+    }
+
 }
 
 @media screen and (max-width: 400px) {
 
-    body {
-        width: 400px;
-        height: auto;
+    .mw-navcontainer-menu {
+        margin-right: 80px;
     }
 }
