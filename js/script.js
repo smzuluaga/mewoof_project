@@ -65,3 +65,43 @@ const botonNav = document.querySelector(".toggle");
 botonNav.addEventListener("click", () => {
     navCont.classList.toggle("nav-menu-visible")
 })
+
+//SECCIÓN CONSTÁCTENOS
+//Validación datos ingresados al formulario
+document.addEventListener("DOMContentLoaded", function() {
+    // Traer los datos de entrada
+    var nombreInput = document.getElementById("nombre");
+    var emailInput = document.getElementsByName("email")[0]; // getElementsByName se trae con el nombre
+    var enviarButton = document.getElementById("enviarButton");
+
+    // Validar nombre
+    function validarNombre(nombreCompleto) {
+        var nombreApellido = nombreCompleto.split(" ");
+        return nombreApellido.length === 2 && nombreApellido[0].length >= 3 && nombreApellido[1].length >= 3;
+    }
+
+    // Validar email
+    function validarEmail(emailValido) {
+        var regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; //Permit verificar el cuerbo de un correo
+        return regex.test(emailValido);
+    }
+
+    enviarButton.addEventListener("click", function(event) {
+        var nombreCompleto = nombreInput.value.trim();
+        var emailValido = emailInput.value.trim();
+
+        // Realizar validación de nombre y correo electrónico
+        if (validarNombre(nombreCompleto) && validarEmail(emailValido)) {
+            document.querySelector("form").submit();
+        } else {
+            if (!validarNombre(nombreCompleto)) {
+                alert("Ingrese su nombre completo.");
+            }
+            if (!validarEmail(emailValido)) {
+                alert("Ingrese un email valido.");
+            }
+            event.preventDefault(); // no deja enviar el formulario
+        }
+    });
+});
+// FIN SECCIÓN CONSTÁCTENOS

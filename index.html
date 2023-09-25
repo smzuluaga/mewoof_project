@@ -12,6 +12,7 @@
     <script defer src="js/script.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="https://kit.fontawesome.com/a37bb3c75c.js" crossorigin="anonymous"></script>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'> <!--Enlace iconos Boxicons-->
 </head>
 
 <body class="mw-main">
@@ -25,15 +26,15 @@
                 <button class="toggle"><i class="fa-solid fa-bars"></i></button>
                 <ul class="mw-navcontainer-menu nav-menu-visible">
                     <li><a href="#">Home</a></li>
-                    <li><a href="#mw-linkto_aboutsection">AboutUs</a></li>
-                    <li><a href="#">ContactUs</a></li>
+                    <li><a href="#nosotros">AboutUs</a></li>
+                    <li><a href="#contactenos">ContactUs</a></li>
                     <li><a href="#"><span class="login-modifier">LogIn</span></a></li>
                 </ul>
             </div>
         </nav>
     </header>
 
-    <section class="mw-about">
+    <section class="mw-about" id="nosotros">
         <div class="mw-aboutflex"> 
             <div class="mw-aboutcontainer1">
                 <div>
@@ -105,21 +106,56 @@
                         <button onclick="mostrarMenos4()" id="mostrar-menos4" class="mostrar-menos mw-st-button">Ver menos</button>
                     </div>
                 </div>
-                        <div class="mw-info">
-                          <h2 id="contact">Contacténos</h2>
-                        <div class="content-icons">
-                           <i class='bx bxl-linkedin-square iconLink' >Mewoof Project</i>
-                           <i class='bx bxl-instagram-alt iconLink'>Mewoof.app</i>
-                           <i class='bx bxs-envelope iconLink'>Mewoofproject@gmail.com</i>
-                        <footer class="container-main">
-                           <div class="container">
-                               <p class="text-white">MeWoof © 2023 Todos los derechos reservados  
-                           </div>
-                        </div>
-                        </footer>
-                    </div>
-                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--Sección de Contáctenos-->
+    <Section class="contactUs" id="contactenos">
+        <!--Encabezado de contáctenos-->
+        <div class="contactHeader">
+            <h2 class="title">Contacténos</h2>
+            <p class="caption">¿Quieres conocer más de MeWoof?</p>
+        </div>
+        <!--Fin Encabezado de contáctenos-->
+
+        <!--Formulario para conocer más de MeWoof-->
+        <form class="contactInf"
+        action="https://formspree.io/f/xpzgybll"
+        method="POST"
+        >
+            <label>Nombre:</label>
+            <input type="text" name="name" id="nombre" placeholder="Ingrese su nombre completo" >
+            <label>Correo Electrónico:</label>
+            <input type="text" name="email" placeholder="Ingrese su correo electrónico">
+            <button type="button" id="enviarButton">Enviar</button>
+        </form>
+        <!--Fin formulario para conocer más de MeWoof-->
+
+        <!--Redes sociales de MeWoof-->
+        <section class="socialMedia">
+            <div class="icon">
+                <i class='bx bxl-linkedin-square iconLink'></i>
+                <p class="socialMediaName">MeWoof Project</p>
+            </div>
+            <div class="icon">
+                <i class='bx bxl-instagram-alt iconLink'></i>
+                <p class="socialMediaName">MeWoof.app</p>
+            </div>
+            <div class="icon">
+                <i class='bx bxs-envelope iconLink'></i>
+                <p class="socialMediaName">mewoofproject@gmail.com</p>
+            </div>
         </section>
+        <!--Fin redes sociales de MeWoof-->
+    </Section>
+    <!--Fin sección de Contáctenos-->
+
+    <!-- SECCIÓN Footer-->
+    <section class="footer">
+        <p>MeWoof © 2023 Todos los derechos reservados  </p>
+    </section>
+    <!--Fin del footer-->
     
 </body>
 </html>
