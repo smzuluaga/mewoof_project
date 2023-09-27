@@ -6,6 +6,7 @@
     padding:0;
 }
 
+/*Se definen los colores a utilizar durante la plantilla*/
 :root { 
     --red: #EF4147;
     --pink: #F05376;
@@ -17,13 +18,14 @@
     --redo85: rgba(239, 65, 71, 0.85);
 }
 
+/*Cuerpo del html*/
 body {
     font-family: 'Montserrat';
     width: 100%; 
 }
 
 
-/*BARRA DE NAVEGACION*/
+/*Barra de navegación*/
 .mw-head { 
     box-shadow: 0 4px 3px rgba(0, 0, 0, 0.4);
 }
@@ -43,18 +45,21 @@ body {
     
 }
 
+/* contenedor del encabezado (DIV) */
 .mw-navcontainer div{
     display: flex;
     margin:5px 8px;
     padding:10px;
 }
 
+/*Imagen mewoof*/
 .mw-navcontainer img{
     display: flex;
     align-items: center;
     width: 5%;
 }
 
+/*Nombre mewoof encabezado*/
 .mw-navcontainer h1{
     display: flex;
     padding: 10px;
@@ -64,12 +69,14 @@ body {
     font-size: 30px;
 }
 
+/*Contenedor de img mewoof*/
 .mw-navcontainer-logo {
     margin: 10px;
     display: flex;
     align-items: center;
 }
 
+/*Menu hamburguesa*/
 .mw-navcontainer-menu {
     display:flex;
     width: 30%;
@@ -82,10 +89,12 @@ body {
 
 }
 
+/*Listado de navegación (puntos)*/
 .mw-navcontainer-menu li {
     list-style: none;
 }
 
+/*Enlaces de navegación*/
 .mw-navcontainer-menu a {
     text-decoration: none;
     color: var(--black2);
@@ -94,14 +103,17 @@ body {
     
 }
 
+/*Establece un segundo estado a los enlaces de navegación*/
 .mw-navcontainer-menu a:hover {
     font-size: 16px;
 }
 
+/*Enlace de navegación login*/
 .login-modifier {
     color:white;
 }
 
+/*Botón hamburguesa*/
 .toggle {
     background: none;
     border: none;
@@ -119,6 +131,7 @@ body {
     flex-direction: column;
 }
 
+/*Contenedor Misión, Visión, Valores*/
 .mw-aboutcontainer1 {
     display: flex;
     padding: 2%;
@@ -128,6 +141,7 @@ body {
     
 }
 
+/*Secciones de DIV Misión, Visión, Valores*/
 .mw-aboutcontainer1 div{
     display: flex;
     flex-direction: column;
@@ -141,6 +155,7 @@ body {
     /* overflow: scroll; */
 }
 
+/*TITULOS Misión, Visión, Valores*/
 .mw-aboutcontainer1 h3 {
     text-align: center;
     margin: 2px 0 25px;
@@ -148,6 +163,7 @@ body {
     color: var(--pink);
 }
 
+/*PARRAFOS Misión, Visión, Valores*/
 .mw-aboutcontainer1 p {
     display: flex;
     text-align: justify;
@@ -158,12 +174,14 @@ body {
 
 /*ABOUT US -TEAM*/
 
+/*Contenedor tarjetas y meet our team*/
 .mw-aboutcontainer2 {
     display: flex;
     flex-direction: column;
     height: auto;
 }
 
+/*Contenedor meet our team*/
 .mw-aboutcontainer2-head {
     display: flex;
     flex-direction: column;
@@ -171,20 +189,20 @@ body {
 
 }
 
+/*Span del parrafo meet our team (MeWoof)*/
 .mw-aboutcontainer2-head span{
     color: var(--black2);
     font-weight: bold;
 }
-/* .mw-abouthead-style{
 
-} */
-
+/*Titulo meet our team*/
 .mw-aboutcontainer2-head h3 {
     color: var(--red);
     font-size: 35px;
     margin: 3%;
 }
 
+/*Parrafo meet our team*/
 .mw-aboutcontainer2-head p {
     color: var(--black2);
     font-size: 17px;
@@ -192,7 +210,8 @@ body {
     letter-spacing: 0.2px;
     padding: 5px 80px; 
 }
-    
+
+/*Contenedor tarjetas de equipo*/
 .mw-aboutcontainer2-cards {
     display: flex;
     justify-content: center;
@@ -212,6 +231,7 @@ body {
     
 }
 
+/*Botones tarjetas ver más-ver menos*/
 .mw-teamcard button{
     align-items: baseline;
     border: none;
@@ -228,12 +248,14 @@ body {
     box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.6);
 }
 
+/*Segundo estado de las tarjetas*/
 .mw-teamcard button:hover {
     background-color: #FFC859;
     height: 40px ;
     font-size:20px;
 }
 
+/*Imganes (tarjetas)*/
 .mw-teamcard img {
     border-radius: 1000px;
     height: 150px;
@@ -243,6 +265,7 @@ body {
     
 }
 
+/*Titutlos de las tarjetas (nuestros nombres)*/
 .mw-teamcard h4 {
     margin: 0px 0px 15px;
     text-align: center;
@@ -251,6 +274,7 @@ body {
     color: var(--pink);
 }
 
+/*Contenedor (img, nombres, parrafo)*/
 .mw-cardhead {
     text-align: center;
 }
@@ -261,6 +285,7 @@ body {
     margin-bottom: 15px;
 }
 
+/*Div parrafo de las tarjetas*/
 .mw-cardtext {
     text-align: justify;
     display: none;
@@ -278,16 +303,12 @@ body {
     
 }
 
-
+/*Button mostrar menos (tarjetas)*/
 .mostrar-menos {
     display:none;
 }
 
-div {
- /* border: 1px solid #000; */
-}
-
-
+/*Responsive para el NAVEGADOR, SOBRE NOSOTROS, TARJETAS*/
 /*1200 900 600 400*/
 @media screen and (max-width: 1200px) {
 
@@ -353,6 +374,7 @@ div {
     }
 }
 
+/*Responsive para el NAVEGADOR, SOBRE NOSOTROS, TARJETAS*/
 @media screen and (max-width: 900px) {
    
     .mw-navcontainer h1 {
@@ -428,6 +450,7 @@ div {
     
 }
 
+/*Responsive para el NAVEGADOR, SOBRE NOSOTROS, TARJETAS*/
 @media screen and (max-width: 768px) {
 
     .mw-navcontainer-menu {
@@ -588,6 +611,7 @@ div {
             font-size: 16px;
             padding: 20px;
             color: var(--black2);
+            outline: 0;
         }
 
         .contactInf button {

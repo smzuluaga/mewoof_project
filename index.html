@@ -4,26 +4,38 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mewoof</title>
+    <!-- Se establecen metadatos, como el título de la página y el ícono en la pestaña del navegador -->
     <link rel="icon" type="icon" href="img/adopcion_mascotas_perros_gatos_cat_miau.png">
+
+    <!-- Se enlaza una hoja de estilo externa llamada "styles.css" para aplicar estilos a la página -->
     <link href="css/styles.css" rel="stylesheet">
+
+    <!-- Se enlazan fuentes de Google Fonts para su uso en la página -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100&family=Poppins:wght@100&display=swap" rel="stylesheet">
+    
+    <!-- Se enlaza un archivo JavaScript externo llamado "script.js" para agregar funcionalidad a la página -->
     <script defer src="js/script.js"></script>
+
+    <!-- Se enlazan archivos JavaScript y CSS para el uso de librerías y fuentes de iconos -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="https://kit.fontawesome.com/a37bb3c75c.js" crossorigin="anonymous"></script>
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'> <!--Enlace iconos Boxicons-->
 </head>
 
 <body class="mw-main">
-    <header class="mw-head">
+    <header class="mw-head"> <!-- Se crea la cabecera de la página con el logotipo y el nombre "MeWoof" -->
         <nav class="mw-nav">
             <div class="mw-navcontainer"> 
                 <div class="mw-navcontainer-logo">
                     <img src="img/adopcion_mascotas_perros_gatos_cat_miau.png" alt="patita">
                     <h1>MeWoof</h1>
                 </div>
+                <!-- Se agrega un botón de hamburguesa para navegación en dispositivos móviles -->
                 <button class="toggle"><i class="fa-solid fa-bars"></i></button>
+
+                <!-- Se crea un menú de navegación con enlaces a las secciones de la página -->
                 <ul class="mw-navcontainer-menu nav-menu-visible">
                     <li><a href="#">Home</a></li>
                     <li><a href="#nosotros">AboutUs</a></li>
@@ -34,29 +46,37 @@
         </nav>
     </header>
 
+    <!-- Sección "About Us" (Nosotros) con información sobre la misión, visión y valores -->
     <section class="mw-about" id="nosotros">
         <div class="mw-aboutflex"> 
+
+            <!-- Contenedor para la información de misión, visión y valores -->
             <div class="mw-aboutcontainer1">
                 <div>
-                    <h3>Misión</h3>
+                    <h3>Misión</h3> <!-- Titulo e información sobre la misión de MeWoof -->
                     <p>Nuestra misión es proporcionar una plataforma en línea dedicada a conectar a animales rescatados con familias amorosas. Buscamos crear conciencia sobre el bienestar animal, fomentar la adopción responsable y brindar a cada mascota la oportunidad de encontrar un hogar lleno de cuidado, compasión y felicidad.</p>
                 </div>
                 <div>
                     <h3>Visión</h3>
                     <p>Ser reconocidos por nuestra contribución en la creación de miles de historias felices de adopción. Nos esforzamos por crear un mundo donde cada mascota encuentra un hogar amoroso y cada hogar encuente a su compañero perfecto, formando relaciones que perduren toda la vida.</p>
                 </div>
+
+                 <!-- Se repite una estructura similar para la visión y los valores -->
                 <div>
                     <h3>Valores</h3>
                     <p>En MeWoof promovemos la inclusión y diversidad de personas y familias adoptivas, priorizando el bienestar animal por encima de cualquier otro interés, reconociendo la responsabilidad social e integridad que debe acompañar la adopción de las mascotas, y brindando recursos que fomentan el compromiso a largo plazo.</p>
                 </div>
             </div>
             
+             <!-- Contenedor para el equipo de MeWoof -->
             <div class="mw-aboutcontainer2"> 
                 <div class="mw-aboutcontainer2-head">
-                    <h3>Meet Our Team</h3>
+                    <h3>Meet Our Team</h3><!-- Título y descripción del equipo de MeWoof -->
                     <p>Unimos corazones para encontrar hogares amorosos para mascotas necesitadas. Conoce al equipo apasionado que trabaja detrás de <span>MeWoof.</span></p>
                 </div>
-                <div class="mw-aboutcontainer2-cards">
+                <div class="mw-aboutcontainer2-cards"> <!-- Contenedor de tarjetas de equipo -->
+                    <!-- Se crean tarjetas individuales para cada miembro del equipo con su imagen y descripción -->
+                    <!-- Contenedor de tarjeta Jazmin -->
                     <div class="mw-teamcard">
                         <div class="mw-cardhead">
                             <img src="img/developer-jazminIllera-fullstack-java-html-css.png">
@@ -69,6 +89,8 @@
                         <button onclick="mostrarMas1()" id="mostrar-mas1" class="mw-st-button">Ver más</button>
                         <button onclick="mostrarMenos1()" id="mostrar-menos1" class="mostrar-menos mw-st-button">Ver menos</button>
                     </div>
+
+                    <!-- Contenedor de tarjeta Natalia -->
                     <div class="mw-teamcard">
                         <div class="mw-cardhead">
                             <img src="img/developer-natalia-parra-fullstack-java-html-css.png">
@@ -81,6 +103,8 @@
                         <button onclick="mostrarMas2()" id="mostrar-mas2" class="mw-st-button">Ver más</button>
                         <button onclick="mostrarMenos2()" id="mostrar-menos2" class="mostrar-menos mw-st-button">Ver menos</button>
                     </div>
+
+                    <!-- Contenedor de tarjeta Santiago -->
                     <div class="mw-teamcard">
                         <div class="mw-cardhead">
                             <img src="img/developer-santiago-zuluaga-fullstack-java-html-css.png">
@@ -93,6 +117,8 @@
                         <button onclick="mostrarMas3()" id="mostrar-mas3" class="mw-st-button">Ver más</button>
                         <button onclick="mostrarMenos3()" id="mostrar-menos3" class="mostrar-menos mw-st-button">Ver menos</button>
                     </div>
+
+                    <!-- Contenedor de tarjeta Steven -->
                     <div class="mw-teamcard">
                         <div class="mw-cardhead">
                             <img src="img/l.png">
@@ -127,8 +153,8 @@
             <label>Nombre:</label>
             <input type="text" name="name" id="nombre" placeholder="Ingrese su nombre completo" >
             <label>Correo Electrónico:</label>
-            <input type="text" name="email" placeholder="Ingrese su correo electrónico">
-            <button type="button" id="enviarButton">Enviar</button>
+            <input type="text" name="email" id="email" placeholder="Ingrese su correo electrónico">
+            <button type="button" onclick="resetForm()" id="enviarButton">Enviar</button>
         </form>
         <!--Fin formulario para conocer más de MeWoof-->
 
