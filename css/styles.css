@@ -6,26 +6,26 @@
     padding:0;
 }
 
+/*Se definen los colores a utilizar durante la plantilla*/
 :root { 
-    --red1: rgba(239, 65, 71);
-    --red: rgba(239, 65, 71, 0.85);
-    --pink1: #F7ABB2;
-    --pink2: rgba(240, 83, 115);
-    --beige: rgba(200, 174, 125, 1);
-    --yellow: #E8B77E;
-    --green: #E9EFC1;
-    --white: #FFFFFF;
-    --grey: #333333;
-    --blac: #000000;
+    --red: #EF4147;
+    --pink: #F05376;
+    --pink2: #F7ABB2;
+    --beige: #E8B77E;
+    --beige2: #E7CFB2;
+    --black2: #333333;
+    --black2o3: rgb(51, 51, 51, 0.03);
+    --redo85: rgba(239, 65, 71, 0.85);
 }
 
+/*Cuerpo del html*/
 body {
     font-family: 'Montserrat';
     width: 100%; 
 }
 
 
-/*BARRA DE NAVEGACION*/
+/*Barra de navegación*/
 .mw-head { 
     box-shadow: 0 4px 3px rgba(0, 0, 0, 0.4);
 }
@@ -37,41 +37,46 @@ body {
     justify-content: space-around;
     align-items: center;
     padding: 1%;
-    background: var(--pink1);
-    color: var(--white);
+    background: var(--pink2);
+    color: white;
     width: 100%;
     position: fixed;
     height: 25px;
     
 }
 
+/* contenedor del encabezado (DIV) */
 .mw-navcontainer div{
     display: flex;
     margin:5px 8px;
     padding:10px;
 }
 
+/*Imagen mewoof*/
 .mw-navcontainer img{
     display: flex;
     align-items: center;
     width: 5%;
 }
 
+/*Nombre mewoof encabezado*/
 .mw-navcontainer h1{
     display: flex;
     padding: 10px;
     align-content: center;
-    color: var(--red);
+    color: var(--redo85);
     font-family: futura;
     font-size: 30px;
 }
 
+/*Contenedor de img mewoof*/
 .mw-navcontainer-logo {
     margin: 10px;
     display: flex;
     align-items: center;
 }
 
+/*Menu hamburguesa*/
 .mw-navcontainer-menu {
     display:flex;
     width: 30%;
@@ -84,26 +89,31 @@ body {
 
 }
 
+/*Listado de navegación (puntos)*/
 .mw-navcontainer-menu li {
     list-style: none;
 }
 
+/*Enlaces de navegación*/
 .mw-navcontainer-menu a {
     text-decoration: none;
-    color: var(--grey);
+    color: var(--black2);
     font-size: 15px;
     margin: 20px;
     
 }
 
+/*Establece un segundo estado a los enlaces de navegación*/
 .mw-navcontainer-menu a:hover {
     font-size: 16px;
 }
 
+/*Enlace de navegación login*/
 .login-modifier {
     color:white;
 }
 
+/*Botón hamburguesa*/
 .toggle {
     background: none;
     border: none;
@@ -121,15 +131,17 @@ body {
     flex-direction: column;
 }
 
+/*Contenedor Misión, Visión, Valores*/
 .mw-aboutcontainer1 {
     display: flex;
     padding: 2%;
     justify-content: center;
     font-size: 14%;
-    color:var(--grey);
+    color:var(--black2);
     
 }
 
+/*Secciones de DIV Misión, Visión, Valores*/
 .mw-aboutcontainer1 div{
     display: flex;
     flex-direction: column;
@@ -143,13 +155,15 @@ body {
     /* overflow: scroll; */
 }
 
+/*TITULOS Misión, Visión, Valores*/
 .mw-aboutcontainer1 h3 {
     text-align: center;
     margin: 2px 0 25px;
     font-size: 30px;
-    color: var(--pink2);
+    color: var(--pink);
 }
 
+/*PARRAFOS Misión, Visión, Valores*/
 .mw-aboutcontainer1 p {
     display: flex;
     text-align: justify;
@@ -160,12 +174,14 @@ body {
 
 /*ABOUT US -TEAM*/
 
+/*Contenedor tarjetas y meet our team*/
 .mw-aboutcontainer2 {
     display: flex;
     flex-direction: column;
     height: auto;
 }
 
+/*Contenedor meet our team*/
 .mw-aboutcontainer2-head {
     display: flex;
     flex-direction: column;
@@ -173,28 +189,29 @@ body {
 
 }
 
+/*Span del parrafo meet our team (MeWoof)*/
 .mw-aboutcontainer2-head span{
-    color: var(--grey);
+    color: var(--black2);
     font-weight: bold;
 }
-/* .mw-abouthead-style{
 
-} */
-
+/*Titulo meet our team*/
 .mw-aboutcontainer2-head h3 {
-    color: var(--red1);
+    color: var(--red);
     font-size: 35px;
     margin: 3%;
 }
 
+/*Parrafo meet our team*/
 .mw-aboutcontainer2-head p {
-    color: var(--grey);
+    color: var(--black2);
     font-size: 17px;
     font-family: 'Montserrat';
     letter-spacing: 0.2px;
     padding: 5px 80px; 
 }
-    
+
+/*Contenedor tarjetas de equipo*/
 .mw-aboutcontainer2-cards {
     display: flex;
     justify-content: center;
@@ -210,10 +227,11 @@ body {
     height: 30%;
     width: 15%;
     font-size: 16px; 
-    color: var(--grey);
+    color: var(--black2);
     
 }
 
+/*Botones tarjetas ver más-ver menos*/
 .mw-teamcard button{
     align-items: baseline;
     border: none;
@@ -222,7 +240,7 @@ body {
     border-radius: 20px;
     width: 70%;
     height: 30px;
-    background: var(--pink2);
+    background: var(--pink);
     color: white;
     font-family: 'poppins';
     font-size: 16px; 
@@ -230,12 +248,14 @@ body {
     box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.6);
 }
 
+/*Segundo estado de las tarjetas*/
 .mw-teamcard button:hover {
     background-color: #FFC859;
     height: 40px ;
     font-size:20px;
 }
 
+/*Imganes (tarjetas)*/
 .mw-teamcard img {
     border-radius: 1000px;
     height: 150px;
@@ -245,14 +265,16 @@ body {
     
 }
 
+/*Titutlos de las tarjetas (nuestros nombres)*/
 .mw-teamcard h4 {
     margin: 0px 0px 15px;
     text-align: center;
     font-size: 15px;
     width: 100%;
-    color: var(--pink2);
+    color: var(--pink);
 }
 
+/*Contenedor (img, nombres, parrafo)*/
 .mw-cardhead {
     text-align: center;
 }
@@ -263,6 +285,7 @@ body {
     margin-bottom: 15px;
 }
 
+/*Div parrafo de las tarjetas*/
 .mw-cardtext {
     text-align: justify;
     display: none;
@@ -280,16 +303,12 @@ body {
     
 }
 
-
+/*Button mostrar menos (tarjetas)*/
 .mostrar-menos {
     display:none;
 }
 
-div {
- /* border: 1px solid #000; */
-}
-
-
+/*Responsive para el NAVEGADOR, SOBRE NOSOTROS, TARJETAS*/
 /*1200 900 600 400*/
 @media screen and (max-width: 1200px) {
 
@@ -355,6 +374,7 @@ div {
     }
 }
 
+/*Responsive para el NAVEGADOR, SOBRE NOSOTROS, TARJETAS*/
 @media screen and (max-width: 900px) {
    
     .mw-navcontainer h1 {
@@ -430,6 +450,7 @@ div {
     
 }
 
+/*Responsive para el NAVEGADOR, SOBRE NOSOTROS, TARJETAS*/
 @media screen and (max-width: 768px) {
 
     .mw-navcontainer-menu {
@@ -540,3 +561,144 @@ div {
         margin-right: 80px;
     }
 }
+
+/* Sección de contáctenos*/
+.contactUs{
+    margin-top: 100px;
+    background-color: var(--black2o3);
+}
+    /*Encabezado de contáctenos*/
+        .contactHeader h2{
+            padding-top: 30px;
+            color: var(--red);
+            font-size: 30px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .contactHeader p{
+            color: var(--black2);
+            font-size: 20px;
+            text-align: center;
+            margin-bottom: 60px;
+            font-weight: 100;
+        }
+    /*Fin encabezado de contáctenos*/
+
+    /*Formulario*/
+        .contactInf{
+            max-width: 715px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            height: 270px;
+        }
+
+        .contactInf label{
+            text-align: left;
+            font-size: 15px;
+            margin-bottom: 5px;
+            margin-left: 10px;
+        }
+
+        .contactInf input{
+            margin-top: 0;
+            margin-bottom: 15px;
+            height: 10px;
+            border-radius: 20px;
+            border: none;
+            border-bottom: 5px solid var(--pink2);
+            font-size: 16px;
+            padding: 20px;
+            color: var(--black2);
+            outline: 0;
+        }
+
+        .contactInf button {
+            height: 32px;
+            background-color: var(--pink);
+            color: white;
+            border: none;
+            border-radius: 180px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-left: auto;
+            width: 151px;
+        }
+    /*Fin formulario*/
+
+    /*Iconos*/
+        .socialMedia {
+            margin-top: 30px;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+        
+        .iconLink {
+            font-size: 75px;
+            color: var(--beige2);
+        }
+        
+        .socialMediaName {
+            margin-top: 5px;
+            margin-bottom: 50px;
+            font-size: 15px;
+            font-weight: 100;
+        }
+    /*Fin iconos*/
+/* Fin sección de contáctenos*/
+
+/* Sección footer*/
+        .footer{
+            background-color: var(--pink2);
+            height: 40px;
+            color: white;
+            padding-left: 20px;
+            padding-top: 15px;
+        }
+/* Fin sección footer*/
+
+/* Diseño responsivo contáctenos sección*/
+@media (max-width: 768px) {
+    .contactHeader h2{
+        font-size: 20px; /*Tamaño titulo*/
+    }
+    .contactHeader p{
+        font-size: 15px; /*Tamaño frase*/
+    }
+    .contactInf { /*Disminuir espacio entre formulario e iconos*/
+        height: 220px;
+    }
+    .contactInf label{ /*Indicación formulario */
+        font-size: 13px;
+        margin-left: 30px;
+    }
+    .contactInf input{ /*Inputs*/
+        height: 5px;
+        font-size: 13px;
+        width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .contactInf button { /* Botón*/
+        height: 26px;
+        font-size: 12px;
+        width: 110px;
+        margin-right: 25px;
+    }
+    .iconLink { /*Tamaño iconos*/
+        font-size: 45px;
+    }
+    .socialMediaName { /*Tamaño nombre redes*/
+       font-size: 9px;
+    }
+    .footer{ /*Footer letra*/
+        padding-top: 20px;
+        font-size: 10px;
+    }
+}
+/* Fin diseño responsivo contáctenos sección*/
