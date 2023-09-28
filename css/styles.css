@@ -122,9 +122,61 @@ body {
     display: none;
 }
 
+/* Sección HOME*/
+
+/* HOME*/
+
+/*.home{
+padding-top: 300px; //Para evitar que el navbar se acomode sobre lo que se ponga en la sección
+}*/
+
+/* Sección banner*/
+.homeBanner{
+    height: 580px; /*SOLO ES POR CREAR EL ESPACIO*/
+}
+
+/* Fin Banner*/
+
+/* Sección items*/
+.pets-container {
+    background-color: var(--black2o3);
+    height: 250px;
+    display: flex;
+    gap: 250px;
+    justify-content:center;
+    align-items: center;
+}
+
+.petStories {
+    display: flex;
+    align-items: center;
+}
+
+.petStories img{
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center top;
+}
+
+.petStories p {
+    width: 300px;
+    text-align: justify;
+    margin-left: 10px; 
+}
+
+.petStories span{
+    color: #F05376;
+    font-weight: bold;
+}
+
+/* Fin items*/
+
+/* Fin sección HOME*/
+
 
 /* ABOUT */
-
 
 .mv-aboutflex {
     display: flex;
@@ -481,6 +533,34 @@ body {
         justify-content: center;
         align-items: center;
     }
+
+/*Responsive ITEM SECCIÓN HOME*/
+@media screen and (max-width: 768px) {
+    .pets-container {
+        flex-direction:column;
+        height: auto;
+        padding: 20px;
+        gap: 30px;
+    }
+
+    .petStories {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .petStories img {
+        height: 50px;
+        width: 50px;
+        margin-bottom: 10px;
+    }
+    .petStories p{
+        width: 250px;
+        font-size: 10px;
+    }
+}
+
+/*FIN diseño responsivo pagina home/items*/
 
     .mw-aboutcontainer1 div {
         width: 80%
