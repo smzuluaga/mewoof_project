@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,400;0,700;1,200&family=Poppins:wght@500&display=swap');
+
+* {
+    box-sizing: content-box;
+    margin:0;
+    padding:0;
+}
+
+/*Se definen los colores a utilizar durante la plantilla*/
+:root { 
+    --red: #EF4147;
+    --pink: #F05376;
+    --pink2: #F7ABB2;
+    --beige: #E8B77E;
+    --beige2: #E7CFB2;
+    --black2: #3333335f;
+    --black2o3: rgb(51, 51, 51, 0.03);
+    --redo85: rgba(239, 65, 71, 0.85);
+}
