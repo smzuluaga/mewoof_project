@@ -139,19 +139,19 @@ padding-top: 300px; //Para evitar que el navbar se acomode sobre lo que se ponga
   @keyframes banner {
     0%,
     20% {
-      background-image: url(../img/pexels-alotrobo-1124002.jpg);
+      background-image: url(../img/banner1.png);
     }
     25%,
     45% {
-      background-image: url(../img/pexels-barnabas-davoti-14084426.jpg);
+      background-image: url(../img/banner2.png);
     }
     50%,
     75% {
-      background-image: url(../img/pexels-maud-slaats-2326938.jpg);
+      background-image: url(../img/banner3.png);
     }
     80%,
     100% {
-      background-image: url(../img/pexels-pixabay-460985.jpg);  
+      background-image: url(../img/banner4.png);  
 
     }
     }
@@ -206,6 +206,37 @@ padding-top: 300px; //Para evitar que el navbar se acomode sobre lo que se ponga
     color: white;
      cursor: pointer;
   }
+  @media (max-width: 768px) {
+    .mw-homebanner {
+        height: 400px; /* Cambia la altura a automática para que se ajuste al contenido */
+    }
+    @keyframes banner {
+        0%,
+        20% {
+          background-image: url(../img/banner1.png);
+          background-position: center;
+        }
+        25%,
+        45% {
+          background-image: url(../img/banner2.png);
+          background-position: center;
+        }
+        50%,
+        75% {
+          background-image: url(../img/banner3.png);
+          background-position: center;
+        }
+        80%,
+        100% {
+          background-image: url(../img/banner4.png);  
+          background-position: center;
+
+        }
+    }
+    .mw__buttonBanner{
+        width: 100px;
+    }
+}
   /*Termina banner*/
 
 /* Sección items*/
@@ -241,6 +272,8 @@ padding-top: 300px; //Para evitar que el navbar se acomode sobre lo que se ponga
     color: #F05376;
     font-weight: bold;
 }
+
+
 
 /* Fin items*/
 
