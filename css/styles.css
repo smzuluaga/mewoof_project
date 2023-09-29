@@ -134,31 +134,31 @@ padding-top: 300px; //Para evitar que el navbar se acomode sobre lo que se ponga
 .section__mwhome {
     animation: banner 15s infinite linear alternate;
     background-size: cover;
+    height: 600px;
   }
   
   @keyframes banner {
     0%,
     20% {
-      background-image: url(../img/pexels-alotrobo-1124002.jpg);
+      background-image: url(../img/Banner1.jpg);
     }
     25%,
     45% {
-      background-image: url(../img/pexels-barnabas-davoti-14084426.jpg);
+      background-image: url(../img/Banner2.jpg);
     }
     50%,
     75% {
-      background-image: url(../img/pexels-maud-slaats-2326938.jpg);
+      background-image: url(../img/Banner3.jpg);
     }
     80%,
     100% {
-      background-image: url(../img/pexels-pixabay-460985.jpg);  
+      background-image: url(../img/Banner4.jpg);  
 
     }
     }
   
   
   .mw-homebanner {
-    background: var(--black2);
     z-index: 1;
     width: 100%;
     height: 100vh;
@@ -206,6 +206,36 @@ padding-top: 300px; //Para evitar que el navbar se acomode sobre lo que se ponga
     color: white;
      cursor: pointer;
   }
+  
+  @media (max-width: 768px) {
+    .mw-homebanner {
+        height: 400px; /* Cambia la altura a automática para que se ajuste al contenido */
+    }
+    @keyframes banner {
+        0%,
+        20% {
+          background-image: url(../img/Banner1.jpg);
+          background-position: center; 
+        }
+        25%,
+        45% {
+          background-image: url(../img/Banner2.jpg);
+          background-position: center; 
+        }
+        50%,
+        75% {
+          background-image: url(../img/Banner3.jpg);
+          background-position: center; 
+        }
+        80%,
+        100% {
+          background-image: url(../img/Banner4.jpg);  
+          background-position: center; 
+    
+        }
+    }
+}
+
   /*Termina banner*/
 
 /* Sección items*/
