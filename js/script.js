@@ -66,7 +66,7 @@ botonNav.addEventListener("click", () => {
     navCont.classList.toggle("nav-menu-visible")
 })
 
-//SECCIÓN CONSTÁCTENOS
+//SECCIÓN CONTÁCTENOS
 //Validación datos ingresados al formulario
 document.addEventListener("DOMContentLoaded", function() {
     // Traer los datos de entrada
@@ -93,7 +93,7 @@ document.addEventListener("DOMContentLoaded", function() {
         // Realizar validación de nombre y correo electrónico
         if (validarNombre(nombreCompleto) && validarEmail(emailValido)) {
             document.querySelector("form").submit();
-            document.getElementById("nombre").value = "";
+            document.getElementById("nombre").value = ""; //Limpiar campos 
             document.getElementById("email").value = "";
         } else {
             if (!validarNombre(nombreCompleto)) {
@@ -102,7 +102,7 @@ document.addEventListener("DOMContentLoaded", function() {
             if (!validarEmail(emailValido)) {
                 alert("Ingrese un email valido.");
             }
-            event.preventDefault(); // no deja enviar el formulario
+            event.preventDefault(); // no deja enviar el formulario antes de tiempo
         }
     });
 });
