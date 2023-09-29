@@ -134,6 +134,7 @@ padding-top: 300px; //Para evitar que el navbar se acomode sobre lo que se ponga
 .section__mwhome {
     animation: banner 15s infinite linear alternate;
     background-size: cover;
+    height: 600px;
   }
   
   @keyframes banner {
@@ -158,7 +159,6 @@ padding-top: 300px; //Para evitar que el navbar se acomode sobre lo que se ponga
   
   
   .mw-homebanner {
-    background: var(--black2);
     z-index: 1;
     width: 100%;
     height: 100vh;
