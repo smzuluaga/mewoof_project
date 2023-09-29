@@ -784,6 +784,7 @@ padding-top: 300px; //Para evitar que el navbar se acomode sobre lo que se ponga
             text-align: center;
             margin-bottom: 60px;
             font-weight: 100;
+            color: #000;
         }
     /*Fin encabezado de contáctenos*/
 
@@ -838,6 +839,10 @@ padding-top: 300px; //Para evitar que el navbar se acomode sobre lo que se ponga
             justify-content: center;
             align-items: center;
             text-align: center;
+        }
+
+        .socialMedia a {
+            text-decoration: none;
         }
         
         .iconLink {
