@@ -1,3 +1,96 @@
+// SECCIONES DEL INDEX
+const seccionLogin= document.getElementById("mw_login");
+const seccionTipoUsuario= document.getElementById("mw-usuarioTipo");
+const seccionRegister= document.getElementById("mw_register");
+const seccionRegister2= document.getElementById("mw_register2");
+
+// BOTONES BOTONES LOGIN PARTE 1 - USUARIO CONTRASEÑA
+const botonLogin = document.getElementById("mw-loginNav");
+const botonLoginApp = document.getElementById("mw-loginButton");
+const botonCloseLogin= document.getElementById("mw-loginCloseButton");
+const botonATipoUsuario = document.getElementById("mw-redireccionaTipoUsuario");
+
+botonLogin.addEventListener('click', () => {
+    seccionLogin.style.display="flex";
+});
+
+botonLoginApp.addEventListener('click', () => {
+    alert ("¡Ingreso Exitoso!");
+});
+
+botonCloseLogin.addEventListener('click', () => {
+    seccionLogin.style.display="none";
+})
+
+botonATipoUsuario.addEventListener('click', () => {
+    seccionLogin.style.display="none";
+    seccionTipoUsuario.style.display="flex";
+});
+
+// BOTONES LOGIN PARTE 2 - TIPO DE USUARIO
+const botonCloseTipoUsuario= document.getElementById("mw-usuarioTipoCloseButton");
+const botonARegister = document.getElementById("mv-usuarioTipoButton1");
+const botonARegister2 = document.getElementById("mv-usuarioTipoButton2");
+const botonALogin2 = document.getElementById("mw-redireccionaLogin2");
+
+botonCloseTipoUsuario.addEventListener('click', () => {
+    seccionTipoUsuario.style.display="none";
+});
+
+botonARegister.addEventListener('click', () => {
+    seccionTipoUsuario.style.display="none";
+    seccionRegister.style.display="flex";
+});
+
+botonARegister2.addEventListener('click', () => {
+    seccionTipoUsuario.style.display="none";
+    seccionRegister2.style.display="flex";
+});
+
+botonALogin2.addEventListener('click', () => {
+    seccionTipoUsuario.style.display="none";
+    seccionLogin.style.display="flex";
+});
+
+// BOTONES LOGIN PARTE 3 - USUARIO DANDO EN ADOPCIÓN
+const botonCloseRegister= document.getElementById("mw-registerCloseButton");
+const botonALogin3 = document.getElementById("mw-redireccionaLogin3");
+const botonRegistrarDandoAdopcion = document.getElementById("mw-registerButtonDandoAdopcion");
+
+
+botonCloseRegister.addEventListener('click', () => {
+    seccionRegister.style.display="none";
+});
+
+botonALogin3.addEventListener('click', () => {
+    seccionRegister.style.display="none";
+    seccionLogin.style.display="flex";
+});
+
+botonRegistrarDandoAdopcion.addEventListener('click', () => {
+    alert("¡Registro Exitoso! \n Bienvenido a la comunidad Mewoof");
+});
+
+// BOTONES LOGIN PARTE 4 - USUARIO ADOPTANDO
+const botonCloseRegister2= document.getElementById("mw-register2CloseButton");
+const botonALogin4 = document.getElementById("mw-redireccionaLogin4");
+const botonRegistrarAdoptante = document.getElementById("mw-registerButtonAdoptante");
+
+botonCloseRegister2.addEventListener('click', () => {
+    seccionRegister2.style.display="none";
+});
+
+botonALogin4.addEventListener('click', () => {
+    seccionRegister2.style.display="none";
+    seccionLogin.style.display="flex";
+});
+
+botonRegistrarAdoptante.addEventListener('click', () => {
+    alert("¡Registro Exitoso! \n Bienvenido a la comunidad Mewoof");
+});
+
+
+
 // BOTONTES MOSTRAR MÁS SECCION OUR TEAM
 function mostrarMas1() {
     const member1 = document.querySelector("#mw-cardtext1");
