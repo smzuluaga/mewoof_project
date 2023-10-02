@@ -17,3 +17,199 @@
     --black2o3: rgb(51, 51, 51, 0.03);
     --redo85: rgba(239, 65, 71, 0.85);
 }
+
+/* Aquí empiezan arreglos del sidebar  */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    display: inline-flex;
+}
+
+.sidebar {
+    width: 120px;
+    max-width: 120px;
+    height: 100vh;
+    background-color: #F7ABB2;;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    box-sizing: border-box;
+}
+
+.iconoHover {
+    width: 100%;
+    height: 15%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Alinea verticalmente en el centro */
+    align-items: center;
+    margin-top: 25px;
+    box-sizing: border-box;
+    
+}
+
+#jaz img{
+    width: 65px;
+    height: 65px;
+    cursor: pointer;
+}
+
+#prueba img{
+    width: 55px;
+    height: 55px;
+    cursor: pointer;
+}
+
+
+.iconoHover i {
+    font-size: 50px;
+    color: #fff;
+    
+}
+
+
+.iconoHover:hover {
+    background-color: #F05376;
+}
+/* Aquí terminan arreglos del sidebar  */
+
+
+.card{
+  margin-top: 1%;
+    margin-left: 30%;
+    width: 35%;
+    padding: 5px 0;
+    height: 75%;
+    overflow: hidden;
+    background: linear-gradient(180deg, var(--pink2) 0%, var(--beige2) 100%);
+    border-radius: 10px;
+    position: relative;
+    text-align: right;
+    margin-bottom: 1px;
+    /* Aplica una sombra al elemento utilizando la propiedad box-shadow */
+  box-shadow: 0 0 6px var(--red);
+  /*
+   - 0 0: Desplazamiento horizontal y vertical de la sombra, en este caso, no hay desplazamiento (sombra centrada).
+   - 6px: Radio de difuminado de la sombra, creando un efecto suave en un área de 6 píxeles alrededor del elemento.
+   - var(--color_shadow): Color de la sombra obtenido de la variable CSS --color_shadow.
+  */
+  
+  }
+
+  .card__img{
+    margin-top: 4%;
+    width: 95%;
+    height: 290px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-right: 13px;
+  }
+
+  .cards__text{
+    text-align: left;
+    width: 90%;
+    margin:0 auto;
+  }
+
+  .card__list{
+    color: var(--gold2);
+    font-weight: 700;
+    /* Establece márgenes en las direcciones superior, derecha, inferior e izquierda del elemento */
+  margin: 15px 0 12px;
+  /*
+   - 25px: Margen superior de 25 píxeles.
+   - 0: No se aplican márgenes en los lados derecho e izquierdo.
+   - 12px: Margen inferior de 12 píxeles.
+  */
+  
+    font-size: 18px;
+  }
+  
+  
+  .card__title{
+    font-size: 20px;
+    color:#EF4147;
+    margin-bottom: 8px;
+
+  }
+
+  .card .card__title .point{
+    color: #5d5c5c88;
+  }
+
+  .card_button {
+    margin-top: 30%;
+    margin-bottom: 30%;
+    background: linear-gradient(180deg, #ecbcee 0%, #f6f4f6 100%); 
+    border-radius: 6px;
+    /* text-decoration: none;*/
+     width: 100%;
+    color: #EF4147;
+    text-align: center;
+    margin-right: 60%;
+  display: flex;
+	justify-content: center;
+	align-items: center;
+    padding: 5px 0; 
+  }
+
+  .icons .buttons {
+	margin-top: 0;
+	display: flex;
+	align-items: center;
+    margin-left: 31%;
+}
+
+.icons .buttons .no i {
+	color: #EF4147;
+	font-size: 33px;
+}
+
+.icons .buttons .star i {
+	color: #EF4147;
+	font-size: 22px;
+}
+
+.icons .buttons .heart i {
+	color:#EF4147;
+	font-size: 32px;
+}
+
+.icons .buttons .no,
+.icons .buttons .star,
+.icons .buttons .heart {
+	background-color: #fff;
+	width: 70px;
+	height: 70px;
+    background: linear-gradient(180deg, #ecbcee 0%, #e1d2e1 100%); 
+	box-shadow: 0 1px 10px 0 rgba(0, 20, 20, 0.1);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: 70px;
+	margin: 30px;
+	transition: 0.2s transform;
+    margin-right: 50px;
+}
+
+.icons .buttons .no:hover,
+.icons .buttons .star:hover,
+.icons .buttons .heart:hover {
+	transform: scale(1.1);
+}
+
+.icons .buttons .star {
+	width: 60px;
+	height: 60px;
+}
+
+.otro1 {
+  display: flex;
+  margin: 0;
+}
+
+.otro2{
+  margin: 0 0 0 5%;
+}
