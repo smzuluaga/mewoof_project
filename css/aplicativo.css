@@ -77,11 +77,11 @@ body {
 
 
 .card{
-  margin-top: 1%;
-    margin-left: 30%;
-    width: 35%;
+  margin-top: 5%;
+    margin-left: 45%;
+    width: 38%;
     padding: 5px 0;
-    height: 75%;
+    height: 69%;
     overflow: hidden;
     background: linear-gradient(180deg, var(--pink2) 0%, var(--beige2) 100%);
     border-radius: 10px;
@@ -100,7 +100,7 @@ body {
 
   .card__img{
     margin-top: 4%;
-    width: 95%;
+    width: 93%;
     height: 290px;
     object-fit: cover;
     border-radius: 10px;
@@ -140,8 +140,8 @@ body {
   }
 
   .card_button {
-    margin-top: 30%;
-    margin-bottom: 30%;
+    margin-top: 20%;
+    margin-bottom: 20%;
     background: linear-gradient(180deg, #ecbcee 0%, #f6f4f6 100%); 
     border-radius: 6px;
     /* text-decoration: none;*/
@@ -152,14 +152,14 @@ body {
   display: flex;
 	justify-content: center;
 	align-items: center;
-    padding: 5px 0; 
+    padding: 3px 0; 
   }
 
   .icons .buttons {
 	margin-top: 0;
 	display: flex;
 	align-items: center;
-    margin-left: 31%;
+    margin-left: 45%;
 }
 
 .icons .buttons .no i {
@@ -189,9 +189,9 @@ body {
 	justify-content: center;
 	align-items: center;
 	border-radius: 70px;
-	margin: 30px;
+	margin: 15px;
 	transition: 0.2s transform;
-    margin-right: 50px;
+    margin-right: 30px;
 }
 
 .icons .buttons .no:hover,
