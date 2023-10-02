@@ -33,19 +33,156 @@
                     <img src="img/adopcion_mascotas_perros_gatos_cat_miau.png" alt="patita">
                     <h1>MeWoof</h1>
                 </div>
-                <!-- Se agrega un botón de hamburguesa para navegación en dispositivos móviles -->
-                <button class="toggle"><i class="fa-solid fa-bars"></i></button>
 
                 <!-- Se crea un menú de navegación con enlaces a las secciones de la página -->
-                <ul class="mw-navcontainer-menu nav-menu-visible">
+                <ul class="mw-navcontainer-menu">
                     <li><a href="#">Home</a></li>
                     <li><a href="#nosotros">AboutUs</a></li>
                     <li><a href="#contactenos">ContactUs</a></li>
-                    <li><a href="#"><span class="login-modifier">LogIn</span></a></li>
+                    <li><a href="#"><span class="login-modifier" id="mw-loginNav">LogIn</span></a></li>
                 </ul>
+                <!-- Se agrega un botón de hamburguesa para navegación en dispositivos móviles -->
+
+                <button class="toggle"><i class="fa-solid fa-bars"></i></button>
             </div>
         </nav>
     </header>
+    
+<!-- Inicio Login -->
+    <div class="mw-login" id="mw_login">
+        <div class="mw-loginCard">
+            <div class="mw-loginClose"><button id="mw-loginCloseButton"><i class='bx bx-x'></i></button></div>
+            <div class="mw-loginData">
+                <div>
+                    <label for="mw_loginUsser">Ususario</label>
+                    <input type="text" id="mw_loginUsser">
+                </div>
+                <div>
+                    <label for="mw_loginPassword">Contraseña</label>
+                    <input type="password" id="mw_loginPassword">
+                </div>
+            </div>
+            <div class="mw-loginButtons">
+                <button id="mw-loginButton">Login</button>
+                <button id="mw-redireccionaTipoUsuario">Aún no estoy registrado</button>
+            </div>
+        </div>
+    </div>
+<!-- Fin Login -->
+<!-- Inicio tipo Usuario -->
+    <div class="mw-usuarioTipo" id="mw-usuarioTipo">
+        <div class="mw-usuarioTipoCard">
+            <div class="mw-usuarioTipoClose"><button id="mw-usuarioTipoCloseButton"><i class='bx bx-x'></i></button></div>
+            <div class="mw-usuarioTipoData">
+                    <button class="mv-usuarioTipoButton" id="mv-usuarioTipoButton1">Estoy dando en Adopcion</button>
+                    <button class="mv-usuarioTipoButton" id="mv-usuarioTipoButton2">Estoy Adptando</button>
+            </div>
+            <div class="mw-usuarioTipoButtons">
+                <button id="mw-redireccionaLogin2">Ya estoy registrado</button>
+            </div>
+        </div>
+    </div>
+<!-- Fin tipo Usuario -->
+
+<!-- Inicio Register Usuario Dando en Adopcion -->
+<div class="mw-register" id="mw_register">
+    <div class="mw-registerCard">
+        <div class="mw-registerClose"><button id="mw-registerCloseButton"><i class='bx bx-x'></i></button></div>
+        <div class="mw-registerData">
+            <div>
+                <label for="mw_registerUsser">Usuario Mewoof</label>
+                <input type="text" id="mw_registerUsser" placeholder="Dando en Adopcion">
+            </div>
+            <div>
+                <label for="mw_registerPassword">Nombre</label>
+                <input type="text" id="mw_registerPassword">
+            </div>
+            <div>
+                <label for="mw_registerPassword">Apellido</label>
+                <input type="text" id="mw_registerPassword">
+            </div>
+            <div>
+                <label for="mw_registerPassword">Pais</label>
+                <input type="text" id="mw_registerPassword">
+            </div>
+            <div>
+                <label for="mw_registerPassword">Ciudad</label>
+                <input type="text" id="mw_registerPassword">
+            </div>
+            <div>
+                <label for="mw_registerPassword">Cel</label>
+                <input type="cel" id="mw_registerPassword">
+            </div>
+            <div>
+                <label for="mw_registerPassword">Email</label>
+                <input type="email" id="mw_registerPassword">
+            </div>
+            <div>
+                <label for="mw_registerPassword">Contraseña</label>
+                <input type="password" id="mw_registerPassword">
+            </div>
+            <div>
+                <label for="mw_registerPassword">Confirmar Contraseña</label>
+                <input type="password" id="mw_registerPassword">
+            </div>
+        </div>
+        <div class="mw-registerButtons">
+            <button id="mw-registerButtonDandoAdopcion">Registrarme</button>
+            <button id="mw-redireccionaLogin3">Ya estoy registrado</button>
+        </div>
+    </div>
+</div>
+<!-- Fin Register Usuario Dando en Adopcion-->
+
+<!-- Inicio Register Usuario Adoptando -->
+    <div class="mw-register2" id="mw_register2">
+        <div class="mw-register2Card">
+            <div class="mw-register2Close"><button id="mw-register2CloseButton"><i class='bx bx-x'></i></button></div>
+            <div class="mw-register2Data">
+                <div>
+                    <label for="mw_register2Usser">Usuario Mewoof</label>
+                    <input type="text" id="mw_register2Usser" placeholder="Adoptando">
+                </div>
+                <div>
+                    <label for="mw_register2Password">Nombre</label>
+                    <input type="text" id="mw_register2Password">
+                </div>
+                <div>
+                    <label for="mw_register2Password">Apellido</label>
+                    <input type="text" id="mw_register2Password">
+                </div>
+                <div>
+                    <label for="mw_register2Password">Pais</label>
+                    <input type="text" id="mw_register2Password">
+                </div>
+                <div>
+                    <label for="mw_register2Password">Ciudad</label>
+                    <input type="text" id="mw_register2Password">
+                </div>
+                <div>
+                    <label for="mw_register2Password">Cel</label>
+                    <input type="cel" id="mw_register2Password">
+                </div>
+                <div>
+                    <label for="mw_register2Password">Email</label>
+                    <input type="email" id="mw_register2Password">
+                </div>
+                <div>
+                    <label for="mw_register2Password">Contraseña</label>
+                    <input type="password" id="mw_register2Password">
+                </div>
+                <div>
+                    <label for="mw_register2Password">Confirmar Contraseña</label>
+                    <input type="password" id="mw_register2Password">
+                </div>
+            </div>
+            <div class="mw-registerButtons">
+                <button id="mw-registerButtonAdoptante">Registrarme</button>
+                <button id="mw-redireccionaLogin4">Ya estoy registrado</button>
+            </div>
+        </div>
+    </div>
+<!-- Fin Register Usuario Adoptando-->
 
 <!-- Fin barra de navegación -->
     <!-- Sección Home - Banner -->
@@ -63,6 +200,22 @@
 
         <!-- Items - historias -->
         <div class="pets-container">
+            <div class="petStories">
+                <img src="img/perrito1.jpg">
+                <p> <span>Dina:</span> Me encontraba sola y asustada en las calles, pero me rescataron y ahora vivo feliz con una famila que me ama.</p>
+            </div>
+            <div class="petStories">
+                <img src="img/perrito2.jpg">
+                <p class="petStories-modifier"><span>Sasha:</span> Estaba buscando una familia y encontré la mejor, me dan comida muy rica, me cuidad y me dan mucho amor.</p>
+            </div>
+            <div class="petStories">
+                <img src="img/perrito1.jpg">
+                <p> <span>Dina:</span> Me encontraba sola y asustada en las calles, pero me rescataron y ahora vivo feliz con una famila que me ama.</p>
+            </div>
+            <div class="petStories">
+                <img src="img/perrito2.jpg">
+                <p><span>Sasha:</span> Estaba buscando una familia y encontré la mejor, me dan comida muy rica, me cuidad y me dan mucho amor.</p>
+            </div>
             <div class="petStories">
                 <img src="img/perrito1.jpg">
                 <p> <span>Dina:</span> Me encontraba sola y asustada en las calles, pero me rescataron y ahora vivo feliz con una famila que me ama.</p>
@@ -185,7 +338,9 @@
             <input type="text" name="name" id="nombre" placeholder="Ingrese su nombre completo" >
             <label>Correo Electrónico:</label>
             <input type="text" name="email" id="email" placeholder="Ingrese su correo electrónico">
-            <button type="button" onclick="resetForm()" id="enviarButton">Enviar</button>
+            <div id="mw-button-container">
+                <button type="button" onclick="resetForm()" id="enviarButton">Enviar</button>
+            </div>
         </form>
         <!--Fin formulario para conocer más de MeWoof-->
 
