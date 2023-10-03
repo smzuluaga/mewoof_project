@@ -4,6 +4,7 @@
     box-sizing: content-box;
     margin:0;
     padding:0;
+    /* border: 1px solid black; */
 }
 
 /*Se definen los colores a utilizar durante la plantilla*/
@@ -34,29 +35,35 @@ body {
 .mw-navcontainer {
     display: flex;
     height:3.5%;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
     padding: 1%;
     background: var(--pink2);
     color: white;
     width: 100%;
     position: fixed;
+    z-index: 1;
     height: 25px;
     
 }
 
 /* contenedor del encabezado (DIV) */
+.mw-nav {
+    width: 100%;
+}
+
+
 .mw-navcontainer div{
+    
     display: flex;
-    margin:5px 8px;
-    padding:10px;
+
 }
 
 /*Imagen mewoof*/
 .mw-navcontainer img{
     display: flex;
     align-items: center;
-    width: 5%;
+    width: 10%;
 }
 
 /*Nombre mewoof encabezado*/
@@ -71,7 +78,8 @@ body {
 
 /*Contenedor de img mewoof*/
 .mw-navcontainer-logo {
-    margin: 10px;
+    width:20%;
+    margin: 100px;
     display: flex;
     align-items: center;
 }
@@ -80,18 +88,17 @@ body {
 .mw-navcontainer-menu {
     display:flex;
     width: 30%;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
     font-weight: bold;
-    margin: 10px;
-    padding:10px;
-    left:0
+    margin: 100px;
 
 }
 
 /*Listado de navegación (puntos)*/
 .mw-navcontainer-menu li {
     list-style: none;
+    margin: 0 3%;
 }
 
 /*Enlaces de navegación*/
@@ -99,7 +106,6 @@ body {
     text-decoration: none;
     color: var(--black2);
     font-size: 15px;
-    margin: 20px;
     
 }
 
@@ -122,13 +128,514 @@ body {
     display: none;
 }
 
+
+/* Inicio Pop Up Login*/
+
+.mw-login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    display: none;
+}
+
+.mw-loginCard {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    min-width: 250px;
+    height: 70vh;
+    padding: 20px 20px;
+    background: rgb(35, 35, 35,0.9);
+    color: #fff;
+    border-radius: 35px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+.mw-loginCard h1 {
+    font-size: 23px;
+    margin:20% 0;
+    text-align: center;
+}
+
+.mw-loginData {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.mw-loginData div{
+    width: 100%;
+    margin: 10px;
+    align-items: center;
+    justify-content: center;
+}
+
+.mw-loginData label {
+    text-align: center;
+    font-size: 15px;
+    width: 80%;
+    color:white;
+}
+
+.mw-loginData input{
+    text-align: center;
+    font-size: 12px;
+    font-weight:100;
+    padding: 3px;
+    width: 100%;
+    border: none;
+    outline: 0;   
+    border-radius: 10px;
+    height: 30px;
+    background: rgba(231, 207, 178, 0.65);
+    color: #FFF;
+}
+
+input::placeholder{
+    color:white;
+    font-weight: 0;
+}
+
+.mw-loginData div button{
+    background: none;
+    color: white;
+    border:none;
+    margin-top: 5px;
+
+}
+
+.bx bx-low-vision {
+    position: relative;
+}
+
+.loginCard > div{
+    margin-left: 50px;
+    margin-bottom: 100px; 
+}
+
+.mw-loginClose{
+    width: 100%;
+    display: flex;
+    justify-content: right;
+    margin:0;
+    font-size: 20px;
+}
+
+.mw-loginClose button{
+    display: flex;
+    align-items: center;
+    border: none;
+    background: none;
+    font-size: 20px;
+    cursor: pointer;
+    color: white;
+
+}
+
+.mw-loginData div{
+    display: flex;
+    flex-direction: column;
+}
+
+.mw-loginButtons {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 0;
+}
+
+.mw-mainButtons{
+    background-color: rgba(247, 171, 178,0.75);
+    border-radius: 20px;
+    border: none;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.4);
+    color: #fff;
+    padding: 10px 10px;
+    margin-top: 30px;
+    width:50%
+}
+
+.mw-mainButtons button {
+    background:none;
+    border: none;
+    color: #fff;
+}
+
+#mw-redireccionaTipoUsuario {
+    border:none;
+    background: none;
+    color: #959595;
+    box-shadow: none;
+    width: 100%;
+    margin-top: 50px;
+}
+
+#mw-redireccionaTipoUsuario:hover {
+    color: var(--beige);
+    cursor: pointer;
+}
+
+
+.mw-loginButtons a{
+    text-decoration: none;
+    font-size: 10px;
+    color: #888888;
+    text-align: center;
+}
+/*Fin Pop Up Login*/
+
+/* Inicio Pop Up Tipo de Usuario*/
+.mw-usuarioTipo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.8);
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    display: none;
+}
+
+.mw-usuarioTipoCard {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    min-width: 250px;
+    height: 70vh;
+    padding: 20px 20px;
+    background:  rgb(35, 35, 35,0.9);
+    color: #fff;
+    border-radius: 35px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+.mw-usuarioTipoCard h1 {
+    font-size: 20px;
+
+    text-align: center;
+}
+
+.usuarioTipoCard > div{
+    margin-left: 50px;
+    margin-bottom: 100px; 
+}
+
+.mw-usuarioTipoData {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.mw-usuarioTipoClose{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin:0;
+    font-size: 20px;
+}
+
+.mw-usuarioTipoClose button{
+    display: flex;
+    align-items: center;
+    border: none;
+    background: none;
+    font-size: 20px;
+    cursor: pointer;
+    color: white;
+
+}
+
+.mw-usuarioTipoButtons {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30%;
+}
+
+.mv-usuarioTipoButton {
+    width: 80%;
+    margin: 10px 0;
+    border: none;
+    padding: 15px;
+    border-radius: 20px;
+    background: rgba(231, 207, 178, 0.65);
+    color: white;
+}
+
+.mv-usuarioTipoButton:hover {
+    background: rgba(247, 171, 178,0.75);
+}
+
+#mw-redireccionaLogin2 {
+    background: none;
+    color: #959595;
+    box-shadow: none;
+    width: 100%;
+    border: none;
+}
+
+#mw-redireccionaLogin2:hover {
+    color: var(--beige);
+    cursor: pointer;
+}
+
+/*Fin Pop Up Tipo Usuario*/
+
+/*Inicio Pop Up Register Usuario Dando en Adopcion*/
+.mw-register{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: none;
+}
+
+.mw-registerCard {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    min-width: 250px;
+    height: 70vh;
+    padding: 20px 20px;
+    background:  rgb(35, 35, 35,0.9);
+    color: #fff;
+    border-radius: 35px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+.mw-registerCard h1 {
+    font-size: 23px;
+    margin: 10% 0;
+    text-align: center;
+}
+
+.mw-registerClose {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.mw-registerClose button{
+    display: flex;
+    align-items: center;
+    border: none;
+    background: none;
+    font-size: 20px;
+    cursor: pointer;
+    color: white;
+}
+
+.mw-registerData {
+    width: 100%;
+    overflow-y: scroll;
+    height: 50vh;
+}
+
+.mw-registerData::-webkit-scrollbar {
+    display: none;
+}
+
+.mw-user1Form {
+    margin-top: 10px;
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: auto;
+}
+
+.mw-user1Form div{
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+}
+
+.mw-user1Form label {
+    font-size: 12px;
+    color: var(--red);
+    font-weight: bold;
+    margin-bottom: 2px;
+}
+
+.mw-user1Form input {
+    background: none;
+    border: none;
+    border-bottom: 1px solid white;
+    outline: 0;
+    color: white;
+    font-size: 12px;
+    padding: 3px;
+    font-weight:lighter;
+    margin-bottom: 5px;
+}
+
+#mw-redireccionaLogin3 {
+    background: none;
+    color: #959595;
+    box-shadow: none;
+    width: 100%;
+    border: none;
+    margin-top: 5px;
+}
+
+#mw-redireccionaLogin3:hover {
+    color: var(--beige);
+    cursor: pointer;
+}
+
+#mw-registerButtonDandoAdopcion {
+    margin-bottom: 5px;
+}
+
+.mw-registerButtons {
+    width:100%;
+    height: 20vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+/*Fin Pop Up Register Dando en Adopcion*/
+
+/* Inicio Pop Up Login Usuario Adoptando*/
+.mw-register2{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: none;
+}
+
+.mw-register2Card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    min-width: 250px;
+    height: 70vh;
+    padding: 20px 20px;
+    background:  rgb(35, 35, 35,0.9);
+    color: #fff;
+    border-radius: 35px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+.mw-register2Card h1 {
+    font-size: 23px;
+    margin: 10% 0;
+    text-align: center;
+}
+
+.mw-register2Close {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.mw-register2Close button{
+    display: flex;
+    align-items: center;
+    border: none;
+    background: none;
+    font-size: 20px;
+    cursor: pointer;
+    color: white;
+}
+
+.mw-register2Data {
+    width: 100%;
+    overflow-y: scroll;
+    height: 30vh;
+}
+
+.mw-register2Data::-webkit-scrollbar {
+    display: none;
+}
+
+.mw-user2Form {
+    margin-top: 10px;
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: auto;
+}
+
+.mw-user2Form div{
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+}
+
+.mw-user2Form label {
+    font-size: 12px;
+    color: var(--red);
+    font-weight: bold;
+    margin-bottom: 2px;
+}
+
+.mw-user2Form input {
+    width:100%;
+    background: none;
+    border: none;
+    border-bottom: 1px solid white;
+    outline: 0;
+    color: white;
+    font-size: 12px;
+    padding: 3px;
+    font-weight:lighter;
+    margin-bottom: 5px;
+}
+
+#mw-redireccionaLogin4 {
+    background: none;
+    color: #959595;
+    box-shadow: none;
+    width: 100%;
+    border: none;
+    margin-top: 5px;
+}
+
+#mw-redireccionaLogin4:hover {
+    color: var(--beige);
+    cursor: pointer;
+}
+
+#mw-registerButtonDandoAdopcion {
+    margin-bottom: 5px;
+}
+/*Fin Pop Up Login Usuario Adoptando*/
+
 /* Sección HOME*/
-
 /* HOME*/
-
-/*.home{
-padding-top: 300px; //Para evitar que el navbar se acomode sobre lo que se ponga en la sección
-}*/
 
 /* Sección banner*/
 .section__mwhome {
@@ -160,7 +667,7 @@ padding-top: 300px; //Para evitar que el navbar se acomode sobre lo que se ponga
   
   .mw-homebanner {
     z-index: 1;
-    width: 100%;
+    width: 100vw;
     height: 100vh;
     text-align: center;
     display: flex;
@@ -206,57 +713,31 @@ padding-top: 300px; //Para evitar que el navbar se acomode sobre lo que se ponga
     color: white;
      cursor: pointer;
   }
-  @media (max-width: 768px) {
-    .mw-homebanner {
-        height: 400px; /* Cambia la altura a automática para que se ajuste al contenido */
-    }
-    @keyframes banner {
-        0%,
-        20% {
-          background-image: url(../img/banner1.png);
-          background-position: center;
-        }
-        25%,
-        45% {
-          background-image: url(../img/banner2.png);
-          background-position: center;
-        }
-        50%,
-        75% {
-          background-image: url(../img/banner3.png);
-          background-position: center;
-        }
-        80%,
-        100% {
-          background-image: url(../img/banner4.png);  
-          background-position: center;
-
-        }
-    }
-    .mw__buttonBanner{
-        width: 100px;
-    }
-}
-  /*Termina banner*/
+    
 
 /* Sección items*/
 .pets-container {
     background-color: var(--black2o3);
-    height: 250px;
+    width: auto;
+    height: auto;
     display: flex;
-    gap: 250px;
-    justify-content:center;
+    flex-wrap: wrap;
+    justify-content:space-evenly;
     align-items: center;
+    padding: 5%;
 }
 
 .petStories {
+    width: auto;
     display: flex;
     align-items: center;
+    margin-top: 50px;
+    
 }
 
 .petStories img{
-    width: 140px;
-    height: 140px;
+    width: 15vh;
+    height: 15vh;
     border-radius: 50%;
     object-fit: cover;
     object-position: center top;
@@ -272,25 +753,26 @@ padding-top: 300px; //Para evitar que el navbar se acomode sobre lo que se ponga
     color: #F05376;
     font-weight: bold;
 }
-
-
-
 /* Fin items*/
-
 /* Fin sección HOME*/
 
-
 /* ABOUT */
+
+.mw-about {
+    border-color: red;
+    box-sizing: border-box;
+}
 
 .mv-aboutflex {
     display: flex;
     flex-direction: column;
+    width: 100%;
+    
 }
 
 /*Contenedor Misión, Visión, Valores*/
 .mw-aboutcontainer1 {
     display: flex;
-    padding: 2%;
     justify-content: center;
     font-size: 14%;
     color:var(--black2);
@@ -407,8 +889,9 @@ padding-top: 300px; //Para evitar que el navbar se acomode sobre lo que se ponga
 /*Segundo estado de las tarjetas*/
 .mw-teamcard button:hover {
     background-color: #FFC859;
-    height: 40px ;
+    height: 33px ;
     font-size:20px;
+    cursor: pointer;
 }
 
 /*Imganes (tarjetas)*/
@@ -464,16 +947,32 @@ padding-top: 300px; //Para evitar que el navbar se acomode sobre lo que se ponga
     display:none;
 }
 
+#mw-button-container {
+    width: 100%;
+    text-align: right;
+    margin-right: 9%;
+ }
+
+#enviarButton {
+    font-size: 12px;
+    margin-top: 20px;
+}
+
 /*Responsive para el NAVEGADOR, SOBRE NOSOTROS, TARJETAS*/
 /*1200 900 600 400*/
 @media screen and (max-width: 1200px) {
+    .mw__buttonBanner{
+        width: 200px;
+        font-size: 12px; 
+        padding: 0;
+    }
 
     .mw-navcontainer h1 {
         font-size: 25px;
     }
 
     .mw-navcontainer img{
-        width: 4.5%;
+        width: 30px;
     }
 
     .mw-navcontainer-menu a {
@@ -528,22 +1027,77 @@ padding-top: 300px; //Para evitar que el navbar se acomode sobre lo que se ponga
     .mw-teamcard:hover {
         font-size: 14px;
     }
+
+    #mw-button-container {
+        width: 100%;
+        text-align: right;
+        margin-right: 9%;
+     }
+    
+    #enviarButton {
+        font-size: 12px;
+        margin-top: 20px;
+    }
+
+    
 }
 
 /*Responsive para el NAVEGADOR, SOBRE NOSOTROS, TARJETAS*/
 @media screen and (max-width: 900px) {
    
+    /*Inicio Login*/
+
+    .mw-loginCard {
+        width: 20%;
+    }
+
+    .mw-loginButtons button{
+        font-size: 12px;
+    }
+
+    .mw-loginButtons a{
+        font-size: 13x;
+    }
+
+    .mw-loginData label, label {
+        font-size: 13px;
+    }
+    /*Fin Login*/
+
     .mw-navcontainer h1 {
         font-size: 20px;
     }
 
     .mw-navcontainer img{
-        width: 4%;
+        width:25px;
         margin: 0;
     }
     
-    .mw-navcontainer-menu {
-        left: 50px;
+    .pets-container {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .petStories {
+        width: 300px;
+        margin-top: 15px; 
+        display: flex;
+        flex-direction: row;
+        margin-top: 40px 20px;
+        /* border: 1px solid black; */
+        margin-top: 40px;
+    }
+
+    .petStories p {
+        width: 50%;
+        height: auto;
+        font-size: 11px;
+    }
+
+    .petStories img {
+        width: 12vh;
+        height: 12vh;
     }
 
     .mw-navcontainer-menu a {
@@ -603,6 +1157,44 @@ padding-top: 300px; //Para evitar que el navbar se acomode sobre lo que se ponga
     .mw-teamcard:hover {
         font-size: 13px;
     }
+
+
+     .contactInf {
+        padding: 5px;
+        justify-content: center;
+        align-items: center;
+     }
+    .contactInf input{
+        width: 70%;
+        font-size: 1x;
+    }
+
+    .contactInf label{
+        width: 70%;
+        font-size: 13px;
+        margin-left: 45px;
+    }
+
+    .contactHeader p {
+        font-size: 7px;
+    }
+
+     #mw-button-container {
+        width: 100%;
+        text-align: right;
+        margin-right: 25%;
+     }
+
+    #enviarButton {
+        font-size: 12px;
+        margin-top: 20px;
+    }
+
+    .footer {
+        text-align: center;
+        font-size: 11.5px;
+    }
+
     
 }
 
@@ -612,16 +1204,34 @@ padding-top: 300px; //Para evitar que el navbar se acomode sobre lo que se ponga
     .mw-navcontainer-menu {
         position: relative;
         flex-direction: column;
-        margin-right: 20px;
-        background-color:#888888 ;
+        background-color: rgba(8,8,8,0.5);
+        width: 30%;
         height: 80px;
         transition: left 0.30s;
         top: 65px;
-        margin-right: 70px ;
+        left: 100%;
+    }
+
+    .nav-menu-visible {
+        left:26.5%;
+    }
+
+    .mw-navcontainer-menu {
+        top: 60px;
+        margin:0;
     }
 
     .mw-navcontainer img{
-        width: 6%;
+        width: 20px;
+        margin: 0;
+    }
+
+    .mw-navcontainer-logo{
+        margin: 50px;
+    }
+
+    .mw-navcontainer img{
+        width: 20px;
         margin: 0;
     }
     
@@ -629,139 +1239,183 @@ padding-top: 300px; //Para evitar que el navbar se acomode sobre lo que se ponga
     .mw-navcontainer-menu a {
         font-size: 9px;
         margin: 10px;
+        color: white;
     }
     
-    .mw-aboutcontainer1 {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
+
+    .mw-homebanner {
+        height: 400px; /* Cambia la altura a automática para que se ajuste al contenido */
+    }
+    @keyframes banner {
+        0%,
+        20% {
+          background-image: url(../img/banner1.png);
+          background-position: center;
+        }
+        25%,
+        45% {
+          background-image: url(../img/banner2.png);
+          background-position: center;
+        }
+        50%,
+        75% {
+          background-image: url(../img/banner3.png);
+          background-position: center;
+        }
+        80%,
+        100% {
+          background-image: url(../img/banner4.png);  
+          background-position: center;
+
+        }
+    }
+    .mw__buttonBanner{
+        width: 100px;
+        font-size: 12px; 
+        padding: 0;
+    }
+  /*Termina banner*/
+
+   /*Inicio Login*/
+
+    .mw-loginCard {
+        width: 45%;
     }
 
-   
+    .mw-loginButtons button{
+        font-size: 10px;
+    }
+
+    .mw-loginButtons a{
+        font-size: 8px;
+    }
+
+    .mw-loginData label, label {
+        font-size: 10px;
+    }
+    
+    /*Fin Login*/
 
  /*Responsive banner*/
-@media screen and (max-width: 776px) {
-    .section__mwhome {
-        height: 100%;
-        width: 100%;
-    }
-    .mw-homebanner h2{
-        font-size: 15px;
-    }
-    .mw-homebanner h3{
-        font-size: 15px;
-    }
+ .section__mwhome {
+    height: 100%;
+    width: 100%;
 }
-    
+.mw-homebanner h2{
+    font-size: 15px;
+}
+.mw-homebanner h3{
+    font-size: 15px;
+}
 
 
 /*Responsive ITEM SECCIÓN HOME*/
-@media screen and (max-width: 768px) {
-    .pets-container {
-        flex-direction:column;
-        height: auto;
-        padding: 20px;
-        gap: 30px;
-    }
+.pets-container {
+    flex-direction:column;
+    height: auto;
+    padding: 20px;
+    gap: 30px;
+}
 
-    .petStories {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-    }
+.petStories {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
 
-    .petStories img {
-        height: 50px;
-        width: 50px;
-        margin-bottom: 10px;
-    }
-    .petStories p{
-        width: 250px;
-        font-size: 10px;
-    }
+.petStories img {
+    height: 50px;
+    width: 50px;
+    margin-bottom: 10px;
+}
+.petStories p{
+    width: 250px;
+    font-size: 10px;
 }
 
 /*FIN diseño responsivo pagina home/items*/
 
-    .mw-aboutcontainer1 div {
-        width: 80%
-    }  
+.mw-aboutcontainer1 div {
+    width: 40%;
 
-    .mw-aboutcontainer1 p {
-        font-size: 9px;
-    }
+}  
 
-    .mw-aboutcontainer1 h3 {
-        font-size: 18px;
-    }
+.mw-aboutcontainer1 p {
+    font-size: 9px;
+    height: 180px;
+}
 
-    .mw-aboutcontainer2-head h3 {
-        font-size: 22px;
-        margin-top: 30px;
-    }
+.mw-aboutcontainer1 h3 {
+    font-size: 18px;
+}
 
-    .mw-aboutcontainer2-head p {
-        font-size: 11px;
-        text-align: center;
-        margin-bottom: 20px;
-        
-    }
-    
-    .mw-aboutcontainer2-cards {
-        flex-wrap: wrap;
-    }
+.mw-aboutcontainer2-head h3 {
+    font-size: 22px;
+    margin-top: 30px;
+}
 
-    .mw-teamcard {
-        font-size: 11px;
-        width: 40%;
-    }
-    
-    .mw-teamcard img {
-        height: 60px;
-    }
-    
-    .mw-teamcard h4 {
-        font-size: 12px;
-    
-    }
-
-    .mw-teamcard button {
-        height: 17px;
-        font-size: 11px;
-    }
-
-    .mw-teamcard button:hover {
-        height: 21px ;
-        font-size:12px;
-    }
-  
-    .mw-navcontainer-menu a:hover {
+.mw-aboutcontainer2-head p {
     font-size: 11px;
-    }
+    text-align: center;
+    margin-bottom: 20px;
+    
+}
 
-    .mw-teamcard:hover {
-        font-size: 13px;
-    }
+.mw-aboutcontainer2-cards {
+    flex-wrap: wrap;
+}
 
-    .toggle {
-        position: relative;
-        display: block;
-        left: 25%;
-        cursor: pointer
-    }
+.mw-teamcard {
+    font-size: 11px;
+    width: 40%;
+}
 
-    .nav-menu-visible {
-        left:100%
-    }
+.mw-teamcard img {
+    height: 60px;
+}
+
+.mw-teamcard h4 {
+    font-size: 12px;
 
 }
 
-@media screen and (max-width: 400px) {
+.mw-teamcard button {
+    height: 17px;
+    font-size: 11px;
+}
 
-    .mw-navcontainer-menu {
-        margin-right: 80px;
-    }
+.mw-teamcard button:hover {
+    height: 21px ;
+    font-size:12px;
+}
+
+.mw-navcontainer-menu a:hover {
+font-size: 11px;
+}
+
+.mw-teamcard:hover {
+    font-size: 13px;
+}
+
+.toggle {
+    position: relative;
+    display: flex;
+    cursor: pointer;
+    margin-right: 10%;
+    
+}
+
+#mw-button-container {
+    width: 100%;
+    text-align: right;
+    margin-right: 9%;
+ }
+
+#enviarButton {
+    font-size: 12px;
+    margin-top: 20px;
+}
+
 }
 
 /* Sección de contáctenos*/
@@ -835,7 +1489,7 @@ padding-top: 300px; //Para evitar que el navbar se acomode sobre lo que se ponga
             margin-top: 30px;
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 10px;
+            gap: 20px;
             justify-content: center;
             align-items: center;
             text-align: center;
@@ -871,6 +1525,47 @@ padding-top: 300px; //Para evitar que el navbar se acomode sobre lo que se ponga
 
 /* Diseño responsivo contáctenos sección*/
 @media (max-width: 768px) {
+    .mw-navcontainer-logo{
+        margin: 30px;
+    }
+
+    .mw-navcontainer-menu {
+        top: 60px;
+        }
+
+    .nav-menu-visible {
+        left:31%;
+    }
+
+    .mw-loginCard {
+        width: 25%;
+        display: flex;
+    }
+
+    .pets-container {
+        display: flex;
+        flex-direction: row;
+    }
+
+     .petStories {
+        width: 300px;
+        margin-top: 15px; 
+        display: flex;
+        flex-direction: row;
+    }
+
+    .petStories img {
+        width: 15vh;
+        height: 15vh;
+    }
+
+
+    .petStories p {
+        width: 50%;
+        height: auto;
+        font-size: 12px;
+    }
+
     .contactHeader h2{
         font-size: 20px; /*Tamaño titulo*/
     }
@@ -887,7 +1582,7 @@ padding-top: 300px; //Para evitar que el navbar se acomode sobre lo que se ponga
     .contactInf input{ /*Inputs*/
         height: 5px;
         font-size: 13px;
-        width: 80%;
+        width: 70%;
         margin-left: auto;
         margin-right: auto;
     }
@@ -895,7 +1590,7 @@ padding-top: 300px; //Para evitar que el navbar se acomode sobre lo que se ponga
         height: 26px;
         font-size: 12px;
         width: 110px;
-        margin-right: 25px;
+        margin-right: 60px;
     }
     .iconLink { /*Tamaño iconos*/
         font-size: 45px;
@@ -906,6 +1601,110 @@ padding-top: 300px; //Para evitar que el navbar se acomode sobre lo que se ponga
     .footer{ /*Footer letra*/
         padding-top: 20px;
         font-size: 10px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .contactInf button { /* Botón*/
+        height: 26px;
+        font-size: 12px;
+        width: 110px;
+        margin-right: 40px;
+    }
+
+    .mw-aboutcontainer1 {
+        height: auto;
+        overflow: scroll;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
+   
+    .mw-aboutcontainer1 p {
+        overflow: scroll;
+        font-size: 12px;
+    }
+
+}
+
+@media screen and (max-width: 400px) {
+
+    .mw-navcontainer-logo{
+        margin: 30px;
+    }
+
+    .mw-navcontainer-menu {
+        top: 57px;
+        }
+
+    .nav-menu-visible {
+        left:26.5%;
+    }
+
+    .mw-loginCard {
+        width: 45%;
+    }
+
+    .pets-container {
+        height: 500px;
+        overflow: hidden;
+    }
+
+    .petStories {
+        margin-top: 15px; 
+        display: flex;
+        flex-direction: row;
+    }
+
+    .petStories img {
+        width: 15vh;
+        height: 15vh;
+    }
+
+
+    .petStories p {
+        width: 50%;
+        height: auto;
+        font-size: 12px;
+    }
+
+    .mw-aboutcontainer1 h3{
+        margin: 10px;
+    }
+
+    .mw-aboutcontainer1 div{
+        height: 150px;
+    }
+
+    .mw-aboutcontainer1 p{
+        display: flex;
+        font-size: 10.5px;
+        overflow: scroll;
+    }
+
+    .contactInf input{
+        width: 70%;
+        font-size: 11px;
+    }
+
+    .contactInf label{
+        width: 70%;
+        font-size: 13px;
+        margin-left: 45px;
+    }
+
+    .contactHeader p {
+        font-size: 14px;
+    }
+
+    #enviarButton {
+        font-size: 11px;
+    }
+
+    .footer {
+        text-align: center;
     }
 }
 /* Fin diseño responsivo contáctenos sección*/
