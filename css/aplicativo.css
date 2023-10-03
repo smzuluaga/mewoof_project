@@ -53,6 +53,7 @@ body {
 #jaz img{
     width: 65px;
     height: 65px;
+    border-radius: 1000px;
     cursor: pointer;
 }
 
