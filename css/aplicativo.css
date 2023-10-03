@@ -78,7 +78,7 @@ body {
 
 .card{
   margin-top: 5%;
-    margin-left: 45%;
+    margin-left: 48%;
     width: 38%;
     padding: 5px 0;
     height: 69%;
@@ -159,7 +159,7 @@ body {
 	margin-top: 0;
 	display: flex;
 	align-items: center;
-    margin-left: 45%;
+    margin-left: 49%;
 }
 
 .icons .buttons .no i {
@@ -212,4 +212,224 @@ body {
 
 .otro2{
   margin: 0 0 0 5%;
+}
+
+.recarga{ 
+  display: flex;
+}
+
+.reload {
+  display: flex;
+  background-color: #fff;
+	width: 70px;
+	height: 70px;
+    background: linear-gradient(180deg, #ecbcee 0%, #f3f1f3 100%); 
+	box-shadow: 0 1px 10px 0 rgba(0, 20, 20, 0.1);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: 70px;
+	margin: 15px;
+	transition: 0.2s transform;
+    margin-left: 480%;
+    margin-top: 300%;
+}
+
+.reload i {
+  color:#EF4147;
+	font-size: 32px;
+}
+
+/*Responsive*/
+@media screen and (max-width: 1200px) {
+
+  .icons {
+    height: 200px; /* Cambia la altura a automática para que se ajuste al contenido */
+  }
+  
+  .card {
+    margin-left: 33%;
+    width: 50%;
+    height: 220%;
+    margin-top: 5%;
+  }
+
+  .card_button{
+    margin-top: 0;
+    margin-bottom: 5%;
+  }
+  
+  .icons .buttons{
+    margin-left: 40%;
+    margin-top: 3%;
+  }
+
+  .reload{
+    margin-left: 300%;
+  }
+  }
+
+  @media screen and (max-width: 900px) {
+
+    .icons {
+      height: 500px; /* Cambia la altura a automática para que se ajuste al contenido */
+    }
+    
+    .card {
+      margin-left: 26%;
+      width: 50%;
+      height: 70%;
+      margin-top: 10%;
+    }
+    
+    .card__img{
+      height: 200px; /* Cambia la altura a automática para que se ajuste al contenido */
+    }
+    
+    .icons .buttons{
+      margin-left: 32%;
+    }
+
+    .icons .buttons .no,
+    .icons .buttons .star,
+    .icons .buttons .heart {
+      width: 50px;
+      height: 50px;
+    }
+
+    .icons .buttons .no i,
+    .icons .buttons .heart i {
+      font-size: 25px;
+    }
+
+    .icons .buttons .star i {
+      font-size: 20px;
+    }
+    .reload{
+      margin-top: 320%;
+      margin-left: 260%;
+      width: 50px;
+      height: 50px;
+    }
+    .reload i{
+      font-size: 25px;
+    }
+
+  }
+
+/*Responsive card*/
+@media screen and (max-width: 768px) {
+
+.icons {
+  height: 500px; /* Cambia la altura a automática para que se ajuste al contenido */
+}
+
+.card {
+  margin-left: 18%;
+  width: 57%;
+  height: 75%;
+  margin-top: 10%;
+}
+
+.card__img{
+  height: 200px; /* Cambia la altura a automática para que se ajuste al contenido */
+}
+
+.icons .buttons{
+  margin-left: 20%;
+}
+
+.reload{
+  margin-left: 50%;
+}
+
+@media screen and (max-width: 600px) {
+
+  .icons {
+    height: 500px; /* Cambia la altura a automática para que se ajuste al contenido */
+  }
+  
+  .card {
+    margin-left: 13%;
+    width: 68%;
+    height: 77%;
+    margin-top: 12%;
+  }
+  
+  .card__img{
+    height: 200px; /* Cambia la altura a automática para que se ajuste al contenido */
+  }
+  
+  .icons .buttons{
+    margin-left: 22%;
+  }
+    .icons .buttons .no,
+    .icons .buttons .star,
+    .icons .buttons .heart {
+      margin: 12px;
+
+    }
+
+    .card_button{
+      margin-top: 10px;
+      margin-bottom: 20px;
+    }
+
+    .reload{
+      margin-left: 50%;
+    }
+
+  }
+
+  @media screen and (max-width: 500px) {
+
+    .icons {
+      height: 500px; /* Cambia la altura a automática para que se ajuste al contenido */
+    }
+    
+    .card {
+      margin-left: 10%;
+      width: 75%;
+      height: 79%;
+      margin-top: 12%;
+    }
+    
+    .card__img{
+      height: 200px; /* Cambia la altura a automática para que se ajuste al contenido */
+    }
+    
+    .icons .buttons{
+      margin-left: 13%;
+    }
+
+    .reload{
+      margin-left: 50%;
+    }
+    }
+
+  @media screen and (max-width: 400px) {
+
+    .icons {
+      height: 500px; /* Cambia la altura a automática para que se ajuste al contenido */
+    }
+    
+    .card {
+      margin-left: 3%;
+      width: 80%;
+      height: 80%;
+      margin-top: 12%;
+    }
+    
+    .card__img{
+      height: 200px; /* Cambia la altura a automática para que se ajuste al contenido */
+    }
+    
+    .icons .buttons{
+      margin-left: 5%;
+    }
+
+    .reload{
+      margin-left: 20%;
+    }
+  }
 }
