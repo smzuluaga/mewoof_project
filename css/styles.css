@@ -130,11 +130,12 @@ body {
 
 
 /* Inicio Pop Up Login*/
+
 .mw-login {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: rgba(0, 0, 0, 0.5);
     width: 100%;
     height: 100vh;
     position: fixed;
@@ -146,14 +147,19 @@ body {
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    min-width: 15%;
-    height: 35%;
-    padding: 20px 20px 50px;
-    padding-top: 20px;
-    background: rgb(255, 251, 251,0.85);
-    color: #000;
-    border-radius: 20px;
+    min-width: 250px;
+    height: 70vh;
+    padding: 20px 20px;
+    background: rgb(35, 35, 35,0.9);
+    color: #fff;
+    border-radius: 35px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+.mw-loginCard h1 {
+    font-size: 23px;
+    margin:20% 0;
+    text-align: center;
 }
 
 .mw-loginData {
@@ -161,9 +167,11 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    width: 100%;
 }
 
 .mw-loginData div{
+    width: 100%;
     margin: 10px;
     align-items: center;
     justify-content: center;
@@ -172,17 +180,39 @@ body {
 .mw-loginData label {
     text-align: center;
     font-size: 15px;
-    width: auto;
+    width: 80%;
+    color:white;
 }
 
 .mw-loginData input{
     text-align: center;
-    font-size: 10;
+    font-size: 12px;
+    font-weight:100;
     padding: 3px;
-    width: 80%;
+    width: 100%;
     border: none;
-    border-bottom: 1px solid #000;
     outline: 0;   
+    border-radius: 10px;
+    height: 30px;
+    background: rgba(231, 207, 178, 0.65);
+    color: #FFF;
+}
+
+input::placeholder{
+    color:white;
+    font-weight: 0;
+}
+
+.mw-loginData div button{
+    background: none;
+    color: white;
+    border:none;
+    margin-top: 5px;
+
+}
+
+.bx bx-low-vision {
+    position: relative;
 }
 
 .loginCard > div{
@@ -205,6 +235,7 @@ body {
     background: none;
     font-size: 20px;
     cursor: pointer;
+    color: white;
 
 }
 
@@ -214,32 +245,41 @@ body {
 }
 
 .mw-loginButtons {
+    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin-bottom: 0;
 }
 
-.mw-loginButtons button{
-    background-color: var(--pink);
+.mw-mainButtons{
+    background-color: rgba(247, 171, 178,0.75);
     border-radius: 20px;
     border: none;
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.4);
     color: #fff;
-    padding: 5px 10px;
-    margin-bottom: 5px;
-    width:70%
-
+    padding: 10px 10px;
+    margin-top: 30px;
+    width:50%
 }
 
-#mw-redireccionaRegister {
+.mw-mainButtons button {
+    background:none;
+    border: none;
+    color: #fff;
+}
+
+#mw-redireccionaTipoUsuario {
+    border:none;
     background: none;
-    color: black;
+    color: #959595;
     box-shadow: none;
     width: 100%;
+    margin-top: 50px;
 }
 
-#mw-redireccionaRegister:hover {
+#mw-redireccionaTipoUsuario:hover {
     color: var(--beige);
     cursor: pointer;
 }
@@ -270,14 +310,19 @@ body {
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    min-width: 15%;
-    height: 35%;
-    padding: 20px 20px 50px;
-    padding-top: 20px;
-    background: rgb(255, 251, 251,0.85);
-    color: #000;
-    border-radius: 20px;
+    min-width: 250px;
+    height: 70vh;
+    padding: 20px 20px;
+    background:  rgb(35, 35, 35,0.9);
+    color: #fff;
+    border-radius: 35px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+.mw-usuarioTipoCard h1 {
+    font-size: 20px;
+
+    text-align: center;
 }
 
 .usuarioTipoCard > div{
@@ -288,12 +333,14 @@ body {
 .mw-usuarioTipoData {
     display: flex;
     flex-direction: column;
+    align-items: center;
+    width: 100%;
 }
 
 .mw-usuarioTipoClose{
     width: 100%;
     display: flex;
-    justify-content: right;
+    justify-content: space-between;
     margin:0;
     font-size: 20px;
 }
@@ -305,12 +352,8 @@ body {
     background: none;
     font-size: 20px;
     cursor: pointer;
+    color: white;
 
-}
-
-.mw-loginData div{
-    display: flex;
-    flex-direction: column;
 }
 
 .mw-usuarioTipoButtons {
@@ -318,42 +361,37 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin-top: 30%;
 }
 
 .mv-usuarioTipoButton {
-    width: 100%;
+    width: 80%;
     margin: 10px 0;
     border: none;
-    padding: 10px;
+    padding: 15px;
     border-radius: 20px;
+    background: rgba(231, 207, 178, 0.65);
+    color: white;
 }
 
 .mv-usuarioTipoButton:hover {
-    background: #FFC859;
+    background: rgba(247, 171, 178,0.75);
 }
 
-
-#mw-redireccionaRegister {
+#mw-redireccionaLogin2 {
     background: none;
-    color: black;
+    color: #959595;
     box-shadow: none;
     width: 100%;
     border: none;
 }
 
-#mw-redireccionaRegister:hover {
+#mw-redireccionaLogin2:hover {
     color: var(--beige);
     cursor: pointer;
 }
 
-
-.mw-loginButtons a{
-    text-decoration: none;
-    font-size: 10px;
-    color: #888888;
-    text-align: center;
-}
-/*Fin Pop Up Login*/
+/*Fin Pop Up Tipo Usuario*/
 
 /*Inicio Pop Up Register Usuario Dando en Adopcion*/
 .mw-register{
@@ -373,17 +411,110 @@ body {
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    min-width: 15%;
-    height: 35%;
-    padding: 20px 20px 50px;
-    padding-top: 20px;
-    background: rgb(255, 251, 251,0.85);
-    color: #000;
-    border-radius: 20px;
+    min-width: 250px;
+    height: 70vh;
+    padding: 20px 20px;
+    background:  rgb(35, 35, 35,0.9);
+    color: #fff;
+    border-radius: 35px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
 }
 
+.mw-registerCard h1 {
+    font-size: 23px;
+    margin: 10% 0;
+    text-align: center;
+}
 
+.mw-registerClose {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.mw-registerClose button{
+    display: flex;
+    align-items: center;
+    border: none;
+    background: none;
+    font-size: 20px;
+    cursor: pointer;
+    color: white;
+}
+
+.mw-registerData {
+    width: 100%;
+    overflow-y: scroll;
+    height: 50vh;
+}
+
+.mw-registerData::-webkit-scrollbar {
+    display: none;
+}
+
+.mw-user1Form {
+    margin-top: 10px;
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: auto;
+}
+
+.mw-user1Form div{
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+}
+
+.mw-user1Form label {
+    font-size: 12px;
+    color: var(--red);
+    font-weight: bold;
+    margin-bottom: 2px;
+}
+
+.mw-user1Form input {
+    background: none;
+    border: none;
+    border-bottom: 1px solid white;
+    outline: 0;
+    color: white;
+    font-size: 12px;
+    padding: 3px;
+    font-weight:lighter;
+    margin-bottom: 5px;
+}
+
+#mw-redireccionaLogin3 {
+    background: none;
+    color: #959595;
+    box-shadow: none;
+    width: 100%;
+    border: none;
+    margin-top: 5px;
+}
+
+#mw-redireccionaLogin3:hover {
+    color: var(--beige);
+    cursor: pointer;
+}
+
+#mw-registerButtonDandoAdopcion {
+    margin-bottom: 5px;
+}
+
+.mw-registerButtons {
+    width:100%;
+    height: 20vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
 
 /*Fin Pop Up Register Dando en Adopcion*/
 
@@ -405,14 +536,101 @@ body {
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    min-width: 15%;
-    height: 35%;
-    padding: 20px 20px 50px;
-    padding-top: 20px;
-    background: rgb(255, 251, 251,0.85);
-    color: #000;
-    border-radius: 20px;
+    min-width: 250px;
+    height: 70vh;
+    padding: 20px 20px;
+    background:  rgb(35, 35, 35,0.9);
+    color: #fff;
+    border-radius: 35px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+.mw-register2Card h1 {
+    font-size: 23px;
+    margin: 10% 0;
+    text-align: center;
+}
+
+.mw-register2Close {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.mw-register2Close button{
+    display: flex;
+    align-items: center;
+    border: none;
+    background: none;
+    font-size: 20px;
+    cursor: pointer;
+    color: white;
+}
+
+.mw-register2Data {
+    width: 100%;
+    overflow-y: scroll;
+    height: 30vh;
+}
+
+.mw-register2Data::-webkit-scrollbar {
+    display: none;
+}
+
+.mw-user2Form {
+    margin-top: 10px;
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: auto;
+}
+
+.mw-user2Form div{
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+}
+
+.mw-user2Form label {
+    font-size: 12px;
+    color: var(--red);
+    font-weight: bold;
+    margin-bottom: 2px;
+}
+
+.mw-user2Form input {
+    width:100%;
+    background: none;
+    border: none;
+    border-bottom: 1px solid white;
+    outline: 0;
+    color: white;
+    font-size: 12px;
+    padding: 3px;
+    font-weight:lighter;
+    margin-bottom: 5px;
+}
+
+#mw-redireccionaLogin4 {
+    background: none;
+    color: #959595;
+    box-shadow: none;
+    width: 100%;
+    border: none;
+    margin-top: 5px;
+}
+
+#mw-redireccionaLogin4:hover {
+    color: var(--beige);
+    cursor: pointer;
+}
+
+#mw-registerButtonDandoAdopcion {
+    margin-bottom: 5px;
 }
 /*Fin Pop Up Login Usuario Adoptando*/
 
