@@ -1449,6 +1449,7 @@ font-size: 11px;
             display: flex;
             flex-direction: column;
             height: 270px;
+            margin-bottom: 8%;
         }
 
         .contactInf label{
