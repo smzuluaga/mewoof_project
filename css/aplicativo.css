@@ -181,6 +181,7 @@ body {
 .icons .buttons .no,
 .icons .buttons .star,
 .icons .buttons .heart {
+  cursor: pointer;
 	background-color: #fff;
 	width: 70px;
 	height: 70px;
