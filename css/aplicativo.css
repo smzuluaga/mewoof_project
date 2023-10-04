@@ -53,6 +53,7 @@ body {
 #jaz img{
     width: 65px;
     height: 65px;
+    border-radius: 1000px;
     cursor: pointer;
 }
 
@@ -180,6 +181,7 @@ body {
 .icons .buttons .no,
 .icons .buttons .star,
 .icons .buttons .heart {
+  cursor: pointer;
 	background-color: #fff;
 	width: 70px;
 	height: 70px;
