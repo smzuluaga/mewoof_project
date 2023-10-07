@@ -666,10 +666,8 @@ input::placeholder{
   
   
   .mw-homebanner {
-    z-index: 1;
     width: 100vw;
     height: 100vh;
-    text-align: center;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -1449,6 +1447,7 @@ font-size: 11px;
             display: flex;
             flex-direction: column;
             height: 270px;
+            margin-bottom: 8%;
         }
 
         .contactInf label{
