@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,400;0,700;1,200&family=Poppins:wght@500&display=swap');
+
+* {
+    box-sizing: content-box;
+    margin:0;
+    padding:0;
+}
+
+.section__mwhome {
+    animation: banner 15s infinite linear alternate;
+    background-size: cover;
+    height: 650px;
+  }
+  
+  @keyframes banner {
+    0%,
+    100%{
+      background-image: url(../img/bannerapli.png);
+    }
+    }
+  
+  .mw-homebanner {
+    z-index: 1;
+    width: 90.8vw;
+    height: 100vh;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  /*Se definen los colores a utilizar durante la plantilla*/
+  :root { 
+      --red: #EF4147;
+      --pink: #F05376;
+      --pink2: #F7ABB2;
+      --beige: #E8B77E;
+      --beige2: #E7CFB2;
+      --black2: #3333335f;
+      --black2o3: rgb(51, 51, 51, 0.03);
+      --redo85: rgba(239, 65, 71, 0.85);
+  }
+  
+  /* Aquí empiezan arreglos del sidebar  */
+  body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      display: inline-flex;
+  }
+  
+  .sidebar {
+      width: 98px;
+      max-width: 120px;
+      height: 100vh;
+      background-color: #F7ABB2;;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      box-sizing: border-box;
+  }
+  
+  .iconoHover {
+      width: 100%;
+      height: 15%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center; /* Alinea verticalmente en el centro */
+      align-items: center;
+      margin-top: 22px;
+      box-sizing: border-box;
+      
+  }
+  
+  #jaz img{
+      width: 55px;
+      height: 55px;
+      border-radius: 1000px;
+      cursor: pointer;
+  }
+  
+  #prueba img{
+      width: 45px;
+      height: 45px;
+      cursor: pointer;
+  }
+  
+  
+  .iconoHover i {
+      font-size: 40px;
+      color: #fff;
+      
+  }
+  
+  
+  .iconoHover:hover {
+      background-color: #F05376;
+  }
+  /* Aquí terminan arreglos del sidebar  */
