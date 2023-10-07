@@ -48,7 +48,7 @@
   
   .sidebar {
       width: 120px;
-      max-width: 100px;
+      max-width: 120px;
       height: 100vh;
       background-color: #F7ABB2;;
       display: flex;
@@ -72,21 +72,21 @@
   }
   
   #jaz img{
-      width: 55px;
-      height: 55px;
+      width: 65px;
+      height: 65px;
       border-radius: 1000px;
       cursor: pointer;
   }
   
   #prueba img{
-      width: 45px;
-      height: 45px;
+      width: 55px;
+      height: 55px;
       cursor: pointer;
   }
   
   
   .iconoHover i {
-      font-size: 40px;
+      font-size: 50px;
       color: #fff;
       
   }
@@ -213,13 +213,13 @@
         width: 80%;
         height: 11%;
         overflow: hidden;
-        background: linear-gradient(180deg, #99a19f 0%, #717271 100%); 
+        background: linear-gradient(180deg, #9fa1a0 0%, #a0a1a073 100%); 
         border-radius: 30px;
         position: relative;
         text-align: right;
         margin-bottom: 1px;
         /* Aplica una sombra al elemento utilizando la propiedad box-shadow */
-      box-shadow: 0 0 6px var(--red);
+        box-shadow: 0 0 6px var(--red);
       /*
        - 0 0: Desplazamiento horizontal y vertical de la sombra, en este caso, no hay desplazamiento (sombra centrada).
        - 6px: Radio de difuminado de la sombra, creando un efecto suave en un área de 6 píxeles alrededor del elemento.
@@ -227,10 +227,10 @@
       */
     }
 
-    .img2 img{
+    .img2 i{
       cursor: pointer;
-      height: 40px;
-      width: 40px;
-      margin-left: 40%;
+      font-size: 60px;
+      color: #5457569c;
+      margin-left: 14%;
     }
     
