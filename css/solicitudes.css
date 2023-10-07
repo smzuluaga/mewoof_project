@@ -21,13 +21,12 @@
   
   .mw-homebanner {
     z-index: 1;
-    width: 90.8vw;
+    width: 92.4vw;
     height: 100vh;
     text-align: center;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    align-items: right;
   }
   /*Se definen los colores a utilizar durante la plantilla*/
   :root { 
@@ -50,7 +49,7 @@
   
   .sidebar {
       width: 98px;
-      max-width: 120px;
+      max-width: 100px;
       height: 100vh;
       background-color: #F7ABB2;;
       display: flex;
@@ -98,3 +97,109 @@
       background-color: #F05376;
   }
   /* Aquí terminan arreglos del sidebar  */
+
+
+  .title-soli{
+    margin-top: 2%;
+    margin-left: 37%;
+    background: linear-gradient(180deg, #EF4147 0%, #F05376 100%); 
+      border-radius: 10px;
+      /* text-decoration: none;*/
+       width: 300px;
+      color: #fbf8f9;
+      text-align: center;
+      margin-right: 60%;
+    display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 3px 0; 
+  }
+
+  .img-radius {
+    display: flex;
+  }
+
+  .contenedortext-bot{
+    display: grid;
+  }
+
+  .card{
+    display: flex;
+    margin-top: 5%;
+      margin-left: 10%;
+      width: 80%;
+      height: 13%;
+      overflow: hidden;
+      background: linear-gradient(180deg, var(--pink2) 0%, var(--beige2) 100%);
+      border-radius: 30px;
+      position: relative;
+      text-align: right;
+      margin-bottom: 1px;
+      /* Aplica una sombra al elemento utilizando la propiedad box-shadow */
+    box-shadow: 0 0 6px var(--red);
+    /*
+     - 0 0: Desplazamiento horizontal y vertical de la sombra, en este caso, no hay desplazamiento (sombra centrada).
+     - 6px: Radio de difuminado de la sombra, creando un efecto suave en un área de 6 píxeles alrededor del elemento.
+     - var(--color_shadow): Color de la sombra obtenido de la variable CSS --color_shadow.
+    */
+    
+    }
+  
+    .card__img{
+      margin-top: 4%;
+      margin-left: 15%;
+      width: 70px;
+      height: 70px;
+      object-fit: cover;
+      border-radius: 1000px;
+      margin-right: 13px;
+    }
+  
+    .cards__text{
+      text-align: left;
+      width: 90%;
+      margin:0 auto;
+      font-size: 10px;
+      display: flex;
+    }
+  
+    .card__list{
+        margin-top: 30px;
+      color: var(--gold2);
+      font-weight: 700;
+      /* Establece márgenes en las direcciones superior, derecha, inferior e izquierda del elemento */
+    margin: 15px 0 12px;
+    /*
+     - 25px: Margen superior de 25 píxeles.
+     - 0: No se aplican márgenes en los lados derecho e izquierdo.
+     - 12px: Margen inferior de 12 píxeles.
+    */
+    
+      font-size: 10px;
+    }
+    
+    
+    .card__title{
+      font-size: 10px;
+      color:#EF4147;
+      margin-bottom: 11px;
+  
+    }
+  
+    .card .card__title .point{
+      color: #5d5c5c88;
+    }
+  
+    .card_button {
+      background: linear-gradient(180deg, #ecbcee 0%, #f6f4f6 100%); 
+      border-radius: 6px;
+      /* text-decoration: none;*/
+       width: 60px;
+      color: #EF4147;
+      text-align: center;
+      margin-right: 60%;
+    display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 3px 0; 
+    }
