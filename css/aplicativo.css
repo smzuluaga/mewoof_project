@@ -1,28 +1,34 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,400;0,700;1,200&family=Poppins:wght@500&display=swap');
 
 * {
-    box-sizing: content-box;
-    margin:0;
-    padding:0;
+  /* box-sizing: content-box; */
+  box-sizing: border-box;
+  margin:0;
+  padding:0;
+}
+
+.sidebar-pagina {
+display: flex;
+width: 100vw;
+height: 100vh;
 }
 
 .section__mwhome {
-  animation: banner 15s infinite linear alternate;
-  background-size: cover;
-  height: 800px;
+margin: 0;
+padding: 0;
+width: 100%;
+height: 100%;
+background-size: cover;
+background-repeat: no-repeat;
+background-attachment: fixed;
+background-position: center center;
+background-image: url(../img/fondo-test.jpg);
 }
-
-@keyframes banner {
-  0%,
-  100%{
-    background-image: url(../img/bannerapli.png);
-  }
-  }
 
 .mw-homebanner {
   z-index: 1;
-  width: 92.8vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -235,7 +241,6 @@ body {
 /*Responsive*/
 @media screen and (max-width: 1200px) {
 
-  
   .card {
     margin-left: 27%;
     width: 43%;
@@ -255,7 +260,6 @@ body {
   }
 
   @media screen and (max-width: 900px) {
-   
     .card {
       margin-left: 20%;
       width: 53%;

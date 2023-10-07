@@ -7,17 +7,16 @@
 }
 
 .section__mwhome {
-    animation: banner 15s infinite linear alternate;
-    background-size: cover;
-    height: 650px;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center center;
+  background-image: url(../img/fondo-test.jpg);
   }
-  
-  @keyframes banner {
-    0%,
-    100%{
-      background-image: url(../img/bannerapli.png);
-    }
-    }
   
   .mw-homebanner {
     z-index: 1;
@@ -48,7 +47,7 @@
   }
   
   .sidebar {
-      width: 98px;
+      width: 120px;
       max-width: 100px;
       height: 100vh;
       background-color: #F7ABB2;;
