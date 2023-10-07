@@ -128,7 +128,7 @@
     margin-top: 5%;
       margin-left: 10%;
       width: 80%;
-      height: 13%;
+      height: 11%;
       overflow: hidden;
       background: linear-gradient(180deg, var(--pink2) 0%, var(--beige2) 100%);
       border-radius: 30px;
@@ -148,8 +148,8 @@
     .card__img{
       margin-top: 4%;
       margin-left: 15%;
-      width: 70px;
-      height: 70px;
+      width: 60px;
+      height: 60px;
       object-fit: cover;
       border-radius: 1000px;
       margin-right: 13px;
@@ -158,8 +158,8 @@
     .cards__text{
       text-align: left;
       width: 90%;
-      margin:0 auto;
-      font-size: 10px;
+      margin-left: 20px;
+      font-size: 12px;
       display: flex;
     }
   
@@ -180,9 +180,10 @@
     
     
     .card__title{
-      font-size: 10px;
+      margin-top: 5px;
+      font-size: 18px;
       color:#EF4147;
-      margin-bottom: 11px;
+      margin-bottom: 5px;
   
     }
   
@@ -191,15 +192,46 @@
     }
   
     .card_button {
-      background: linear-gradient(180deg, #ecbcee 0%, #f6f4f6 100%); 
+      font-size: 15px;
+      margin-top: 30px;
+      background: linear-gradient(180deg, #80e5ca 0%, #07f66f 100%); 
       border-radius: 6px;
       /* text-decoration: none;*/
-       width: 60px;
+       width: 70px;
       color: #EF4147;
       text-align: center;
-      margin-right: 60%;
+      margin-left: 30%;
     display: flex;
       justify-content: center;
       align-items: center;
       padding: 3px 0; 
     }
+
+    .card2{
+      display: flex;
+      margin-top: 5%;
+        margin-left: 10%;
+        width: 80%;
+        height: 11%;
+        overflow: hidden;
+        background: linear-gradient(180deg, #99a19f 0%, #717271 100%); 
+        border-radius: 30px;
+        position: relative;
+        text-align: right;
+        margin-bottom: 1px;
+        /* Aplica una sombra al elemento utilizando la propiedad box-shadow */
+      box-shadow: 0 0 6px var(--red);
+      /*
+       - 0 0: Desplazamiento horizontal y vertical de la sombra, en este caso, no hay desplazamiento (sombra centrada).
+       - 6px: Radio de difuminado de la sombra, creando un efecto suave en un área de 6 píxeles alrededor del elemento.
+       - var(--color_shadow): Color de la sombra obtenido de la variable CSS --color_shadow.
+      */
+    }
+
+    .img2 img{
+      cursor: pointer;
+      height: 40px;
+      width: 40px;
+      margin-left: 40%;
+    }
+    
