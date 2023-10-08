@@ -201,7 +201,7 @@ document.addEventListener("DOMContentLoaded", function() {
     // Validar nombre
     function validarNombre(nombreCompleto) {
         let nombreApellido = nombreCompleto.split(" ");
-        return nombreApellido.length === 2 && nombreApellido[0].length >= 3 && nombreApellido[1].length >= 3;
+        return nombreApellido.length >= 2 && nombreApellido[0].length >= 3 && nombreApellido[1].length >= 3;
     }
 
     // Validar email
@@ -215,16 +215,57 @@ document.addEventListener("DOMContentLoaded", function() {
         let emailValido = emailInput.value.trim();
 
         // Realizar validación de nombre y correo electrónico
-        if (validarNombre(nombreCompleto) && validarEmail(emailValido)) {
+        const parrafoAEliminar = document.getElementById("alert-nombre");
+        const parrafoAEliminarC = document.getElementById("alert-correo");
+        if(validarNombre(nombreCompleto) && parrafoAEliminar){
+            const padre = parrafoAEliminar.parentNode;
+            padre.removeChild(parrafoAEliminar); 
+        }
+
+        else if(validarEmail(emailValido) && parrafoAEliminarC){
+            const padre = parrafoAEliminarC.parentNode;
+            padre.removeChild(parrafoAEliminarC); 
+        }
+
+        else if (validarNombre(nombreCompleto) && validarEmail(emailValido)) {
             document.querySelector("form").submit();
+
+            
+
             document.getElementById("nombre").value = ""; //Limpiar campos 
             document.getElementById("email").value = "";
         } else {
             if (!validarNombre(nombreCompleto)) {
-                alert("Ingrese su nombre completo.");
+
+                const parrafoNombreExiste = document.getElementById("alert-nombre");
+
+                if(!parrafoNombreExiste){
+                const inputPadre = document.getElementById("nombre");
+                const nuevoParrafo = document.createElement("p");
+                nuevoParrafo.id = "alert-nombre";
+                nuevoParrafo.textContent = "Ingrese su nombre completo";
+                nuevoParrafo.style.paddingLeft = "20px";
+                nuevoParrafo.style.paddingBottom = "20px";
+                nuevoParrafo.style.color = "red";
+                inputPadre.parentNode.insertBefore(nuevoParrafo, inputPadre.nextSibling);
+            }
+                // alert("Ingrese su nombre completo.");
             }
             if (!validarEmail(emailValido)) {
-                alert("Ingrese un email valido.");
+                
+                const parrafoCorreoExiste = document.getElementById("alert-correo");
+
+                if(!parrafoCorreoExiste){
+                const inputPadre = document.getElementById("email");
+                const nuevoParrafoC = document.createElement("p");
+                nuevoParrafoC.id = "alert-correo";
+                nuevoParrafoC.textContent = "Ingrese un email válido";
+                nuevoParrafoC.style.paddingLeft = "20px";
+                nuevoParrafoC.style.paddingBottom = "20px";
+                nuevoParrafoC.style.color = "red";
+                inputPadre.parentNode.insertBefore(nuevoParrafoC, inputPadre.nextSibling);
+                }
+                // alert("Ingrese un email valido.");
             }
             event.preventDefault(); // no deja enviar el formulario antes de tiempo
         }
