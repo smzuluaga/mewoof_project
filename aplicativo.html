@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mewoof</title>
+    <title>Mewoof App</title>
     <!-- Se establecen metadatos, como el título de la página y el ícono en la pestaña del navegador -->
     <link rel="icon" type="icon" href="img/adopcion_mascotas_perros_gatos_cat_miau.png">
 
@@ -24,71 +24,170 @@
     <script src="https://kit.fontawesome.com/a37bb3c75c.js" crossorigin="anonymous"></script>
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'> <!--Enlace iconos Boxicons-->
 </head>
+
 <body>
-  <div class="sidebar-pagina">
-     <!-- Aquí empieza el sidebar  -->
-     <div class="sidebar">
-        <div class="iconoHover jaz">
-          <a href="#" class="icono" id="jaz"
-            >
-            <!--El enlace de las imagenes deberá cambiar según corresponda ESTA IMAGEN ES LA DEL USUARIO -->
-            <img
-              src="img/eveloper-jazminIllera-fullstack-java-html-css.png"
-              alt="Icono 1"
-          /></a>
-        </div>
-        <div class="iconoHover logo">
-          <a href="#" class="icono" id="prueba"
-            >
-            <!--El enlace de las imagenes deberá cambiar según corresponda ESTA IMAGEN ES LA DEL LOGO DE MEEWOOF -->
-            <img
-              src="img/adopcion_mascotas_perros_gatos_cat_miau.png"
-              alt="Icono 2"
-          /></a>
-        </div>
-        <div class="iconoHover">
-          <a href="#" class="icono"><i class="bx bx-chat"></i></a>
-        </div>
-        <div class="iconoHover">
-          <a href="./solicitudes.html" class="icono"><i class="bx bx-file"></i></a>
-        </div>
-        <div class="iconoHover">
-          <a href="#" class="icono"><i class="bx bxs-home"></i></a>
-        </div>
-      </div>
-      <!-- Aquí termina el sidebar  -->
 
-      <section class="section__mwhome">
-        <!--Contenedor de la imagen y el texto-->
-        <div class="mw-homebanner">
-
-     <div class="icons">
-      <div class="card">
-        <img src="img/banner2.png" class="card__img">
-        <div class="cards__text">
-            <p class="card__list"></p>
-            <h3 class="card__title">Fiona<span class="point"> 1 año</span></h3>
-            <div class="otro1">
-            <div class="otro">
-                <a class="card_button">Alegre</a>
-                <a class="card_button">Juguetona</a></div>
-                <div class="otro2">
-            <p class="card__copy">Mi mayor cualidad es que soy una gran exploradora, en una salida al parque puedo encontrar más de 10 palos.</p>
-          </div>
-        </div>
+    <div class="sidebar-pagina">
+        <!-- Aquí empieza el sidebar  -->
+        <div class="sidebar">
+            <div class="iconoHover jaz" id="mw-navButtonPerfil">
+                <a href="#" class="icono" id="jaz"
+                >
+                <!--El enlace de las imagenes deberá cambiar según corresponda ESTA IMAGEN ES LA DEL USUARIO -->
+                <img
+                    src="img/eveloper-jazminIllera-fullstack-java-html-css.png"
+                    alt="Icono 1"
+                /></a>
+            </div>
+            <div class="iconoHover logo" id="mw-navButtonMatch">
+                <a href="#" class="icono" id="prueba"
+                >
+                <!--El enlace de las imagenes deberá cambiar según corresponda ESTA IMAGEN ES LA DEL LOGO DE MEEWOOF -->
+                <img
+                    src="img/adopcion_mascotas_perros_gatos_cat_miau.png"
+                    alt="Icono 2"
+                /></a>
+            </div>
+            <div class="iconoHover" id="mw-navButtonChat">
+                <a href="#" class="icono"><i class="bx bx-chat"></i></a>
+            </div>
+            <div class="iconoHover" id="mw-navButtonMascotas">
+                <a href="#" class="icono"><i class="bx bx-file"></i></a>
+            </div>
+            <div class="iconoHover" id="mw-navButtonHome">
+                <a href="#" class="icono"><i class="bx bxs-home"></i></a>
+            </div>
         </div>
     </div>
-    <div class="buttons">
-      <div id="noLike" class="no">
-        <i class="fas fa-times"></i>
-      </div>
-      <div id="like" class="heart">
-        <i class="fas fa-heart"></i>
-      </div>
-     </div>
-    </div>
-  </div>
-</section>
-</div>
+    <!-- Aquí termina el sidebar  -->
+
+    <!-- Main es la seccion donde estaran als subsecciones que correpsonden a las pantallas de los botones de la nav bar -->
+    <main class="mw-viewScreen">
+        
+        <!-- Inicio Seccion MAtches // // FALTA HACER AJUSTES DE FORMATO -->
+        <section class="section__mwhome" id="section-mwhome">
+            <!--Contenedor de la imagen y el texto-->
+            <div class="mw-homebanner">
+                <div class="card">
+                    <img src="img/banner2.png" class="card__img">
+                    <div class="cards__text">
+                        <p class="card__list"></p>
+                        <h3 class="card__title">Fiona<span class="point"> 1 año</span></h3>
+                    </div>
+                    <div class="caracteristicasMascota">
+                        <div class="mw-tagsMascota">
+                            <a class="card_button">Alegre</a>
+                            <a class="card_button">Juguetona</a>
+                        </div>
+                        <div class="mw-descripcioMascota">
+                            <p class="card__copy">Mi mayor cualidad es que soy una gran exploradora, en una salida al parque puedo encontrar más de 10 palos.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="buttons">
+                    <div id="noLike" class="no">
+                        <i class="fas fa-times"></i>
+                    </div>
+                    <div id="like" class="heart">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Fin Seccion MAtches -->
+
+        <!-- Inicio Seccion Solicitudes Usuario Dando en Adopcion // FALTA HACER FORMATO-->
+        <section class="Entregando-misMascotas" id="Entregando_misMascotas">
+            <div class="mw-misMascotas-container">
+                <h1>Mis Mascotas en Adopción</h1>
+                <div class="mw-misMascotas-tablero">
+                    <div class="mw-mascotaCargada">
+                        <div class="img-radius">
+                            <img src="img/banner2.png" class="mw-mascotaCargada-img">
+                        </div>
+                        <div class="mw-mascotaCargada-info">
+                            <h3 class="card__title">Fiona<span class="point"> 1 año</span></h3>
+                            <p class="card__copy">  Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum nostrum asperiores animi ducimus quod voluptatibus deserunt vero repudiandae consequatur, dolore consequuntur doloremque, qui accusantium repellat placeat aut repellendus. Culpa, eos!</p>
+                        </div>
+                        <div class="mw-impresionesMascota">
+                            <button class="card_button">Impresiones</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="mw-addMascota-button mw-mascotaCargada" id="mw_panelMascotaOpen">
+                    <i class='bx bx-plus-circle'></i>
+                </div>
+            </div>
+
+            <!-- Inicio Seccion Cargar Mascota  Interface  // FALTA HACER FORMATO -->
+            <div class="mw-panelMascota" id="mw_panelMascota">
+                <div class="mw-panelMascota-container">
+                    <div class="mw-panelMascotaClose" id="mw_panelMascotaClose">
+                        <button id="mw-panelMascotaClose"><i class='bx bx-x'></i></button>
+                    </div>
+                    <h1>Crear Mascota</h1>
+                    <form action="">
+                        <div>
+                            <label for="">Raza</label>
+                            <input type="text" id="mw-mascotaRaza">
+                        </div>
+                        <div>
+                            <label for="">Tamaño</label>
+                            <input type="text" id="mw-mascotaSize">
+                        </div>
+                        <div>
+                            <label for="">Nombre</label>
+                            <input type="text" id="mw-mascotaNombre">
+                        </div>
+                        <div>
+                            <label for="">Edad</label>
+                            <input type="text" id="mw-mascotaEdad">
+                        </div>
+                        <div>
+                            <label for="">Estado de Salud</label>
+                            <input type="text" id="mw-mascotaSalud">
+                        </div>
+                        <div>
+                            <label for="">Necesidades</label>
+                            <input type="text" id="mw-mascotaNeeds">
+                        </div>
+                        <div>
+                            <label for="">Foto</label>
+                            <input type="file" id="mw-mascotaFoto">
+                        </div>
+                    </form>
+                    <div class="mw-cargarMascotaButton">
+                        <button id="mw_cargarMascotaButton" onclick="crearMascota()">Crear</button>
+                    </div>
+                </div>
+            </div>
+        <!-- Fin Seccion Cargar Mascota  Interface -->
+        </section>
+        <!-- Fin Seccion Solicitudes Usuario Dando en Adopcion -->
+        
+        <!-- Inicio Seccion Solicitudes Usuario Adoptando // FALTA HACER FORMATO -->
+        <section class="Adoptante-solicitudesEnv" id="Adoptante_solicitudesEnv">
+            <div class="mw-solicitudesEnv-container">
+                <h1>Solicitudes Enviadas</h1>
+                <div class="mw-solicitudesEnv-tablero">
+                    <div class="mw-tablero-solicitudEnv">
+                        <div class="img-radius">
+                            <img src="img/banner2.png" class="mw-solicitudesEnv-img">
+                        </div>
+                        <div class="mw-mascotaCargada-info">
+                            <h3 class="card__title">Fiona<span class="point"> 1 año</span></h3>
+                            <p class="card__copy">  Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum nostrum asperiores animi ducimus quod voluptatibus deserunt vero repudiandae consequatur, dolore consequuntur doloremque, qui accusantium repellat placeat aut repellendus. Culpa, eos!</p>
+                        </div>
+                        <div class="mw-estadoSolicitud">
+                            <a class="card_button">Aprobado</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Fin Seccion Solicitudes Usuario Adoptando -->
+
+    </main>
+
 </body>
 </html>
