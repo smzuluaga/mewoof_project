@@ -1,44 +1,3 @@
-// let listaDeOjetos = [];
-// const objeto = {};
-
-// let divAddObjects = document.getElementById("like");
-
-// function addObjectsToList(){
-//     const nombreH3 = document.querySelector(".card__title");
-
-//     const descripcionPerrito = document.querySelector(".card__copy");
-
-//     const rutaImagenPerrito = document.querySelector(".card__img")
-
-//     const imagePerrito = rutaImagenPerrito.src;
-    
-//     objeto.rutaImagen = imagePerrito;
-    
-//     const nombreTexto = nombreH3.textContent.trim();
-    
-
-//     let nombreGuardar = nombreTexto.split(' ');
-
-//     for(caracter of nombreTexto){
-//         if(!isNaN(caracter) && caracter != ' '){
-//             objeto.edad = parseInt(caracter)
-//         } else {
-//             objeto.nombre = nombreGuardar[0]
-//         }
-//     }
-
-//     const descripcionTexto = descripcionPerrito.textContent.trim();
-
-//     objeto.descripcion = descripcionTexto
-    
-
-//     listaDeOjetos.push(objeto)
-//     console.log(listaDeOjetos)  
-
-// }
-
-// divAddObjects.addEventListener("click", addObjectsToList);
-
 
 ///***********************************************///
 // MODELADO DE OBJETOS
@@ -172,11 +131,12 @@ function iniciar () {
     mewoofDB = JSON.parse(localStorage.getItem('mewoofDB'));
     setUsuarioSesion(mewoofDB.usuarioSesion);
     mewoofDB.usuarioSesion = mewoofDB.usuarios.lista.find( x => x.email === usuarioSesion.email);
+    // usuarioSesion.mascotasCargadas = mewoofDB.usuarioSesion.mascotasCargadas;
 }
 
 
 function setUsuarioSesion (usuario) {
-    // alert("GENERANDO USUARIO")
+    alert("GENERANDO USUARIO")
 
     usuario.tipo === 'Entregando' 
     ? usuarioSesion = new Entregando(usuario.nombre, usuario.apellido, usuario.pais, usuario.ciudad, usuario.id, usuario.cel, usuario.email, usuario.password, usuario.tipo )
@@ -225,6 +185,7 @@ botonCerrarPanelMascota.addEventListener('click', () => {
 
 function crearMascota() {
     usuarioSesion.agregarMascota(usuarioSesion, formularioRaza.value, formularioSize.value,formularioNombre.value, formularioEdad.value, formularioSalud.value);
+    console.log("lleguekakakak");
     seccionMisMascotas.style.display="flex"
     seccionPanelMascota.style.display="none"
     formularioRaza.value = '';
@@ -232,68 +193,109 @@ function crearMascota() {
     formularioNombre.value = '';
     formularioSalud.value = '';
     formularioSize.value = '';
+    alert("Mascota Creada");
 }
 
-function renderizarSolicitudes(listaMascotas){
-    // Tablero donde se van a renderizar las solicitudes en Seccion mis Mascotas
-    const tablero = document.getElementById("mw-misMascotas-tablero");
+// function renderizarSolicitudes(listaMascotas){
+//     // Tablero donde se van a renderizar las solicitudes en Seccion mis Mascotas
+//     const tablero = document.getElementById("mw-misMascotas-tablero");
     
-    // Inicializacion de ciclo que va a recorrer todo el arreglo de mascotas Cargadas
-    for (let mascota of listaMascotas){
+//     // Inicializacion de ciclo que va a recorrer todo el arreglo de mascotas Cargadas
+//     for (let mascota of listaMascotas){
 
-        /// CREACION DE ELEMENTOS PARA INSERTAR UNA TARJETA A HTML POR MEDIO DE LA MANIPULACION DEL DOM
-        // TarjetaMascota - Bloque 1 -> Foto
-        const tarjetaMascotaCargada = document.createElement("div");
-        const boxImagenTarjeta = document.createElement("div");
-        const imagenTarjeta = document.createElement("img");
+//         /// CREACION DE ELEMENTOS PARA INSERTAR UNA TARJETA A HTML POR MEDIO DE LA MANIPULACION DEL DOM
+//         // TarjetaMascota - Bloque 1 -> Foto
+//         const tarjetaMascotaCargada = document.createElement("div");
+//         const boxImagenTarjeta = document.createElement("div");
+//         const imagenTarjeta = document.createElement("img");
         
-        // TarjetaMascota - Bloque 2 -> Info Mascota
-        const boxInfoTarjeta = document.createElement("div");
-        const nombreMascotaTarjeta = document.createElement("h3");
-        const edadMascotaTarjeta = document.createElement("span");
-        const descripcionMascotaTarjeta = document.createElement("p");
+//         // TarjetaMascota - Bloque 2 -> Info Mascota
+//         const boxInfoTarjeta = document.createElement("div");
+//         const nombreMascotaTarjeta = document.createElement("h3");
+//         const edadMascotaTarjeta = document.createElement("span");
+//         const descripcionMascotaTarjeta = document.createElement("p");
         
-        // TarjetaMascota - Bloque 3 -> Impresiones mascotas
-        const boxImpresiones = document.createElement("div");
-        const textImpresiones = document.createElement("button");
+//         // TarjetaMascota - Bloque 3 -> Impresiones mascotas
+//         const boxImpresiones = document.createElement("div");
+//         const textImpresiones = document.createElement("button");
 
-        // Tarjeta Mascota - Asignacion de Clases y contenido de objetos creados para Tarjeta Mascota - Bloque 1 -> Foto
-        tarjetaMascotaCargada.classList.add("mw-mascotaCargada");
-        boxImagenTarjeta.classList.add("img-radius");
-        imagenTarjeta.classList.add("mw-mascotaCargada-img");
+//         // Tarjeta Mascota - Asignacion de Clases y contenido de objetos creados para Tarjeta Mascota - Bloque 1 -> Foto
+//         tarjetaMascotaCargada.classList.add("mw-mascotaCargada");
+//         boxImagenTarjeta.classList.add("img-radius");
+//         imagenTarjeta.classList.add("mw-mascotaCargada-img");
 
-        imagenTarjeta.src="img/banner2.png";
+//         imagenTarjeta.src="img/banner2.png";
 
-        boxImagenTarjeta.appendChild(imagenTarjeta);
-        tarjetaMascotaCargada.appendChild(boxImagenTarjeta);
+//         boxImagenTarjeta.appendChild(imagenTarjeta);
+//         tarjetaMascotaCargada.appendChild(boxImagenTarjeta);
         
         
-        // Tarjeta Mascota - Asignacion de Clases y contenido de objetos creados para Tarjeta Mascota - Bloque 2 -> Info Mascota
-        boxInfoTarjeta.classList.add("mw-mascotaCargada-info");
-        nombreMascotaTarjeta.classList.add("card__title");
-        edadMascotaTarjeta.classList.add("point");
+//         // Tarjeta Mascota - Asignacion de Clases y contenido de objetos creados para Tarjeta Mascota - Bloque 2 -> Info Mascota
+//         boxInfoTarjeta.classList.add("mw-mascotaCargada-info");
+//         nombreMascotaTarjeta.classList.add("card__title");
+//         edadMascotaTarjeta.classList.add("point");
 
-        nombreMascotaTarjeta.innerHTML = mascota.nombre;
-        edadMascotaTarjeta.innerHTML = mascota.edad;
-        descripcionMascotaTarjeta.innerHTML=mascota.raza;
+//         nombreMascotaTarjeta.innerHTML = mascota.nombre;
+//         edadMascotaTarjeta.innerHTML = mascota.edad;
+//         descripcionMascotaTarjeta.innerHTML=mascota.raza;
 
-        nombreMascotaTarjeta.appendChild(edadMascotaTarjeta);
-        boxInfoTarjeta.appendChild(nombreMascotaTarjeta);
-        boxInfoTarjeta.appendChild(descripcionMascotaTarjeta);
-        tarjetaMascotaCargada.appendChild(boxInfoTarjeta);
+//         nombreMascotaTarjeta.appendChild(edadMascotaTarjeta);
+//         boxInfoTarjeta.appendChild(nombreMascotaTarjeta);
+//         boxInfoTarjeta.appendChild(descripcionMascotaTarjeta);
+//         tarjetaMascotaCargada.appendChild(boxInfoTarjeta);
         
-        // Tarjeta Mascota - Asignacion de Clases y contenido de objetos creados para Tarjeta Mascota - Bloque 3 -> Impresiones Mascota
-        descripcionMascotaTarjeta.classList.add("card__copy");
-        boxImpresiones.classList.add("mw-impresionesMascota");
-        textImpresiones.classList.add("card_button");
+//         // Tarjeta Mascota - Asignacion de Clases y contenido de objetos creados para Tarjeta Mascota - Bloque 3 -> Impresiones Mascota
+//         descripcionMascotaTarjeta.classList.add("card__copy");
+//         boxImpresiones.classList.add("mw-impresionesMascota");
+//         textImpresiones.classList.add("card_button");
 
-        mascota.solicitudesRecibidas.length === 1 ? textImpresiones.innerHTML = `${mascota.solicitudesRecibidas.length} like`: textImpresiones.innerHTML = `${mascota.solicitudesRecibidas.length} likes`;
-        textImpresiones.onclick="#";
+//         mascota.solicitudesRecibidas.length === 1 ? textImpresiones.innerHTML = `${mascota.solicitudesRecibidas.length} like`: textImpresiones.innerHTML = `${mascota.solicitudesRecibidas.length} likes`;
+//         textImpresiones.onclick="#";
         
-        boxImpresiones.appendChild(textImpresiones);
-        descripcionMascotaTarjeta.appendChild(boxImpresiones);
-        tarjetaMascotaCargada.appendChild(boxInfoTarjeta);
+//         boxImpresiones.appendChild(textImpresiones);
+//         descripcionMascotaTarjeta.appendChild(boxImpresiones);
+//         tarjetaMascotaCargada.appendChild(boxInfoTarjeta);
 
-        tablero.appendChild(tarjetaMascotaCargada);
+//         tablero.appendChild(tarjetaMascotaCargada);
+//     }
+// }
+
+// INICIO FUNCION DE AGREGAR OBJETO CUANDO SE OPRIME EL CORAZON DE LIKE <3
+
+let listaDeOjetos = [];
+const objeto = {};
+
+let divAddObjects = document.getElementById("like");
+
+function addObjectsToList(){
+    
+    const nombreH3 = document.querySelector(".card__title");
+    const descripcionPerrito = document.querySelector(".card__copy");
+    const rutaImagenPerrito = document.querySelector(".card__img")
+    
+    const imagePerrito = rutaImagenPerrito.src;
+    objeto.rutaImagen = imagePerrito;
+    const nombreTexto = nombreH3.textContent.trim();
+    
+    let nombreGuardar = nombreTexto.split(' ');
+    
+    for(caracter of nombreTexto){
+        if(!isNaN(caracter) && caracter != ' '){
+            objeto.edad = parseInt(caracter)
+        } else {
+            objeto.nombre = nombreGuardar[0]
+        }
     }
+    
+    const descripcionTexto = descripcionPerrito.textContent.trim();
+    
+    objeto.descripcion = descripcionTexto
+    
+    
+    listaDeOjetos.push(objeto)
+    console.log(listaDeOjetos)  
+    
 }
+
+divAddObjects.addEventListener("click", addObjectsToList);
+// FIN FUNCION DE AGREGAR OBJETO CUANDO SE OPRIME EL CORAZON DE LIKE <3
