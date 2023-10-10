@@ -16,7 +16,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100&family=Poppins:wght@100&display=swap" rel="stylesheet">
     
     <!-- Se enlaza un archivo JavaScript externo llamado "script.js" para agregar funcionalidad a la página -->
-    <script async src="js/script.js"></script>
+    <script defer src="js/script.js"></script>
+    <script defer src="js/aplicativo.js"></script>
 
     <!-- Se enlazan archivos JavaScript y CSS para el uso de librerías y fuentes de iconos -->
     <script async src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
@@ -48,14 +49,14 @@
         </nav>
     </header>
     
-<!-- Inicio Login -->
+<!-- Inicio Login POP UP // FALTA HACER VALIDACIONES DE CAMPOS INPUTS --> 
     <div class="mw-login" id="mw_login">
         <div class="mw-loginCard">
             <div class="mw-loginClose"><button id="mw-loginCloseButton"><i class='bx bx-x'></i></button></div>
             <h1>Sing In</h1>
             <div class="mw-loginData">
                 <div>
-                    <input type="text" id="mw_loginUsser" placeholder="Enter email or user name">
+                    <input type="text" id="mw_loginUser" placeholder="Enter email or user name">
                 </div>
                 <div>
                     <input type="password" id="mw_loginPassword" placeholder="Password">
@@ -63,12 +64,13 @@
                 </div>
             </div>
             <div class="mw-loginButtons">
-                <a href="aplicativo.html" class="mw-mainButtons" target="_blank"><button id="mw-loginButton" >Login</button></a>
+                <button id="mw-loginButton" class="mw-mainButtons" >Login</button>
                 <button id="mw-redireccionaTipoUsuario">Aún no estoy registrado</button>
             </div>
         </div>
     </div>
 <!-- Fin Login -->
+
 <!-- Inicio tipo Usuario -->
     <div class="mw-usuarioTipo" id="mw_usuarioTipo">
         <div class="mw-usuarioTipoCard">
@@ -88,7 +90,7 @@
     </div>
 <!-- Fin tipo Usuario -->
 
-<!-- Inicio Register Usuario Dando en Adopcion -->
+<!-- Inicio Register Usuario Dando en Adopcion // FALTA HACER VALIDACIONES DE CAMPOS INPUTS -->
 <div class="mw-register" id="mw_register">
     <div class="mw-registerCard">
         <div class="mw-registerClose">
@@ -105,27 +107,31 @@
                 </div>
                 <div>
                     <label for="mw_registerPassword">Nombre</label>
-                    <input type="text" id="mw_registerPassword">
+                    <input type="text" id="mw_registerNombre">
                 </div>
                 <div>
                     <label for="mw_registerPassword">Apellido</label>
-                    <input type="text" id="mw_registerPassword">
+                    <input type="text" id="mw_registerApellido">
                 </div>
                 <div>
                     <label for="mw_registerPassword">Pais</label>
-                    <input type="text" id="mw_registerPassword">
+                    <input type="text" id="mw_registerPais">
                 </div>
                 <div>
                     <label for="mw_registerPassword">Ciudad</label>
-                    <input type="text" id="mw_registerPassword">
+                    <input type="text" id="mw_registerCiudad">
                 </div>
                 <div>
                     <label for="mw_registerPassword">Cel</label>
-                    <input type="cel" id="mw_registerPassword">
+                    <input type="cel" id="mw_registerCel">
+                </div>
+                <div>
+                    <label for="mw_registerId">Id</label>
+                    <input type="text" id="mw_registerId">
                 </div>
                 <div>
                     <label for="mw_registerPassword">Email</label>
-                    <input type="email" id="mw_registerPassword">
+                    <input type="email" id="mw_registerEmail">
                 </div>
                 <div>
                     <label for="mw_registerPassword">Contraseña</label>
@@ -133,7 +139,7 @@
                 </div>
                 <div>
                     <label for="mw_registerPassword">Confirmar Contraseña</label>
-                    <input type="password" id="mw_registerPassword">
+                    <input type="password" id="mw_registerPassword2">
                 </div>
             </form>
         </div>
@@ -145,7 +151,7 @@
 </div>
 <!-- Fin Register Usuario Dando en Adopcion-->
 
-<!-- Inicio Register Usuario Adoptando -->
+<!-- Inicio Register Usuario Adoptando // FALTA HACER VALIDACIONES DE CAMPOS INPUTS -->
     <div class="mw-register2" id="mw_register2">
         <div class="mw-register2Card">
             <div class="mw-register2Close">
@@ -161,27 +167,31 @@
                     </div>
                     <div>
                         <label for="mw_register2Password">Nombre</label>
-                        <input type="text" id="mw_register2Password">
+                        <input type="text" id="mw_register2Nombre">
                     </div>
                     <div>
                         <label for="mw_register2Password">Apellido</label>
-                        <input type="text" id="mw_register2Password">
+                        <input type="text" id="mw_register2Apellido">
                     </div>
                     <div>
                         <label for="mw_register2Password">Pais</label>
-                        <input type="text" id="mw_register2Password">
+                        <input type="text" id="mw_register2Pais">
                     </div>
                     <div>
                         <label for="mw_register2Password">Ciudad</label>
-                        <input type="text" id="mw_register2Password">
+                        <input type="text" id="mw_register2Ciudad">
+                    </div>
+                    <div>
+                        <label for="mw_register2Id">Id</label>
+                        <input type="text" id="mw_register2Id">
                     </div>
                     <div>
                         <label for="mw_register2Password">Cel</label>
-                        <input type="cel" id="mw_register2Password">
+                        <input type="cel" id="mw_register2Cel">
                     </div>
                     <div>
                         <label for="mw_register2Password">Email</label>
-                        <input type="email" id="mw_register2Password">
+                        <input type="email" id="mw_register2Email">
                     </div>
                     <div>
                         <label for="mw_register2Password">Contraseña</label>
@@ -189,7 +199,7 @@
                     </div>
                     <div>
                         <label for="mw_register2Password">Confirmar Contraseña</label>
-                        <input type="password" id="mw_register2Password">
+                        <input type="password" id="mw_register2Password2">
                     </form>
             </div>
             </div>
@@ -201,7 +211,7 @@
     </div>
 <!-- Fin Register Usuario Adoptando-->
 
-<!-- Fin barra de navegación -->
+<!-- Inicio barra de navegación -->
     <!-- Sección Home - Banner -->
         <section class="section__mwhome">
             <!--Contenedor de la imagen y el texto-->

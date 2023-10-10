@@ -1,37 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,400;0,700;1,200&family=Poppins:wght@500&display=swap');
 
-* {
-    box-sizing: content-box;
-    margin:0;
-    padding:0;
-}
-
-.section__mwhome {
-  animation: banner 15s infinite linear alternate;
-  background-size: cover;
-  height: 800px;
-}
-
-@keyframes banner {
-  0%,
-  100%{
-    background-image: url(../img/bannerapli.png);
-  }
-  }
-
-.mw-homebanner {
-  z-index: 1;
-  width: 92.8vw;
-  height: 100vh;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-
-
 /*Se definen los colores a utilizar durante la plantilla*/
 :root { 
     --red: #EF4147;
@@ -44,102 +12,130 @@
     --redo85: rgba(239, 65, 71, 0.85);
 }
 
-/* Aquí empiezan arreglos del sidebar  */
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    display: inline-flex;
+* {
+  /* box-sizing: content-box; */
+    box-sizing: border-box;
+    margin:0;
+    padding:0;
+    /* border: 1px solid black; */
 }
 
-.sidebar {
-    width: 120px;
-    max-width: 120px;
+html {
+    width: 100vw;
+}
+
+body {
+    display: flex;
+    font-family: Arial, sans-serif;
+    width: 100vw;
+    height: 100vh;
+    background-image: url(../img/fondo-test.jpg);
+    background-size: cover;
+    /* background-attachment: fixed; */
+}
+
+/* Aquí empiezan arreglos del sidebar  */
+.section__mwhome {
+    width: 100vw;
+    height: 100vh;
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.mw-homebanner {
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+  }
+
+  .sidebar {
+    width: 115px;
+    max-width: 110px;
     height: 100vh;
     background-color: #F7ABB2;;
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-top: 10px;
-    padding-bottom: 10px;
+    justify-content: center;
     box-sizing: border-box;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.5);
+    position: fixed;
+    z-index: 1;
 }
 
 .iconoHover {
     width: 100%;
-    height: 15%;
+    height: 17.5%;
     display: flex;
     flex-direction: column;
-    justify-content: center; /* Alinea verticalmente en el centro */
+    justify-content: space-evenly; /* Alinea verticalmente en el centro */
     align-items: center;
-    margin-top: 25px;
     box-sizing: border-box;
-    
+    padding: 20px 5px;
 }
 
-#jaz img{
+.sidebar img {
     width: 65px;
     height: 65px;
     border-radius: 1000px;
     cursor: pointer;
 }
 
-#prueba img{
-    width: 55px;
-    height: 55px;
-    cursor: pointer;
-}
-
-
 .iconoHover i {
     font-size: 50px;
     color: #fff;
-    
 }
 
 
 .iconoHover:hover {
     background-color: #F05376;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.5);
+    font-size: 70px;
 }
 /* Aquí terminan arreglos del sidebar  */
 
+.mw-viewScreen {
+    background: rgba(255, 255, 255, 0.4);
+    box-sizing: border-box;
+}
+
 
 .card{
-  margin-top: 2%;
-    margin-left: 25%;
-    width: 45%;
-    padding: 5px 0;
-    height: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 35%;
+    padding: 5px;
+    height: 70%;
     overflow: hidden;
     background: linear-gradient(180deg, var(--pink2) 0%, var(--beige2) 100%);
-    border-radius: 10px;
-    position: relative;
+    border-radius: 20px;
+    /* position: relative; */
     text-align: right;
-    margin-bottom: 1px;
-    /* Aplica una sombra al elemento utilizando la propiedad box-shadow */
-  box-shadow: 0 0 6px var(--red);
-  /*
-   - 0 0: Desplazamiento horizontal y vertical de la sombra, en este caso, no hay desplazamiento (sombra centrada).
-   - 6px: Radio de difuminado de la sombra, creando un efecto suave en un área de 6 píxeles alrededor del elemento.
-   - var(--color_shadow): Color de la sombra obtenido de la variable CSS --color_shadow.
-  */
-  
-  }
+      /* Aplica una sombra al elemento utilizando la propiedad box-shadow */
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.5);
+    
+}
 
-  .card__img{
-    margin-top: 4%;
+.card__img{
     width: 95%;
-    height: 290px;
+    height: auto;
     object-fit: cover;
     border-radius: 10px;
-    margin-right: 13px;
-  }
+}
 
-  .cards__text{
+.cards__text{
     text-align: left;
     width: 90%;
     margin:0 auto;
     font-size: 20px;
-  }
+}
 
   .card__list{
     color: var(--gold2);
@@ -153,114 +149,367 @@ body {
   */
   
     font-size: 50px;
-  }
-  
-  
-  .card__title{
+}
+
+.card__title{
     font-size: 32px;
     color:#EF4147;
     margin-bottom: 11px;
+}
 
-  }
+.card .card__title .point{
+color: #5d5c5c88;
+}
 
-  .card .card__title .point{
-    color: #5d5c5c88;
-  }
+/* ****************REVISAR ************* */
 
-  .card_button {
+  /* .card_button {
     margin-top: 9%;
     margin-bottom: 15%;
     background: linear-gradient(180deg, #ecbcee 0%, #f6f4f6 100%); 
     border-radius: 6px;
-    /* text-decoration: none;*/
-     width: 100%;
+    width: 100%;
     color: #EF4147;
     text-align: center;
     margin-right: 60%;
-  display: flex;
+    display: flex;
 	justify-content: center;
 	align-items: center;
     padding: 3px 0; 
-  }
+} */
 
-  .icons .buttons {
-	margin-top: 0;
+.buttons {
 	display: flex;
 	align-items: center;
-    margin-left: 34%;
+    justify-content: space-evenly;
+    width: 35%;
+    
 }
 
-.icons .buttons .no i {
-	color: #EF4147;
-	font-size: 45px;
-}
-
-.icons .buttons .heart i {
-	color:#EF4147;
-	font-size: 45px;
-}
-
-.icons .buttons .no,
-.icons .buttons .heart {
-  cursor: pointer;
-	background-color: #fff;
-	width: 80px;
-	height: 80px;
+.buttons i{
+    color: #EF4147;
+    font-size: 45px;
+    cursor: pointer;
+    background-color: #fff;
+    width: 80px;
+    height: 80px;
     background: linear-gradient(180deg, #ecbcee 0%, #e1d2e1 100%); 
-	box-shadow: 0 1px 10px 0 rgba(0, 20, 20, 0.1);
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	border-radius: 70px;
-	margin: 15px;
-	transition: 0.2s transform;
-    margin-right: 100px;
+    box-shadow: 0 1px 10px 0 rgba(0, 20, 20, 0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 70px;
+    margin: 15px;
+    transition: 0.2s transform;
 }
 
-.icons .buttons .no:hover,
-.icons .buttons .heart:hover {
+.buttons i:hover {
 	transform: scale(1.1);
 }
 
-.otro1 {
-  display: flex;
-  margin: 0;
+.caracteristicasMascota {
+    display: flex;
+    margin: 0 15px;
+  }
+
+.caracteristicasMascota div {
+    padding: 5px;
 }
 
-.otro2{
-  margin: 0 0 0 5%;
+/*Fin pagina de matchs*/
+
+/* Inicio Seccion mis Mascotas*/
+.Entregando-misMascotas {
+    width: 100%;
+    height: 100%;
+    display: none;
+    /* z-index: 2; */
+    justify-content: center;
+
 }
 
+.mw-misMascotas-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.mw-misMascotas-container h1 {
+    text-align: center;
+    margin-top: 5%;
+    font-size: 30px;
+}
+
+.mw-misMascotas-tablero {
+    width: 80%;
+    height: 70%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow-y: scroll;
+    scrollbar-width: thin;
+    
+}
+
+.mw-misMascotas-tablero::-webkit-scrollbar {
+    width: 12px;
+}
+
+.mw-mascotaCargada {
+    display: flex;
+    border-radius: 20px;
+    padding: 10px;
+    margin-bottom: 30px;
+    background: rgba(231, 207, 178, 0.8);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.3);
+    
+}
+
+.mw-mascotaCargada div {
+    margin: 0 10px;
+}
+
+.mw-mascotaCargada img {
+    width: 70px;
+    height: 70px;
+    border-radius: 1000px;
+}
+
+.img-radius {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+.mw-estadoSolicitud {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.mw-addMascota-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 15%;
+    background: rgba(100, 100, 100, 0.9);
+    font-size: 25px;
+    color: white;
+    border: none;
+}
+
+.mw-addMascota-button:hover {
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.7);
+
+}
+/* Fin Seccion mis Mascotas*/
+
+/* Inicio Seccion Panel Crear Mascota*/
+.mw-panelMascota {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    /* z-index: 1; */
+    background: rgba(0, 0, 0, 0.5);
+}
+
+
+.mw-panelMascota-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    min-width: 250px;
+    max-width: 300px;
+    height: 70vh;
+    padding: 20px 20px;
+    background: rgb(35, 35, 35,0.9);
+    color: #fff;
+    border-radius: 35px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+.mw-panelMascota-container form{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 80px;
+}
+
+.mw-panelMascota-container form div {
+    display: flex;
+    flex-direction: column;
+}
+
+.mw-panelMascota-container form input {
+    outline: none;
+}
+
+.mw-panelMascotaClose{
+    width: 90%;
+    display: flex;
+    justify-content: right;
+}
+
+.mw-panelMascotaClose button{
+    background: none;
+    border: none;
+    font-size: 20px;
+    color: white;
+}
+
+.mw-cargarMascotaButton{
+    margin-top: 80px;
+}
+/* Fin Seccion Panel Crear Mascota*/
+
+/* Inicio Seccion Solicitudes*/
+.Adoptante-solicitudesEnv {
+    width: 100%;
+    height: 100%;
+    display: none;
+}
+
+.mw-solicitudesEnv-container{
+    display: flex;
+    flex-direction: column;
+}
+
+.mw-solicitudesEnv-container h1 {
+    text-align: center;
+    margin-top: 5%;
+    font-size: 30px;
+}
+
+.mw-solicitudesEnv-tablero {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.mw-tablero-solicitudEnv {
+    display: flex;
+    border: 1px solid black;
+    margin: 5%;
+    border-radius: 20px;
+    padding: 10px;
+    background: rgba(231, 207, 178, 0.8)
+}
+
+.mw-tablero-solicitudEnv div {
+    margin: 0 10px;
+}
+
+.mw-tablero-solicitudEnv img {
+    width: 70px;
+    height: 70px;
+    border-radius: 1000px;
+}
+
+.img-radius {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Fin Seccion Solicitudes*/
+
+
+
+/* ****************REVISAR ************* */
 
 /*Responsive*/
 @media screen and (max-width: 1200px) {
 
+    .card {
+      margin-left: 27%;
+      width: 43%;
+      height: 80%;
+      margin-top: 1px;
+    }
+  
+    .card_button{
+      margin-top: 0;
+      margin-bottom: 5%;
+    }
+    
+    .icons .buttons{
+      margin-left: 30%;
+      margin-top: 0;
+    }
+    }
+  
+    @media screen and (max-width: 900px) {
+      .card {
+        margin-left: 20%;
+        width: 53%;
+        height: 75%;
+        margin-top: 5%;
+      }
+      
+      .card__img{
+        height: 200px; /* Cambia la altura a automática para que se ajuste al contenido */
+      }
+      
+      .icons .buttons{
+        margin-left: 27%;
+      }
+  
+      .icons .buttons .no,
+      .icons .buttons .heart {
+        width: 70px;
+        height: 70px;
+      }
+  
+      .icons .buttons .no i,
+      .icons .buttons .heart i {
+        font-size: 40px;
+      }
+    }
+  
+  /*Responsive card*/
+  @media screen and (max-width: 768px) {
   
   .card {
-    margin-left: 27%;
-    width: 43%;
-    height: 80%;
-    margin-top: 1px;
-  }
-
-  .card_button{
-    margin-top: 0;
-    margin-bottom: 5%;
+    margin-left: 18%;
+    width: 57%;
+    height: 70%;
+    margin-top: 10%;
   }
   
+  .card_button {
+    margin-top: 10%;
+    margin-bottom: 15%;
+  }
+  
+  .card__img{
+    height: 200px; /* Cambia la altura a automática para que se ajuste al contenido */
+  }
+  
+      .icons .buttons .no,
+      .icons .buttons .heart {
+        margin-right: 60px;
+      }
+  
   .icons .buttons{
-    margin-left: 30%;
-    margin-top: 0;
+    margin-left: 25%;
   }
+  
   }
-
-  @media screen and (max-width: 900px) {
-   
+  
+  @media screen and (max-width: 600px) {
+    
     .card {
-      margin-left: 20%;
-      width: 53%;
-      height: 75%;
-      margin-top: 5%;
+      margin-left: 13%;
+      width: 70%;
+      height: 74%;
+      margin-top: 12%;
     }
     
     .card__img{
@@ -270,121 +519,63 @@ body {
     .icons .buttons{
       margin-left: 27%;
     }
-
-    .icons .buttons .no,
-    .icons .buttons .heart {
-      width: 70px;
-      height: 70px;
-    }
-
-    .icons .buttons .no i,
-    .icons .buttons .heart i {
-      font-size: 40px;
-    }
-  }
-
-/*Responsive card*/
-@media screen and (max-width: 768px) {
-
-.card {
-  margin-left: 18%;
-  width: 57%;
-  height: 70%;
-  margin-top: 10%;
-}
-
-.card_button {
-  margin-top: 10%;
-  margin-bottom: 15%;
-}
-
-.card__img{
-  height: 200px; /* Cambia la altura a automática para que se ajuste al contenido */
-}
-
-    .icons .buttons .no,
-    .icons .buttons .heart {
-      margin-right: 60px;
-    }
-
-.icons .buttons{
-  margin-left: 25%;
-}
-
-}
-
-@media screen and (max-width: 600px) {
+      .icons .buttons .no,
+      .icons .buttons .star,
+      .icons .buttons .heart {
+        margin: 12px;
   
-  .card {
-    margin-left: 13%;
-    width: 70%;
-    height: 74%;
-    margin-top: 12%;
-  }
+      }
   
-  .card__img{
-    height: 200px; /* Cambia la altura a automática para que se ajuste al contenido */
-  }
+      .card_button{
+        margin-top: 10px;
+        margin-bottom: 20px;
+      }
   
-  .icons .buttons{
-    margin-left: 27%;
-  }
-    .icons .buttons .no,
-    .icons .buttons .star,
-    .icons .buttons .heart {
-      margin: 12px;
-
+    }
+  
+    @media screen and (max-width: 500px) {
+  
+      .card {
+        margin-left: 10%;
+        width: 75%;
+        height: 73%;
+        margin-top: 12%;
+      }
+      
+      .card__img{
+        height: 200px;
+        margin-left: 7px; /* Cambia la altura a automática para que se ajuste al contenido */
+      }
+      
+      .icons .buttons{
+        margin-left: 23%;
+      }
+      
+      .card__title{
+        font-size: 28px;
+      }
+  
+      .cards__text {
+        font-size: 17px;
+      }
+  
+      }
+  
+    @media screen and (max-width: 400px) {
+      
+      .card {
+        margin-left: 9%;
+        width: 84%;
+        height: 75%;
+        margin-top: 9%;
+      }
+      
+      .card__img{
+        height: 200px; /* Cambia la altura a automática para que se ajuste al contenido */
+      }
+      
+      .icons .buttons{
+        margin-left: 20%;
+      }
     }
 
-    .card_button{
-      margin-top: 10px;
-      margin-bottom: 20px;
-    }
-
-  }
-
-  @media screen and (max-width: 500px) {
-
-    .card {
-      margin-left: 10%;
-      width: 75%;
-      height: 73%;
-      margin-top: 12%;
-    }
-    
-    .card__img{
-      height: 200px;
-      margin-left: 7px; /* Cambia la altura a automática para que se ajuste al contenido */
-    }
-    
-    .icons .buttons{
-      margin-left: 23%;
-    }
-    
-    .card__title{
-      font-size: 28px;
-    }
-
-    .cards__text {
-      font-size: 17px;
-    }
-
-    }
-
-  @media screen and (max-width: 400px) {
-    
-    .card {
-      margin-left: 9%;
-      width: 84%;
-      height: 75%;
-      margin-top: 9%;
-    }
-    
-    .card__img{
-      height: 200px; /* Cambia la altura a automática para que se ajuste al contenido */
-    }
-    
-    .icons .buttons{
-      margin-left: 20%;
-    }
-  }

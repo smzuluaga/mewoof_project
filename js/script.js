@@ -7,9 +7,11 @@ const seccionRegister2= document.getElementById("mw_register2");
 // BOTONES BOTONES LOGIN PARTE 1 - USUARIO CONTRASEÑA
 const botonLoginNav = document.getElementById("mw-loginNav");
 const botonLoginApp = document.getElementById("mw-loginButton");
+const botonaApp = document.getElementById("mw-loginButton-modifier");
 const botonCloseLogin= document.getElementById("mw-loginCloseButton");
 const botonATipoUsuario = document.getElementById("mw-redireccionaTipoUsuario");
 const botonMostrarPassword = document.getElementById("mw-mostrar_password");
+const inputUser = document.getElementById("mw_loginUser");
 const inputPassword = document.getElementById("mw_loginPassword");
 
 botonLoginNav.addEventListener('click', () => {
@@ -17,7 +19,7 @@ botonLoginNav.addEventListener('click', () => {
 });
 
 botonLoginApp.addEventListener('click', () => {
-    alert ("¡Ingreso Exitoso!");
+    loginValidations();
 });
 
 botonCloseLogin.addEventListener('click', () => {
@@ -29,6 +31,7 @@ botonATipoUsuario.addEventListener('click', () => {
     seccionTipoUsuario.style.display="flex";
 });
 
+// PENDIENTE MBOTON PARA MSOTRAR Y OCULTAR LA CONTRASEÑA
 // botonMostrarPassword.addEventListener('click', () => {
 //     inputPassword.type="text";
 // });
@@ -85,9 +88,10 @@ botonALogin3.addEventListener('click', () => {
 });
 
 botonRegistrarDandoAdopcion.addEventListener('click', () => {
-    alert("¡Registro Exitoso! \n Bienvenido a la comunidad Mewoof");
     seccionRegister.style.display="none";
     seccionLogin.style.display="flex"
+    // FUNCION GUARDAR USUARIO NUEVO
+    newUserEntregando();
 });
 
 // BOTONES LOGIN PARTE 4 - USUARIO ADOPTANDO
@@ -111,9 +115,9 @@ botonALogin4.addEventListener('click', () => {
 });
 
 botonRegistrarAdoptante.addEventListener('click', () => {
-    alert("¡Registro Exitoso! \n Bienvenido a la comunidad Mewoof");
     seccionRegister2.style.display="none";
     seccionLogin.style.display="flex"
+    newUserAdoptante();
 });
 
 
@@ -268,3 +272,156 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 });
 // FIN SECCIÓN CONSTÁCTENOS
+
+
+//// ***************************** ////
+/// INICIO SECCIÓN APLICATIVO 
+
+//MODELADO DE OBJETOS 
+
+// Se inicializa una variable para traer la BD  de mewoof desde local storage y una variable para almacenar el usuario que va a estar en sesion
+
+let mewoofDB;
+let usuarioSesion;
+window.onload = validarLocalStorage (), resetUsuarioSesion();
+
+// const userCounter = mewoofDB.usuarios.lista.length;
+
+
+// FUNCIONES
+
+function validarLocalStorage () {
+    if (localStorage.getItem('mewoofDB')){
+
+    console.log("YA EXISTIA")
+    mewoofDB = JSON.parse(localStorage.getItem('mewoofDB'));
+    console.log(mewoofDB);
+
+} else {
+    console.log("NO EXISTIA")
+    newMewoofappLS = 
+    {
+        usuarios: {
+            lista: [],
+        },
+        mascotas: {
+            lista: [],
+        },
+        usuarioSesion: null,
+    }
+    
+    localStorage.setItem('mewoofDB', JSON.stringify(newMewoofappLS))
+    mewoofDB = JSON.parse(localStorage.getItem('mewoofDB'));
+
+    console.log(mewoofDB);
+}
+};
+
+function newUserEntregando () {
+
+    const nombre = document.getElementById('mw_registerNombre');
+    const apellido = document.getElementById('mw_registerApellido');
+    const pais = document.getElementById('mw_registerPais');
+    const ciudad = document.getElementById('mw_registerCiudad');
+    const id = document.getElementById('mw_registerId');
+    const cel = document.getElementById('mw_registerCel');
+    const email = document.getElementById('mw_registerEmail');
+    const password = document.getElementById('mw_registerPassword');
+    const password2 = document.getElementById('mw_registerPassword2');
+
+    let newUser = {nombre: nombre.value, apellido: apellido.value, pais: pais.value, ciudad: ciudad.value, id: id.value, cel: cel.value, email: email.value, password: password.value, tipo:'Entregando', mascotasCargadas: []};
+    mewoofDB.usuarios.lista.push(newUser)
+    saveLocaStorage();
+
+    alert("¡Registro Exitoso! \n Bienvenido a la comunidad Mewoof");
+
+    nombre.value = '';
+    apellido.value = '';
+    pais.value = '';
+    ciudad.value = '';
+    id.value = '';
+    cel.value = '';
+    email.value = '';
+    password.value = '';
+    password2.value = '';
+    
+}
+
+function newUserAdoptante () {
+
+    const nombre = document.getElementById('mw_register2Nombre');
+    const apellido = document.getElementById('mw_register2Apellido');
+    const pais = document.getElementById('mw_register2Pais');
+    const ciudad = document.getElementById('mw_register2Ciudad');
+    const id = document.getElementById('mw_register2Id');
+    const cel = document.getElementById('mw_register2Cel');
+    const email = document.getElementById('mw_register2Email');
+    const password = document.getElementById('mw_register2Password');
+    const password2 = document.getElementById('mw_register2Password2');
+
+    let newUser = {nombre: nombre.value, apellido: apellido.value, pais: pais.value, ciudad: ciudad.value, id: id.value, cel: cel.value, email: email.value, password: password.value, tipo:'Adoptante', solicitudesEnviadas: []};
+    mewoofDB.usuarios.lista.push(newUser)
+    saveLocaStorage();
+
+    alert("¡Registro Exitoso! \n Bienvenido a la comunidad Mewoof");
+
+    nombre.value = '';
+    apellido.value = '';
+    pais.value = '';
+    ciudad.value = '';
+    id.value = '';
+    cel.value = '';
+    email.value = '';
+    password.value = '';
+    password2.value = '';
+}
+
+
+
+function loginValidations () {
+
+    const usuario = inputUser.value;
+    const password = inputPassword.value;
+
+    const usuarioBuscado = mewoofDB.usuarios.lista.find( x => x.email === usuario)
+
+    if (usuarioBuscado) {
+        if (usuarioBuscado.password === password) {
+            alert("Autenticación Exitosa \n ¡Bienvenido!");
+            mewoofDB.usuarioSesion = usuarioBuscado;
+            saveLocaStorage();
+            window.open("aplicativo.html");
+            inputUser.value = '';
+            inputPassword.value = '';
+        } else {
+            alert("Contraseña Incorrecta");
+            inputPassword.value = '';
+        }
+    } else {
+        alert ("Usuario no encontrado \n Puede registrarse en el boton 'Aún no estoy registrado'")
+        inputUser.value = '';
+        inputPassword.value = '';
+    }
+
+}
+
+function saveLocaStorage() {
+    localStorage.setItem('mewoofDB', JSON.stringify(mewoofDB));
+}
+
+function limpiarForm () {
+
+}
+
+function eliminarUsuario (usuarioEmail){
+    let usuarioEliminar = mewoofDB.usuarios.lista.findIndex(x => x.email === usuarioEmail);
+
+    mewoofDB.usuarios.lista.splice(usuarioEliminar,1);
+
+    saveLocaStorage();
+}
+
+function resetUsuarioSesion() {
+    mewoofDB.usuarioSesion = null;
+    saveLocaStorage();
+}
