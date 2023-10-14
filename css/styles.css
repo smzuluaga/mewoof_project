@@ -445,7 +445,7 @@ input::placeholder{
 .mw-registerData {
     width: 100%;
     overflow-y: scroll;
-    height: 50vh;
+    height: 60vh;
 }
 
 .mw-registerData::-webkit-scrollbar {
@@ -486,7 +486,7 @@ input::placeholder{
     font-size: 12px;
     padding: 3px;
     font-weight:lighter;
-    margin-bottom: 5px;
+    margin-bottom: 10px;
 }
 
 #mw-redireccionaLogin3 {
@@ -570,7 +570,7 @@ input::placeholder{
 .mw-register2Data {
     width: 100%;
     overflow-y: scroll;
-    height: 30vh;
+    height: 60vh;
 }
 
 .mw-register2Data::-webkit-scrollbar {
@@ -612,7 +612,7 @@ input::placeholder{
     font-size: 12px;
     padding: 3px;
     font-weight:lighter;
-    margin-bottom: 5px;
+    margin-bottom: 10px;
 }
 
 #mw-redireccionaLogin4 {
