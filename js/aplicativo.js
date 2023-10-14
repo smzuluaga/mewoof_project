@@ -51,7 +51,7 @@ class Entregando extends Usuario {
         mewoofDB.mascotas.lista.push(newMascota);
 
         saveLocaStorage();
-        alert("Mascota agregada con exito")
+        // alert("Mascota agregada con exito")
     }
 }
 
@@ -120,6 +120,10 @@ navBotonSolicitudes.addEventListener('click', () => {
     ocultarSecciones();
 
     usuarioSesion.tipo === "Entregando" ? seccionMisMascotas.style.display="flex": seccionSolicitudes.style.display="flex";
+    
+    if (usuarioSesion.tipo === "Entregando") {
+        renderizarSolicitudes(mewoofDB.usuarios.lista[findUser(usuarioSesion)].mascotasCargadas);
+    }
 })
 
 // FUNCIONES GENERALES
@@ -127,7 +131,7 @@ navBotonSolicitudes.addEventListener('click', () => {
 window.onload  = iniciar();
 
 function iniciar () {
-    alert("Cargando Entorno..")
+    // alert("Cargando Entorno..")
     mewoofDB = JSON.parse(localStorage.getItem('mewoofDB'));
     setUsuarioSesion(mewoofDB.usuarioSesion);
     mewoofDB.usuarioSesion = mewoofDB.usuarios.lista.find( x => x.email === usuarioSesion.email);
@@ -136,7 +140,7 @@ function iniciar () {
 
 
 function setUsuarioSesion (usuario) {
-    alert("GENERANDO USUARIO")
+    // alert("GENERANDO USUARIO")
 
     usuario.tipo === 'Entregando' 
     ? usuarioSesion = new Entregando(usuario.nombre, usuario.apellido, usuario.pais, usuario.ciudad, usuario.id, usuario.cel, usuario.email, usuario.password, usuario.tipo )
@@ -185,80 +189,80 @@ botonCerrarPanelMascota.addEventListener('click', () => {
 
 function crearMascota() {
     usuarioSesion.agregarMascota(usuarioSesion, formularioRaza.value, formularioSize.value,formularioNombre.value, formularioEdad.value, formularioSalud.value);
-    console.log("lleguekakakak");
-    seccionMisMascotas.style.display="flex"
+
     seccionPanelMascota.style.display="none"
+    alert("Mascota Creada");
     formularioRaza.value = '';
     formularioEdad.value = '';
     formularioNombre.value = '';
     formularioSalud.value = '';
     formularioSize.value = '';
-    alert("Mascota Creada");
+    renderizarSolicitudes(mewoofDB.usuarios.lista[findUser(usuarioSesion)].mascotasCargadas);
 }
 
-// function renderizarSolicitudes(listaMascotas){
-//     // Tablero donde se van a renderizar las solicitudes en Seccion mis Mascotas
-//     const tablero = document.getElementById("mw-misMascotas-tablero");
+function renderizarSolicitudes(listaMascotas){
+    // Tablero donde se van a renderizar las solicitudes en Seccion mis Mascotas
+    const tablero = document.getElementById("mw_misMascotas-tablero");
+    // tablero.innerHTML="";
     
-//     // Inicializacion de ciclo que va a recorrer todo el arreglo de mascotas Cargadas
-//     for (let mascota of listaMascotas){
+    // Inicializacion de ciclo que va a recorrer todo el arreglo de mascotas Cargadas
+    for (let mascota of listaMascotas){
 
-//         /// CREACION DE ELEMENTOS PARA INSERTAR UNA TARJETA A HTML POR MEDIO DE LA MANIPULACION DEL DOM
-//         // TarjetaMascota - Bloque 1 -> Foto
-//         const tarjetaMascotaCargada = document.createElement("div");
-//         const boxImagenTarjeta = document.createElement("div");
-//         const imagenTarjeta = document.createElement("img");
+        /// CREACION DE ELEMENTOS PARA INSERTAR UNA TARJETA A HTML POR MEDIO DE LA MANIPULACION DEL DOM
+        // TarjetaMascota - Bloque 1 -> Foto
+        const tarjetaMascotaCargada = document.createElement("div");
+        const boxImagenTarjeta = document.createElement("div");
+        const imagenTarjeta = document.createElement("img");
         
-//         // TarjetaMascota - Bloque 2 -> Info Mascota
-//         const boxInfoTarjeta = document.createElement("div");
-//         const nombreMascotaTarjeta = document.createElement("h3");
-//         const edadMascotaTarjeta = document.createElement("span");
-//         const descripcionMascotaTarjeta = document.createElement("p");
+        // TarjetaMascota - Bloque 2 -> Info Mascota
+        const boxInfoTarjeta = document.createElement("div");
+        const nombreMascotaTarjeta = document.createElement("h3");
+        const edadMascotaTarjeta = document.createElement("span");
+        const descripcionMascotaTarjeta = document.createElement("p");
         
-//         // TarjetaMascota - Bloque 3 -> Impresiones mascotas
-//         const boxImpresiones = document.createElement("div");
-//         const textImpresiones = document.createElement("button");
+        // TarjetaMascota - Bloque 3 -> Impresiones mascotas
+        const boxImpresiones = document.createElement("div");
+        const textImpresiones = document.createElement("button");
 
-//         // Tarjeta Mascota - Asignacion de Clases y contenido de objetos creados para Tarjeta Mascota - Bloque 1 -> Foto
-//         tarjetaMascotaCargada.classList.add("mw-mascotaCargada");
-//         boxImagenTarjeta.classList.add("img-radius");
-//         imagenTarjeta.classList.add("mw-mascotaCargada-img");
+        // Tarjeta Mascota - Asignacion de Clases y contenido de objetos creados para Tarjeta Mascota - Bloque 1 -> Foto
+        tarjetaMascotaCargada.classList.add("mw-mascotaCargada");
+        boxImagenTarjeta.classList.add("img-radius");
+        imagenTarjeta.classList.add("mw-mascotaCargada-img");
 
-//         imagenTarjeta.src="img/banner2.png";
+        imagenTarjeta.src="img/banner2.png";
 
-//         boxImagenTarjeta.appendChild(imagenTarjeta);
-//         tarjetaMascotaCargada.appendChild(boxImagenTarjeta);
+        boxImagenTarjeta.appendChild(imagenTarjeta);
+        tarjetaMascotaCargada.appendChild(boxImagenTarjeta);
         
         
-//         // Tarjeta Mascota - Asignacion de Clases y contenido de objetos creados para Tarjeta Mascota - Bloque 2 -> Info Mascota
-//         boxInfoTarjeta.classList.add("mw-mascotaCargada-info");
-//         nombreMascotaTarjeta.classList.add("card__title");
-//         edadMascotaTarjeta.classList.add("point");
+        // Tarjeta Mascota - Asignacion de Clases y contenido de objetos creados para Tarjeta Mascota - Bloque 2 -> Info Mascota
+        boxInfoTarjeta.classList.add("mw-mascotaCargada-info");
+        nombreMascotaTarjeta.classList.add("card__title");
+        edadMascotaTarjeta.classList.add("point");
+        descripcionMascotaTarjeta.classList.add("card__copy");
 
-//         nombreMascotaTarjeta.innerHTML = mascota.nombre;
-//         edadMascotaTarjeta.innerHTML = mascota.edad;
-//         descripcionMascotaTarjeta.innerHTML=mascota.raza;
+        nombreMascotaTarjeta.innerHTML = mascota.nombre;
+        edadMascotaTarjeta.innerHTML = mascota.edad;
+        descripcionMascotaTarjeta.innerHTML="Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum nostrum asperiores animi ducimus quod voluptatibus deserunt vero repudiandae consequatur, dolore consequuntur doloremque, qui accusantium repellat placeat aut repellendus. Culpa, eos"; /// **********CAMBIAR SOURCE DE ESTE INHER HTML
 
-//         nombreMascotaTarjeta.appendChild(edadMascotaTarjeta);
-//         boxInfoTarjeta.appendChild(nombreMascotaTarjeta);
-//         boxInfoTarjeta.appendChild(descripcionMascotaTarjeta);
-//         tarjetaMascotaCargada.appendChild(boxInfoTarjeta);
+        boxInfoTarjeta.appendChild(nombreMascotaTarjeta);
+        boxInfoTarjeta.appendChild(edadMascotaTarjeta);
+        boxInfoTarjeta.appendChild(descripcionMascotaTarjeta);
+        tarjetaMascotaCargada.appendChild(boxInfoTarjeta);
         
-//         // Tarjeta Mascota - Asignacion de Clases y contenido de objetos creados para Tarjeta Mascota - Bloque 3 -> Impresiones Mascota
-//         descripcionMascotaTarjeta.classList.add("card__copy");
-//         boxImpresiones.classList.add("mw-impresionesMascota");
-//         textImpresiones.classList.add("card_button");
+        // Tarjeta Mascota - Asignacion de Clases y contenido de objetos creados para Tarjeta Mascota - Bloque 3 -> Impresiones Mascota
+        boxImpresiones.classList.add("mw-impresionesMascota");
+        textImpresiones.classList.add("card_button");
 
-//         mascota.solicitudesRecibidas.length === 1 ? textImpresiones.innerHTML = `${mascota.solicitudesRecibidas.length} like`: textImpresiones.innerHTML = `${mascota.solicitudesRecibidas.length} likes`;
-//         textImpresiones.onclick="#";
+        mascota.solicitudesRecibidas.length === 1 ? textImpresiones.innerHTML = `${mascota.solicitudesRecibidas.length} like`: textImpresiones.innerHTML = `${mascota.solicitudesRecibidas.length} likes`;
+        // textImpresiones.onclick="#";
         
-//         boxImpresiones.appendChild(textImpresiones);
-//         descripcionMascotaTarjeta.appendChild(boxImpresiones);
-//         tarjetaMascotaCargada.appendChild(boxInfoTarjeta);
+        boxImpresiones.appendChild(textImpresiones);
+        tarjetaMascotaCargada.appendChild(boxImpresiones);
 
-//         tablero.appendChild(tarjetaMascotaCargada);
-//     }
-// }
+        tablero.appendChild(tarjetaMascotaCargada);
+    }
+}
 
 // INICIO FUNCION DE AGREGAR OBJETO CUANDO SE OPRIME EL CORAZON DE LIKE <3
 
