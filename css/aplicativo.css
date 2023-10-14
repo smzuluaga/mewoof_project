@@ -96,6 +96,7 @@ body {
     background-color: #F05376;
     box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.5);
     font-size: 70px;
+
 }
 /* Aquí terminan arreglos del sidebar  */
 
@@ -157,25 +158,26 @@ body {
 }
 
 .card__title .point{
-  font-size: 23px;
+  font-size: 27px;
   color: #5d5c5c88;
   font-style: italic;
   margin-left: 20px;
 }
 
-/* ****************CARACTERISTICAS DEL PERRO ************* */
+/* ****************CARACTERISTICAS DEL PERRO ************* ACAAAAAAA*/
 
-   .card_button {
-    border-radius: 6px;
-    width: 100%;
-    color: whitesmoke;
+    .card_button {
+    font-size: 15px;
+    border-radius: 12px;
+    border: none;
+    padding: 5px;
     text-align: center;
-    margin-right: 60%;
     display: flex;
     justify-content: left;
     text-align: left;
-    font-weight: lighter;
+    background-color: var(--beige2);
 } 
+
 
 .buttons {
 	display: flex;
@@ -221,14 +223,14 @@ body {
 /* Inicio Seccion mis Mascotas*/
 .Entregando-misMascotas {
     width: 100%;
+    color: gray;
     height: 100%;
     display: none;
     /* z-index: 2; */
     justify-content: center;
-
 }
 
-.mw-misMascotas-container{
+.mw-misMascotas-container{ /* aca estoy editando*/
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -241,8 +243,8 @@ body {
     font-size: 30px;
 }
 
-.mw-misMascotas-tablero {
-    width: 80%;
+.mw-misMascotas-tablero { /* aca estoy editando largo del is mascotas en adopcion*/
+    width: 90%;
     height: 70%;
     display: flex;
     flex-direction: column;
@@ -250,22 +252,22 @@ body {
     justify-content: center;
     overflow-y: scroll;
     scrollbar-width: thin;
-    
+    margin-left: 120px;
 }
 
 .mw-misMascotas-tablero::-webkit-scrollbar {
     width: 12px;
 }
 
-.mw-mascotaCargada {
+.mw-mascotaCargada { /* aca estoy editando*/
     display: flex;
-    border-radius: 20px;
+    border-radius: 70px;
     padding: 10px;
     margin-bottom: 30px;
-    background: rgba(231, 207, 178, 0.8);
+    background: rgb(252, 237, 239);
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.3);
-    
 }
+
 
 .mw-mascotaCargada div {
     margin: 0 10px;
@@ -296,9 +298,9 @@ body {
     align-items: center;
     justify-content: center;
     width: 15%;
-    background: rgba(100, 100, 100, 0.9);
+    background: var(--pink2);
     font-size: 25px;
-    color: white;
+    color: black;
     border: none;
 }
 
@@ -306,6 +308,13 @@ body {
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.7);
 
 }
+
+.card_button{
+  font-size: 15px;
+  color: gray;
+
+}
+
 /* Fin Seccion mis Mascotas*/
 
 /* Inicio Seccion Panel Crear Mascota*/
@@ -369,7 +378,7 @@ body {
 }
 /* Fin Seccion Panel Crear Mascota*/
 
-/* Inicio Seccion Solicitudes*/
+/* Inicio Seccion Solicitudes*/ /*Aca estoy editando  mueve el fiona solicitudes a la derecha*/
 .Adoptante-solicitudesEnv{
     width: 95%;
     height: 100%;
@@ -394,16 +403,18 @@ body {
     flex-direction: column;
 }
 
-.mw-tablero-solicitudEnv {
+.mw-tablero-solicitudEnv { /*Aca estoy editando solicitudes enviadas */
     display: flex;
     margin-top: 4%;
     margin-left: 13%;
-    border-radius: 90px;
+    border-radius: 70px;
     padding: 10px;
     background: rgb(252, 237, 239);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.3);
+    
 }
 
-.mw-tablero-solicitudEnv div {
+.mw-tablero-solicitudEnv div { /*aca edito*/
     margin: 0 10px;
     color: gray;
 }
