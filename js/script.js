@@ -521,7 +521,7 @@ function validacionRegister(HTMLElement) {
   
   if (elementoHtml.id === "D-mw_registerId" ||    elementoHtml.id === "A-mw_registerId"){
     const registerId = elementoHtml.value.trim();
-    const regexId = /^([A-z\d]){10,10}$/;
+    const regexId = /^([A-z\d]){1,10}$/;
     let registerValido = regexId.test(registerId);
     console.log(registerValido)
     alertasValidacionIfElse(registerValido, elementoHtml);
@@ -529,7 +529,7 @@ function validacionRegister(HTMLElement) {
   } else if (elementoHtml.id === "D-mw_registerNombre" || elementoHtml.id === "A-mw_registerNombre") {
     const registerNombre = elementoHtml.value.trim();
     const regexNombre =
-      /^([A-z\u00C1-\u00ff]){3,15}((\s([A-z\u00C1-\u00ff]{1,15})){1,1}$)?$/;
+      /^([A-z\u00C1-\u00ff]){1,15}((\s([A-z\u00C1-\u00ff]{1,15})){1,1}$)?$/;
     let nombreValido = regexNombre.test(registerNombre);
 
     alertasValidacionIfElse(nombreValido, elementoHtml);
@@ -537,7 +537,7 @@ function validacionRegister(HTMLElement) {
   } else if (elementoHtml.id === "D-mw_registerApellido" || elementoHtml.id === "A-mw_registerApellido") {
     const registerApellido = elementoHtml.value.trim();
     const regexApellido =
-      /^([A-z\u00C1-\u00ff]){3,15}((\s([A-z\u00C1-\u00ff]{1,15})){1,1}$)?$/;
+      /^([A-z\u00C1-\u00ff]){1,15}((\s([A-z\u00C1-\u00ff]{1,15})){1,1}$)?$/;
     let apellidoValido = regexApellido.test(registerApellido);
 
     alertasValidacionIfElse(apellidoValido, elementoHtml);
@@ -553,7 +553,7 @@ function validacionRegister(HTMLElement) {
   } else if (elementoHtml.id === "D-mw_registerCiudad" || elementoHtml.id === "A-mw_registerCiudad") {
     const registerCiudad = elementoHtml.value.trim();
     const regexCiudad =
-      /^([A-z\u00C1-\u00ff]){3,15}((\s([A-z\u00C1-\u00ff]{1,15})){1,6}$)?$/;
+      /^([A-z\u00C1-\u00ff]){2,15}((\s([A-z\u00C1-\u00ff]{1,15})){1,6}$)?$/;
     let ciudadValido = regexCiudad.test(registerCiudad);
 
     alertasValidacionIfElse(ciudadValido, elementoHtml);
@@ -656,7 +656,7 @@ function alertasValidacionIfElse(estado, elementoHtml){
     } else if (elementoHtml.id === "D-mw_registerMail" || elementoHtml.id === "A-mw_registerMail") {
       nuevoParrafoAlerta.textContent = "Digite un Email válido";
     } else if (elementoHtml.id === "D-mw_registerPassword" || elementoHtml.id === "A-mw_registerPassword") {
-      nuevoParrafoAlerta.textContent = "Digite una contraseña válida";
+      nuevoParrafoAlerta.textContent = "Mínimo 8 caracteres";
     } else if (elementoHtml.id === "D-mw_registerPasswordConfirm" || elementoHtml.id === "A-mw_registerPasswordConfirm") {
       nuevoParrafoAlerta.textContent = "Las contraseñas no coinciden";
     } else if (elementoHtml.id === "mw_loginUser"){
