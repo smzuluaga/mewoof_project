@@ -249,10 +249,11 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     overflow-y: scroll;
     scrollbar-width: thin;
     margin-left: 120px;
+    /*border: 1px solid black;*/
 }
 
 .mw-misMascotas-tablero::-webkit-scrollbar {
