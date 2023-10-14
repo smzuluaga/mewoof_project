@@ -116,11 +116,11 @@ botonALogin4.addEventListener('click', () => {
     seccionLogin.style.display="flex";
 });
 
-botonRegistrarAdoptante.addEventListener('click', () => {
-    seccionRegister2.style.display="none";
-    seccionLogin.style.display="flex"
-    newUserAdoptante();
-});
+// botonRegistrarAdoptante.addEventListener('click', () => {
+//     seccionRegister2.style.display="none";
+//     seccionLogin.style.display="flex"
+//     newUserAdoptante();
+// });
 
 
 
@@ -519,7 +519,7 @@ let passwordUserTestToConfirmA = '';
 function validacionRegister(HTMLElement) {
   const elementoHtml = HTMLElement;
   
-  if (elementoHtml.id === "D-mw_registerId"){
+  if (elementoHtml.id === "D-mw_registerId" ||    elementoHtml.id === "A-mw_registerId"){
     const registerId = elementoHtml.value.trim();
     const regexId = /^([A-z\d]){10,10}$/;
     let registerValido = regexId.test(registerId);
