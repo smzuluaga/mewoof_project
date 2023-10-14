@@ -13,6 +13,8 @@ const botonATipoUsuario = document.getElementById("mw-redireccionaTipoUsuario");
 const botonMostrarPassword = document.getElementById("mw-mostrar_password");
 const inputUser = document.getElementById("mw_loginUser");
 const inputPassword = document.getElementById("mw_loginPassword");
+let botonesFormularios = document.querySelectorAll(".boton-formulario");
+
 
 botonLoginNav.addEventListener('click', () => {
     seccionLogin.style.display="flex";
@@ -87,12 +89,12 @@ botonALogin3.addEventListener('click', () => {
     seccionLogin.style.display="flex";
 });
 
-botonRegistrarDandoAdopcion.addEventListener('click', () => {
-    seccionRegister.style.display="none";
-    seccionLogin.style.display="flex"
-    // FUNCION GUARDAR USUARIO NUEVO
-    newUserEntregando();
-});
+// botonRegistrarDandoAdopcion.addEventListener('click', () => {
+//     seccionRegister.style.display="none";
+//     seccionLogin.style.display="flex"
+//     // FUNCION GUARDAR USUARIO NUEVO
+//     newUserEntregando();
+// });
 
 // BOTONES LOGIN PARTE 4 - USUARIO ADOPTANDO
 
@@ -119,6 +121,80 @@ botonRegistrarAdoptante.addEventListener('click', () => {
     seccionLogin.style.display="flex"
     newUserAdoptante();
 });
+
+
+
+botonesFormularios.forEach(function (boton) {
+  boton.addEventListener("click", function (event) {
+    
+    if (boton.id === "mw-registerButtonDandoAdopcion") {
+      boton.id = "D";
+      
+    } else if (boton.id === "mw-registerButtonAdoptante") {
+      boton.id = "A";
+    }
+
+    const mwRegisterId = document.getElementById(`${boton.id}-mw_registerId`);
+    const mwRegisterNombre = document.getElementById(
+      `${boton.id}-mw_registerNombre`
+    );
+    const mwRegisterApellido = document.getElementById(
+      `${boton.id}-mw_registerApellido`
+    );
+    const mwRegisterPais = document.getElementById(
+      `${boton.id}-mw_registerPais`
+    );
+    const mwRegisterCiudad = document.getElementById(
+      `${boton.id}-mw_registerCiudad`
+    );
+    const mwRegisterCel = document.getElementById(`${boton.id}-mw_registerCel`);
+    const mwRegisterEmail = document.getElementById(
+      `${boton.id}-mw_registerMail`
+    );
+    const mwRegisterPassword = document.getElementById(
+      `${boton.id}-mw_registerPassword`
+    );
+    const mwRegisterPasswordConfirm = document.getElementById(
+      `${boton.id}-mw_registerPasswordConfirm`
+    );
+    
+    validacionRegister(mwRegisterId);
+    validacionRegister(mwRegisterNombre);
+    validacionRegister(mwRegisterApellido);
+    validacionRegister(mwRegisterPais);
+    validacionRegister(mwRegisterCiudad);
+    validacionRegister(mwRegisterCel);
+    validacionRegister(mwRegisterEmail);
+    validacionRegister(mwRegisterPassword);
+    validacionRegister(mwRegisterPasswordConfirm);
+
+    if(boton.id == "D"){
+        const contenedorDeFormularioEntregando = document.getElementById("mw_user1Form");
+        let parrafosEnFormularioEntregando = contenedorDeFormularioEntregando.getElementsByTagName("p");
+        if(parrafosEnFormularioEntregando.length == 0 && mwRegisterPasswordConfirm.value != ''){
+            seccionRegister.style.display="none";
+            seccionLogin.style.display="flex"
+            newUserEntregando();
+        }
+    } else if(boton.id == "A"){
+        console.log("estoy en A");
+        const contenedorDeFormularioAdopantdo = document.getElementById("mw_user2Form");
+        let parrafosEnFormularioAdoptando = contenedorDeFormularioAdopantdo.getElementsByTagName("p");
+        if(parrafosEnFormularioAdoptando.length == 0 && mwRegisterPasswordConfirm.value != ''){
+            seccionRegister2.style.display="none";
+            seccionLogin.style.display="flex"
+            // FUNCION GUARDAR USUARIO NUEVO
+            newUserAdoptante();
+        }
+    }
+    
+
+    
+  });
+});
+
+
+
 
 
 
@@ -319,21 +395,22 @@ function validarLocalStorage () {
 
 function newUserEntregando () {
 
-    const nombre = document.getElementById('mw_registerNombre');
-    const apellido = document.getElementById('mw_registerApellido');
-    const pais = document.getElementById('mw_registerPais');
-    const ciudad = document.getElementById('mw_registerCiudad');
-    const id = document.getElementById('mw_registerId');
-    const cel = document.getElementById('mw_registerCel');
-    const email = document.getElementById('mw_registerEmail');
-    const password = document.getElementById('mw_registerPassword');
-    const password2 = document.getElementById('mw_registerPassword2');
+    const id = document.getElementById('D-mw_registerId');
+    const nombre = document.getElementById('D-mw_registerNombre');
+    const apellido = document.getElementById('D-mw_registerApellido');
+    const pais = document.getElementById('D-mw_registerPais');
+    const ciudad = document.getElementById('D-mw_registerCiudad');
+    const cel = document.getElementById('D-mw_registerCel');
+    const email = document.getElementById('D-mw_registerMail');
+    const password = document.getElementById('D-mw_registerPassword');
+    const password2 = document.getElementById('D-mw_registerPasswordConfirm');
 
     let newUser = {nombre: nombre.value, apellido: apellido.value, pais: pais.value, ciudad: ciudad.value, id: id.value, cel: cel.value, email: email.value, password: password.value, tipo:'Entregando', mascotasCargadas: []};
     mewoofDB.usuarios.lista.push(newUser)
     saveLocaStorage();
 
-    alert("¡Registro Exitoso! \n Bienvenido a la comunidad Mewoof");
+    alert(`¡Registro Exitoso! 
+    Bienvenido a la comunidad Mewoof`);
 
     nombre.value = '';
     apellido.value = '';
@@ -348,16 +425,17 @@ function newUserEntregando () {
 }
 
 function newUserAdoptante () {
-
-    const nombre = document.getElementById('mw_register2Nombre');
-    const apellido = document.getElementById('mw_register2Apellido');
-    const pais = document.getElementById('mw_register2Pais');
-    const ciudad = document.getElementById('mw_register2Ciudad');
-    const id = document.getElementById('mw_register2Id');
-    const cel = document.getElementById('mw_register2Cel');
-    const email = document.getElementById('mw_register2Email');
-    const password = document.getElementById('mw_register2Password');
-    const password2 = document.getElementById('mw_register2Password2');
+    console.log("estoy en la funcion adoptante");
+    const id = document.getElementById('A-mw_registerId');
+    const nombre = document.getElementById('A-mw_registerNombre');
+    console.log(`Esto es lo que tieen nombre ${nombre.value}`);
+    const apellido = document.getElementById('A-mw_registerApellido');
+    const pais = document.getElementById('A-mw_registerPais');
+    const ciudad = document.getElementById('A-mw_registerCiudad');
+    const cel = document.getElementById('A-mw_registerCel');
+    const email = document.getElementById('A-mw_registerMail');
+    const password = document.getElementById('A-mw_registerPassword');
+    const password2 = document.getElementById('A-mw_registerPasswordConfirm');
 
     let newUser = {nombre: nombre.value, apellido: apellido.value, pais: pais.value, ciudad: ciudad.value, id: id.value, cel: cel.value, email: email.value, password: password.value, tipo:'Adoptante', solicitudesEnviadas: []};
     mewoofDB.usuarios.lista.push(newUser)
@@ -386,6 +464,9 @@ function loginValidations () {
     const usuarioBuscado = mewoofDB.usuarios.lista.find( x => x.email === usuario)
 
     if (usuarioBuscado) {
+        const elementoHtmlUser = document.getElementById("mw_loginUser");
+        const estadoUsuarioEncontrado = usuarioBuscado;
+        alertasValidacionIfElse(estadoUsuarioEncontrado, elementoHtmlUser);
         if (usuarioBuscado.password === password) {
             alert("Autenticación Exitosa \n ¡Bienvenido!");
             mewoofDB.usuarioSesion = usuarioBuscado;
@@ -394,11 +475,17 @@ function loginValidations () {
             inputUser.value = '';
             inputPassword.value = '';
         } else {
-            alert("Contraseña Incorrecta");
+            const elementoHtmlPassword = document.getElementById("mw_loginPassword");
+            const estadoPasswordCoincide = usuarioBuscado.password === password;
+            alertasValidacionIfElse(estadoPasswordCoincide, elementoHtmlPassword);
+            // alert("Contraseña Incorrecta");
             inputPassword.value = '';
         }
     } else {
-        alert ("Usuario no encontrado \n Puede registrarse en el boton 'Aún no estoy registrado'")
+        const elementoHtmlUser = document.getElementById("mw_loginUser");
+        const estadoUsuarioEncontrado = usuarioBuscado;
+        alertasValidacionIfElse(estadoUsuarioEncontrado, elementoHtmlUser);
+        // alert ("Usuario no encontrado \n Puede registrarse en el boton 'Aún no estoy registrado'")
         inputUser.value = '';
         inputPassword.value = '';
     }
@@ -425,3 +512,171 @@ function resetUsuarioSesion() {
     mewoofDB.usuarioSesion = null;
     saveLocaStorage();
 }
+
+let passwordUserTestToConfirmD = '';
+let passwordUserTestToConfirmA = '';
+
+function validacionRegister(HTMLElement) {
+  const elementoHtml = HTMLElement;
+  
+  if (elementoHtml.id === "D-mw_registerId"){
+    const registerId = elementoHtml.value.trim();
+    const regexId = /^([A-z\d]){10,10}$/;
+    let registerValido = regexId.test(registerId);
+    console.log(registerValido)
+    alertasValidacionIfElse(registerValido, elementoHtml);
+
+  } else if (elementoHtml.id === "D-mw_registerNombre" || elementoHtml.id === "A-mw_registerNombre") {
+    const registerNombre = elementoHtml.value.trim();
+    const regexNombre =
+      /^([A-z\u00C1-\u00ff]){3,15}((\s([A-z\u00C1-\u00ff]{1,15})){1,1}$)?$/;
+    let nombreValido = regexNombre.test(registerNombre);
+
+    alertasValidacionIfElse(nombreValido, elementoHtml);
+
+  } else if (elementoHtml.id === "D-mw_registerApellido" || elementoHtml.id === "A-mw_registerApellido") {
+    const registerApellido = elementoHtml.value.trim();
+    const regexApellido =
+      /^([A-z\u00C1-\u00ff]){3,15}((\s([A-z\u00C1-\u00ff]{1,15})){1,1}$)?$/;
+    let apellidoValido = regexApellido.test(registerApellido);
+
+    alertasValidacionIfElse(apellidoValido, elementoHtml);
+    
+  } else if (elementoHtml.id === "D-mw_registerPais" || elementoHtml.id === "A-mw_registerPais") {
+    const registerPais = elementoHtml.value.trim();
+    const regexPais =
+      /^([A-z\u00C1-\u00ff]){3,15}((\s([A-z\u00C1-\u00ff]{1,15})){1,6}$)?$/;
+    let paisValido = regexPais.test(registerPais);
+
+    alertasValidacionIfElse(paisValido, elementoHtml);
+  
+  } else if (elementoHtml.id === "D-mw_registerCiudad" || elementoHtml.id === "A-mw_registerCiudad") {
+    const registerCiudad = elementoHtml.value.trim();
+    const regexCiudad =
+      /^([A-z\u00C1-\u00ff]){3,15}((\s([A-z\u00C1-\u00ff]{1,15})){1,6}$)?$/;
+    let ciudadValido = regexCiudad.test(registerCiudad);
+
+    alertasValidacionIfElse(ciudadValido, elementoHtml);
+
+  } else if (elementoHtml.id === "D-mw_registerCel" || elementoHtml.id === "A-mw_registerCel") {
+    const registerCel = elementoHtml.value.trim();
+    const regexCel = /^\+?(\d{2,3}[^\dA-z]*[#pe]?\d*){3,3}$/;
+    let celValido = regexCel.test(registerCel);
+
+    alertasValidacionIfElse(celValido, elementoHtml);
+
+  } else if (elementoHtml.id === "D-mw_registerMail" || elementoHtml.id === "A-mw_registerMail") {
+    const registerMail = elementoHtml.value.trim();
+    const regexMail = /^[\w_]{1,30}(\.?\+?[\w]{5,10})?@[\w]{2,10}\.\w{2,5}$/;
+    let mailValido = regexMail.test(registerMail);
+
+    alertasValidacionIfElse(mailValido, elementoHtml)
+  } else if (elementoHtml.id === "D-mw_registerPassword" || elementoHtml.id === "A-mw_registerPassword") {
+    const registerPassword = elementoHtml.value.trim();
+    const regexPassword = /^([\w\d\.\*\-]){8,20}$/;
+    let passwordValido = regexPassword.test(registerPassword);
+
+    alertasValidacionIfElse(passwordValido, elementoHtml);
+
+  } else if (elementoHtml.id === "D-mw_registerPasswordConfirm" || elementoHtml.id === "A-mw_registerPasswordConfirm") {
+    let registerPasswordConfirm = elementoHtml.value.trim();
+    let passwordConfirmValido;
+    if(elementoHtml.id == "D-mw_registerPasswordConfirm"){
+        if(registerPasswordConfirm === passwordUserTestToConfirmD && registerPasswordConfirm != ''){
+            passwordConfirmValido = true;
+        } else {
+            passwordConfirmValido = false;
+        }
+    }else if(elementoHtml.id == "A-mw_registerPasswordConfirm"){
+        if(registerPasswordConfirm === passwordUserTestToConfirmD && registerPasswordConfirm != ''){
+            passwordConfirmValido = true;
+        } else {
+            passwordConfirmValido = false;
+        }
+    }
+    alertasValidacionIfElse(passwordConfirmValido, elementoHtml)
+  }
+}
+
+function alertasValidacionIfElse(estado, elementoHtml){
+    if (!estado) {
+        const parrafoExistenciaPorId = document.getElementById(
+          `${elementoHtml.id}-alert`
+        );
+        if (!parrafoExistenciaPorId) {
+          creacionAlertaRegister(elementoHtml);
+        }
+      } else {
+        const parrafoExistenciaPorId = document.getElementById(
+          `${elementoHtml.id}-alert`
+        );
+        if (parrafoExistenciaPorId != null) {
+            console.log("entre a borrar");
+            const elementoPadreDeParrafoExistente =
+            parrafoExistenciaPorId.parentNode;
+            elementoPadreDeParrafoExistente.removeChild(parrafoExistenciaPorId);
+          //Esto es para el testeo de contraseñas si el elemento es contraseña setea una variable global de contraseña para poder ser comparada después
+          if(elementoHtml.id === "D-mw_registerPassword"){
+                passwordUserTestToConfirmD = elementoHtml.value.trim();
+                console.log(passwordUserTestToConfirmD);
+          }else if(elementoHtml.id === "A-mw_registerPassword"){
+              passwordUserTestToConfirmA = elementoHtml.value.trim();
+              console.log(passwordUserTestToConfirmA);
+          }
+        } else if(estado){
+            if(elementoHtml.id === "D-mw_registerPassword"){
+                passwordUserTestToConfirmD = elementoHtml.value.trim();
+                console.log(passwordUserTestToConfirmD);
+          }else if(elementoHtml.id === "A-mw_registerPassword"){
+              passwordUserTestToConfirmA = elementoHtml.value.trim();
+              console.log(passwordUserTestToConfirmA);
+          }
+        }
+      }
+};
+
+  function creacionAlertaRegister(elementoHtml) {
+    const elementoPadreDeParrafoExistente = elementoHtml.parentNode;
+
+    const nuevoParrafoAlerta = document.createElement("p");
+    nuevoParrafoAlerta.id = `${elementoHtml.id}-alert`;
+    
+    if(elementoHtml.id === "D-mw_registerId" || elementoHtml.id === "A-mw_registerId"){
+        nuevoParrafoAlerta.textContent = "Escriba un documento válido";
+    } else if (elementoHtml.id === "D-mw_registerNombre" || elementoHtml.id === "A-mw_registerNombre") {
+      nuevoParrafoAlerta.textContent = "Escriba un nombre válido";
+    } else if (elementoHtml.id === "D-mw_registerApellido" || elementoHtml.id === "A-mw_registerApellido") {
+      nuevoParrafoAlerta.textContent = "Escriba un apellido válido";
+    } else if (elementoHtml.id === "D-mw_registerPais" || elementoHtml.id === "A-mw_registerPais") {
+      nuevoParrafoAlerta.textContent = "Escriba un país válido";
+    } else if (elementoHtml.id === "D-mw_registerCiudad" || elementoHtml.id === "A-mw_registerCiudad") {
+      nuevoParrafoAlerta.textContent = "Escriba una ciudad válida";
+    } else if (elementoHtml.id === "D-mw_registerCel" || elementoHtml.id === "A-mw_registerCel") {
+      nuevoParrafoAlerta.textContent = "Digite un teléfono válido";
+    } else if (elementoHtml.id === "D-mw_registerMail" || elementoHtml.id === "A-mw_registerMail") {
+      nuevoParrafoAlerta.textContent = "Digite un Email válido";
+    } else if (elementoHtml.id === "D-mw_registerPassword" || elementoHtml.id === "A-mw_registerPassword") {
+      nuevoParrafoAlerta.textContent = "Digite una contraseña válida";
+    } else if (elementoHtml.id === "D-mw_registerPasswordConfirm" || elementoHtml.id === "A-mw_registerPasswordConfirm") {
+      nuevoParrafoAlerta.textContent = "Las contraseñas no coinciden";
+    } else if (elementoHtml.id === "mw_loginUser"){
+        nuevoParrafoAlerta.textContent = "El usuario no ha sido encontrado"
+    } else if (elementoHtml.id === "mw_loginPassword"){
+        nuevoParrafoAlerta.textContent = "La constraseña es incorrecta"
+    }
+
+    if(elementoHtml.id === "mw_loginUser" || elementoHtml.id === "mw_loginPassword"){
+        nuevoParrafoAlerta.style.color = "red";
+        nuevoParrafoAlerta.style.fontSize = "12px";
+        nuevoParrafoAlerta.style.marginBottom = "7px"
+    } else {
+        nuevoParrafoAlerta.style.color = "red";
+        nuevoParrafoAlerta.style.fontSize = "11px";
+        nuevoParrafoAlerta.style.marginBottom = "7px"
+    }
+    elementoPadreDeParrafoExistente.parentNode.insertBefore(
+    nuevoParrafoAlerta,
+    elementoPadreDeParrafoExistente.nextSibling
+    );
+  }
+// event.preventDefault();
