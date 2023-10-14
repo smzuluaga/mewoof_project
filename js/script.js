@@ -425,3 +425,142 @@ function resetUsuarioSesion() {
     mewoofDB.usuarioSesion = null;
     saveLocaStorage();
 }
+
+let passwordUserTestToConfirmD = '';
+let passwordUserTestToConfirmA = '';
+
+function validacionRegister(HTMLElement) {
+  const elementoHtml = HTMLElement;
+  console.log("Entre a register")
+  
+  if (elementoHtml.id === "D-mw_registerNombre" || elementoHtml.id === "A-mw_registerNombre") {
+    console.log("validaciones")
+    const registerNombre = elementoHtml.value.trim();
+    const regexNombre =
+      /^([A-z\u00C1-\u00ff]){3,15}((\s([A-z\u00C1-\u00ff]{1,15})){1,1}$)?$/;
+    let nombreValido = regexNombre.test(registerNombre);
+
+    alertasValidacionIfElse(nombreValido, elementoHtml);
+
+  } else if (elementoHtml.id === "D-mw_registerApellido" || elementoHtml.id === "A-mw_registerApellido") {
+    const registerApellido = elementoHtml.value.trim();
+    const regexApellido =
+      /^([A-z\u00C1-\u00ff]){3,15}((\s([A-z\u00C1-\u00ff]{1,15})){1,1}$)?$/;
+    let apellidoValido = regexApellido.test(registerApellido);
+
+    alertasValidacionIfElse(apellidoValido, elementoHtml);
+    
+  } else if (elementoHtml.id === "D-mw_registerPais" || elementoHtml.id === "A-mw_registerPais") {
+    const registerPais = elementoHtml.value.trim();
+    const regexPais =
+      /^([A-z\u00C1-\u00ff]){3,15}((\s([A-z\u00C1-\u00ff]{1,15})){1,6}$)?$/;
+    let paisValido = regexPais.test(registerPais);
+
+    alertasValidacionIfElse(paisValido, elementoHtml);
+  
+  } else if (elementoHtml.id === "D-mw_registerCiudad" || elementoHtml.id === "A-mw_registerCiudad") {
+    const registerCiudad = elementoHtml.value.trim();
+    const regexCiudad =
+      /^([A-z\u00C1-\u00ff]){3,15}((\s([A-z\u00C1-\u00ff]{1,15})){1,6}$)?$/;
+    let ciudadValido = regexCiudad.test(registerCiudad);
+
+    alertasValidacionIfElse(ciudadValido, elementoHtml);
+
+  } else if (elementoHtml.id === "D-mw_registerCel" || elementoHtml.id === "A-mw_registerCel") {
+    const registerCel = elementoHtml.value.trim();
+    const regexCel = /^\+?(\d{2,3}[^\dA-z]*[#pe]?\d*){3,3}$/;
+    let celValido = regexCel.test(registerCel);
+
+    alertasValidacionIfElse(celValido, elementoHtml);
+
+  } else if (elementoHtml.id === "D-mw_registerMail" || elementoHtml.id === "A-mw_registerMail") {
+    const registerMail = elementoHtml.value.trim();
+    const regexMail = /^[\w_]{1,30}(\.?\+?[\w]{5,10})?@[\w]{2,10}\.\w{2,5}$/;
+    let mailValido = regexMail.test(registerMail);
+
+    alertasValidacionIfElse(mailValido, elementoHtml)
+  } else if (elementoHtml.id === "D-mw_registerPassword" || elementoHtml.id === "A-mw_registerPassword") {
+    const registerPassword = elementoHtml.value.trim();
+    const regexPassword = /^([\w\d\.\*\-]){8,20}$/;
+    let passwordValido = regexPassword.test(registerPassword);
+
+    alertasValidacionIfElse(passwordValido, elementoHtml);
+
+  } else if (elementoHtml.id === "D-mw_registerPasswordConfirm" || elementoHtml.id === "A-mw_registerPasswordConfirm") {
+    let registerPasswordConfirm = elementoHtml.value.trim();
+    let passwordConfirmValido;
+    if(elementoHtml.id == "D-mw_registerPasswordConfirm"){
+      passwordConfirmValido = registerPasswordConfirm === passwordUserTestToConfirmD;
+    }else if(elementoHtml.id == "A-mw_registerPasswordConfirm"){
+      passwordConfirmValido = registerPasswordConfirm === passwordUserTestToConfirmA;
+    }
+    
+    alertasValidacionIfElse(passwordConfirmValido, elementoHtml)
+  }
+
+}
+
+  function creacionAlertaRegister(elementoHtml) {
+    const elementoPadreDeParrafoExistente = elementoHtml.parentNode;
+    // const padreParrafoNombre = document.getElementById("registerNombreUser");
+    const nuevoParrafoAlerta = document.createElement("p");
+    nuevoParrafoAlerta.id = `${elementoHtml.id}-alert`;
+    
+    if (elementoHtml.id === "D-mw_registerNombre" || elementoHtml.id === "A-mw_registerNombre") {
+      nuevoParrafoAlerta.textContent = "Escriba un nombre válido";
+      console.log("estoy lanzando la alerta")
+    } else if (elementoHtml.id === "D-mw_registerApellido" || elementoHtml.id === "A-mw_registerApellido") {
+      nuevoParrafoAlerta.textContent = "Escriba un apellido válido";
+    } else if (elementoHtml.id === "D-mw_registerPais" || elementoHtml.id === "A-mw_registerPais") {
+      nuevoParrafoAlerta.textContent = "Escriba un país válido";
+    } else if (elementoHtml.id === "D-mw_registerCiudad" || elementoHtml.id === "A-mw_registerCiudad") {
+      nuevoParrafoAlerta.textContent = "Escriba una ciudad válida";
+    } else if (elementoHtml.id === "D-mw_registerCel" || elementoHtml.id === "A-mw_registerCel") {
+      nuevoParrafoAlerta.textContent = "Digite un teléfono válido";
+    } else if (elementoHtml.id === "D-mw_registerMail" || elementoHtml.id === "A-mw_registerMail") {
+      nuevoParrafoAlerta.textContent = "Digite un Email válido";
+    } else if (elementoHtml.id === "D-mw_registerPassword" || elementoHtml.id === "A-mw_registerPassword") {
+      nuevoParrafoAlerta.textContent = "Digite una contraseña válida";
+    } else if (elementoHtml.id === "D-mw_registerPasswordConfirm" || elementoHtml.id === "A-mw_registerPasswordConfirm") {
+      nuevoParrafoAlerta.textContent = "Las contraseñas no coinciden";
+    }
+
+    nuevoParrafoAlerta.style.color = "red";
+    nuevoParrafoAlerta.style.fontSize = "11px";
+    // nuevoParrafoAlerta.style.marginBottom = "9px";
+    elementoPadreDeParrafoExistente.parentNode.insertBefore(
+    nuevoParrafoAlerta,
+    elementoPadreDeParrafoExistente.nextSibling
+    );
+  }
+
+
+function alertasValidacionIfElse(estado, elementoHtml){
+    if (!estado) {
+        console.log(elementoHtml)
+        const parrafoExistenciaPorId = document.getElementById(
+          `${elementoHtml.id}-alert`
+        );
+        if (!parrafoExistenciaPorId) {
+          creacionAlertaRegister(elementoHtml);
+        }
+      } else {
+        const parrafoExistenciaPorId = document.getElementById(
+          `${elementoHtml.id}-alert`
+        );
+        if (parrafoExistenciaPorId != null) {
+            console.log("entre a borrar");
+          const elementoPadreDeParrafoExistente =
+            parrafoExistenciaPorId.parentNode;
+          elementoPadreDeParrafoExistente.removeChild(parrafoExistenciaPorId);
+          //Esto es para el testeo de contraseñas si el elemento es contraseña setea una variable global de contraseña para poder ser comparada después
+          if(elementoHtml.id === "D-mw_registerPassword"){
+                passwordUserTestToConfirmD = elementoHtml.value.trim();
+          }else if(elementoHtml.id === "A-mw_registerPassword"){
+              passwordUserTestToConfirmA = elementoHtml.value.trim();
+          }
+        }
+      }
+};
+
+// event.preventDefault();
