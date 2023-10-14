@@ -75,10 +75,10 @@ const botonCloseRegister= document.getElementById("mw-registerCloseButton");
 const botonALogin3 = document.getElementById("mw-redireccionaLogin3");
 const botonRegistrarDandoAdopcion = document.getElementById("mw-registerButtonDandoAdopcion");
 
-// botonBackRegister.addEventListener('click', () => {
-//     seccionRegister.style.display="none";
-//     seccionTipoUsuario.style.display="flex";
-// });
+botonBackRegister.addEventListener('click', () => {
+    seccionRegister.style.display="none";
+    seccionTipoUsuario.style.display="flex";
+});
 
 botonCloseRegister.addEventListener('click', () => {
     seccionRegister.style.display="none";
@@ -134,10 +134,10 @@ botonesFormularios.forEach(function (boton) {
       boton.id = "A";
     }
 
+    const mwRegisterId = document.getElementById(`${boton.id}-mw_registerId`);
     const mwRegisterNombre = document.getElementById(
       `${boton.id}-mw_registerNombre`
     );
-    console.log(mwRegisterNombre.id)
     const mwRegisterApellido = document.getElementById(
       `${boton.id}-mw_registerApellido`
     );
@@ -158,6 +158,7 @@ botonesFormularios.forEach(function (boton) {
       `${boton.id}-mw_registerPasswordConfirm`
     );
     
+    validacionRegister(mwRegisterId);
     validacionRegister(mwRegisterNombre);
     validacionRegister(mwRegisterApellido);
     validacionRegister(mwRegisterPais);
@@ -168,11 +169,8 @@ botonesFormularios.forEach(function (boton) {
     validacionRegister(mwRegisterPasswordConfirm);
 
     if(boton.id == "D"){
-        console.log("estoy en D");
         const contenedorDeFormularioEntregando = document.getElementById("mw_user1Form");
-        console.log(contenedorDeFormularioEntregando)
         let parrafosEnFormularioEntregando = contenedorDeFormularioEntregando.getElementsByTagName("p");
-        console.log(parrafosEnFormularioEntregando)
         if(parrafosEnFormularioEntregando.length == 0 && mwRegisterPasswordConfirm.value != ''){
             seccionRegister.style.display="none";
             seccionLogin.style.display="flex"
@@ -466,6 +464,9 @@ function loginValidations () {
     const usuarioBuscado = mewoofDB.usuarios.lista.find( x => x.email === usuario)
 
     if (usuarioBuscado) {
+        const elementoHtmlUser = document.getElementById("mw_loginUser");
+        const estadoUsuarioEncontrado = usuarioBuscado;
+        alertasValidacionIfElse(estadoUsuarioEncontrado, elementoHtmlUser);
         if (usuarioBuscado.password === password) {
             alert("Autenticación Exitosa \n ¡Bienvenido!");
             mewoofDB.usuarioSesion = usuarioBuscado;
@@ -474,11 +475,17 @@ function loginValidations () {
             inputUser.value = '';
             inputPassword.value = '';
         } else {
-            alert("Contraseña Incorrecta");
+            const elementoHtmlPassword = document.getElementById("mw_loginPassword");
+            const estadoPasswordCoincide = usuarioBuscado.password === password;
+            alertasValidacionIfElse(estadoPasswordCoincide, elementoHtmlPassword);
+            // alert("Contraseña Incorrecta");
             inputPassword.value = '';
         }
     } else {
-        alert ("Usuario no encontrado \n Puede registrarse en el boton 'Aún no estoy registrado'")
+        const elementoHtmlUser = document.getElementById("mw_loginUser");
+        const estadoUsuarioEncontrado = usuarioBuscado;
+        alertasValidacionIfElse(estadoUsuarioEncontrado, elementoHtmlUser);
+        // alert ("Usuario no encontrado \n Puede registrarse en el boton 'Aún no estoy registrado'")
         inputUser.value = '';
         inputPassword.value = '';
     }
@@ -511,10 +518,15 @@ let passwordUserTestToConfirmA = '';
 
 function validacionRegister(HTMLElement) {
   const elementoHtml = HTMLElement;
-  console.log("Entre a register")
   
-  if (elementoHtml.id === "D-mw_registerNombre" || elementoHtml.id === "A-mw_registerNombre") {
-    console.log("validaciones")
+  if (elementoHtml.id === "D-mw_registerId"){
+    const registerId = elementoHtml.value.trim();
+    const regexId = /^([A-z\d]){10,10}$/;
+    let registerValido = regexId.test(registerId);
+    console.log(registerValido)
+    alertasValidacionIfElse(registerValido, elementoHtml);
+
+  } else if (elementoHtml.id === "D-mw_registerNombre" || elementoHtml.id === "A-mw_registerNombre") {
     const registerNombre = elementoHtml.value.trim();
     const regexNombre =
       /^([A-z\u00C1-\u00ff]){3,15}((\s([A-z\u00C1-\u00ff]{1,15})){1,1}$)?$/;
@@ -570,12 +582,6 @@ function validacionRegister(HTMLElement) {
     let registerPasswordConfirm = elementoHtml.value.trim();
     let passwordConfirmValido;
     if(elementoHtml.id == "D-mw_registerPasswordConfirm"){
-        // if(elementoHtml.value == ''){
-        //     console.log("siemrpes estoy vacio");
-        //     passwordConfirmValido = false;
-        // }else {
-        //     passwordConfirmValido = registerPasswordConfirm === passwordUserTestToConfirmD;
-        // }
         if(registerPasswordConfirm === passwordUserTestToConfirmD && registerPasswordConfirm != ''){
             passwordConfirmValido = true;
         } else {
@@ -588,50 +594,12 @@ function validacionRegister(HTMLElement) {
             passwordConfirmValido = false;
         }
     }
-    
     alertasValidacionIfElse(passwordConfirmValido, elementoHtml)
   }
-
 }
-
-  function creacionAlertaRegister(elementoHtml) {
-    const elementoPadreDeParrafoExistente = elementoHtml.parentNode;
-
-    const nuevoParrafoAlerta = document.createElement("p");
-    nuevoParrafoAlerta.id = `${elementoHtml.id}-alert`;
-    
-    if (elementoHtml.id === "D-mw_registerNombre" || elementoHtml.id === "A-mw_registerNombre") {
-      nuevoParrafoAlerta.textContent = "Escriba un nombre válido";
-      console.log("estoy lanzando la alerta")
-    } else if (elementoHtml.id === "D-mw_registerApellido" || elementoHtml.id === "A-mw_registerApellido") {
-      nuevoParrafoAlerta.textContent = "Escriba un apellido válido";
-    } else if (elementoHtml.id === "D-mw_registerPais" || elementoHtml.id === "A-mw_registerPais") {
-      nuevoParrafoAlerta.textContent = "Escriba un país válido";
-    } else if (elementoHtml.id === "D-mw_registerCiudad" || elementoHtml.id === "A-mw_registerCiudad") {
-      nuevoParrafoAlerta.textContent = "Escriba una ciudad válida";
-    } else if (elementoHtml.id === "D-mw_registerCel" || elementoHtml.id === "A-mw_registerCel") {
-      nuevoParrafoAlerta.textContent = "Digite un teléfono válido";
-    } else if (elementoHtml.id === "D-mw_registerMail" || elementoHtml.id === "A-mw_registerMail") {
-      nuevoParrafoAlerta.textContent = "Digite un Email válido";
-    } else if (elementoHtml.id === "D-mw_registerPassword" || elementoHtml.id === "A-mw_registerPassword") {
-      nuevoParrafoAlerta.textContent = "Digite una contraseña válida";
-    } else if (elementoHtml.id === "D-mw_registerPasswordConfirm" || elementoHtml.id === "A-mw_registerPasswordConfirm") {
-      nuevoParrafoAlerta.textContent = "Las contraseñas no coinciden";
-    }
-
-    nuevoParrafoAlerta.style.color = "red";
-    nuevoParrafoAlerta.style.fontSize = "11px";
-    // nuevoParrafoAlerta.style.marginBottom = "9px";
-    elementoPadreDeParrafoExistente.parentNode.insertBefore(
-    nuevoParrafoAlerta,
-    elementoPadreDeParrafoExistente.nextSibling
-    );
-  }
-
 
 function alertasValidacionIfElse(estado, elementoHtml){
     if (!estado) {
-        console.log(elementoHtml)
         const parrafoExistenciaPorId = document.getElementById(
           `${elementoHtml.id}-alert`
         );
@@ -667,4 +635,48 @@ function alertasValidacionIfElse(estado, elementoHtml){
       }
 };
 
+  function creacionAlertaRegister(elementoHtml) {
+    const elementoPadreDeParrafoExistente = elementoHtml.parentNode;
+
+    const nuevoParrafoAlerta = document.createElement("p");
+    nuevoParrafoAlerta.id = `${elementoHtml.id}-alert`;
+    
+    if(elementoHtml.id === "D-mw_registerId" || elementoHtml.id === "A-mw_registerId"){
+        nuevoParrafoAlerta.textContent = "Escriba un documento válido";
+    } else if (elementoHtml.id === "D-mw_registerNombre" || elementoHtml.id === "A-mw_registerNombre") {
+      nuevoParrafoAlerta.textContent = "Escriba un nombre válido";
+    } else if (elementoHtml.id === "D-mw_registerApellido" || elementoHtml.id === "A-mw_registerApellido") {
+      nuevoParrafoAlerta.textContent = "Escriba un apellido válido";
+    } else if (elementoHtml.id === "D-mw_registerPais" || elementoHtml.id === "A-mw_registerPais") {
+      nuevoParrafoAlerta.textContent = "Escriba un país válido";
+    } else if (elementoHtml.id === "D-mw_registerCiudad" || elementoHtml.id === "A-mw_registerCiudad") {
+      nuevoParrafoAlerta.textContent = "Escriba una ciudad válida";
+    } else if (elementoHtml.id === "D-mw_registerCel" || elementoHtml.id === "A-mw_registerCel") {
+      nuevoParrafoAlerta.textContent = "Digite un teléfono válido";
+    } else if (elementoHtml.id === "D-mw_registerMail" || elementoHtml.id === "A-mw_registerMail") {
+      nuevoParrafoAlerta.textContent = "Digite un Email válido";
+    } else if (elementoHtml.id === "D-mw_registerPassword" || elementoHtml.id === "A-mw_registerPassword") {
+      nuevoParrafoAlerta.textContent = "Digite una contraseña válida";
+    } else if (elementoHtml.id === "D-mw_registerPasswordConfirm" || elementoHtml.id === "A-mw_registerPasswordConfirm") {
+      nuevoParrafoAlerta.textContent = "Las contraseñas no coinciden";
+    } else if (elementoHtml.id === "mw_loginUser"){
+        nuevoParrafoAlerta.textContent = "El usuario no ha sido encontrado"
+    } else if (elementoHtml.id === "mw_loginPassword"){
+        nuevoParrafoAlerta.textContent = "La constraseña es incorrecta"
+    }
+
+    if(elementoHtml.id === "mw_loginUser" || elementoHtml.id === "mw_loginPassword"){
+        nuevoParrafoAlerta.style.color = "red";
+        nuevoParrafoAlerta.style.fontSize = "12px";
+        nuevoParrafoAlerta.style.marginBottom = "7px"
+    } else {
+        nuevoParrafoAlerta.style.color = "red";
+        nuevoParrafoAlerta.style.fontSize = "11px";
+        nuevoParrafoAlerta.style.marginBottom = "7px"
+    }
+    elementoPadreDeParrafoExistente.parentNode.insertBefore(
+    nuevoParrafoAlerta,
+    elementoPadreDeParrafoExistente.nextSibling
+    );
+  }
 // event.preventDefault();
