@@ -170,8 +170,7 @@
                     </div>
                     <div class="caracteristicasMascota">
                         <div class="mw-tagsMascota">
-                            <a class="card_button">Alegre</a>
-                            <a class="card_button">Juguetona</a>
+                            <a class="card_button">#Alegre <br> #Juguetona</a>
                         </div>
                         <div class="mw-descripcioMascota">
                             <p class="card__copy">Mi mayor cualidad es que soy una gran exploradora, en una salida al parque puedo encontrar más de 10 palos.</p>
@@ -194,19 +193,19 @@
         <section class="Entregando-misMascotas" id="Entregando_misMascotas">
             <div class="mw-misMascotas-container">
                 <h1>Mis Mascotas en Adopción</h1>
-                <div class="mw-misMascotas-tablero">
-                    <div class="mw-mascotaCargada">
+                <div class="mw-misMascotas-tablero" id="mw_misMascotas-tablero">
+                    <!-- <div class="mw-mascotaCargada">
                         <div class="img-radius">
                             <img src="img/banner2.png" class="mw-mascotaCargada-img">
                         </div>
                         <div class="mw-mascotaCargada-info">
-                            <h3 class="card__title">Fiona<span class="point"> 1 año</span></h3>
+                            <h3 class="card__title">Fiona</h3><span class="point"> 1 año</span>
                             <p class="card__copy">  Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum nostrum asperiores animi ducimus quod voluptatibus deserunt vero repudiandae consequatur, dolore consequuntur doloremque, qui accusantium repellat placeat aut repellendus. Culpa, eos!</p>
                         </div>
                         <div class="mw-impresionesMascota">
                             <button class="card_button">Impresiones</button>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
                 <div class="mw-addMascota-button mw-mascotaCargada" id="mw_panelMascotaOpen">
                     <i class='bx bx-plus-circle'></i>
@@ -220,7 +219,7 @@
                         <button id="mw-panelMascotaClose"><i class='bx bx-x'></i></button>
                     </div>
                     <h1>Crear Mascota</h1>
-                    <form action="">
+                    <form id="mw_mascotaForm" action="">
                         <div>
                             <label for="">Raza</label>
                             <input type="text" id="mw-mascotaRaza">
@@ -251,7 +250,8 @@
                         </div>
                     </form>
                     <div class="mw-cargarMascotaButton">
-                        <button id="mw_cargarMascotaButton" onclick="crearMascota()">Crear</button>
+                        <!-- <button id="mw_cargarMascotaButton" onclick="crearMascota()">Crear</button> -->
+                        <button id="mw_cargarMascotaButton">Crear</button>
                     </div>
                 </div>
             </div>
