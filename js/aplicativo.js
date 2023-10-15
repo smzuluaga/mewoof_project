@@ -102,6 +102,7 @@ const seccionMatch = document.getElementById("section-mwhome");
 const seccionPanelMascota = document.getElementById("mw_panelMascota");
 const seccionMisMascotas = document.getElementById("Entregando_misMascotas");
 const seccionSolicitudes = document.getElementById("Adoptante_solicitudesEnv");
+const seccionPerfilUser = document.getElementById("mw_section-profile");
 
 // BOTONES NAV BAR
 const navBotonPerfil = document.getElementById("mw-navButtonPerfil");
@@ -109,6 +110,12 @@ const navBotonMatch = document.getElementById("mw-navButtonMatch");
 const navBotonChat = document.getElementById("mw-navButtonChat");
 const navBotonSolicitudes = document.getElementById("mw-navButtonMascotas");
 const navBotonHome = document.getElementById("mw-navButtonHome");
+
+navBotonPerfil.addEventListener('click', () => {
+  ocultarSecciones();
+  seccionPerfilUser.style.display="flex";
+})
+
 
 navBotonMatch.addEventListener('click', () => {
     ocultarSecciones();
@@ -158,7 +165,9 @@ function saveLocaStorage () {
 
 function ocultarSecciones () {
     seccionMatch.style.display="none";
+    seccionPanelMascota.style.display="none";
     seccionMisMascotas.style.display="none";
+    seccionPerfilUser.style.display="none";
     seccionSolicitudes.style.display="none";
 }
 
