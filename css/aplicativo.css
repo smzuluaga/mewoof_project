@@ -99,6 +99,206 @@ body {
 }
 /* Aquí terminan arreglos del sidebar  */
 
+
+/*Inicia arreglos del editar información*/
+.mw-section-profile{
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+}
+.profile-container{
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+}
+
+.profile-title {
+  display: flex;
+  justify-content: center;
+  color: #EF4147;
+  margin-top: 20px;
+  letter-spacing: 5px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.profile-information{
+  display: flex;
+  height: 90%;
+}
+
+.content-user{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  width: 25%;
+}
+
+.content-user div{
+  height: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.content-user img{
+  width: 200px;
+  height: 200px;
+  border-radius: 1000px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+  border: 4px solid gray;
+}
+
+.content-user h3{
+  color: #EF4147;
+  font-weight: 10px;
+  font-size: 25px;
+}
+
+.content-form{
+  display: flex;
+  width: 75%;
+  justify-content: center;
+  align-items: center;
+}
+
+.form-horizontal{
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  height: 85%;
+  justify-content: space-evenly;
+}
+
+.form-horizontal div{
+  display: inline-block;
+  
+}
+
+.flex-wrap{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.mw-flex-wrap div{
+  width: 30%;
+  margin: 10px;    
+  }
+
+.form-group{
+  display: flex;
+  flex-direction: column;
+  height:100px;
+  color: black;
+  font-size: 20px;
+}
+
+.mw-flex-wrap input{
+  width: 100%;
+  border-radius: 60px;
+  padding: 5px;
+  border: 1px solid black;
+}
+
+.mw-flex-wrap select{
+  width: 100%;
+  border-radius: 60px;
+}
+
+.form-group-about{
+  color: black;
+  font-size: 20px;
+  margin-bottom: 2%;
+}
+
+.form-group-about .form-input{
+  width: 100%;
+  border-radius: 60px;
+  padding: 10px;
+  border: 1px solid black;
+}
+
+.form-email .form-input{
+  width: 100%;
+  border-radius: 60px;
+  padding: 5px;
+  border: 1px solid black;
+}
+
+.form-email{
+  color: black;
+  font-size: 20px;
+}
+
+.form-interesting{
+  font-size: 20px;
+}
+
+.btn-same{
+  margin-bottom: 0;
+  margin-top: 1%;
+  margin-right: 50%;
+}
+
+.btn-same-but{
+  background-color: #EF4147;
+  border-radius: 60px;
+  width: 200px;
+  height: 35px;
+  color: aliceblue;
+  font-size: 18px;
+  border: none;
+  cursor: pointer;
+  margin-left: 40%;
+}
+
+.content-user .btn-edit-but{
+  background-color:#F05376;
+  border-radius: 60px;
+  width: 160px;
+  height: 25px;
+  color: aliceblue;
+  font-size: 13px;
+  border: none;
+  cursor: pointer;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+@media (max-width: 768px) {
+  .profile-container {
+      max-width: 100%;
+  }
+  .profile-information {
+      flex-direction: column;
+  }
+
+  .content-form {
+      margin-left: 10%;
+  }
+  .content-user {
+      margin-left: 30%;
+      margin-top: 10%;
+      margin-bottom: 10%;
+  }
+  .btn-same{
+      margin-right: 70%;
+      margin-top: 6%;
+  }
+}
+
+.btn-edit-but {
+  cursor: pointer;
+}
+/*Fin arreglos editar información*/
+
 .mw-viewScreen {
     background: rgba(255, 255, 255, 0.4);
     box-sizing: border-box;
