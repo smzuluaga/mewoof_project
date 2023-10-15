@@ -523,7 +523,7 @@ function validacionRegister(HTMLElement) {
     const registerId = elementoHtml.value.trim();
     const regexId = /^([A-z\d]){1,10}$/;
     let registerValido = regexId.test(registerId);
-    console.log(registerValido)
+ 
     alertasValidacionIfElse(registerValido, elementoHtml);
 
   } else if (elementoHtml.id === "D-mw_registerNombre" || elementoHtml.id === "A-mw_registerNombre") {
@@ -567,8 +567,18 @@ function validacionRegister(HTMLElement) {
 
   } else if (elementoHtml.id === "D-mw_registerMail" || elementoHtml.id === "A-mw_registerMail") {
     const registerMail = elementoHtml.value.trim();
+    const registerMailValue = elementoHtml.value;
     const regexMail = /^[\w_]{1,30}(\.?\+?[\w]{5,10})?@[\w]{2,10}\.\w{2,5}$/;
-    let mailValido = regexMail.test(registerMail);
+    let mailValidoRegex = regexMail.test(registerMail);
+    let mailValidoPorExistencia = mewoofDB.usuarios.lista.find(x => x.email === registerMailValue);
+    let mailValido = false;
+
+    if((mailValidoRegex && mailValidoPorExistencia == undefined)){
+      mailValido = true;
+    }else if(mailValidoRegex && mailValidoPorExistencia) {
+      mailValido = false;
+    }
+
 
     alertasValidacionIfElse(mailValido, elementoHtml)
   } else if (elementoHtml.id === "D-mw_registerPassword" || elementoHtml.id === "A-mw_registerPassword") {
@@ -611,7 +621,6 @@ function alertasValidacionIfElse(estado, elementoHtml){
           `${elementoHtml.id}-alert`
         );
         if (parrafoExistenciaPorId != null) {
-            console.log("entre a borrar");
             const elementoPadreDeParrafoExistente =
             parrafoExistenciaPorId.parentNode;
             elementoPadreDeParrafoExistente.removeChild(parrafoExistenciaPorId);
@@ -626,7 +635,6 @@ function alertasValidacionIfElse(estado, elementoHtml){
         } else if(estado){
             if(elementoHtml.id === "D-mw_registerPassword"){
                 passwordUserTestToConfirmD = elementoHtml.value.trim();
-                console.log(passwordUserTestToConfirmD);
           }else if(elementoHtml.id === "A-mw_registerPassword"){
               passwordUserTestToConfirmA = elementoHtml.value.trim();
               console.log(passwordUserTestToConfirmA);
@@ -654,7 +662,18 @@ function alertasValidacionIfElse(estado, elementoHtml){
     } else if (elementoHtml.id === "D-mw_registerCel" || elementoHtml.id === "A-mw_registerCel") {
       nuevoParrafoAlerta.textContent = "Digite un teléfono válido";
     } else if (elementoHtml.id === "D-mw_registerMail" || elementoHtml.id === "A-mw_registerMail") {
-      nuevoParrafoAlerta.textContent = "Digite un Email válido";
+
+      let registerMailValueParaTextoAlerta = elementoHtml.value;
+      let mailValidoPorExistenciaParaTextoAlerta = mewoofDB.usuarios.lista.find(x => x.email === registerMailValueParaTextoAlerta);
+
+      if(mailValidoPorExistenciaParaTextoAlerta != undefined){
+        if(registerMailValueParaTextoAlerta === mailValidoPorExistenciaParaTextoAlerta.email){
+            nuevoParrafoAlerta.textContent = "Este correo ya existe"
+        }}
+      else {
+        nuevoParrafoAlerta.textContent = "Digite un Email válido";
+      }
+
     } else if (elementoHtml.id === "D-mw_registerPassword" || elementoHtml.id === "A-mw_registerPassword") {
       nuevoParrafoAlerta.textContent = "Mínimo 8 caracteres";
     } else if (elementoHtml.id === "D-mw_registerPasswordConfirm" || elementoHtml.id === "A-mw_registerPasswordConfirm") {
