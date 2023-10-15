@@ -1,4 +1,3 @@
-
 ///***********************************************///
 // MODELADO DE OBJETOS
 let mewoofDB;
@@ -303,3 +302,125 @@ function addObjectsToList(){
 
 divAddObjects.addEventListener("click", addObjectsToList);
 // FIN FUNCION DE AGREGAR OBJETO CUANDO SE OPRIME EL CORAZON DE LIKE <3
+
+botonCrearMascota.addEventListener('click', function(event){
+    const mwRegisterRaza = document.getElementById("mw-mascotaRaza");
+    const mwRegisterSize = document.getElementById("mw-mascotaSize");
+    const mwRegisterNombre = document.getElementById("mw-mascotaNombre");
+    const mwRegisterEdad = document.getElementById("mw-mascotaEdad");
+    const mwRegisterSalud = document.getElementById("mw-mascotaSalud");
+    const mwRegisterNecesidades = document.getElementById("mw-mascotaNeeds");
+
+    validacionRegister(mwRegisterRaza);
+    validacionRegister(mwRegisterSize);
+    validacionRegister(mwRegisterNombre);
+    validacionRegister(mwRegisterEdad);
+    validacionRegister(mwRegisterSalud);
+    validacionRegister(mwRegisterNecesidades);
+
+    if(botonCrearMascota.id =="mw_cargarMascotaButton"){
+        const contenedorDeFormularioEntregando = document.getElementById("mw_mascotaForm");
+        let parrafosEnFormularioEntregando = contenedorDeFormularioEntregando.getElementsByTagName("p");
+        if(parrafosEnFormularioEntregando.length == 0){
+            crearMascota();
+        }
+    }
+});
+
+function validacionRegister(HTMLElement) {
+    const elementoHtml = HTMLElement;
+
+    if(elementoHtml.id === "mw-mascotaRaza"){
+      const registerRaza = elementoHtml.value.trim();
+      const regexRaza =
+        /^([A-z\u00C1-\u00ff]){3,15}((\s([A-z\u00C1-\u00ff]{1,15})){1,6}$)?$/;
+      let razaValido = regexRaza.test(registerRaza);
+  
+      alertasValidacionIfElse(razaValido, elementoHtml);
+    }else if(elementoHtml.id === "mw-mascotaSize"){
+      const registerSize = elementoHtml.value.trim();
+      const regexSize = /^([A-z\u00C1-\u00ff]){1,15}((\s([A-z\u00C1-\u00ff]{1,15})){1,1}$)?$/;
+      let sizeValido = regexSize.test(registerSize);
+  
+      alertasValidacionIfElse(sizeValido, elementoHtml);
+    }else if(elementoHtml.id === "mw-mascotaNombre"){
+      const registerNombreMascota = elementoHtml.value.trim();
+      const regexNombreMascota = /^([A-z\u00C1-\u00ff]){1,15}((\s([A-z\u00C1-\u00ff]{1,15})){1,1}$)?$/;
+      let nombreMascotaValido = regexNombreMascota.test(registerNombreMascota);
+  
+      alertasValidacionIfElse(nombreMascotaValido, elementoHtml);
+    }else if(elementoHtml.id === "mw-mascotaEdad"){
+      const registerEdadMascota = elementoHtml.value.trim();
+      const regexEdadMascota = /^\d\d?$/;
+      let edadMascotaValido = regexEdadMascota.test(registerEdadMascota);
+  
+      alertasValidacionIfElse(edadMascotaValido, elementoHtml);
+    }else if(elementoHtml.id === "mw-mascotaSalud"){
+      const registerSaludMascota = elementoHtml.value.trim();
+      const regexSaludMascota = /^([A-z\u00C1-\u00ff]){2,15}((\s([A-z\u00C1-\u00ff]{1,18})){1,40}\s?$)?$/;
+      let saludMascotaValido = regexSaludMascota.test(registerSaludMascota);
+  
+      alertasValidacionIfElse(saludMascotaValido, elementoHtml);
+    }else if(elementoHtml.id === "mw-mascotaNeeds"){
+      const registerNecesidadesMascota = elementoHtml.value.trim();
+      const regexNecesidadesMascota = /^([A-z\u00C1-\u00ff]){2,15}((\s([A-z\u00C1-\u00ff]{1,18})){1,40}\s?$)?$/;
+      let necesidadesMascotaValido = regexNecesidadesMascota.test(registerNecesidadesMascota);
+  
+      alertasValidacionIfElse(necesidadesMascotaValido, elementoHtml);
+    }
+  }
+  
+  function alertasValidacionIfElse(estado, elementoHtml){
+      if (!estado) {
+          const parrafoExistenciaPorId = document.getElementById(
+            `${elementoHtml.id}-alert`
+          );
+          if (!parrafoExistenciaPorId) {
+            creacionAlertaRegister(elementoHtml);
+          }
+        } else {
+          const parrafoExistenciaPorId = document.getElementById(
+            `${elementoHtml.id}-alert`
+          );
+          if (parrafoExistenciaPorId != null) {
+              const elementoPadreDeParrafoExistente =
+              parrafoExistenciaPorId.parentNode;
+              elementoPadreDeParrafoExistente.removeChild(parrafoExistenciaPorId);
+            //Esto es para el testeo de contraseñas si el elemento es contraseña setea una variable global de contraseña para poder ser comparada después
+          } 
+        }
+  };
+  
+    function creacionAlertaRegister(elementoHtml) {
+      const elementoPadreDeParrafoExistente = elementoHtml.parentNode;
+  
+      const nuevoParrafoAlerta = document.createElement("p");
+      nuevoParrafoAlerta.id = `${elementoHtml.id}-alert`;
+      if (elementoHtml.id == "mw-mascotaRaza"){
+        nuevoParrafoAlerta.textContent = "Dígite una raza válida"
+      } else if (elementoHtml.id == "mw-mascotaSize"){
+        nuevoParrafoAlerta.textContent = "Dígite un tamaño válido"
+      } else if (elementoHtml.id == "mw-mascotaNombre"){
+        nuevoParrafoAlerta.textContent = "Dígite un nombre válido"
+      } else if (elementoHtml.id == "mw-mascotaEdad"){
+        nuevoParrafoAlerta.textContent = "Dígite una edad válida"
+      } else if (elementoHtml.id == "mw-mascotaSalud"){
+        nuevoParrafoAlerta.textContent = "Escriba 10 caracteres mínimo"
+      } else if (elementoHtml.id == "mw-mascotaNeeds"){
+        nuevoParrafoAlerta.textContent = "Escriba 10 caracteres mínimo"
+      }
+  
+      if(elementoHtml.id === "mw_loginUser" || elementoHtml.id === "mw_loginPassword"){
+          nuevoParrafoAlerta.style.color = "red";
+          nuevoParrafoAlerta.style.fontSize = "12px";
+          nuevoParrafoAlerta.style.marginBottom = "7px"
+      } else {
+          nuevoParrafoAlerta.style.color = "red";
+          nuevoParrafoAlerta.style.fontSize = "11px";
+          nuevoParrafoAlerta.style.marginBottom = "7px"
+      }
+      elementoPadreDeParrafoExistente.parentNode.insertBefore(
+      nuevoParrafoAlerta,
+      elementoPadreDeParrafoExistente.nextSibling
+      );
+    }

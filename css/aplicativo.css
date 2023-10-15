@@ -353,6 +353,7 @@ body {
     display: flex;
     flex-direction: column;
     margin-bottom: 80px;
+    overflow-y: scroll;
 }
 
 .mw-panelMascota-container form div {
@@ -378,7 +379,7 @@ body {
 }
 
 .mw-cargarMascotaButton{
-    margin-top: 80px;
+    margin-top: 5px;
 }
 /* Fin Seccion Panel Crear Mascota*/
 
