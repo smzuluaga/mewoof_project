@@ -103,6 +103,7 @@ body {
 .mw-viewScreen {
     background: rgba(255, 255, 255, 0.4);
     box-sizing: border-box;
+    width: 100%;
     
 }
 
@@ -236,6 +237,7 @@ body {
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
+    width: 100%;
 }
 
 .mw-misMascotas-container h1 {
