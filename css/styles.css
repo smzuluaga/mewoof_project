@@ -721,6 +721,7 @@ input::placeholder{
     color: var(--pink2);
     font-size: 25px;
     font-style: italic;
+    margin: 20px 0;
 }
 
 .mw-CasosDeExitos h3 span {
