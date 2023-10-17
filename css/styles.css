@@ -1195,11 +1195,13 @@ input::placeholder{
         width: 100%;
         text-align: right;
         margin-right: 25%;
+        z-index: 5;
      }
 
     #enviarButton {
         font-size: 12px;
         margin-top: 20px;
+        z-index: 5;
     }
 
     .footer {
@@ -1461,7 +1463,7 @@ font-size: 11px;
             display: flex;
             flex-direction: column;
             height: 270px;
-            margin-bottom: 8%;
+            margin-bottom: 15%;
         }
 
         .contactInf label{
