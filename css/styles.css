@@ -1499,7 +1499,7 @@ font-size: 11px;
 
     /*Iconos*/
         .socialMedia {
-            margin-top: 30px;
+            margin-top: 10%;
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 20px;
