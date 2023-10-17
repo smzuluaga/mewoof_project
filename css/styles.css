@@ -714,6 +714,20 @@ input::placeholder{
     
 
 /* Sección items*/
+
+.mw-CasosDeExitos{
+    width: 100%;
+    text-align: center;
+    color: var(--pink2);
+    font-size: 25px;
+    font-style: italic;
+}
+
+.mw-CasosDeExitos h3 span {
+    color: var(--red);
+}
+
+
 .pets-container {
     background-color: var(--black2o3);
     width: auto;
@@ -730,7 +744,6 @@ input::placeholder{
     display: flex;
     align-items: center;
     margin-top: 50px;
-    
 }
 
 .petStories img{
