@@ -17,6 +17,8 @@ class Usuario {
         this.password = password;
         this.user = this.email;
         this.tipo = tipo;
+        this.about = '';
+        this.intereses = '';
     }
     
     registrarse () {
@@ -194,16 +196,39 @@ function ocultarSecciones () {
 
 // INICIO FUNCIONES PERFIL
 
-const inputNombre = document.getElementById("");
-const inputApellido = document.getElementById("");
-const inputCelular = document.getElementById("");
-const inputPais = document.getElementById("");
-const inputCiudad = document.getElementById("");
-const inputEmail = document.getElementById("");
-const inputInteres = document.getElementById("");
-const inputAbout = document.getElementById("");
+let nombreMostrar = document.getElementById("username_user");
+let inputNombre = document.getElementById("inputName");
+let inputApellido = document.getElementById("inputApellido");
+let inputCelular = document.getElementById("inputCelular");
+let inputPais = document.getElementById("inputPais");
+let inputCiudad = document.getElementById("inputCiudad");
+let inputEmail = document.getElementById("inputEmail");
+let inputInteres = document.getElementById("");
+let inputAbout = document.getElementById("");
+const botonGuardarCambiosPerfil = document.getElementById("mw-PerfilBtn-guardarCambios");
 // FIN FUNCIONES PERFIL
 
+nombreMostrar.innerHTML = `${usuarioSesion.nombre} ${usuarioSesion.apellido}`;
+inputNombre.value = usuarioSesion.nombre;
+inputApellido.value = usuarioSesion.apellido;
+inputCelular.value = usuarioSesion.cel;
+inputPais.value = usuarioSesion.pais;
+inputCiudad.value = usuarioSesion.ciudad;
+inputEmail.value = usuarioSesion.email;
+// inputInteres.value = usuarioSesion.intereses;
+// inputAbout.value = usuarioSesion.about;
+
+botonGuardarCambiosPerfil.addEventListener('click', () => {
+    let perfilCambio = mewoofDB.usuarios.lista.find(x=>x.email===usuarioSesion.email)
+
+    perfilCambio.nombre = inputNombre.value;
+    perfilCambio.apellido = inputApellido.value;
+    perfilCambio.cel = inputCelular.value;
+    perfilCambio.pais = inputPais.value;
+    perfilCambio.ciudad = inputCiudad.value;
+    perfilCambio.email = inputEmail.value;
+    saveLocaStorage();
+})
 
 // BOTONES CREAR MASCOTA
 const botonAbrirPanelMascota = document.getElementById("mw_panelMascotaOpen");
@@ -249,6 +274,9 @@ function renderizarSolicitudes(listaMascotas){
     // Inicializacion de ciclo que va a recorrer todo el arreglo de mascotas Cargadas
     for (let mascota of listaMascotas){
 
+        if (document.getElementById(`mascota-${mascota.nombre}-${mascota.currentOwner.nombre}`)){
+            continue;
+        }
         /// CREACION DE ELEMENTOS PARA INSERTAR UNA TARJETA A HTML POR MEDIO DE LA MANIPULACION DEL DOM
         // TarjetaMascota - Bloque 1 -> Foto
         const tarjetaMascotaCargada = document.createElement("div");
@@ -267,6 +295,7 @@ function renderizarSolicitudes(listaMascotas){
 
         // Tarjeta Mascota - Asignacion de Clases y contenido de objetos creados para Tarjeta Mascota - Bloque 1 -> Foto
         tarjetaMascotaCargada.classList.add("mw-mascotaCargada");
+        tarjetaMascotaCargada.setAttribute("id",`mascota-${mascota.nombre}-${mascota.currentOwner.nombre}`);
         boxImagenTarjeta.classList.add("img-radius");
         imagenTarjeta.classList.add("mw-mascotaCargada-img");
 
@@ -304,6 +333,10 @@ function renderizarSolicitudes(listaMascotas){
         tablero.appendChild(tarjetaMascotaCargada);
     }
 }
+
+
+
+
 
 // INICIO FUNCION DE AGREGAR OBJETO CUANDO SE OPRIME EL CORAZON DE LIKE <3
 
@@ -373,96 +406,96 @@ function validacionRegister(HTMLElement) {
     const elementoHtml = HTMLElement;
 
     if(elementoHtml.id === "mw-mascotaRaza"){
-      const registerRaza = elementoHtml.value.trim();
-      const regexRaza =
+        const registerRaza = elementoHtml.value.trim();
+        const regexRaza =
         /^([A-z\u00C1-\u00ff]){3,15}((\s([A-z\u00C1-\u00ff]{1,15})){1,6}$)?$/;
-      let razaValido = regexRaza.test(registerRaza);
-  
-      alertasValidacionIfElse(razaValido, elementoHtml);
+        let razaValido = regexRaza.test(registerRaza);
+
+        alertasValidacionIfElse(razaValido, elementoHtml);
     }else if(elementoHtml.id === "mw-mascotaSize"){
-      const registerSize = elementoHtml.value.trim();
-      const regexSize = /^([A-z\u00C1-\u00ff]){1,15}((\s([A-z\u00C1-\u00ff]{1,15})){1,1}$)?$/;
-      let sizeValido = regexSize.test(registerSize);
-  
-      alertasValidacionIfElse(sizeValido, elementoHtml);
+        const registerSize = elementoHtml.value.trim();
+        const regexSize = /^([A-z\u00C1-\u00ff]){1,15}((\s([A-z\u00C1-\u00ff]{1,15})){1,1}$)?$/;
+        let sizeValido = regexSize.test(registerSize);
+
+        alertasValidacionIfElse(sizeValido, elementoHtml);
     }else if(elementoHtml.id === "mw-mascotaNombre"){
-      const registerNombreMascota = elementoHtml.value.trim();
-      const regexNombreMascota = /^([A-z\u00C1-\u00ff]){1,15}((\s([A-z\u00C1-\u00ff]{1,15})){1,1}$)?$/;
-      let nombreMascotaValido = regexNombreMascota.test(registerNombreMascota);
-  
-      alertasValidacionIfElse(nombreMascotaValido, elementoHtml);
+        const registerNombreMascota = elementoHtml.value.trim();
+        const regexNombreMascota = /^([A-z\u00C1-\u00ff]){1,15}((\s([A-z\u00C1-\u00ff]{1,15})){1,1}$)?$/;
+        let nombreMascotaValido = regexNombreMascota.test(registerNombreMascota);
+
+        alertasValidacionIfElse(nombreMascotaValido, elementoHtml);
     }else if(elementoHtml.id === "mw-mascotaEdad"){
-      const registerEdadMascota = elementoHtml.value.trim();
-      const regexEdadMascota = /^\d\d?$/;
-      let edadMascotaValido = regexEdadMascota.test(registerEdadMascota);
-  
-      alertasValidacionIfElse(edadMascotaValido, elementoHtml);
+        const registerEdadMascota = elementoHtml.value.trim();
+        const regexEdadMascota = /^\d\d?$/;
+        let edadMascotaValido = regexEdadMascota.test(registerEdadMascota);
+
+        alertasValidacionIfElse(edadMascotaValido, elementoHtml);
     }else if(elementoHtml.id === "mw-mascotaSalud"){
-      const registerSaludMascota = elementoHtml.value.trim();
-      const regexSaludMascota = /^([A-z\u00C1-\u00ff]){2,15}((\s([A-z\u00C1-\u00ff]{1,18})){1,40}\s?$)?$/;
-      let saludMascotaValido = regexSaludMascota.test(registerSaludMascota);
-  
-      alertasValidacionIfElse(saludMascotaValido, elementoHtml);
+        const registerSaludMascota = elementoHtml.value.trim();
+        const regexSaludMascota = /^([A-z\u00C1-\u00ff]){2,15}((\s([A-z\u00C1-\u00ff]{1,18})){1,40}\s?$)?$/;
+        let saludMascotaValido = regexSaludMascota.test(registerSaludMascota);
+
+        alertasValidacionIfElse(saludMascotaValido, elementoHtml);
     }else if(elementoHtml.id === "mw-mascotaNeeds"){
-      const registerNecesidadesMascota = elementoHtml.value.trim();
-      const regexNecesidadesMascota = /^([A-z\u00C1-\u00ff]){2,15}((\s([A-z\u00C1-\u00ff]{1,18})){1,40}\s?$)?$/;
-      let necesidadesMascotaValido = regexNecesidadesMascota.test(registerNecesidadesMascota);
-  
-      alertasValidacionIfElse(necesidadesMascotaValido, elementoHtml);
+        const registerNecesidadesMascota = elementoHtml.value.trim();
+        const regexNecesidadesMascota = /^([A-z\u00C1-\u00ff]){2,15}((\s([A-z\u00C1-\u00ff]{1,18})){1,40}\s?$)?$/;
+        let necesidadesMascotaValido = regexNecesidadesMascota.test(registerNecesidadesMascota);
+
+        alertasValidacionIfElse(necesidadesMascotaValido, elementoHtml);
     }
-  }
-  
-  function alertasValidacionIfElse(estado, elementoHtml){
-      if (!estado) {
-          const parrafoExistenciaPorId = document.getElementById(
+}
+
+function alertasValidacionIfElse(estado, elementoHtml){
+        if (!estado) {
+            const parrafoExistenciaPorId = document.getElementById(
             `${elementoHtml.id}-alert`
-          );
-          if (!parrafoExistenciaPorId) {
+            );
+            if (!parrafoExistenciaPorId) {
             creacionAlertaRegister(elementoHtml);
-          }
+            }
         } else {
-          const parrafoExistenciaPorId = document.getElementById(
+            const parrafoExistenciaPorId = document.getElementById(
             `${elementoHtml.id}-alert`
-          );
-          if (parrafoExistenciaPorId != null) {
-              const elementoPadreDeParrafoExistente =
-              parrafoExistenciaPorId.parentNode;
-              elementoPadreDeParrafoExistente.removeChild(parrafoExistenciaPorId);
+            );
+        if (parrafoExistenciaPorId != null) {
+            const elementoPadreDeParrafoExistente =
+            parrafoExistenciaPorId.parentNode;
+            elementoPadreDeParrafoExistente.removeChild(parrafoExistenciaPorId);
             //Esto es para el testeo de contraseñas si el elemento es contraseña setea una variable global de contraseña para poder ser comparada después
-          } 
-        }
-  };
-  
-    function creacionAlertaRegister(elementoHtml) {
-      const elementoPadreDeParrafoExistente = elementoHtml.parentNode;
-  
-      const nuevoParrafoAlerta = document.createElement("p");
-      nuevoParrafoAlerta.id = `${elementoHtml.id}-alert`;
-      if (elementoHtml.id == "mw-mascotaRaza"){
-        nuevoParrafoAlerta.textContent = "Dígite una raza válida"
-      } else if (elementoHtml.id == "mw-mascotaSize"){
+        } 
+    }
+};
+
+function creacionAlertaRegister(elementoHtml) {
+    const elementoPadreDeParrafoExistente = elementoHtml.parentNode;
+
+    const nuevoParrafoAlerta = document.createElement("p");
+    nuevoParrafoAlerta.id = `${elementoHtml.id}-alert`;
+    if (elementoHtml.id == "mw-mascotaRaza"){
+    nuevoParrafoAlerta.textContent = "Dígite una raza válida"
+    } else if (elementoHtml.id == "mw-mascotaSize"){
         nuevoParrafoAlerta.textContent = "Dígite un tamaño válido"
-      } else if (elementoHtml.id == "mw-mascotaNombre"){
+    } else if (elementoHtml.id == "mw-mascotaNombre"){
         nuevoParrafoAlerta.textContent = "Dígite un nombre válido"
-      } else if (elementoHtml.id == "mw-mascotaEdad"){
+    } else if (elementoHtml.id == "mw-mascotaEdad"){
         nuevoParrafoAlerta.textContent = "Dígite una edad válida"
-      } else if (elementoHtml.id == "mw-mascotaSalud"){
+    } else if (elementoHtml.id == "mw-mascotaSalud"){
         nuevoParrafoAlerta.textContent = "Escriba 10 caracteres mínimo"
-      } else if (elementoHtml.id == "mw-mascotaNeeds"){
+    } else if (elementoHtml.id == "mw-mascotaNeeds"){
         nuevoParrafoAlerta.textContent = "Escriba 10 caracteres mínimo"
-      }
-  
-      if(elementoHtml.id === "mw_loginUser" || elementoHtml.id === "mw_loginPassword"){
-          nuevoParrafoAlerta.style.color = "red";
-          nuevoParrafoAlerta.style.fontSize = "12px";
-          nuevoParrafoAlerta.style.marginBottom = "7px"
-      } else {
-          nuevoParrafoAlerta.style.color = "red";
-          nuevoParrafoAlerta.style.fontSize = "11px";
-          nuevoParrafoAlerta.style.marginBottom = "7px"
-      }
-      elementoPadreDeParrafoExistente.parentNode.insertBefore(
-      nuevoParrafoAlerta,
-      elementoPadreDeParrafoExistente.nextSibling
-      );
+    }
+
+    if(elementoHtml.id === "mw_loginUser" || elementoHtml.id === "mw_loginPassword"){
+        nuevoParrafoAlerta.style.color = "red";
+        nuevoParrafoAlerta.style.fontSize = "12px";
+        nuevoParrafoAlerta.style.marginBottom = "7px"
+    } else {
+        nuevoParrafoAlerta.style.color = "red";
+        nuevoParrafoAlerta.style.fontSize = "11px";
+        nuevoParrafoAlerta.style.marginBottom = "7px"
+    }
+    elementoPadreDeParrafoExistente.parentNode.insertBefore(
+    nuevoParrafoAlerta,
+    elementoPadreDeParrafoExistente.nextSibling
+    );
     }

@@ -349,9 +349,11 @@ function validarLocalStorage () {
     {
         usuarios: {
             lista: [],
+            eliminados: [],
         },
         mascotas: {
             lista: [],
+            eliminados: [],
         },
         usuarioSesion: null,
     }
