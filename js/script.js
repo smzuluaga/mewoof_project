@@ -277,7 +277,7 @@ document.addEventListener("DOMContentLoaded", function() {
   
     // Validar nombre
     function validarNombre(nombreCompleto) {
-      const regexNombreContactenos = /^([A-z\u00C1-\u00ff]){1,15}((\s([A-z\u00C1-\u00ff]{1,15})){1,1}$)?$/;
+      const regexNombreContactenos = /^([A-z\u00C1-\u00ff]){1,15}((\s([A-z\u00C1-\u00ff]{1,15})){1,10}$)?$/;
 
       return regexNombreContactenos.test(nombreCompleto);
     }
@@ -290,7 +290,7 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     function validarMensaje(mensajeValido){
-      const regexCampoTexto = /^([A-z\u00C1-\u00ff]){4,15}((\s([A-z\u00C1-\u00ff]{1,18})){1,40}\s?$)?$/;
+      const regexCampoTexto = /^([A-z\u00C1-\u00ff]){1,15}((\s([A-z\u00C1-\u00ff]{1,18})){1,200}\s?$)?$/;
 
       return regexCampoTexto.test(mensajeValido);
     }
