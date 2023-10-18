@@ -35,7 +35,7 @@
                 >
                 <!--El enlace de las imagenes deberá cambiar según corresponda ESTA IMAGEN ES LA DEL USUARIO -->
                 <img
-                    src="img/eveloper-jazminIllera-fullstack-java-html-css.png"
+                    src="img/user.png"
                     alt="Icono 1"
                 /></a>
             </div>
@@ -74,8 +74,8 @@
                 <div class="profile-information">
                     <div class="content-user">
                         <div>
-                            <img class="image-user" src="./img/eveloper-jazminIllera-fullstack-java-html-css.png" alt="" />
-                            <h3 class="username-user">Jazmin Illera Peraza</h3>
+                            <img class="image-user" src="./img/user.png" alt="" />
+                            <h3 class="username-user" id="username_user"></h3>
                         </div>
                         <div class="btn-edit">
                             <button type="button" class="btn-edit-but" id="open-popup">Editar Contraseña</button>
@@ -96,20 +96,20 @@
                             <div class="mw-flex-wrap">
                                 <div class="form-group">
                                     <label for="inputName">Nombres</label>
-                                    <input type="email" id="inputName" placeholder="Escriba su nombre">
+                                    <input type="text" id="inputName" placeholder="Escriba su nombre">
                                 </div>
                                 <div class="form-group">
                                     <label for="inputName">Apellidos</label>
-                                    <input type="email" id="inputName" placeholder="Escriba su apellido">
+                                    <input type="text" id="inputApellido" placeholder="Escriba su apellido">
                                 </div>
                                 <div class="form-group">
                                     <label for="inputEmail">Celular</label>
                                     <input type="number" id="inputCelular" placeholder="Celular">
                                 </div>                                          
                                 <div class="form-group">
-                                    <label for="inputPaís">País</label>
-                                    <select title="modalidades" name="modalidades[]" class="form-control">
-                                        <option value="1">Colombia</option>
+                                    <label for="inputPais">País</label>
+                                    <select title="modalidades" name="modalidades[]" class="form-control" id="inputPais">
+                                        <option select value="1">Colombia</option>
                                         <option value="2">Brasil</option>
                                         <option value="3">Ecuador</option>
                                         <option value="4">Peru</option>
@@ -122,7 +122,7 @@
                                 </div>                
                                 <div class="form-group">
                                     <label for="" >Ciudad</label>
-                                    <select title="modalidades" name="modalidades[]" class="form-control">
+                                    <select title="modalidades" name="modalidades[]" class="form-control" id="inputCiudad">
                                         <option value="1">Medellin</option>
                                         <option value="2">Cali</option>
                                         <option value="3">Bogota</option>
@@ -141,7 +141,7 @@
                             </div>                                            
                             <div class="form-interesting">
                                 <label>Interés</label>
-                                <input type="radio"> Gato
+                                <input type="radio" id=""> Gato
                                 <input type="radio"> Perro
                             </div>
                             <div class="form-group-about">
@@ -149,7 +149,7 @@
                                 <input type="text" placeholder="Información relevante para la plataforma" class="form-input">
                             </div>
                             <div class="btn-same">
-                                <button type="submit" class="btn-same-but">Guardar Cambios</button>
+                                <button type="submit" class="btn-same-but" id="mw-PerfilBtn-guardarCambios">Guardar Cambios</button>
                             </div>
                         </form>
                     </div>
