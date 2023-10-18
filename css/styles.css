@@ -714,6 +714,21 @@ input::placeholder{
     
 
 /* Sección items*/
+
+.mw-CasosDeExitos{
+    width: 100%;
+    text-align: center;
+    color: var(--pink2);
+    font-size: 25px;
+    font-style: italic;
+    margin: 20px 0;
+}
+
+.mw-CasosDeExitos h3 span {
+    color: var(--red);
+}
+
+
 .pets-container {
     background-color: var(--black2o3);
     width: auto;
@@ -730,7 +745,6 @@ input::placeholder{
     display: flex;
     align-items: center;
     margin-top: 50px;
-    
 }
 
 .petStories img{
@@ -1181,11 +1195,13 @@ input::placeholder{
         width: 100%;
         text-align: right;
         margin-right: 25%;
+        z-index: 5;
      }
 
     #enviarButton {
         font-size: 12px;
         margin-top: 20px;
+        z-index: 5;
     }
 
     .footer {
@@ -1447,7 +1463,7 @@ font-size: 11px;
             display: flex;
             flex-direction: column;
             height: 270px;
-            margin-bottom: 8%;
+            margin-bottom: 15%;
         }
 
         .contactInf label{
@@ -1485,7 +1501,7 @@ font-size: 11px;
 
     /*Iconos*/
         .socialMedia {
-            margin-top: 30px;
+            margin-top: 10%;
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 20px;
