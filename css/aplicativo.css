@@ -14,14 +14,14 @@
 
 * {
   /* box-sizing: content-box; */
-    box-sizing: border-box;
+    box-sizing: content-box;
     margin:0;
     padding:0;
     /* border: 1px solid black; */
 }
 
 html {
-    width: 100vw;
+  width: 100vw;
 }
 
 body {
@@ -32,15 +32,31 @@ body {
     background-image: url(../img/fondo-test.jpg);
     background-size: cover;
     /* background-attachment: fixed; */
+    /* border: 1px solid var(--red); */
+
+}
+
+.mw-viewScreen {
+  background: rgba(255, 255, 255, 1);
+  box-sizing: content-box;
+  width: 94%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;  
+}
+
+.sidebar-pagina {
+  width: 6%;
 }
 
 /* Aquí empiezan arreglos del sidebar  */
-.section__mwhome {
-    width: 100vw;
+.mw_sectionMatch {
+    width: 100%;
     height: 100vh;
     justify-content: left;
     align-items: left;
     text-align: left;
+    display: none;
 }
 
 .mw-homebanner {
@@ -55,7 +71,6 @@ body {
 
   .sidebar {
     width: 115px;
-    max-width: 110px;
     height: 100vh;
     background-color: #F7ABB2;;
     display: flex;
@@ -64,8 +79,8 @@ body {
     justify-content: center;
     box-sizing: border-box;
     box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.5);
-    position: fixed;
-    z-index: 1;
+    /* position: fixed;
+    z-index: 1; */
 }
 
 .iconoHover {
@@ -100,13 +115,20 @@ body {
 }
 /* Aquí terminan arreglos del sidebar  */
 
+.mw-viewScreen {
+  background: rgba(255, 255, 255, 0.4);
+  box-sizing: border-box;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  
+}
 
 /*Inicia arreglos del editar información*/
 .mw-section-profile{
-  width: 100vw;
+  width: 100%;
   height: 100vh;
-  display: flex;
-  margin-left: 5%;
+  display: none;
 }
 .profile-container{
   display: flex;
@@ -300,13 +322,19 @@ body {
 }
 /*Fin arreglos editar información*/
 
-.mw-viewScreen {
-    background: rgba(255, 255, 255, 0.4);
-    box-sizing: border-box;
-    width: 100%;
-    
-}
 
+/*Inicio seccion matches Human*/
+.mw_sectionMatchHuman {
+    width: 100%;
+    height: 100vh;
+    justify-content: left;
+    align-items: left;
+    text-align: left;
+    display: none;
+}
+/*Fin seccion matches Human*/
+
+/*Inicio seccion matches*/
 
 .card{
     display: flex;
@@ -422,6 +450,32 @@ body {
 
 /*Fin pagina de matchs*/
 
+
+/* Inicio Seccion chat*/
+.mw-sectionChat {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100%;
+}
+
+.mw-sectionChat div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 90%
+}
+
+.mw-sectionChat div img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+/* Fin Seccion chat */
+
+
 /* Inicio Seccion mis Mascotas*/
 .Entregando-misMascotas {
     width: 100%;
@@ -455,7 +509,6 @@ body {
     justify-content: flex-start;
     overflow-y: scroll;
     scrollbar-width: thin;
-    margin-left: 120px;
     /*border: 1px solid black;*/
 }
 
@@ -526,7 +579,7 @@ body {
     display: none;
     justify-content: center;
     align-items: center;
-    width: 100vw;
+    width: 100%;
     height: 100vh;
     position: fixed;
     /* z-index: 1; */
@@ -585,8 +638,9 @@ body {
 
 /* Inicio Seccion Solicitudes*/ /*Aca estoy editando  mueve el fiona solicitudes a la derecha*/
 .Adoptante-solicitudesEnv{
-    width: 95%;
+    width: 100%;
     height: 100%;
+    display: none;
 }
 
 .mw-solicitudesEnv-container{
@@ -606,16 +660,18 @@ body {
     width: 100%;
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .mw-tablero-solicitudEnv { /*Aca estoy editando solicitudes enviadas */
     display: flex;
     margin-top: 4%;
-    margin-left: 13%;
     border-radius: 70px;
     padding: 10px;
     background: rgb(252, 237, 239);
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.3);
+    width: 80%;
     
 }
 
@@ -638,7 +694,16 @@ body {
 
 /* Fin Seccion Solicitudes*/
 
-
+/* Inicio Seccion home*/
+.mw-sectionHome {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+}
+/* Fin Seccion home*/ 
 
 /* ****************REVISAR ************* */
 

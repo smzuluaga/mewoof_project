@@ -89,7 +89,7 @@ class Mascota {
 class Solicitud {
     constructor(destinatario, remitente, cuerpo){
         this.destinatario = destinatario;
-        this. remitente = remitente;
+        this.remitente = remitente;
         this.cuerpo = cuerpo;
     }
 }
@@ -98,11 +98,14 @@ class Solicitud {
 // ******** INICIO MANIPULACION DOM ******** //
 
 // SECCIONES
-const seccionMatch = document.getElementById("section-mwhome");
+const seccionPerfilUser = document.getElementById("mw_section-profile");
+const seccionMatchHuman = document.getElementById("mw-sectionMatchHuman");
+const seccionMatch = document.getElementById("mw-sectionMatch");
+const seccionChat = document.getElementById("mw_sectionChat");
 const seccionPanelMascota = document.getElementById("mw_panelMascota");
 const seccionMisMascotas = document.getElementById("Entregando_misMascotas");
 const seccionSolicitudes = document.getElementById("Adoptante_solicitudesEnv");
-const seccionPerfilUser = document.getElementById("mw_section-profile");
+const seccionHome = document.getElementById("mw_sectionHome");
 
 // BOTONES NAV BAR
 const navBotonPerfil = document.getElementById("mw-navButtonPerfil");
@@ -119,7 +122,14 @@ navBotonPerfil.addEventListener('click', () => {
 
 navBotonMatch.addEventListener('click', () => {
     ocultarSecciones();
-    seccionMatch.style.display="flex";
+    usuarioSesion.tipo=== "Adoptante"?
+    seccionMatch.style.display="flex":
+    seccionMatchHuman.style.display="flex";
+})
+
+navBotonChat.addEventListener('click', () => {
+    ocultarSecciones();
+    seccionChat.style.display="flex";
 })
 
 navBotonSolicitudes.addEventListener('click', () => {
@@ -131,6 +141,12 @@ navBotonSolicitudes.addEventListener('click', () => {
         renderizarSolicitudes(mewoofDB.usuarios.lista[findUser(usuarioSesion)].mascotasCargadas);
     }
 })
+
+navBotonHome.addEventListener('click', () => {
+    ocultarSecciones();
+    seccionHome.style.display="flex";
+})
+// FIN FUNCIONES NAV BAR
 
 // FUNCIONES GENERALES
 
@@ -164,12 +180,29 @@ function saveLocaStorage () {
 }
 
 function ocultarSecciones () {
+    seccionPerfilUser.style.display="none";
+    seccionMatchHuman.style.display="none";
     seccionMatch.style.display="none";
+    seccionChat.style.display="none";
     seccionPanelMascota.style.display="none";
     seccionMisMascotas.style.display="none";
-    seccionPerfilUser.style.display="none";
     seccionSolicitudes.style.display="none";
+    seccionHome.style.display="none";
 }
+
+// FIN FUNCIONES GENERALES
+
+// INICIO FUNCIONES PERFIL
+
+const inputNombre = document.getElementById("");
+const inputApellido = document.getElementById("");
+const inputCelular = document.getElementById("");
+const inputPais = document.getElementById("");
+const inputCiudad = document.getElementById("");
+const inputEmail = document.getElementById("");
+const inputInteres = document.getElementById("");
+const inputAbout = document.getElementById("");
+// FIN FUNCIONES PERFIL
 
 
 // BOTONES CREAR MASCOTA
