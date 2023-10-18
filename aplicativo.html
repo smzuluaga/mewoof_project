@@ -35,7 +35,7 @@
                 >
                 <!--El enlace de las imagenes deberá cambiar según corresponda ESTA IMAGEN ES LA DEL USUARIO -->
                 <img
-                    src="img/eveloper-jazminIllera-fullstack-java-html-css.png"
+                    src="img/user.png"
                     alt="Icono 1"
                 /></a>
             </div>
@@ -63,9 +63,135 @@
 
     <!-- Main es la seccion donde estaran als subsecciones que correpsonden a las pantallas de los botones de la nav bar -->
     <main class="mw-viewScreen">
+         <!-- Inicio Seccion Perfil -->
+
+        <!--Seccion editar información-->
+        <section id="mw_section-profile" class="mw-section-profile">
+            <div class="profile-container">
+                <div class="profile-title">
+                    <h1 class="profile-title-letter">Editar información</h1>
+                </div>
+                <div class="profile-information">
+                    <div class="content-user">
+                        <div>
+                            <img class="image-user" src="./img/user.png" alt="" />
+                            <h3 class="username-user" id="username_user"></h3>
+                        </div>
+                        <div class="btn-edit">
+                            <button type="button" class="btn-edit-but" id="open-popup">Editar Contraseña</button>
+                        </div>
+                        <div class="popup" id="password-popup">
+                            <div class="popup-content">
+                                <span class="popup-close" id="close-popup">&times;</span>
+                                <label>Anterior Contraseña</label>
+                                <input type="password" id="password">
+                                <label>Nueva Contraseña</label>
+                                <input type="password" id="new-password">
+                                <button type="submit" class="btn-edit-but" id="save-password">Guardar Contraseña</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="content-form">
+                        <form class="form-horizontal">
+                            <div class="mw-flex-wrap">
+                                <div class="form-group">
+                                    <label for="inputName">Nombres</label>
+                                    <input type="text" id="inputName" placeholder="Escriba su nombre">
+                                </div>
+                                <div class="form-group">
+                                    <label for="inputName">Apellidos</label>
+                                    <input type="text" id="inputApellido" placeholder="Escriba su apellido">
+                                </div>
+                                <div class="form-group">
+                                    <label for="inputEmail">Celular</label>
+                                    <input type="number" id="inputCelular" placeholder="Celular">
+                                </div>                                          
+                                <div class="form-group">
+                                    <label for="inputPais">País</label>
+                                    <select title="modalidades" name="modalidades[]" class="form-control" id="inputPais">
+                                        <option select value="1">Colombia</option>
+                                        <option value="2">Brasil</option>
+                                        <option value="3">Ecuador</option>
+                                        <option value="4">Peru</option>
+                                        <option value="5">Chile</option>
+                                        <option value="6">Argentina</option>
+                                        <option value="7">Mexico</option>
+                                        <option value="8">Francia</option>
+                                        <option value="9">España</option>
+                                    </select>
+                                </div>                
+                                <div class="form-group">
+                                    <label for="" >Ciudad</label>
+                                    <select title="modalidades" name="modalidades[]" class="form-control" id="inputCiudad">
+                                        <option value="1">Medellin</option>
+                                        <option value="2">Cali</option>
+                                        <option value="3">Bogota</option>
+                                        <option value="4">Cundinamarca</option>
+                                        <option value="5">Boyaca</option>
+                                        <option value="6">Manizales</option>
+                                        <option value="7">Bucaramanga</option>
+                                        <option value="8">Barrancabermeja</option>
+                                        <option value="9">Cartagena</option>
+                                    </select>
+                                </div>
+                            </div> 
+                            <div class="form-email">
+                                <label for="inputEmail">Email</label>
+                                <input type="email" id="inputEmail" placeholder="Email" class="form-input">
+                            </div>                                            
+                            <div class="form-interesting">
+                                <label>Interés</label>
+                                <input type="radio" id=""> Gato
+                                <input type="radio"> Perro
+                            </div>
+                            <div class="form-group-about">
+                                <label>Acerca de mi</label>
+                                <input type="text" placeholder="Información relevante para la plataforma" class="form-input">
+                            </div>
+                            <div class="btn-same">
+                                <button type="submit" class="btn-same-but" id="mw-PerfilBtn-guardarCambios">Guardar Cambios</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                </div>
+        </section>
+        <!--Fin sección perfil -->
         
+        <!--Fin sección Matches Human-->
+        <section class="mw_sectionMatchHuman" id="mw-sectionMatchHuman">
+            <!--Contenedor de la imagen y el texto-->
+            <div class="mw-homebanner">
+                <div class="card">
+                    <img src="img/human.JPG" class="card__img">
+                    <div class="cards__text">
+                        <p class="card__list"></p>
+                        <h3 class="card__title">Nicolas<span class="point"> 27 años</span></h3>
+                    </div>
+                    <div class="caracteristicasMascota">
+                        <div class="mw-tagsMascota">
+                            <a class="card_button">#Alegre <br> #Divertido</a>
+                        </div>
+                        <div class="mw-descripcioMascota">
+                            <p class="card__copy">Soy un ingeniero profesional que pasa la mayor parte del tiempo en su apartamento y quisiera adoptar un amigo para compartir.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="buttons">
+                    <div id="noLike" class="no">
+                        <i class="fas fa-times"></i>
+                    </div>
+                    <div id="like" class="heart">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--Fin sección Matches Human -->
+        
+
         <!-- Inicio Seccion MAtches // // FALTA HACER AJUSTES DE FORMATO -->
-        <section class="section__mwhome" id="section-mwhome">
+        <section class="mw_sectionMatch" id="mw-sectionMatch">
             <!--Contenedor de la imagen y el texto-->
             <div class="mw-homebanner">
                 <div class="card">
@@ -76,8 +202,7 @@
                     </div>
                     <div class="caracteristicasMascota">
                         <div class="mw-tagsMascota">
-                            <a class="card_button">Alegre</a>
-                            <a class="card_button">Juguetona</a>
+                            <a class="card_button">#Alegre <br> #Juguetona</a>
                         </div>
                         <div class="mw-descripcioMascota">
                             <p class="card__copy">Mi mayor cualidad es que soy una gran exploradora, en una salida al parque puedo encontrar más de 10 palos.</p>
@@ -96,23 +221,31 @@
         </section>
         <!-- Fin Seccion MAtches -->
 
+        <!-- Inicio Seccion Chat -->
+        <section class="mw-sectionChat" id="mw_sectionChat">
+            <div>
+                <img src="img/chat.PNG" alt="chatProvisional" class="chatProvisional">
+            </div>
+        </section>
+        <!-- Fin Seccion Chat -->
+
         <!-- Inicio Seccion Solicitudes Usuario Dando en Adopcion // FALTA HACER FORMATO-->
         <section class="Entregando-misMascotas" id="Entregando_misMascotas">
             <div class="mw-misMascotas-container">
                 <h1>Mis Mascotas en Adopción</h1>
-                <div class="mw-misMascotas-tablero">
-                    <div class="mw-mascotaCargada">
+                <div class="mw-misMascotas-tablero" id="mw_misMascotas-tablero">
+                    <!-- <div class="mw-mascotaCargada">
                         <div class="img-radius">
                             <img src="img/banner2.png" class="mw-mascotaCargada-img">
                         </div>
                         <div class="mw-mascotaCargada-info">
-                            <h3 class="card__title">Fiona<span class="point"> 1 año</span></h3>
+                            <h3 class="card__title">Fiona</h3><span class="point"> 1 año</span>
                             <p class="card__copy">  Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum nostrum asperiores animi ducimus quod voluptatibus deserunt vero repudiandae consequatur, dolore consequuntur doloremque, qui accusantium repellat placeat aut repellendus. Culpa, eos!</p>
                         </div>
                         <div class="mw-impresionesMascota">
                             <button class="card_button">Impresiones</button>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
                 <div class="mw-addMascota-button mw-mascotaCargada" id="mw_panelMascotaOpen">
                     <i class='bx bx-plus-circle'></i>
@@ -126,7 +259,7 @@
                         <button id="mw-panelMascotaClose"><i class='bx bx-x'></i></button>
                     </div>
                     <h1>Crear Mascota</h1>
-                    <form action="">
+                    <form id="mw_mascotaForm" action="">
                         <div>
                             <label for="">Raza</label>
                             <input type="text" id="mw-mascotaRaza">
@@ -157,7 +290,8 @@
                         </div>
                     </form>
                     <div class="mw-cargarMascotaButton">
-                        <button id="mw_cargarMascotaButton" onclick="crearMascota()">Crear</button>
+                        <!-- <button id="mw_cargarMascotaButton" onclick="crearMascota()">Crear</button> -->
+                        <button id="mw_cargarMascotaButton">Crear</button>
                     </div>
                 </div>
             </div>
@@ -186,6 +320,12 @@
             </div>
         </section>
         <!-- Fin Seccion Solicitudes Usuario Adoptando -->
+
+        <!-- Inicio Seccion home -->
+        <section class="mw-sectionHome" id="mw_sectionHome">
+            <img src="img/meme-home.jpeg">
+        </section>
+        <!-- Fin Seccion home -->
 
     </main>
 
