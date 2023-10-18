@@ -570,7 +570,7 @@ function validacionRegister(HTMLElement) {
             passwordConfirmValido = false;
         }
     }else if(elementoHtml.id == "A-mw_registerPasswordConfirm"){
-        if(registerPasswordConfirm === passwordUserTestToConfirmD && registerPasswordConfirm != ''){
+        if(registerPasswordConfirm === passwordUserTestToConfirmA && registerPasswordConfirm != ''){
             passwordConfirmValido = true;
         } else {
             passwordConfirmValido = false;
