@@ -35,12 +35,13 @@ body {
 }
 
 /* Aquí empiezan arreglos del sidebar  */
-.section__mwhome {
+.mw_sectionMatch {
     width: 100vw;
     height: 100vh;
     justify-content: left;
     align-items: left;
     text-align: left;
+    display: none;
 }
 
 .mw-homebanner {
@@ -105,7 +106,7 @@ body {
 .mw-section-profile{
   width: 100vw;
   height: 100vh;
-  display: flex;
+  display: none;
   margin-left: 5%;
 }
 .profile-container{
@@ -307,6 +308,7 @@ body {
     
 }
 
+/*Inicio seccion matches*/
 
 .card{
     display: flex;
@@ -421,6 +423,14 @@ body {
 
 
 /*Fin pagina de matchs*/
+
+
+/* Inicio Seccion chat*/
+.mw-sectionChat {
+  display: none;
+}
+/* Fin Seccion chat */
+
 
 /* Inicio Seccion mis Mascotas*/
 .Entregando-misMascotas {
@@ -587,6 +597,7 @@ body {
 .Adoptante-solicitudesEnv{
     width: 95%;
     height: 100%;
+    display: none;
 }
 
 .mw-solicitudesEnv-container{
@@ -638,7 +649,16 @@ body {
 
 /* Fin Seccion Solicitudes*/
 
-
+/* Inicio Seccion home*/
+.mw-sectionHome {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+}
+/* Fin Seccion home*/ 
 
 /* ****************REVISAR ************* */
 
