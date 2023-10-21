@@ -608,14 +608,14 @@ body {
 .mw-panelMascota-container form{
     display: flex;
     flex-direction: column;
-    margin-bottom: 80px;
-    overflow-y: scroll;
+    margin-bottom: 50px;
     font-weight:100;
     color: var(--beige);
+    overflow-y: auto; 
 }
 
 .mw-panelMascota-container form .mw_mascotaFormFoto{
-margin-top: 15px;
+margin-top: 10px;
 }
 
 #mw-mascotaFoto {
@@ -638,6 +638,7 @@ margin-top: 15px;
     outline: none;
     border-radius: 10px;
     border: none;
+    font-weight: lighter;
 }
 
 .mw-panelMascotaClose{
@@ -661,7 +662,7 @@ margin-top: 15px;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.4);
   color: #fff;
   padding: 10px 10px;
-  margin-top: 30px;
+  margin: 15px;
   width:100px;
 }
 /* Fin Seccion Panel Crear Mascota*/
