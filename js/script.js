@@ -6,6 +6,7 @@ const seccionRegister2= document.getElementById("mw_register2");
 
 // BOTONES BOTONES LOGIN PARTE 1 - USUARIO CONTRASEÑA
 const botonLoginNav = document.getElementById("mw-loginNav");
+const botonConoceme = document.getElementById("mw__botonConoceme");
 const botonLoginApp = document.getElementById("mw-loginButton");
 const botonaApp = document.getElementById("mw-loginButton-modifier");
 const botonCloseLogin= document.getElementById("mw-loginCloseButton");
@@ -15,6 +16,9 @@ const inputUser = document.getElementById("mw_loginUser");
 const inputPassword = document.getElementById("mw_loginPassword");
 let botonesFormularios = document.querySelectorAll(".boton-formulario");
 
+botonConoceme.addEventListener('click', () => {
+  seccionTipoUsuario.style.display="flex";
+});
 
 botonLoginNav.addEventListener('click', () => {
     seccionLogin.style.display="flex";
