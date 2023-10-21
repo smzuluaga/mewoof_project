@@ -485,15 +485,10 @@ function creacionAlertaRegister(elementoHtml) {
         nuevoParrafoAlerta.textContent = "Escriba 10 caracteres mínimo"
     }
 
-    if(elementoHtml.id === "mw_loginUser" || elementoHtml.id === "mw_loginPassword"){
-        nuevoParrafoAlerta.style.color = "red";
-        nuevoParrafoAlerta.style.fontSize = "12px";
-        nuevoParrafoAlerta.style.marginBottom = "7px"
-    } else {
-        nuevoParrafoAlerta.style.color = "red";
-        nuevoParrafoAlerta.style.fontSize = "11px";
-        nuevoParrafoAlerta.style.marginBottom = "7px"
-    }
+    nuevoParrafoAlerta.style.color = "#e4bf94";
+    nuevoParrafoAlerta.style.fontSize = "13px";
+    nuevoParrafoAlerta.style.marginBottom = "6px"
+    
     elementoPadreDeParrafoExistente.parentNode.insertBefore(
     nuevoParrafoAlerta,
     elementoPadreDeParrafoExistente.nextSibling
