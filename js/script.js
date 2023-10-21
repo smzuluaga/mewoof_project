@@ -698,18 +698,6 @@ function alertasValidacionIfElse(estado, elementoHtml){
       nuevoParrafoAlerta.textContent = "El usuario no ha sido encontrado"
     } else if (elementoHtml.id === "mw_loginPassword"){
       nuevoParrafoAlerta.textContent = "La constraseña es incorrecta"
-    } else if (elementoHtml.id === "mw-mascotaRaza"){
-      nuevoParrafoAlerta.textContent = "Dígite una raza válida"
-    } else if (elementoHtml.id === "mw-mascotaSize"){
-      nuevoParrafoAlerta.textContent = "Dígite un tamaño válido"
-    } else if (elementoHtml.id === "mw-mascotaNombre"){
-      nuevoParrafoAlerta.textContent = "Dígite un nombre válido"
-    } else if (elementoHtml.id === "mw-mascotaEdad"){
-      nuevoParrafoAlerta.textContent = "Dígite una edad válida"
-    } else if (elementoHtml.id === "mw-mascotaSalud"){
-      nuevoParrafoAlerta.textContent = "Escriba 2 caracteres mínimo"
-    } else if (elementoHtml.id === "mw-mascotaNeeds"){
-      nuevoParrafoAlerta.textContent = "Escriba 2 caracteres mínimo"
     } else if(elementoHtml.id === "nombre"){
       nuevoParrafoAlerta.textContent = "Escriba nombre válido"
     } else if(elementoHtml.id === "email"){
@@ -735,7 +723,7 @@ function alertasValidacionIfElse(estado, elementoHtml){
 
     } else {
     if(elementoHtml.id === "mw_loginUser" || elementoHtml.id === "mw_loginPassword"){
-        nuevoParrafoAlerta.style.color = "#e4bf94";
+        nuevoParrafoAlerta.style.color = "rgba(239, 65, 71, 0.9)";
         nuevoParrafoAlerta.style.fontSize = "12px";
         nuevoParrafoAlerta.style.marginBottom = "7px";
     } else {
