@@ -177,8 +177,8 @@ botonesFormularios.forEach(function (boton) {
             newUserEntregando();
         }
     } else if(boton.id == "A"){
-        console.log("estoy en A");
-        const contenedorDeFormularioAdopantdo = document.getElementById("mw_user2Form");
+
+      const contenedorDeFormularioAdopantdo = document.getElementById("mw_user2Form");
         let parrafosEnFormularioAdoptando = contenedorDeFormularioAdopantdo.getElementsByTagName("p");
         if(parrafosEnFormularioAdoptando.length == 0 && mwRegisterPasswordConfirm.value != ''){
             seccionRegister2.style.display="none";
@@ -397,10 +397,9 @@ function newUserEntregando () {
 }
 
 function newUserAdoptante () {
-    console.log("estoy en la funcion adoptante");
+
     const id = document.getElementById('A-mw_registerId');
     const nombre = document.getElementById('A-mw_registerNombre');
-    console.log(`Esto es lo que tieen nombre ${nombre.value}`);
     const apellido = document.getElementById('A-mw_registerApellido');
     const pais = document.getElementById('A-mw_registerPais');
     const ciudad = document.getElementById('A-mw_registerCiudad');
@@ -620,8 +619,8 @@ function validacionRegister(HTMLElement) {
 
 function alertasValidacionIfElse(estado, elementoHtml){
     if (!estado) {
-        console.log("hoeeee");
-        const parrafoExistenciaPorId = document.getElementById(
+
+      const parrafoExistenciaPorId = document.getElementById(
           `${elementoHtml.id}-alert`
         );
         if (!parrafoExistenciaPorId) {
@@ -631,10 +630,10 @@ function alertasValidacionIfElse(estado, elementoHtml){
         const parrafoExistenciaPorId = document.getElementById(
           `${elementoHtml.id}-alert`
         );
-        console.log(parrafoExistenciaPorId);
+        // console.log(parrafoExistenciaPorId);
         if (parrafoExistenciaPorId != null) {
-          console.log("voy a borrar papi");
-            const elementoPadreDeParrafoExistente =
+
+          const elementoPadreDeParrafoExistente =
             parrafoExistenciaPorId.parentNode;
             elementoPadreDeParrafoExistente.removeChild(parrafoExistenciaPorId);
           //Esto es para el testeo de contraseñas si el elemento es contraseña setea una variable global de contraseña para poder ser comparada después
