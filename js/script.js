@@ -270,81 +270,51 @@ botonNav.addEventListener("click", () => {
 //Validación datos ingresados al formulario
 document.addEventListener("DOMContentLoaded", function() {
     // Traer los datos de entrada
-    let nombreInput = document.getElementById("nombre");
-    let emailInput = document.getElementsByName("email")[0]; // getElementsByName se trae con el nombre
-    let enviarButton = document.getElementById("enviarButton");
+    const nombreInput = document.getElementById("nombre");
+    const emailInput = document.getElementById("email") // getElementsByName se trae con el nombre
+    const mensajeInput = document.getElementById("message");
+    const enviarButton = document.getElementById("enviarButton");
   
     // Validar nombre
     function validarNombre(nombreCompleto) {
-        let nombreApellido = nombreCompleto.split(" ");
-        return nombreApellido.length >= 2 && nombreApellido[0].length >= 3 && nombreApellido[1].length >= 3;
+      const regexNombreContactenos = /^([A-z\u00C1-\u00ff]){1,15}((\s([A-z\u00C1-\u00ff]{1,15})){1,10}$)?$/;
+
+      return regexNombreContactenos.test(nombreCompleto);
     }
 
     // Validar email
     function validarEmail(emailValido) {
-        let regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; //Permit verificar el cuerbo de un correo
+        const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; //Permit verificar el cuerbo de un correo
+
         return regex.test(emailValido);
-    } 
+    }
 
-    enviarButton.addEventListener("click", function(event) {
-        let nombreCompleto = nombreInput.value.trim();
-        let emailValido = emailInput.value.trim();
+    function validarMensaje(mensajeValido){
+      const regexCampoTexto = /^([A-z\u00C1-\u00ff]){1,15}((\s([A-z\u00C1-\u00ff]{1,18})){1,200}\s?$)?$/;
 
-        // Realizar validación de nombre y correo electrónico
-        const parrafoAEliminar = document.getElementById("alert-nombre");
-        const parrafoAEliminarC = document.getElementById("alert-correo");
-        if(validarNombre(nombreCompleto) && parrafoAEliminar){
-            const padre = parrafoAEliminar.parentNode;
-            padre.removeChild(parrafoAEliminar); 
-        }
+      return regexCampoTexto.test(mensajeValido);
+    }
 
-        else if(validarEmail(emailValido) && parrafoAEliminarC){
-            const padre = parrafoAEliminarC.parentNode;
-            padre.removeChild(parrafoAEliminarC); 
-        }
+  enviarButton.addEventListener("click", function(event) {
+    event.preventDefault()
+    const nombreIngresado = nombreInput.value.trim();
+    const emailIngresado = emailInput.value.trim();
+    const mensajeIngresado = mensajeInput.value.trim();
 
-        else if (validarNombre(nombreCompleto) && validarEmail(emailValido)) {
-            document.querySelector("form").submit();
+    const nombreContactosValido = validarNombre(nombreIngresado);
+    const emailContactenosValido = validarEmail(emailIngresado);
+    const mensajeContactenosValido = validarMensaje(mensajeIngresado);
 
-            
+    alertasValidacionIfElse(nombreContactosValido, nombreInput);
+    alertasValidacionIfElse(emailContactenosValido, emailInput);
+    alertasValidacionIfElse(mensajeContactenosValido, mensajeInput);
 
-            document.getElementById("nombre").value = ""; //Limpiar campos 
-            document.getElementById("email").value = "";
-        } else {
-            if (!validarNombre(nombreCompleto)) {
+    const contenedorFormularioContactenos = document.getElementById("form-contactUs");
 
-                const parrafoNombreExiste = document.getElementById("alert-nombre");
-
-                if(!parrafoNombreExiste){
-                const inputPadre = document.getElementById("nombre");
-                const nuevoParrafo = document.createElement("p");
-                nuevoParrafo.id = "alert-nombre";
-                nuevoParrafo.textContent = "Ingrese su nombre completo";
-                nuevoParrafo.style.paddingLeft = "20px";
-                nuevoParrafo.style.paddingBottom = "20px";
-                nuevoParrafo.style.color = "red";
-                inputPadre.parentNode.insertBefore(nuevoParrafo, inputPadre.nextSibling);
-            }
-                // alert("Ingrese su nombre completo.");
-            }
-            if (!validarEmail(emailValido)) {
-                
-                const parrafoCorreoExiste = document.getElementById("alert-correo");
-
-                if(!parrafoCorreoExiste){
-                const inputPadre = document.getElementById("email");
-                const nuevoParrafoC = document.createElement("p");
-                nuevoParrafoC.id = "alert-correo";
-                nuevoParrafoC.textContent = "Ingrese un email válido";
-                nuevoParrafoC.style.paddingLeft = "20px";
-                nuevoParrafoC.style.paddingBottom = "20px";
-                nuevoParrafoC.style.color = "red";
-                inputPadre.parentNode.insertBefore(nuevoParrafoC, inputPadre.nextSibling);
-                }
-                // alert("Ingrese un email valido.");
-            }
-            event.preventDefault(); // no deja enviar el formulario antes de tiempo
-        }
+    let parrafosEnFormularioContactenos = contenedorFormularioContactenos.getElementsByTagName("p");
+    if(parrafosEnFormularioContactenos.length == 0 && nombreIngresado != '' && emailIngresado != '' && mensajeIngresado != ''){
+      contenedorFormularioContactenos.submit();
+      }
     });
 });
 // FIN SECCIÓN CONSTÁCTENOS
@@ -379,9 +349,11 @@ function validarLocalStorage () {
     {
         usuarios: {
             lista: [],
+            eliminados: [],
         },
         mascotas: {
             lista: [],
+            eliminados: [],
         },
         usuarioSesion: null,
     }
@@ -598,7 +570,7 @@ function validacionRegister(HTMLElement) {
             passwordConfirmValido = false;
         }
     }else if(elementoHtml.id == "A-mw_registerPasswordConfirm"){
-        if(registerPasswordConfirm === passwordUserTestToConfirmD && registerPasswordConfirm != ''){
+        if(registerPasswordConfirm === passwordUserTestToConfirmA && registerPasswordConfirm != ''){
             passwordConfirmValido = true;
         } else {
             passwordConfirmValido = false;
@@ -648,6 +620,7 @@ function validacionRegister(HTMLElement) {
 
 function alertasValidacionIfElse(estado, elementoHtml){
     if (!estado) {
+        console.log("hoeeee");
         const parrafoExistenciaPorId = document.getElementById(
           `${elementoHtml.id}-alert`
         );
@@ -658,7 +631,9 @@ function alertasValidacionIfElse(estado, elementoHtml){
         const parrafoExistenciaPorId = document.getElementById(
           `${elementoHtml.id}-alert`
         );
+        console.log(parrafoExistenciaPorId);
         if (parrafoExistenciaPorId != null) {
+          console.log("voy a borrar papi");
             const elementoPadreDeParrafoExistente =
             parrafoExistenciaPorId.parentNode;
             elementoPadreDeParrafoExistente.removeChild(parrafoExistenciaPorId);
@@ -720,32 +695,55 @@ function alertasValidacionIfElse(estado, elementoHtml){
       nuevoParrafoAlerta.textContent = "El usuario no ha sido encontrado"
     } else if (elementoHtml.id === "mw_loginPassword"){
       nuevoParrafoAlerta.textContent = "La constraseña es incorrecta"
-    } else if (elementoHtml.id == "mw-mascotaRaza"){
+    } else if (elementoHtml.id === "mw-mascotaRaza"){
       nuevoParrafoAlerta.textContent = "Dígite una raza válida"
-    } else if (elementoHtml.id == "mw-mascotaSize"){
+    } else if (elementoHtml.id === "mw-mascotaSize"){
       nuevoParrafoAlerta.textContent = "Dígite un tamaño válido"
-    } else if (elementoHtml.id == "mw-mascotaNombre"){
+    } else if (elementoHtml.id === "mw-mascotaNombre"){
       nuevoParrafoAlerta.textContent = "Dígite un nombre válido"
-    } else if (elementoHtml.id == "mw-mascotaEdad"){
+    } else if (elementoHtml.id === "mw-mascotaEdad"){
       nuevoParrafoAlerta.textContent = "Dígite una edad válida"
-    } else if (elementoHtml.id == "mw-mascotaSalud"){
-      nuevoParrafoAlerta.textContent = "Escriba 10 caracteres mínimo"
-    } else if (elementoHtml.id == "mw-mascotaNeeds"){
-      nuevoParrafoAlerta.textContent = "Escriba 10 caracteres mínimo"
+    } else if (elementoHtml.id === "mw-mascotaSalud"){
+      nuevoParrafoAlerta.textContent = "Escriba 2 caracteres mínimo"
+    } else if (elementoHtml.id === "mw-mascotaNeeds"){
+      nuevoParrafoAlerta.textContent = "Escriba 2 caracteres mínimo"
+    } else if(elementoHtml.id === "nombre"){
+      nuevoParrafoAlerta.textContent = "Escriba nombre válido"
+    } else if(elementoHtml.id === "email"){
+      nuevoParrafoAlerta.textContent = "Escriba un email válido"
+    } else if(elementoHtml.id === "message"){
+      nuevoParrafoAlerta.textContent = "Escriba 4 caracteres mínimo"
     }
 
+    if(elementoHtml.id === "nombre" || elementoHtml.id === "email" || elementoHtml.id === "message"){
+      nuevoParrafoAlerta.style.color = "red";
+      nuevoParrafoAlerta.style.fontSize = "15px";
+      nuevoParrafoAlerta.style.marginLeft = "17px";
+      nuevoParrafoAlerta.style.marginBottom = "10px";
+      let elementoAnteriorAParrafo;
+      if(elementoHtml.id === "nombre"){
+        elementoAnteriorAParrafo = document.getElementById("nombre")
+      } else if(elementoHtml.id === "email"){
+        elementoAnteriorAParrafo = document.getElementById("email")
+      } else if(elementoHtml.id === "message"){
+        elementoAnteriorAParrafo = document.getElementById("message")
+      }
+      elementoAnteriorAParrafo.insertAdjacentElement("afterend", nuevoParrafoAlerta);
+
+    } else {
     if(elementoHtml.id === "mw_loginUser" || elementoHtml.id === "mw_loginPassword"){
         nuevoParrafoAlerta.style.color = "red";
         nuevoParrafoAlerta.style.fontSize = "12px";
-        nuevoParrafoAlerta.style.marginBottom = "7px"
+        nuevoParrafoAlerta.style.marginBottom = "7px";
     } else {
         nuevoParrafoAlerta.style.color = "red";
         nuevoParrafoAlerta.style.fontSize = "11px";
-        nuevoParrafoAlerta.style.marginBottom = "7px"
+        nuevoParrafoAlerta.style.marginBottom = "7px";
     }
     elementoPadreDeParrafoExistente.parentNode.insertBefore(
     nuevoParrafoAlerta,
     elementoPadreDeParrafoExistente.nextSibling
     );
   }
+}
 // event.preventDefault();

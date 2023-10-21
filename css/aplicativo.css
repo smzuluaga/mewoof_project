@@ -14,14 +14,14 @@
 
 * {
   /* box-sizing: content-box; */
-    box-sizing: border-box;
+    box-sizing: content-box;
     margin:0;
     padding:0;
     /* border: 1px solid black; */
 }
 
 html {
-    width: 100vw;
+  width: 100vw;
 }
 
 body {
@@ -32,15 +32,31 @@ body {
     background-image: url(../img/fondo-test.jpg);
     background-size: cover;
     /* background-attachment: fixed; */
+    /* border: 1px solid var(--red); */
+
+}
+
+.mw-viewScreen {
+  background: rgba(255, 255, 255, 1);
+  box-sizing: content-box;
+  width: 94%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;  
+}
+
+.sidebar-pagina {
+  width: 6%;
 }
 
 /* Aquí empiezan arreglos del sidebar  */
-.section__mwhome {
-    width: 100vw;
+.mw_sectionMatch {
+    width: 100%;
     height: 100vh;
     justify-content: left;
     align-items: left;
     text-align: left;
+    display: none;
 }
 
 .mw-homebanner {
@@ -54,8 +70,7 @@ body {
   }
 
   .sidebar {
-    width: 115px;
-    max-width: 110px;
+    width: 100%;
     height: 100vh;
     background-color: #F7ABB2;;
     display: flex;
@@ -64,8 +79,8 @@ body {
     justify-content: center;
     box-sizing: border-box;
     box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.5);
-    position: fixed;
-    z-index: 1;
+    /* position: fixed;
+    z-index: 1; */
 }
 
 .iconoHover {
@@ -100,13 +115,20 @@ body {
 }
 /* Aquí terminan arreglos del sidebar  */
 
+.mw-viewScreen {
+  background: rgba(255, 255, 255, 0.4);
+  box-sizing: border-box;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  
+}
 
 /*Inicia arreglos del editar información*/
 .mw-section-profile{
-  width: 100vw;
+  width: 100%;
   height: 100vh;
-  display: flex;
-  margin-left: 5%;
+  display: none;
 }
 .profile-container{
   display: flex;
@@ -225,6 +247,7 @@ body {
   border-radius: 60px;
   padding: 10px;
   border: 1px solid black;
+  margin-bottom: 25px;
 }
 
 .form-email .form-input{
@@ -232,6 +255,7 @@ body {
   border-radius: 60px;
   padding: 5px;
   border: 1px solid black;
+  margin-bottom: 25px;
 }
 
 .form-email{
@@ -239,9 +263,9 @@ body {
   font-size: 20px;
 }
 
-.form-interesting{
+/* .form-interesting{
   font-size: 20px;
-}
+} */
 
 .btn-same{
   margin-bottom: 0;
@@ -250,7 +274,8 @@ body {
 }
 
 .btn-same-but{
-  background-color: #EF4147;
+  background-color: var(--pink);
+  box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.6);
   border-radius: 60px;
   width: 200px;
   height: 35px;
@@ -259,10 +284,11 @@ body {
   border: none;
   cursor: pointer;
   margin-left: 40%;
+  margin-top: 50px;
 }
 
 .content-user .btn-edit-but{
-  background-color:#F05376;
+  background-color:var(--pink);
   border-radius: 60px;
   width: 160px;
   height: 25px;
@@ -300,13 +326,19 @@ body {
 }
 /*Fin arreglos editar información*/
 
-.mw-viewScreen {
-    background: rgba(255, 255, 255, 0.4);
-    box-sizing: border-box;
-    width: 100%;
-    
-}
 
+/*Inicio seccion matches Human*/
+.mw_sectionMatchHuman {
+    width: 100%;
+    height: 100vh;
+    justify-content: left;
+    align-items: left;
+    text-align: left;
+    display: none;
+}
+/*Fin seccion matches Human*/
+
+/*Inicio seccion matches*/
 
 .card{
     display: flex;
@@ -422,6 +454,32 @@ body {
 
 /*Fin pagina de matchs*/
 
+
+/* Inicio Seccion chat*/
+.mw-sectionChat {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100%;
+}
+
+.mw-sectionChat div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 90%
+}
+
+.mw-sectionChat div img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+/* Fin Seccion chat */
+
+
 /* Inicio Seccion mis Mascotas*/
 .Entregando-misMascotas {
     width: 100%;
@@ -455,7 +513,6 @@ body {
     justify-content: flex-start;
     overflow-y: scroll;
     scrollbar-width: thin;
-    margin-left: 120px;
     /*border: 1px solid black;*/
 }
 
@@ -523,16 +580,15 @@ body {
 
 /* Inicio Seccion Panel Crear Mascota*/
 .mw-panelMascota {
-    display: none;
+    display: flex;
     justify-content: center;
     align-items: center;
-    width: 100vw;
+    width: 200%;
     height: 100vh;
     position: fixed;
-    /* z-index: 1; */
+    z-index: 1;
     background: rgba(0, 0, 0, 0.5);
 }
-
 
 .mw-panelMascota-container {
     display: flex;
@@ -554,19 +610,38 @@ body {
     flex-direction: column;
     margin-bottom: 80px;
     overflow-y: scroll;
+    font-weight:100;
+    color: var(--beige);
+}
+
+.mw-panelMascota-container form .mw_mascotaFormFoto{
+margin-top: 15px;
+}
+
+#mw-mascotaFoto {
+  color: white;
 }
 
 .mw-panelMascota-container form div {
     display: flex;
     flex-direction: column;
+    margin: 10px 0px;
+}
+
+.mw-panelMascotaH1{
+  color: var(--pink2);
+  margin-bottom: 15px;
+  font-weight: lighter;
 }
 
 .mw-panelMascota-container form input {
     outline: none;
+    border-radius: 10px;
+    border: none;
 }
 
 .mw-panelMascotaClose{
-    width: 90%;
+    width: 99%;
     display: flex;
     justify-content: right;
 }
@@ -578,15 +653,24 @@ body {
     color: white;
 }
 
-.mw-cargarMascotaButton{
-    margin-top: 5px;
+.mw-cargarMascotaButtonn{
+  background-color: rgba(247, 171, 178,0.75);
+  font-size: 15px;
+  border-radius: 20px;
+  border: none;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.4);
+  color: #fff;
+  padding: 10px 10px;
+  margin-top: 30px;
+  width:100px;
 }
 /* Fin Seccion Panel Crear Mascota*/
 
 /* Inicio Seccion Solicitudes*/ /*Aca estoy editando  mueve el fiona solicitudes a la derecha*/
 .Adoptante-solicitudesEnv{
-    width: 95%;
+    width: 100%;
     height: 100%;
+    display: none;
 }
 
 .mw-solicitudesEnv-container{
@@ -606,16 +690,18 @@ body {
     width: 100%;
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .mw-tablero-solicitudEnv { /*Aca estoy editando solicitudes enviadas */
     display: flex;
     margin-top: 4%;
-    margin-left: 13%;
     border-radius: 70px;
     padding: 10px;
     background: rgb(252, 237, 239);
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.3);
+    width: 80%;
     
 }
 
@@ -638,7 +724,16 @@ body {
 
 /* Fin Seccion Solicitudes*/
 
-
+/* Inicio Seccion home*/
+.mw-sectionHome {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+}
+/* Fin Seccion home*/ 
 
 /* ****************REVISAR ************* */
 

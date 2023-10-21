@@ -639,6 +639,7 @@ input::placeholder{
 
 /* Sección banner*/
 .section__mwhome {
+    content: url(../img/banner1-op.png) url(../img/banner2.png) url(../img/banner3-op.png) url(../img/banner4.png);
     animation: banner 15s infinite linear alternate;
     background-size: cover;
     height: 600px;
@@ -654,10 +655,10 @@ input::placeholder{
       background-image: url(../img/banner2.png);
     }
     50%,
-    75% {
+    70% {
       background-image: url(../img/banner3-op.png);
     }
-    80%,
+    75%,
     100% {
       background-image: url(../img/banner4.png);  
 
@@ -1195,11 +1196,13 @@ input::placeholder{
         width: 100%;
         text-align: right;
         margin-right: 25%;
+        z-index: 5;
      }
 
     #enviarButton {
         font-size: 12px;
         margin-top: 20px;
+        z-index: 5;
     }
 
     .footer {
@@ -1461,7 +1464,7 @@ font-size: 11px;
             display: flex;
             flex-direction: column;
             height: 270px;
-            margin-bottom: 8%;
+            margin-bottom: 15%;
         }
 
         .contactInf label{
@@ -1499,7 +1502,7 @@ font-size: 11px;
 
     /*Iconos*/
         .socialMedia {
-            margin-top: 30px;
+            margin-top: 10%;
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 20px;
