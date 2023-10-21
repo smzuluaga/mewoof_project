@@ -639,6 +639,7 @@ input::placeholder{
 
 /* Sección banner*/
 .section__mwhome {
+    content: url(../img/banner1-op.png) url(../img/banner2.png) url(../img/banner3-op.png) url(../img/banner4.png);
     animation: banner 15s infinite linear alternate;
     background-size: cover;
     height: 600px;
@@ -654,10 +655,10 @@ input::placeholder{
       background-image: url(../img/banner2.png);
     }
     50%,
-    75% {
+    70% {
       background-image: url(../img/banner3-op.png);
     }
-    80%,
+    75%,
     100% {
       background-image: url(../img/banner4.png);  
 
