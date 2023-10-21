@@ -9,7 +9,7 @@
 
 /*Se definen los colores a utilizar durante la plantilla*/
 :root { 
-    --red: #EF4147;
+    --red: rgba(239, 65, 71, 0.9);
     --pink: #F05376;
     --pink2: #F7ABB2;
     --beige: #E8B77E;
