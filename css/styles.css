@@ -960,6 +960,10 @@ input::placeholder{
     margin-left: 12px;
 }
 
+.mw-ourTeam-socialMedia:hover {
+    color: #F7ABB2;
+}
+
 /* .mw-cardtext>div>a>i {
     text-decoration: none;
     /* cursor: pointer; */
