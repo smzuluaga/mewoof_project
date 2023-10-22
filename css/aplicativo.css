@@ -424,25 +424,47 @@ body {
     margin-bottom: 1px;
 }
 
-.card__title .point{
-  font-size: 27px;
+.point{
+  font-size: 18px;
   color: #5d5c5c88;
   font-style: italic;
   margin-left: 20px;
 }
 
-/* ****************CARACTERISTICAS DEL PERRO ************* ACAAAAAAA*/
+.mw-impresionesMascota {
+  display:flex;
+  align-items: center;
+}
 
-    .card_button {
-    font-size: 15px;
-    border-radius: 12px;
-    border: none;
-    padding: 5px;
-    text-align: center;
-    display: flex;
-    justify-content: left;
-    text-align: left;
-    background-color: var(--beige2);
+.mw_mascotaCargada-actionButtons{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  margin-right: 10px;
+}
+
+.mw_mascotaCargada-actionButtons i{
+  color: white;
+  font-size: 30px;
+}
+
+.mw_mascotaCargada-actionButtons i:hover{
+  color: var(--pink2);
+  font-size: 33px;
+}
+*
+
+.card_button {
+  font-size: 15px;
+  border-radius: 12px;
+  border: none;
+  padding: 5px;
+  text-align: center;
+  display: flex;
+  justify-content: left;
+  background-color: var(--beige2);
+  margin-left: 15px;
+  height: 60%;
 } 
 
 
@@ -559,7 +581,7 @@ body {
 .mw-mascotaCargada { /* aca estoy editando*/
     display: flex;
     border-radius: 70px;
-    padding: 10px;
+    padding: 15px;
     margin-bottom: 30px;
     background: rgb(252, 237, 239);
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.3);
@@ -574,6 +596,14 @@ body {
     width: 70px;
     height: 70px;
     border-radius: 1000px;
+}
+
+.mw-mascotaCargada-info {
+  width: 86%;
+}
+
+.mw-mascotaCargada-info{
+  text-align: justify;
 }
 
 .img-radius {
@@ -597,7 +627,7 @@ body {
     width: 15%;
     background: var(--pink2);
     font-size: 25px;
-    color: black;
+    color: white;
     border: none;
 }
 
