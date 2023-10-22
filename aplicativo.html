@@ -82,11 +82,17 @@
                         </div>
                         <div class="popup" id="password-popup">
                             <div class="popup-content">
-                                <span class="popup-close" id="close-popup">&times;</span>
-                                <label>Anterior Contraseña</label>
-                                <input type="password" id="password">
-                                <label>Nueva Contraseña</label>
-                                <input type="password" id="new-password">
+                                <div class="closeButton-container">
+                                    <span class="popup-close" id="close-popup">&times;</span>
+                                </div>
+                                <div>
+                                    <label>Anterior Contraseña</label>
+                                    <input type="password" id="password">
+                                </div>
+                                <div>
+                                    <label>Nueva Contraseña</label>
+                                    <input type="password" id="new-password">
+                                </div>
                                 <button type="submit" class="btn-edit-but" id="save-password">Guardar Contraseña</button>
                             </div>
                         </div>
@@ -127,11 +133,11 @@
                                         <option value="otra">Otra</option> 
                                     </select>
                                 </div>
+                                <div class="form-email">
+                                    <label for="inputEmail">Email</label>
+                                    <input type="email" id="inputEmail" placeholder="Email" class="form-input">
+                                </div>                                            
                             </div> 
-                            <div class="form-email">
-                                <label for="inputEmail">Email</label>
-                                <input type="email" id="inputEmail" placeholder="Email" class="form-input">
-                            </div>                                            
                             <!-- <div class="form-interesting">
                                 <label>Interés</label>
                                 <input type="radio" id=""> Gato

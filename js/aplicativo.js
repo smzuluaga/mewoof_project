@@ -195,6 +195,15 @@ function ocultarSecciones () {
 
 // INICIO FUNCIONES PERFIL
 
+// FOTO Y CONTRASEÑA
+const seccionCambiarPassword = document.getElementById("password-popup");
+const botonCambiarPassword = document.getElementById("open-popup");
+const botonCerrarPassword = document.getElementById("close-popup");
+const botonGuardarPassword = document.getElementById("save-password");
+let inputLastPassword = document.getElementById("password");
+let inputNewPassword = document.getElementById("new-password");
+
+// FORMULARIO
 let nombreMostrar = document.getElementById("username_user");
 let inputNombre = document.getElementById("inputName");
 let inputApellido = document.getElementById("inputApellido");
@@ -233,8 +242,33 @@ botonGuardarCambiosPerfil.addEventListener('click', () => {
     perfilCambio.email = inputEmail.value;
     perfilCambio.about = inputAbout.value;
     saveLocaStorage();
+    alert("Información Actualizada con éxito");
+
 })
 
+botonCambiarPassword.addEventListener('click', () => {
+    seccionCambiarPassword.style.right="0%";
+})
+
+botonCerrarPassword.addEventListener('click', () => {
+    seccionCambiarPassword.style.right="150%";
+})
+
+botonGuardarPassword.addEventListener('click', () => {
+    alert("1111@11")
+    console.log(`UsuarioSesion: ${usuarioSesion.password} - tipo: ${typeof(usuarioSesion.password)}`)
+    console.log(`contraseña anterior input: ${inputLastPassword.value} - tipo: ${typeof(inputLastPassword.value)}`)
+    console.log(` nueva contraseña: ${inputNewPassword.value} - tipo: ${typeof(inputNewPassword.value)}`);
+    console.log(`boolean compare: ${inputLastPassword.value == usuarioSesion.password} - bollean extrict: ${inputLastPassword.value === usuarioSesion.password}`)
+    if (usuarioSesion.password === inputLastPassword.value){
+        alert("1111@22")
+        let user= mewoofDB.usuarios.lista.find(x=>x.email===usuarioSesion.email)
+        user.password = inputNewPassword.value;
+        alert("Contraseña Actualizada con éxito");
+        seccionCambiarPassword.style.right="150%";
+        saveLocaStorage();
+    }
+})
 // BOTONES CREAR MASCOTA
 const botonAbrirPanelMascota = document.getElementById("mw_panelMascotaOpen");
 const botonCerrarPanelMascota = document.getElementById("mw_panelMascotaClose");

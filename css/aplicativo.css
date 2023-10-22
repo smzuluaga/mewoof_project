@@ -155,12 +155,11 @@ body {
 .content-user{
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  justify-content: center;
   width: 25%;
 }
 
-.content-user div{
-  height: 50%;
+.content-user > div{
   display: flex;
   justify-content: center;
   align-items: center;
@@ -182,6 +181,11 @@ body {
   color: #EF4147;
   font-weight: 10px;
   font-size: 25px;
+}
+
+.content-user button{
+  font-size: 15px;
+  padding: 5px;
 }
 
 .content-form{
@@ -236,21 +240,7 @@ body {
   border-radius: 60px;
 }
 
-.form-group-about{
-  color: black;
-  font-size: 20px;
-  margin-bottom: 2%;
-}
-
-.form-group-about .form-input{
-  width: 100%;
-  border-radius: 60px;
-  padding: 10px;
-  border: 1px solid black;
-  margin-bottom: 25px;
-}
-
-.form-email .form-input{
+.form-input{
   width: 100%;
   border-radius: 60px;
   padding: 5px;
@@ -287,7 +277,8 @@ body {
   margin-top: 50px;
 }
 
-.content-user .btn-edit-but{
+
+.btn-edit-but{
   background-color:var(--pink);
   border-radius: 60px;
   width: 160px;
@@ -297,6 +288,51 @@ body {
   border: none;
   cursor: pointer;
   margin-bottom: 20px;
+  margin: 50px 0 0;
+}
+
+.popup {
+  /* width: 100vh; */
+  position: relative;
+  right: 150%;
+  height: 50%;
+}
+
+
+
+.popup-close:hover {
+  cursor: pointer;
+}
+
+.popup-content {
+  height: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 50px;
+}
+.popup-content div {
+  display: flex;
+  flex-direction: column;
+  margin:10px;
+}
+
+.popup-content button {
+  margin-top: 20px;
+}
+
+.closeButton-container{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center; 
+}
+
+.popup-close {
+  width: 20%;
+  text-align: center;
+  font-size: 22px;
 }
 
 @media (max-width: 768px) {
@@ -321,9 +357,6 @@ body {
   }
 }
 
-.btn-edit-but {
-  cursor: pointer;
-}
 /*Fin arreglos editar información*/
 
 
