@@ -381,7 +381,7 @@ function newUserEntregando () {
     const password = document.getElementById('D-mw_registerPassword');
     const password2 = document.getElementById('D-mw_registerPasswordConfirm');
 
-    let newUser = {nombre: nombre.value, apellido: apellido.value, pais: pais.value, ciudad: ciudad.value, id: id.value, cel: cel.value, email: email.value, password: password.value, tipo:'Entregando', mascotasCargadas: []};
+    let newUser = {nombre: nombre.value, apellido: apellido.value, pais: pais.value, ciudad: ciudad.value, id: id.value, cel: cel.value, email: email.value, password: password.value, tipo:'Entregando', mascotasCargadas: [], about:''};
     mewoofDB.usuarios.lista.push(newUser)
     saveLocaStorage();
 
@@ -412,7 +412,7 @@ function newUserAdoptante () {
     const password = document.getElementById('A-mw_registerPassword');
     const password2 = document.getElementById('A-mw_registerPasswordConfirm');
 
-    let newUser = {nombre: nombre.value, apellido: apellido.value, pais: pais.value, ciudad: ciudad.value, id: id.value, cel: cel.value, email: email.value, password: password.value, tipo:'Adoptante', solicitudesEnviadas: []};
+    let newUser = {nombre: nombre.value, apellido: apellido.value, pais: pais.value, ciudad: ciudad.value, id: id.value, cel: cel.value, email: email.value, password: password.value, tipo:'Adoptante', solicitudesEnviadas: [], about:''};
     mewoofDB.usuarios.lista.push(newUser)
     saveLocaStorage();
 

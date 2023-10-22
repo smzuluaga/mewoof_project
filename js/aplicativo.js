@@ -18,7 +18,6 @@ class Usuario {
         this.user = this.email;
         this.tipo = tipo;
         this.about = '';
-        this.intereses = '';
     }
     
     registrarse () {
@@ -203,8 +202,8 @@ let inputCelular = document.getElementById("inputCelular");
 let inputPais = document.getElementById("inputPais");
 let inputCiudad = document.getElementById("inputCiudad");
 let inputEmail = document.getElementById("inputEmail");
-let inputInteres = document.getElementById("");
-let inputAbout = document.getElementById("");
+let inputAbout = document.getElementById("inputAbout");
+// let inputInteres = document.getElementById("");
 const botonGuardarCambiosPerfil = document.getElementById("mw-PerfilBtn-guardarCambios");
 // FIN FUNCIONES PERFIL
 
@@ -212,11 +211,16 @@ nombreMostrar.innerHTML = `${usuarioSesion.nombre} ${usuarioSesion.apellido}`;
 inputNombre.value = usuarioSesion.nombre;
 inputApellido.value = usuarioSesion.apellido;
 inputCelular.value = usuarioSesion.cel;
-inputPais.value = usuarioSesion.pais;
-inputCiudad.value = usuarioSesion.ciudad;
+inputPais.value = usuarioSesion.pais.toLowerCase();
+inputCiudad.value = usuarioSesion.ciudad.toLowerCase();
 inputEmail.value = usuarioSesion.email;
+
+mewoofDB.usuarios.lista.find(x=>x.email===usuarioSesion.email).about === "" ? inputAbout.value = mensajePerfil(usuarioSesion) : inputAbout.value = mewoofDB.usuarios.lista.find(x=>x.email===usuarioSesion.email).about;
 // inputInteres.value = usuarioSesion.intereses;
-// inputAbout.value = usuarioSesion.about;
+
+function mensajePerfil(usuario) {
+    return `Hola, soy ${usuario.nombre} ${usuario.apellido}, vivo en ${usuario.ciudad}, ${usuario.pais} y soy amante de los animales`
+} 
 
 botonGuardarCambiosPerfil.addEventListener('click', () => {
     let perfilCambio = mewoofDB.usuarios.lista.find(x=>x.email===usuarioSesion.email)
@@ -227,6 +231,7 @@ botonGuardarCambiosPerfil.addEventListener('click', () => {
     perfilCambio.pais = inputPais.value;
     perfilCambio.ciudad = inputCiudad.value;
     perfilCambio.email = inputEmail.value;
+    perfilCambio.about = inputAbout.value;
     saveLocaStorage();
 })
 
