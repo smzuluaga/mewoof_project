@@ -325,12 +325,16 @@ function renderizarSolicitudes(listaMascotas){
         // TarjetaMascota - Bloque 2 -> Info Mascota
         const boxInfoTarjeta = document.createElement("div");
         const nombreMascotaTarjeta = document.createElement("h3");
+        const boxImpresiones = document.createElement("div");
+        const textImpresiones = document.createElement("button");
         const edadMascotaTarjeta = document.createElement("span");
         const descripcionMascotaTarjeta = document.createElement("p");
         
-        // TarjetaMascota - Bloque 3 -> Impresiones mascotas
-        const boxImpresiones = document.createElement("div");
-        const textImpresiones = document.createElement("button");
+        // TarjetaMascota - Bloque 3 -> Botones eliminar y editaar
+        const boxBotones= document.createElement("div");
+        const botonEditarMascota = document.createElement("i");
+        const botonEliminarMascota = document.createElement("i");
+
 
         // Tarjeta Mascota - Asignacion de Clases y contenido de objetos creados para Tarjeta Mascota - Bloque 1 -> Foto
         tarjetaMascotaCargada.classList.add("mw-mascotaCargada");
@@ -346,28 +350,40 @@ function renderizarSolicitudes(listaMascotas){
         
         // Tarjeta Mascota - Asignacion de Clases y contenido de objetos creados para Tarjeta Mascota - Bloque 2 -> Info Mascota
         boxInfoTarjeta.classList.add("mw-mascotaCargada-info");
+        boxImpresiones.classList.add("mw-impresionesMascota");
+        textImpresiones.classList.add("card_button");
         nombreMascotaTarjeta.classList.add("card__title");
         edadMascotaTarjeta.classList.add("point");
         descripcionMascotaTarjeta.classList.add("card__copy");
 
+        mascota.solicitudesRecibidas.length === 1 ? textImpresiones.innerHTML = `${mascota.solicitudesRecibidas.length} like`: textImpresiones.innerHTML = `${mascota.solicitudesRecibidas.length} likes`;
         nombreMascotaTarjeta.innerHTML = mascota.nombre;
-        edadMascotaTarjeta.innerHTML = mascota.edad;
+        edadMascotaTarjeta.innerHTML = `${mascota.edad} años`;
         descripcionMascotaTarjeta.innerHTML="Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum nostrum asperiores animi ducimus quod voluptatibus deserunt vero repudiandae consequatur, dolore consequuntur doloremque, qui accusantium repellat placeat aut repellendus. Culpa, eos"; /// **********CAMBIAR SOURCE DE ESTE INHER HTML
+        // textImpresiones.onclick="#";
 
-        boxInfoTarjeta.appendChild(nombreMascotaTarjeta);
+        boxImpresiones.appendChild(nombreMascotaTarjeta);
+        boxImpresiones.appendChild(textImpresiones);
+
+        boxInfoTarjeta.appendChild(boxImpresiones);
         boxInfoTarjeta.appendChild(edadMascotaTarjeta);
         boxInfoTarjeta.appendChild(descripcionMascotaTarjeta);
         tarjetaMascotaCargada.appendChild(boxInfoTarjeta);
         
         // Tarjeta Mascota - Asignacion de Clases y contenido de objetos creados para Tarjeta Mascota - Bloque 3 -> Impresiones Mascota
-        boxImpresiones.classList.add("mw-impresionesMascota");
-        textImpresiones.classList.add("card_button");
+        boxBotones.classList.add("mw_mascotaCargada-actionButtons");
+        botonEditarMascota.classList.add('bx');
+        botonEditarMascota.classList.add('bx-edit');
+        botonEditarMascota.setAttribute('id', "mw_buttonEditarMascota" )
+        botonEliminarMascota.classList.add('bx');
+        botonEliminarMascota.classList.add('bx-trash');
+        botonEliminarMascota.setAttribute('id', "mw_buttonEliminarMascota" )
 
-        mascota.solicitudesRecibidas.length === 1 ? textImpresiones.innerHTML = `${mascota.solicitudesRecibidas.length} like`: textImpresiones.innerHTML = `${mascota.solicitudesRecibidas.length} likes`;
-        // textImpresiones.onclick="#";
-        
-        boxImpresiones.appendChild(textImpresiones);
-        tarjetaMascotaCargada.appendChild(boxImpresiones);
+        boxBotones.appendChild(botonEditarMascota);
+        boxBotones.appendChild(botonEliminarMascota);
+
+        tarjetaMascotaCargada.appendChild(boxBotones);
+    
 
         tablero.appendChild(tarjetaMascotaCargada);
     }
