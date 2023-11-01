@@ -888,12 +888,96 @@ margin-top: 10px;
 
 /* Inicio Seccion home*/
 .mw-sectionHome {
-  display: flex;
+  margin-top: 2%;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
   width: 100%;
   height: 100vh;
+}
+
+.tittle-comunidad{
+  color: #EF4147;
+  text-align: center;
+}
+
+.content-text{
+  font-size: 130%;
+  text-align: center;
+  margin: 5px 100px 5px 100px;
+}
+
+.content-text button{
+  background-color: #EF4147;
+  color: aliceblue;
+  border-radius: 20px;
+  border: none;
+  width: 200px;
+  height: 30px;
+  font-size: 18px;
+  cursor: pointer;
+  margin-top: 2%;
+}
+
+.container-perdida{
+  margin-top: 4%;
+  text-align: center;
+}
+
+.container-perdida h2{
+  color: #EF4147;
+}
+
+.container-perdida p{
+  font-size: 18px;
+  margin-bottom: 2%;
+}
+
+.content-form{
+  text-align: center;
+  margin-left: 12%;
+}
+
+.content-form input {
+  margin: 5px 10px 20px 20px;
+}
+
+.content-form form i{
+  color: #EF4147;
+  font-size: 40px;
+}
+
+.content-form button{
+  background-color: #EF4147;
+  color: white;
+  border-radius: 6px;
+  border: none;
+  width: 60px;
+  height: 20px;
+  cursor: pointer;
+}
+
+.container-cardsperdidos{
+  display: flex;
+  margin: 5px 100px 5px 100px;
+  align-items: center;
+  text-align: center;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-top: 2%;
+}
+
+.container-cardsperdidos .card-perdidos {
+  box-shadow: 1px 1px 4px 3px #F7ABB2;    
+}
+
+.card__img{
+  width: 80%;
+  height: 90px;
+  margin-top: 10px;
+  object-fit: cover;
+}
+
+.cards__text-perdidos h3 {
+  color: #EF4147;
 }
 /* Fin Seccion home*/ 
 

@@ -367,7 +367,84 @@
 
         <!-- Inicio Seccion home -->
         <section class="mw-sectionHome" id="mw_sectionHome">
-            <img src="img/meme-home.jpeg">
+            <div class="content-all-tittle-text">
+                <div class="tittle-comunidad">
+                    <h1>Comunidad mascoticas perdidas</h1>
+                </div>
+                <div class="content-text">
+                    <p>Este espacio busca crear una red de ayuda para encontrar perros y gatos perdidos a través de la publicación del caso o con el reporte de mascotas encontradas. Solo debes registrar los datos según el caso</p>
+                    <button>Click para publicar</button>
+                </div>
+            </div>
+            <div class="mascota-perdida" id="comunidad">
+                <div class="container-perdida">
+                    <h2 class="Subtitle">Mascotica perdida</h2>
+                    <p class="text-perdida">Selecciona la caracteristica de la mascotica perdida</p>
+                </div>
+                <div class="content-form">
+                    <form>
+                        <input type="radio" name="perdidos">perdidos
+                        <input type="radio" name="encontrados">Encontrados <br>
+                        <input class="animal" type="radio" name="gato"><i class='bx bxs-cat'></i>
+                        <input class="animal" type="radio" name="perro"><i class='bx bxs-dog' ></i>
+                        <input type="text" id="name" placeholder="Buscar por nombre">
+                        <input type="text" id="sex" placeholder="¿Macho o Hembra?">
+                        <input type="radio" name="tamaño">Pequeño
+                        <input type="radio" name="tamaño">Mediano
+                        <input type="radio" name="tamaño">Grande<br>
+                        <label for="" >Ciudad: </label>
+                                        <select title="modalidades" name="modalidades[]" class="form-control" id="inputCiudad">
+                                            <option value="1">Medellin</option>
+                                            <option value="2">Cali</option>
+                                            <option value="3">Bogota</option>
+                                            <option value="4">Cundinamarca</option>
+                                            <option value="5">Boyaca</option>
+                                            <option value="6">Manizales</option>
+                                            <option value="7">Bucaramanga</option>
+                                            <option value="8">Barrancabermeja</option>
+                                            <option value="9">Cartagena</option>
+                                        </select>
+                        <input type="text" id="raza" placeholder="¿Que raza es?">
+                        <input type="text" id="fecha" placeholder="¿Perdido desde? (Fecha)">
+                        <button>Buscar</button>                                      
+                    </form>
+                </div>
+                <!--Especifica que creara un contenedor para los articulos de los servicios-->
+                <article class="container-cardsperdidos">
+                    <div class="card-perdidos">
+                        <img src="img/banner3-op.png" class="card__img">
+                        <div class="cards__text-perdidos">
+                            <h3 class="card__title-perdido">Nala</h3>
+                            <p class="card-secondtitle">Femenino</p>
+                            <p class="card__copy">Perdido desde el 22/10/2023</p>
+                        </div>
+                    </div>
+                    <div class="card-perdidos">
+                        <img src="img/banner2.png" class="card__img">
+                        <div class="cards__text-perdidos">
+                            <h3 class="card__title-perdido">Nala</h3>
+                            <p class="card-secondtitle">Femenino</p>
+                            <p class="card__copy">Perdido desde el 22/10/2023</p>
+                        </div>
+                    </div>
+                    <div class="card-perdidos">
+                        <img src="img/ark-dinosaurs-therizinosaur.jpg" class="card__img">
+                        <div class="cards__text-perdidos">
+                            <h3 class="card__title-perdido">Nala</h3>
+                            <p class="card-secondtitle">Femenino</p>
+                            <p class="card__copy">Perdido desde el 22/10/2023</p>
+                        </div>
+                    </div>
+                    <div class="card-perdidos">
+                        <img src="img/ark-dinosaurs-therizinosaur.jpg" class="card__img">
+                        <div class="cards__text-perdidos">
+                            <h3 class="card__title-perdido">Nala</h3>
+                            <p class="card-secondtitle-perdido">Femenino</p>
+                            <p class="card-date-perdido">Perdido desde el 22/10/2023</p>
+                        </div>
+                    </div>                                           
+                </article>
+            </div>
         </section>
         <!-- Fin Seccion home -->
 
