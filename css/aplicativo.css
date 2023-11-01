@@ -10,6 +10,7 @@
     --black2: #3333335f;
     --black2o3: rgb(51, 51, 51, 0.03);
     --redo85: rgba(239, 65, 71, 0.85);
+
 }
 
 * {
@@ -370,6 +371,88 @@ body {
     display: none;
 }
 /*Fin seccion matches Human*/
+
+
+    /* **************** Edición opcional preferencias ************* */
+
+    .mw-preferences{
+      display: flex;
+      width: 100%;
+    }
+
+    .mw_preMatch{
+      height: 100%;
+      width: 100%;
+    }
+
+    .mw_preMatchContainer h1{
+      display: flex;
+      justify-content: center;
+      color: var(--beige);
+      margin-top: 38px;
+      letter-spacing: 5px;
+      font-size: 25px;
+      font-weight: bold;
+    }
+
+    .buscandoAmor{
+      height: 91%;
+    }
+
+    .buscandoAmorCard{
+      display:inline-block;
+      height: 40%;
+      width: 20%;
+      align-items: center;
+      justify-content: center;
+      margin: 15% 6%;
+    }
+
+    .buscandoAmorImg {
+      text-align: center;
+      justify-content: center;
+    }
+
+    .circle {
+      width: 250px;
+      height: 250px;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .circle:hover {
+      box-shadow: 0 0 10px 5px var(--pink); 
+    }
+
+    #circle1{
+      background-color: #9CD8EF;
+    }
+
+    #circle2{
+      background-color: #E3A6CE;
+    }
+
+    #circle3{
+      background-color: #FFC859;
+    }
+
+    .circle img {
+      max-width: 70%;
+      max-height: 70%;
+    }
+
+    .buscandoAmorText{
+      width: auto;
+      margin-top: 5px;
+      text-align: center;
+      font-size: 20px;
+      font-weight: 600;
+      font-style: italic;
+      color: #333333;
+    }
+    /* *********** Fin edición opcional preferencias ************* */
 
 /*Inicio seccion matches*/
 
