@@ -580,6 +580,7 @@ body {
 
 .mw-mascotaCargada { /* aca estoy editando*/
     display: flex;
+    width: 95%;
     border-radius: 70px;
     padding: 15px;
     margin-bottom: 30px;

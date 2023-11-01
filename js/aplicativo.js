@@ -359,7 +359,7 @@ function renderizarSolicitudes(listaMascotas){
         mascota.solicitudesRecibidas.length === 1 ? textImpresiones.innerHTML = `${mascota.solicitudesRecibidas.length} like`: textImpresiones.innerHTML = `${mascota.solicitudesRecibidas.length} likes`;
         nombreMascotaTarjeta.innerHTML = mascota.nombre;
         edadMascotaTarjeta.innerHTML = `${mascota.edad} años`;
-        descripcionMascotaTarjeta.innerHTML="Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum nostrum asperiores animi ducimus quod voluptatibus deserunt vero repudiandae consequatur, dolore consequuntur doloremque, qui accusantium repellat placeat aut repellendus. Culpa, eos"; /// **********CAMBIAR SOURCE DE ESTE INHER HTML
+        descripcionMascotaTarjeta.innerHTML= `¡Hola! soy ${mascota.nombre}, soy un Peludito de raza ${mascota.raza} vivo en ${mascota.currentOwner.ciudad}, ${mascota.currentOwner.pais} y soy muy amoroso, !Conoceme más!`;
         // textImpresiones.onclick="#";
 
         boxImpresiones.appendChild(nombreMascotaTarjeta);
