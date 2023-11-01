@@ -101,6 +101,7 @@ class Solicitud {
 // SECCIONES
 const seccionPerfilUser = document.getElementById("mw_section-profile");
 const seccionMatchHuman = document.getElementById("mw-sectionMatchHuman");
+const seccionMatchPreferences = document.getElementById("mw_sectionMatchPreferences");
 const seccionMatch = document.getElementById("mw-sectionMatch");
 const seccionChat = document.getElementById("mw_sectionChat");
 const seccionPanelMascota = document.getElementById("mw_panelMascota");
@@ -124,7 +125,7 @@ navBotonPerfil.addEventListener('click', () => {
 navBotonMatch.addEventListener('click', () => {
     ocultarSecciones();
     usuarioSesion.tipo=== "Adoptante"?
-    seccionMatch.style.display="flex":
+    seccionMatchPreferences.style.display="flex":
     seccionMatchHuman.style.display="flex";
 })
 
@@ -183,6 +184,7 @@ function saveLocaStorage () {
 function ocultarSecciones () {
     seccionPerfilUser.style.display="none";
     seccionMatchHuman.style.display="none";
+    seccionMatchPreferences.style.display="none";
     seccionMatch.style.display="none";
     seccionChat.style.display="none";
     seccionPanelMascota.style.display="none";
@@ -214,7 +216,6 @@ let inputEmail = document.getElementById("inputEmail");
 let inputAbout = document.getElementById("inputAbout");
 // let inputInteres = document.getElementById("");
 const botonGuardarCambiosPerfil = document.getElementById("mw-PerfilBtn-guardarCambios");
-// FIN FUNCIONES PERFIL
 
 nombreMostrar.innerHTML = `${usuarioSesion.nombre} ${usuarioSesion.apellido}`;
 inputNombre.value = usuarioSesion.nombre;
@@ -269,6 +270,43 @@ botonGuardarPassword.addEventListener('click', () => {
         saveLocaStorage();
     }
 })
+// FIN FUNCIONES PERFIL
+
+
+// INICIO SECCION PREFERENCES
+
+//BOTONES DE SELECCION GATO, PERRO O AMBOS
+const botonPreferencesCat = document.getElementById("mw-preferencesMew");
+const botonPreferencesDog = document.getElementById("mw-preferencesWoof");
+const botonPreferencesCatDog = document.getElementById("mw-preferencesMewoof");
+const imgVariableTarjetaMascota = document.getElementById("mw-mascotaCardImg");
+
+
+
+botonPreferencesCat.addEventListener('click', () => {
+    ocultarSecciones();
+    seccionMatch.style.display="flex";
+    imgVariableTarjetaMascota.src = "../img/exi-3-op.jpg"
+})
+
+botonPreferencesDog.addEventListener('click', () => {
+    ocultarSecciones();
+    seccionMatch.style.display="flex";
+    imgVariableTarjetaMascota.src = "../img/banner2.png"
+
+})
+
+botonPreferencesCatDog.addEventListener('click', () => {
+    ocultarSecciones();
+    seccionMatch.style.display="flex";
+    imgVariableTarjetaMascota.src = "../img/perrito1.jpg"
+})
+
+
+
+// FIN SECCION PREFERENCES
+
+
 // BOTONES CREAR MASCOTA
 const botonAbrirPanelMascota = document.getElementById("mw_panelMascotaOpen");
 const botonCerrarPanelMascota = document.getElementById("mw_panelMascotaClose");
