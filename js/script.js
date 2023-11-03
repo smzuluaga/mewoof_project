@@ -436,6 +436,44 @@ function loginValidations () {
     const usuario = inputUser.value;
     const password = inputPassword.value;
 
+    //⛔⛔⛔AQUÍ CONSUMIMOS EL ENDPOINT EN EL FETCH⛔⛔⛔⛔
+    // let url = `http://localhost:8080/usuarios/email?email=${usuario}`
+
+    // fetch(url)
+    // .then(response => response.json())
+    // .then(data => {
+    //     // let variable = JSON.parse(data)
+    //     console.log(data)
+    //     const usuarioBuscado = data
+    //     if (usuarioBuscado) {
+    //       const elementoHtmlUser = document.getElementById("mw_loginUser");
+    //       const estadoUsuarioEncontrado = usuarioBuscado;
+    //       alertasValidacionIfElse(estadoUsuarioEncontrado, elementoHtmlUser);
+    //       if (usuarioBuscado.password === password) {
+    //           alert("Autenticación Exitosa \n ¡Bienvenido!");
+    //           mewoofDB.usuarioSesion = usuarioBuscado;
+    //           saveLocaStorage();
+    //           window.open("aplicativo.html");
+    //           inputUser.value = '';
+    //           inputPassword.value = '';
+    //       } else {
+    //           const elementoHtmlPassword = document.getElementById("mw_loginPassword");
+    //           const estadoPasswordCoincide = usuarioBuscado.password === password;
+    //           alertasValidacionIfElse(estadoPasswordCoincide, elementoHtmlPassword);
+    //           // alert("Contraseña Incorrecta");
+    //           inputPassword.value = '';
+    //       }
+    //   } else {
+    //       const elementoHtmlUser = document.getElementById("mw_loginUser");
+    //       const estadoUsuarioEncontrado = usuarioBuscado;
+    //       alertasValidacionIfElse(estadoUsuarioEncontrado, elementoHtmlUser);
+    //       // alert ("Usuario no encontrado \n Puede registrarse en el boton 'Aún no estoy registrado'")
+    //       inputUser.value = '';
+    //       inputPassword.value = '';
+    //   }
+    //   }
+    // )⛔⛔⛔⛔⛔⛔⛔⛔⛔⛔⛔⛔⛔⛔⛔⛔⛔
+
     const usuarioBuscado = mewoofDB.usuarios.lista.find( x => x.email === usuario)
 
     if (usuarioBuscado) {
