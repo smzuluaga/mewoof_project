@@ -142,10 +142,10 @@ body {
   display: flex;
   justify-content: center;
   color: var(--beige);
-  margin-top: 38px;
   letter-spacing: 5px;
   font-size: 25px;
   font-weight: bold;
+  padding: 20px;
 }
 
 .profile-information{
@@ -179,7 +179,7 @@ body {
 }
 
 .content-user h3{
-  color: #EF4147;
+  color: var(--pink2);
   font-weight: 10px;
   font-size: 25px;
 }
@@ -189,7 +189,7 @@ body {
   padding: 5px;
 }
 
-.content-form{
+.content-formInf{
   display: flex;
   width: 75%;
   justify-content: center;
@@ -199,14 +199,14 @@ body {
 .form-horizontal{
   display: flex;
   flex-direction: column;
-  width: 80%;
-  height: 85%;
+  width: 90%;
+  height: 100%;
   justify-content: space-evenly;
 }
 
 .form-horizontal div{
-  display: inline-block;
-  
+  display: inline-block;  
+  text-align: center;
 }
 
 .flex-wrap{
@@ -218,22 +218,26 @@ body {
 
 .mw-flex-wrap div{
   width: 30%;
-  margin: 10px;    
+  margin: 10px;  
   }
 
 .form-group{
   display: flex;
   flex-direction: column;
   height:100px;
-  color: black;
+  color: var(--pink2);
   font-size: 20px;
+}
+
+.form-control{
+  border: 1px solid var(--beige)
 }
 
 .mw-flex-wrap input{
   width: 100%;
   border-radius: 60px;
   padding: 5px;
-  border: 1px solid black;
+  border: 1px solid var(--beige);
 }
 
 .mw-flex-wrap select{
@@ -245,12 +249,12 @@ body {
   width: 100%;
   border-radius: 60px;
   padding: 5px;
-  border: 1px solid black;
+  border: 1px solid var(--beige);
   margin-bottom: 25px;
 }
 
 .form-email{
-  color: black;
+  color: var(--pink2);
   font-size: 20px;
 }
 
@@ -258,24 +262,25 @@ body {
   font-size: 20px;
 } */
 
+.form-group-about{
+  color: var(--pink);
+}
+
 .btn-same{
   margin-bottom: 0;
   margin-top: 1%;
-  margin-right: 50%;
 }
 
 .btn-same-but{
   background-color: var(--pink);
   box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.6);
   border-radius: 60px;
-  width: 200px;
+  width: 150px;
   height: 35px;
   color: aliceblue;
-  font-size: 18px;
+  font-size: 15px;
   border: none;
   cursor: pointer;
-  margin-left: 40%;
-  margin-top: 50px;
 }
 
 
@@ -295,17 +300,23 @@ body {
 .popup {
   /* width: 100vh; */
   position: relative;
-  right: 150%;
+  /* right: 150%; */
   height: 50%;
 }
+.popup input{
+  border: 1px solid var(--pink2);
+}
 
-
+.popup-close {
+  color: #333333;
+}
 
 .popup-close:hover {
   cursor: pointer;
 }
 
 .popup-content {
+  color: var(--pink);
   height: 80%;
   display: flex;
   flex-direction: column;
@@ -381,14 +392,11 @@ body {
   display: none;
 }
 
-    /* **************** Edición opcional preferencias ************* */
-
 .mw-preferences{
   display: flex;
   flex-direction: column;
   width: 100%;
 }
-
 
 .mw_preMatchContainer h1{
   display: flex;
@@ -550,12 +558,10 @@ body {
   border-radius: 12px;
   border: none;
   padding: 5px;
-  text-align: center;
-  display: flex;
-  justify-content: left;
+  justify-content: center;
   background-color: var(--beige2);
   margin-left: 15px;
-  height: 60%;
+  height: 20%;
 } 
 
 
@@ -842,10 +848,13 @@ margin-top: 10px;
 }
 
 .mw-solicitudesEnv-container h1 {
-    text-align: center;
-    margin-top: 5%;
-    font-size: 30px;
-    color: gray;
+  display: flex;
+  justify-content: center;
+  color: var(--beige);
+  letter-spacing: 5px;
+  font-size: 25px;
+  font-weight: bold;
+  padding: 20px;
 }
 
 .mw-solicitudesEnv-tablero {
@@ -888,52 +897,68 @@ margin-top: 10px;
 
 /* Inicio Seccion home*/
 .mw-sectionHome {
-  margin-top: 2%;
+  /* margin-top: 2%; */
   flex-direction: column;
   width: 100%;
   height: 100vh;
 }
 
-.tittle-comunidad{
-  color: #EF4147;
-  text-align: center;
+.tittle-comunidad h1{
+  display: flex;
+  justify-content: center;
+  color: var(--beige);
+  letter-spacing: 5px;
+  font-size: 25px;
+  font-weight: bold;
+  padding-top: 20px;
 }
 
 .content-text{
-  font-size: 130%;
+  font-size: 18px;
+  letter-spacing: 0.4px;
   text-align: center;
-  margin: 5px 100px 5px 100px;
+  margin: 10px 100px 5px 100px;
 }
 
 .content-text button{
-  background-color: #EF4147;
+  background-color: var(--pink2);
   color: aliceblue;
   border-radius: 20px;
   border: none;
-  width: 200px;
+  width: 100px;
   height: 30px;
-  font-size: 18px;
+  font-size: 15px;
+  font-weight: bold;
   cursor: pointer;
   margin-top: 2%;
 }
 
 .container-perdida{
-  margin-top: 4%;
+  margin-top: 1%;
   text-align: center;
 }
 
 .container-perdida h2{
-  color: #EF4147;
+  display: flex;
+  justify-content: center;
+  color: var(--beige2);
+  letter-spacing: 2px;
+  font-weight: bolder;
+  font-size: 22px;
+  font-weight:700;
+  margin-top: 4%;
 }
 
 .container-perdida p{
   font-size: 18px;
-  margin-bottom: 2%;
+  margin: 1%;
+  letter-spacing: 1px;
+  text-align: center;
 }
 
 .content-form{
   text-align: center;
-  margin-left: 12%;
+  margin-top: 3%;
 }
 
 .content-form input {
@@ -941,12 +966,12 @@ margin-top: 10px;
 }
 
 .content-form form i{
-  color: #EF4147;
+  color: var(--pink);
   font-size: 40px;
 }
 
 .content-form button{
-  background-color: #EF4147;
+  background-color: var(--pink2);
   color: white;
   border-radius: 6px;
   border: none;
@@ -957,28 +982,40 @@ margin-top: 10px;
 
 .container-cardsperdidos{
   display: flex;
-  margin: 5px 100px 5px 100px;
+  margin: 70px 100px 5px 100px;
   align-items: center;
   text-align: center;
   flex-wrap: wrap;
   justify-content: space-between;
-  margin-top: 2%;
 }
 
 .container-cardsperdidos .card-perdidos {
-  box-shadow: 1px 1px 4px 3px #F7ABB2;    
+  box-shadow: 1px 1px 20px -3px var(--beige2);  
+  height: 200px;
+  width: 20%;
 }
 
 .card__img{
   width: 80%;
-  height: 90px;
+  height: 50%;  
   margin-top: 10px;
   object-fit: cover;
 }
 
 .cards__text-perdidos h3 {
-  color: #EF4147;
+  color: var(--pink);
 }
+
+.card-secondtitle {
+  color: var(--pink2);
+  font-size: 17px;
+}
+
+.card__copy{
+  font-size: 14px;
+}
+
+
 /* Fin Seccion home*/ 
 
 /* ****************REVISAR ************* */
