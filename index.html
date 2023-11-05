@@ -55,7 +55,7 @@
     <div class="mw-login" id="mw_login">
         <div class="mw-loginCard">
             <div class="mw-loginClose"><button id="mw-loginCloseButton"><i class='bx bx-x'></i></button></div>
-            <h1>Registrarse</h1>
+            <h1>Ingresar</h1>
             <div class="mw-loginData">
                 <div>
                     <input type="text" id="mw_loginUser" placeholder="Ingrese su correo o nombre">
@@ -121,11 +121,24 @@
                 </div>
                 <div>
                     <label for="D-mw_registerPais">Pais</label>
-                    <input type="text" id="D-mw_registerPais">
+                    <select title="modalidades" name="modalidades[]" class="form-control" id="D-mw_registerPais">
+                        <option value="COL">Colombia</option>
+                        <!-- <option value="ecuador">Ecuador</option>
+                        <option value="peru">Peru</option>
+                        <option value="chile">Chile</option>
+                        <option value="mexico">México</option>
+                        <option value="brasi">Brasil</option>
+                        <option value="argentina">Argentina</option> -->
+                    </select>
                 </div>
                 <div>
                     <label for="D-mw_registerCiudad">Ciudad</label>
-                    <input type="text" id="D-mw_registerCiudad">
+                    <select title="modalidades" name="modalidades[]" class="form-control" id="D-mw_registerCiudad">
+                        <option value="MDE">Medellin</option>
+                        <option value="BGT">Bogota</option>
+                        <option value="SCL">Cali</option>
+                        <!-- <option value="otra">Otra</option>  -->
+                    </select>
                 </div>
                 <div>
                     <label for="D-mw_registerCel">Cel</label>
@@ -181,11 +194,24 @@
                     </div>
                     <div>
                         <label for="A-mw_registerPais">Pais</label>
-                        <input type="text" id="A-mw_registerPais">
+                        <select title="modalidades" name="modalidades[]" class="form-control" id="A-mw_registerCiudad">
+                                        <option value="COL">Colombia</option>
+                                        <!-- <option value="ecuador">Ecuador</option>
+                                        <option value="peru">Peru</option>
+                                        <option value="chile">Chile</option>
+                                        <option value="mexico">México</option>
+                                        <option value="brasi">Brasil</option>
+                                        <option value="argentina">Argentina</option> -->
+                        </select>
                     </div>
                     <div>
                         <label for="A-mw_registerCiudad">Ciudad</label>
-                        <input type="text" id="A-mw_registerCiudad">
+                        <select title="modalidades" name="modalidades[]" class="form-control" id="A-mw_registerCiudad">
+                            <option value="MDE">Medellin</option>
+                            <option value="BGT">Bogota</option>
+                            <option value="SCL">Cali</option>
+                            <!-- <option value="otra">Otra</option>  -->
+                        </select>
                     </div>
                     <div>
                         <label for="A-mw_registerCel">Cel</label>
@@ -340,7 +366,7 @@
                                 <a href="https://www.linkedin.com/in/santiago-zuluaga-developer/" target="_blank" class="mw-ourTeam-socialMedia"><i class='bx bxl-linkedin-square'></i></a>
                                 <a href="https://github.com/smzuluaga" target="_blank" class="mw-ourTeam-socialMedia"><i class='bx bxl-github'></i></a>
                             </div>
-                            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptas eveniet fugiat natus rerum animi excepturi repellendus vel facilis sit sed. Esse veritatis tenetur, incidunt rem voluptatem illum. Maiores, at unde.</p>
+                            <p>Amo a los animales y uno de mis sueños es que cada peludito tenga un hogar. Mewoof es mi granito de arena para aquellos que aun no lo tienen, puedan hacerlo pronto.</p>
                         </div>
                         <button onclick="mostrarMas3()" id="mostrar-mas3" class="mw-st-button">Ver más</button>
                         <button onclick="mostrarMenos3()" id="mostrar-menos3" class="mostrar-menos mw-st-button">Ver menos</button>

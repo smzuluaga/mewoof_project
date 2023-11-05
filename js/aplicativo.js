@@ -1,11 +1,57 @@
+let mewoofDB = JSON.parse(localStorage.getItem('mewoofDB'));
+let usuarioSesion = mewoofDB.usuarioSesion;
+// let apiUserController;
+
+function fetchAPI(url) {
+
+    fetch (url)
+    .then(response => response.json())
+    .then(data => {
+        return JSON.parse(data);
+    })
+}
+
+
+console.log(usuarioSesion);
+window.onload  = iniciar();
+
+
+function iniciar () {
+    mewoofDB = JSON.parse(localStorage.getItem('mewoofDB'));
+}
+//     // mewoofDB = JSON.parse(localStorage.getItem('mewoofDB'));
+//     // usuarioSesion = mewoofDB.usuarioSesion;
+//     // alert(mewoofDB.usuarioSesion.email)
+//     // alert(`http://localhost:8080/usuarios/email?email=${mewoofDB.usuarioSesion.email}`)
+//     // apiUserController = fetchAPI(`http://localhost:8080/usuarios/email?email=${mewoofDB.usuarioSesion.email}`)
+    
+//     // setUsuarioSesion(usuarioSesion);
+    
+//     // alert("Cargando Entorno..")
+//     // setUsuarioSesion(mewoofDB.usuarioSesion);
+//     // mewoofDB.usuarioSesion = usuarioSesion;
+//     // saveLocaStorage();
+//     // usuarioSesion.mascotasCargadas = mewoofDB.usuarioSesion.mascotasCargadas;
+// }
+
+
+// function setUsuarioSesion (usuario) {
+//     alert("GENERANDO USUARIO")
+    
+//     usuario.tipo.nombre === 'Entregando' 
+//     ? usuarioSesion = new Entregando(usuario.nombre, usuario.apellido, usuario.pais, usuario.ciudad, usuario.id, usuario.cel, usuario.email, usuario.password, usuario.tipo )
+//     : usuarioSesion = new Adoptante(usuario.nombre, usuario.apellido, usuario.pais, usuario.ciudad, usuario.id, usuario.cel, usuario.email, usuario.password, usuario.tipo );
+    
+//     console.log(usuarioSesion);
+// }
+
+
 ///***********************************************///
 // MODELADO DE OBJETOS
-let mewoofDB;
-let usuarioSesion;
 
 // se define la clase Usuario
 class Usuario {
-
+    
     constructor(nombre, apellido, pais, ciudad, id,  cel, email, password, tipo){
         this.nombre = nombre;
         this.apellido = apellido;
@@ -124,7 +170,7 @@ navBotonPerfil.addEventListener('click', () => {
 
 navBotonMatch.addEventListener('click', () => {
     ocultarSecciones();
-    usuarioSesion.tipo=== "Adoptante"?
+    usuarioSesion.tipo.nombre === "Adoptante"?
     seccionMatchPreferences.style.display="flex":
     seccionMatchHuman.style.display="flex";
 })
@@ -137,9 +183,9 @@ navBotonChat.addEventListener('click', () => {
 navBotonSolicitudes.addEventListener('click', () => {
     ocultarSecciones();
 
-    usuarioSesion.tipo === "Entregando" ? seccionMisMascotas.style.display="flex": seccionSolicitudes.style.display="flex";
+    usuarioSesion.tipo.nombre === "Entregando" ? seccionMisMascotas.style.display="flex": seccionSolicitudes.style.display="flex";
     
-    if (usuarioSesion.tipo === "Entregando") {
+    if (usuarioSesion.tipo.nombre === "Entregando") {
         renderizarSolicitudes(mewoofDB.usuarios.lista[findUser(usuarioSesion)].mascotasCargadas);
     }
 })
@@ -152,26 +198,9 @@ navBotonHome.addEventListener('click', () => {
 
 // FUNCIONES GENERALES
 
-window.onload  = iniciar();
-
-function iniciar () {
-    // alert("Cargando Entorno..")
-    mewoofDB = JSON.parse(localStorage.getItem('mewoofDB'));
-    setUsuarioSesion(mewoofDB.usuarioSesion);
-    mewoofDB.usuarioSesion = mewoofDB.usuarios.lista.find( x => x.email === usuarioSesion.email);
-    // usuarioSesion.mascotasCargadas = mewoofDB.usuarioSesion.mascotasCargadas;
-}
 
 
-function setUsuarioSesion (usuario) {
-    // alert("GENERANDO USUARIO")
 
-    usuario.tipo === 'Entregando' 
-    ? usuarioSesion = new Entregando(usuario.nombre, usuario.apellido, usuario.pais, usuario.ciudad, usuario.id, usuario.cel, usuario.email, usuario.password, usuario.tipo )
-    : usuarioSesion = new Adoptante(usuario.nombre, usuario.apellido, usuario.pais, usuario.ciudad, usuario.id, usuario.cel, usuario.email, usuario.password, usuario.tipo );
-    
-   console.log(usuarioSesion);
-}
 
 function findUser (usuario){
     return mewoofDB.usuarios.lista.findIndex(x => x.email === usuario.email)
@@ -220,29 +249,62 @@ const botonGuardarCambiosPerfil = document.getElementById("mw-PerfilBtn-guardarC
 nombreMostrar.innerHTML = `${usuarioSesion.nombre} ${usuarioSesion.apellido}`;
 inputNombre.value = usuarioSesion.nombre;
 inputApellido.value = usuarioSesion.apellido;
-inputCelular.value = usuarioSesion.cel;
-inputPais.value = usuarioSesion.pais.toLowerCase();
-inputCiudad.value = usuarioSesion.ciudad.toLowerCase();
-inputEmail.value = usuarioSesion.email;
+inputCelular.value = usuarioSesion.telefono;
+inputPais.value = usuarioSesion.pais.id;
+inputCiudad.value = usuarioSesion.ciudad.id;
+inputEmail.value =usuarioSesion.email;
 
-mewoofDB.usuarios.lista.find(x=>x.email===usuarioSesion.email).about === "" ? inputAbout.value = mensajePerfil(usuarioSesion) : inputAbout.value = mewoofDB.usuarios.lista.find(x=>x.email===usuarioSesion.email).about;
+
+mewoofDB.usuarioSesion.about === "AboutMe" ? inputAbout.value = mensajePerfil(usuarioSesion) : inputAbout.value = inputAbout.value = mewoofDB.usuarioSesion.about;
 // inputInteres.value = usuarioSesion.intereses;
 
 function mensajePerfil(usuario) {
-    return `Hola, soy ${usuario.nombre} ${usuario.apellido}, vivo en ${usuario.ciudad}, ${usuario.pais} y soy amante de los animales`
+    return `Hola, soy ${usuario.nombre} ${usuario.apellido}, vivo en ${usuario.ciudad.nombre}, ${usuario.pais.nombre} y soy amante de los animales`
 } 
 
+// FALTA QUE ENVIE A BDDDDDDDDDDDDD
 botonGuardarCambiosPerfil.addEventListener('click', () => {
-    let perfilCambio = mewoofDB.usuarios.lista.find(x=>x.email===usuarioSesion.email)
+    let perfilCambio = mewoofDB.usuarioSesion;
 
     perfilCambio.nombre = inputNombre.value;
     perfilCambio.apellido = inputApellido.value;
-    perfilCambio.cel = inputCelular.value;
-    perfilCambio.pais = inputPais.value;
-    perfilCambio.ciudad = inputCiudad.value;
+    perfilCambio.telefono = inputCelular.value;
+    perfilCambio.pais.id = inputPais.value;
+    perfilCambio.pais.nombre = inputPais.innerHTML;
+    perfilCambio.ciudad.id = inputCiudad.value;
+    perfilCambio.ciudad.nombre = inputCiudad.innerHTML;
     perfilCambio.email = inputEmail.value;
     perfilCambio.about = inputAbout.value;
+    perfilCambio.id = mewoofDB.usuarioSesion.id;
+    perfilCambio.password = mewoofDB.usuarioSesion.password;
+    perfilCambio.tipo.id = mewoofDB.usuarioSesion.tipo.id;
+    perfilCambio.tipo.nombre = mewoofDB.usuarioSesion.tipo.nombre;
     saveLocaStorage();
+
+    console.log(mewoofDB.usuarioSesion);
+
+    let url = "http://localhost:8080/usuarios/actualizarUsuario"
+
+    fetch(url, {
+        method: 'PUT',
+        headers: {
+            'Content-Type' : 'application/json'
+        },
+        body: mewoofDB.usuarioSesion
+    })
+    .then((response) => {
+        if(!response.ok){
+            throw new Error('La solicitud no se completó correctamente.');
+        }
+        return response.json(); // Analiza la respuesta como JSON
+    } )
+    .then((data)=>{
+        console.log('Respuesta del servidor:', data);
+    })
+    .catch((error) => {
+        console.error('Error al actualizar el usuario:', error);
+    });
+
     alert("Información Actualizada con éxito");
 
 })

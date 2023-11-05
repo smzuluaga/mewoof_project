@@ -198,10 +198,6 @@ botonesFormularios.forEach(function (boton) {
 });
 
 
-
-
-
-
 // BOTONTES MOSTRAR MÁS SECCION OUR TEAM
 function mostrarMas1() {
     const member1 = document.querySelector("#mw-cardtext1");
@@ -376,24 +372,71 @@ function newUserEntregando () {
     const apellido = document.getElementById('D-mw_registerApellido');
     const pais = document.getElementById('D-mw_registerPais');
     const ciudad = document.getElementById('D-mw_registerCiudad');
-    const cel = document.getElementById('D-mw_registerCel');
+    const telefono = document.getElementById('D-mw_registerCel');
     const email = document.getElementById('D-mw_registerMail');
     const password = document.getElementById('D-mw_registerPassword');
     const password2 = document.getElementById('D-mw_registerPasswordConfirm');
 
-    let newUser = {nombre: nombre.value, apellido: apellido.value, pais: pais.value, ciudad: ciudad.value, id: id.value, cel: cel.value, email: email.value, password: password.value, tipo:'Entregando', mascotasCargadas: [], about:''};
-    mewoofDB.usuarios.lista.push(newUser)
-    saveLocaStorage();
+    
+    // let newUser = {nombre: nombre.value, apellido: apellido.value, pais: pais.value, ciudad: ciudad.value, id: id.value, cel: telefono.value, email: email.value, password: password.value, tipo:'Entregando', mascotasCargadas: [], about:''};
+    // mewoofDB.usuarios.lista.push(newUser)
+    const url = 'http://localhost:8080/usuarios/crearUsuario';
 
-    alert(`¡Registro Exitoso! 
-    Bienvenido a la comunidad Mewoof`);
+    let newUser = {
+      "nombre": nombre.value,
+      "apellido": apellido.value,
+      "pais": {
+          "id": pais.value,
+          "nombre": pais.innerHTML
+      },
+      "ciudad": {
+          "id": ciudad.value,
+          "nombre": ciudad.innerHTML
+      },
+      "telefono": telefono.value,
+      "email": email.value,
+      "password": password.value === password2.value ? password.value : null,
+      "tipo": {
+          "id": "UE",
+          "nombre": "Entregando"
+      },
+      "about": "AboutMe"
+  }
+
+    fetch(url, {
+      method: 'POST', 
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(newUser)
+      }
+    )
+    .then(response => {
+      if (response.ok) {
+        return response.json();
+      } else {
+        throw new Error ('Error al crear el usuario')
+      }
+    })
+    .then(data => {
+      // Maneja los datos de la respuesta aquí
+      console.log('Usuario creado:', data);
+    })
+    .catch(error => {
+      // Maneja cualquier error que pueda ocurrir durante la solicitud
+      console.error('Error:', error);
+    });
+
+    // saveLocaStorage();
+
+    alert(`¡Registro Exitoso! \n Bienvenido a la comunidad Mewoof`);
 
     nombre.value = '';
     apellido.value = '';
     pais.value = '';
     ciudad.value = '';
     id.value = '';
-    cel.value = '';
+    telefono.value = '';
     email.value = '';
     password.value = '';
     password2.value = '';
@@ -412,9 +455,56 @@ function newUserAdoptante () {
     const password = document.getElementById('A-mw_registerPassword');
     const password2 = document.getElementById('A-mw_registerPasswordConfirm');
 
-    let newUser = {nombre: nombre.value, apellido: apellido.value, pais: pais.value, ciudad: ciudad.value, id: id.value, cel: cel.value, email: email.value, password: password.value, tipo:'Adoptante', solicitudesEnviadas: [], about:''};
-    mewoofDB.usuarios.lista.push(newUser)
-    saveLocaStorage();
+    // let newUser = {nombre: nombre.value, apellido: apellido.value, pais: pais.value, ciudad: ciudad.value, id: id.value, cel: cel.value, email: email.value, password: password.value, tipo:'Adoptante', solicitudesEnviadas: [], about:''};
+    // mewoofDB.usuarios.lista.push(newUser)
+    // saveLocaStorage();
+
+    const url = 'http://localhost:8080/usuarios/crearUsuario';
+
+    let newUser = {
+      "nombre": nombre.value,
+      "apellido": apellido.value,
+      "pais": {
+          "id": pais.value,
+          "nombre": pais.innerHTML
+      },
+      "ciudad": {
+          "id": ciudad.value,
+          "nombre": ciudad.innerHTML
+      },
+      "telefono": telefono.value,
+      "email": email.value,
+      "password": password.value === password2.value ? password.value : null,
+      "tipo": {
+          "id": "UA",
+          "nombre": "Adoptante"
+      },
+      "about": "AboutMe"
+  }
+
+    fetch(url, {
+      method: 'POST', 
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(newUser)
+      }
+    )
+    .then(response => {
+      if (response.ok) {
+        return response.json();
+      } else {
+        throw new Error ('Error al crear el usuario')
+      }
+    })
+    .then(data => {
+      // Maneja los datos de la respuesta aquí
+      console.log('Usuario creado:', data);
+    })
+    .catch(error => {
+      // Maneja cualquier error que pueda ocurrir durante la solicitud
+      console.error('Error:', error);
+    });
 
     alert("¡Registro Exitoso! \n Bienvenido a la comunidad Mewoof");
 
@@ -432,78 +522,76 @@ function newUserAdoptante () {
 
 
 function loginValidations () {
-
-    const usuario = inputUser.value;
-    const password = inputPassword.value;
-
-    //⛔⛔⛔AQUÍ CONSUMIMOS EL ENDPOINT EN EL FETCH⛔⛔⛔⛔
-    // let url = `http://localhost:8080/usuarios/email?email=${usuario}`
-
-    // fetch(url)
-    // .then(response => response.json())
-    // .then(data => {
-    //     // let variable = JSON.parse(data)
-    //     console.log(data)
-    //     const usuarioBuscado = data
-    //     if (usuarioBuscado) {
-    //       const elementoHtmlUser = document.getElementById("mw_loginUser");
-    //       const estadoUsuarioEncontrado = usuarioBuscado;
-    //       alertasValidacionIfElse(estadoUsuarioEncontrado, elementoHtmlUser);
-    //       if (usuarioBuscado.password === password) {
-    //           alert("Autenticación Exitosa \n ¡Bienvenido!");
-    //           mewoofDB.usuarioSesion = usuarioBuscado;
-    //           saveLocaStorage();
-    //           window.open("aplicativo.html");
-    //           inputUser.value = '';
-    //           inputPassword.value = '';
-    //       } else {
-    //           const elementoHtmlPassword = document.getElementById("mw_loginPassword");
-    //           const estadoPasswordCoincide = usuarioBuscado.password === password;
-    //           alertasValidacionIfElse(estadoPasswordCoincide, elementoHtmlPassword);
-    //           // alert("Contraseña Incorrecta");
-    //           inputPassword.value = '';
-    //       }
-    //   } else {
-    //       const elementoHtmlUser = document.getElementById("mw_loginUser");
-    //       const estadoUsuarioEncontrado = usuarioBuscado;
-    //       alertasValidacionIfElse(estadoUsuarioEncontrado, elementoHtmlUser);
-    //       // alert ("Usuario no encontrado \n Puede registrarse en el boton 'Aún no estoy registrado'")
-    //       inputUser.value = '';
-    //       inputPassword.value = '';
-    //   }
-    //   }
-    // )⛔⛔⛔⛔⛔⛔⛔⛔⛔⛔⛔⛔⛔⛔⛔⛔⛔
-
-    const usuarioBuscado = mewoofDB.usuarios.lista.find( x => x.email === usuario)
-
+  
+  
+  const usuario = inputUser.value;
+  const password = inputPassword.value;
+  
+  let url = `http://localhost:8080/usuarios/email?email=${usuario}`
+  
+  fetch(url)
+  .then(response => response.json())
+  .then(data => {
+  
+    const usuarioBuscado = data
+    console.log(usuarioBuscado);
     if (usuarioBuscado) {
-        const elementoHtmlUser = document.getElementById("mw_loginUser");
-        const estadoUsuarioEncontrado = usuarioBuscado;
-        alertasValidacionIfElse(estadoUsuarioEncontrado, elementoHtmlUser);
-        if (usuarioBuscado.password === password) {
-            alert("Autenticación Exitosa \n ¡Bienvenido!");
-            mewoofDB.usuarioSesion = usuarioBuscado;
-            saveLocaStorage();
-            window.open("aplicativo.html");
-            inputUser.value = '';
-            inputPassword.value = '';
-        } else {
-            const elementoHtmlPassword = document.getElementById("mw_loginPassword");
-            const estadoPasswordCoincide = usuarioBuscado.password === password;
-            alertasValidacionIfElse(estadoPasswordCoincide, elementoHtmlPassword);
-            // alert("Contraseña Incorrecta");
-            inputPassword.value = '';
-        }
-    } else {
-        const elementoHtmlUser = document.getElementById("mw_loginUser");
-        const estadoUsuarioEncontrado = usuarioBuscado;
-        alertasValidacionIfElse(estadoUsuarioEncontrado, elementoHtmlUser);
-        // alert ("Usuario no encontrado \n Puede registrarse en el boton 'Aún no estoy registrado'")
+      // const elementoHtmlUser = document.getElementById("mw_loginUser");
+      // const estadoUsuarioEncontrado = usuarioBuscado;
+      alertasValidacionIfElse(usuarioBuscado, usuario);
+      if (usuarioBuscado.password === password) {
+        alert("Autenticación Exitosa \n ¡Bienvenido!");
+        mewoofDB.usuarioSesion = usuarioBuscado;
+        saveLocaStorage();
+        window.open("aplicativo.html");
         inputUser.value = '';
         inputPassword.value = '';
+        } else {
+          const elementoHtmlPassword = document.getElementById("mw_loginPassword");
+          const estadoPasswordCoincide = usuarioBuscado.password === password;
+          alertasValidacionIfElse(estadoPasswordCoincide, elementoHtmlPassword);
+          // alert("Contraseña Incorrecta");
+          inputPassword.value = '';
+        }
+    } else {
+      const elementoHtmlUser = document.getElementById("mw_loginUser");
+      const estadoUsuarioEncontrado = usuarioBuscado;
+      alertasValidacionIfElse(estadoUsuarioEncontrado, elementoHtmlUser);
+      // alert ("Usuario no encontrado \n Puede registrarse en el boton 'Aún no estoy registrado'")
+      inputUser.value = '';
+      inputPassword.value = '';
     }
-
+  })
 }
+    // const usuarioBuscado = mewoofDB.usuarios.lista.find( x => x.email === usuario)
+
+    // if (usuarioBuscado) {
+    //     const elementoHtmlUser = document.getElementById("mw_loginUser");
+    //     const estadoUsuarioEncontrado = usuarioBuscado;
+    //     alertasValidacionIfElse(estadoUsuarioEncontrado, elementoHtmlUser);
+    //     if (usuarioBuscado.password === password) {
+    //         alert("Autenticación Exitosa \n ¡Bienvenido!");
+    //         mewoofDB.usuarioSesion = usuarioBuscado;
+    //         saveLocaStorage();
+    //         window.open("aplicativo.html");
+    //         inputUser.value = '';
+    //         inputPassword.value = '';
+    //     } else {
+    //         const elementoHtmlPassword = document.getElementById("mw_loginPassword");
+    //         const estadoPasswordCoincide = usuarioBuscado.password === password;
+    //         alertasValidacionIfElse(estadoPasswordCoincide, elementoHtmlPassword);
+    //         // alert("Contraseña Incorrecta");
+    //         inputPassword.value = '';
+    //     }
+    // } else {
+    //     const elementoHtmlUser = document.getElementById("mw_loginUser");
+    //     const estadoUsuarioEncontrado = usuarioBuscado;
+    //     alertasValidacionIfElse(estadoUsuarioEncontrado, elementoHtmlUser);
+    //     // alert ("Usuario no encontrado \n Puede registrarse en el boton 'Aún no estoy registrado'")
+    //     inputUser.value = '';
+    //     inputPassword.value = '';
+    // }
+
 
 function saveLocaStorage() {
     localStorage.setItem('mewoofDB', JSON.stringify(mewoofDB));
