@@ -368,6 +368,10 @@ botonPreferencesCatDog.addEventListener('click', () => {
 
 // FIN SECCION PREFERENCES
 
+// INICIO SECCION MATCHES
+
+// FIN SECCION MATCHES
+
 
 // BOTONES CREAR MASCOTA
 const botonAbrirPanelMascota = document.getElementById("mw_panelMascotaOpen");
@@ -392,7 +396,70 @@ botonCerrarPanelMascota.addEventListener('click', () => {
 
 // botonCrearMascota.addEventListener('click', crearMascota());
 
+
 function crearMascota() {
+    
+    let url = "http://localhost:8080/mascotas";
+
+    let newMascota = {
+        "nombre": "Fifi",
+        "edad": 2,
+        "especie": {
+            "id": 2,
+            "especie": "Caninos"
+        },
+        "raza": {
+            "id": 1,
+            "especie": {
+                "id": 2,
+                "especie": "Caninos"
+            },
+            "raza": "Beagle"
+        },
+        "size": {
+            "id": 2,
+            "nombre": "Pequeño",
+            "dimensionMaximaCm": 40
+        },
+        "usuario": usuarioSesion, // REIVSAR SI FUNCIONA ASI
+        "estadoSalud": {
+            "id": 1,
+            "estado": "Optimo"
+        },
+        "estadoAdopcion": {
+            "id": 1,
+            "estado": "En Adopcion"
+        }
+    }; 
+
+    fetch(url, 
+        {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(newMascota)
+        }
+    )
+    .then(response => {
+        if (response.ok) {
+            return response.json();
+        } else {
+            throw new Error ('Error al crear el usuario')
+        }
+        })
+        .then(data => {
+        // Maneja los datos de la respuesta aquí
+        console.log('Mascota creada:', data);
+        })
+        .catch(error => {
+        // Maneja cualquier error que pueda ocurrir durante la solicitud
+        console.error('Error:', error);
+        });
+    };
+
+    console.log(mascotasController);
+
     usuarioSesion.agregarMascota(usuarioSesion, formularioRaza.value, formularioSize.value,formularioNombre.value, formularioEdad.value, formularioSalud.value);
 
     seccionPanelMascota.style.display="none"
