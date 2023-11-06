@@ -491,9 +491,9 @@ body {
 .card{
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
     align-items: center;
-    width: 35%;
+    margin-right: 50%;
+    width: 50%;
     padding: 5px;
     height: 70%;
     overflow: hidden;
@@ -568,7 +568,7 @@ body {
   color: var(--pink2);
   font-size: 33px;
 }
-*
+
 
 .card_button {
   font-size: 15px;
@@ -581,12 +581,40 @@ body {
   height: 20%;
 } 
 
+.buttonreturn{
+  display: flex;
+	align-items: center;
+    justify-content: space-evenly;
+    margin-left: 10%;
+    width: 35%;
+}
+
+.buttonreturn i{
+  color: #EF4147;
+    font-size: 45px;
+    cursor: pointer;
+    background-color: #fff;
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(180deg, #ecbcee 0%, #e1d2e1 100%); 
+    box-shadow: 0 1px 10px 0 rgba(0, 20, 20, 0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 70px;
+    transition: 0.2s transform;
+}
+
+.buttonreturn i:hover{
+  transform: scale(1.1);  
+}
 
 .buttons {
 	display: flex;
 	align-items: center;
-    justify-content: space-evenly;
-    width: 35%;
+  justify-content: space-evenly;
+  width: 35%;
+  margin-right: 50%;
     
 }
 
