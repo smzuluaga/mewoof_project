@@ -162,6 +162,10 @@ body {
     text-align: center;
 }
 
+.botonShow{
+    cursor: pointer;
+}
+
 .mw-loginData {
     display: flex;
     flex-direction: column;

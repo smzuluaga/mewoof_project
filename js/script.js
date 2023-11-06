@@ -1,3 +1,15 @@
+//Mostrar contraseña
+function mostrarcontra() {
+  var passwordShow = document.getElementById("mw_loginPassword");
+
+  if (passwordShow.type === "password") {
+      passwordShow.type = "text"; 
+  } else {
+      passwordShow.type = "password"; 
+  }
+}
+//Fin mostrar contraseña
+
 // SECCIONES DEL INDEX
 const seccionLogin= document.getElementById("mw_login");
 const seccionTipoUsuario= document.getElementById("mw_usuarioTipo");
@@ -738,3 +750,4 @@ function alertasValidacionIfElse(estado, elementoHtml){
   }
 }
 // event.preventDefault();
+
