@@ -418,9 +418,20 @@ body {
   justify-content: space-evenly;
 }
 
+
 .mww-inputsFiltrosMAscotas div{
   display: flex;
   flex-direction: column;
+  color: var(--pink2);
+}
+
+.mww-inputsFiltrosMAscotas select{
+  border-color: #E8B77E;
+  margin-top: 10px;
+  border-radius: 10px;
+  color: var(--pink2);
+  width: 100%;
+  padding: 4px;
 }
 
 .buscandoAmor{
