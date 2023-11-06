@@ -162,7 +162,7 @@ botonesFormularios.forEach(function (boton) {
       `${boton.id}-mw_registerPasswordConfirm`
     );
     
-    validacionRegister(mwRegisterId);
+    // validacionRegister(mwRegisterId);
     validacionRegister(mwRegisterNombre);
     validacionRegister(mwRegisterApellido);
     validacionRegister(mwRegisterPais);

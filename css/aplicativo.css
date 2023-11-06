@@ -308,7 +308,7 @@ body {
 .popup {
   /* width: 100vh; */
   position: relative;
-  right: 150%;
+  right: 350%;
   height: 50%;
 }
 .popup input{
@@ -354,29 +354,6 @@ body {
   text-align: center;
   font-size: 22px;
 }
-
-@media (max-width: 768px) {
-  .profile-container {
-      max-width: 100%;
-  }
-  .profile-information {
-      flex-direction: column;
-  }
-
-  .content-form {
-      margin-left: 10%;
-  }
-  .content-user {
-      margin-left: 30%;
-      margin-top: 10%;
-      margin-bottom: 10%;
-  }
-  .btn-same{
-      margin-right: 70%;
-      margin-top: 6%;
-  }
-}
-
 /*Fin arreglos editar información*/
 
 
@@ -1122,82 +1099,108 @@ margin-top: 10px;
   .icons .buttons{
     margin-left: 25%;
   }
+
+  .profile-container {
+    max-width: 100%;
+  }
+  .profile-information {
+      flex-direction: column;
+  }
+
+  .content-form {
+      margin-left: 10%;
+  }
+  .content-user {
+      margin-left: 30%;
+      margin-top: 10%;
+      margin-bottom: 10%;
+  }
+  .btn-same{
+      margin-right: 70%;
+      margin-top: 6%;
+  }
   
   }
   
   @media screen and (max-width: 600px) {
     
-    .card {
-      margin-left: 13%;
-      width: 70%;
-      height: 74%;
-      margin-top: 12%;
-    }
+  
+  }
+  
+  @media screen and (max-width: 500px) {
+  
     
-    .card__img{
-      height: 200px; /* Cambia la altura a automática para que se ajuste al contenido */
-    }
-    
-    .icons .buttons{
-      margin-left: 27%;
-    }
-      .icons .buttons .no,
-      .icons .buttons .star,
-      .icons .buttons .heart {
-        margin: 12px;
   
+  }
+  
+  @media screen and (min-width: 320px) {
+
+      body {
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        height: 100vh;
+        box-sizing: content-box;
       }
-  
-      .card_button{
-        margin-top: 10px;
-        margin-bottom: 20px;
+
+      .sidebar-pagina {
+        width: 100%;
+        height: 8vh;
+        order: 1
       }
-  
-    }
-  
-    @media screen and (max-width: 500px) {
-  
-      .card {
-        margin-left: 10%;
-        width: 75%;
-        height: 73%;
-        margin-top: 12%;
+
+      .sidebar {
+        display: flex;
+        flex-direction: row;
+        height: 8vh;
+        position: fixed;
+        z-index: 1;
+      }
+
+      .mw-viewScreen {
+        height: 92vh;
+      }
+
+      .sidebar img {
+        width: 35px;
+        height: 35px;
+      }
+
+      .iconoHover {
+        height: 100%;
+      }
+
+      .iconoHover i{
+        font-size: 35px;
+      }
+
+      .iconoHover:hover {
+        font-size: 35px;
+      }
+
+      #mw-navButtonPerfil {
+        order: -2;
+      }
+
+      #mw-navButtonChat{
+        order:0;
       }
       
-      .card__img{
-        height: 200px;
-        margin-left: 7px; /* Cambia la altura a automática para que se ajuste al contenido */
+      #mw-navButtonMascotas{
+        order:-1;
+      }
+
+      .mw_section-profile {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .popup {
+        display: none;
+        right:350%;
       }
       
-      .icons .buttons{
-        margin-left: 23%;
-      }
-      
-      .card__title{
-        font-size: 28px;
-      }
-  
-      .cards__text {
-        font-size: 17px;
-      }
-  
-      }
-  
-    @media screen and (max-width: 400px) {
-      
-      .card {
-        margin-left: 9%;
-        width: 84%;
-        height: 75%;
-        margin-top: 9%;
-      }
-      
-      .card__img{
-        height: 200px; /* Cambia la altura a automática para que se ajuste al contenido */
-      }
-      
-      .icons .buttons{
-        margin-left: 20%;
-      }
+     
     }
 

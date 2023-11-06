@@ -345,7 +345,7 @@ botonCambiarPassword.addEventListener('click', () => {
 })
 
 botonCerrarPassword.addEventListener('click', () => {
-    seccionCambiarPassword.style.right="150%";
+    seccionCambiarPassword.style.right="350%";
 })
 
 botonGuardarPassword.addEventListener('click', () => {
