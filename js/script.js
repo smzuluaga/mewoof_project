@@ -811,9 +811,9 @@ function alertasValidacionIfElse(estado, elementoHtml){
     } else if (elementoHtml.id === "D-mw_registerApellido" || elementoHtml.id === "A-mw_registerApellido") {
       nuevoParrafoAlerta.textContent = "Escriba un apellido válido";
     } else if (elementoHtml.id === "D-mw_registerPais" || elementoHtml.id === "A-mw_registerPais") {
-      nuevoParrafoAlerta.textContent = "Escriba un país válido";
+      nuevoParrafoAlerta.textContent = "Seleccione un país válido";
     } else if (elementoHtml.id === "D-mw_registerCiudad" || elementoHtml.id === "A-mw_registerCiudad") {
-      nuevoParrafoAlerta.textContent = "Escriba una ciudad válida";
+      nuevoParrafoAlerta.textContent = "Seleccione una ciudad válida";
     } else if (elementoHtml.id === "D-mw_registerCel" || elementoHtml.id === "A-mw_registerCel") {
       nuevoParrafoAlerta.textContent = "Digite un teléfono válido";
     } else if (elementoHtml.id === "D-mw_registerMail" || elementoHtml.id === "A-mw_registerMail") {
