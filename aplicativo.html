@@ -24,7 +24,7 @@
     <script src="https://kit.fontawesome.com/a37bb3c75c.js" crossorigin="anonymous"></script>
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'> <!--Enlace iconos Boxicons-->
     <!-- Libreria sweet alert-->
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 
 <body>
@@ -429,41 +429,122 @@
             </div>
             <div class="mascota-perdida" id="comunidad">
                 <div class="container-perdida">
-                    <h2>Mascotica perdida</h2>
-                    <p>Selecciona la caracteristica de la mascotica perdida</p>
+                    <h2>Peludito Perdido</h2>
+                    <p>Selecciona las características de la mascotica perdida</p>
                 </div>
                 <div class="content-form">
                     <form>
-                        <input type="radio" name="perdidos">perdidos
-                        <input type="radio" name="encontrados">Encontrados <br>
-                        <input class="animal" type="radio" name="gato"><i class='bx bxs-cat'></i>
-                        <input class="animal" type="radio" name="perro"><i class='bx bxs-dog' ></i>
-                        <input type="text" id="name" placeholder="Buscar por nombre">
-                        <input type="text" id="sex" placeholder="¿Macho o Hembra?">
-                        <input type="radio" name="tamaño">Pequeño
-                        <input type="radio" name="tamaño">Mediano
-                        <input type="radio" name="tamaño">Grande<br>
-                        <select title="modalidades" name="modalidades[]" class="form-control" id="inputCiudad">
-                            <option value="0">Ciudad</option>
-                            <option value="1">Medellin</option>
-                            <option value="2">Cali</option>
-                            <option value="3">Bogota</option>
-                            <option value="4">Cundinamarca</option>
-                            <option value="5">Boyaca</option>
-                            <option value="6">Manizales</option>
-                            <option value="7">Bucaramanga</option>
-                            <option value="8">Barrancabermeja</option>
-                            <option value="9">Cartagena</option>
+                        <input class="animal" type="radio" name="gato" id="especie-gato"><i class='bx bxs-cat'></i>
+                        <input class="animal" type="radio" name="perro" id="especie-perro"><i class='bx bxs-dog' ></i><br>
+                        <select name=" estado" id="estadobusqueda">
+                            <option name="estado" value="0">Estado de búsqueda</option>
+                            <option name="estado" value="1">Perdido</option>
+                            <option name="estado" value="2">Encontrado</option>
                         </select>
-                        <input type="text" id="raza" placeholder="¿Que raza es?">
-                        <input type="text" id="fecha" placeholder="¿Perdido desde? (Fecha)">
+                        <input type="text" id="name" placeholder="Buscar por nombre">
+                        <select name=sexo" id="sexo">
+                            <option value="0" name="sexo">Sexo</option>
+                            <option value="1" name="sexo">Macho</option>
+                            <option value="2" name="sexo">Hembra</option>
+                        </select>
+                        <select name="size" id="size"> 
+                            <option value="0" name="size">Tamaño</option>
+                            <option value="1" name="size">Mini</option>
+                            <option value="2" name="size">Pequeño</option>
+                            <option value="3" name="size">Mediano</option>
+                            <option value="4" name="size">Grande</option>
+                        </select>
+                        <select title="modalidades" name="ciuades" class="form-control" id="mw-publicaciones_inputCiudad">
+                            <option name="ciudades" value="0">Ciudad</option>
+                            <option name="ciudades" value="1">Medellin</option>
+                            <option name="ciudades" value="2">Cali</option>
+                            <option name="ciudades" value="3">Bogota</option>
+                            <option name="ciudades" value="4">Cundinamarca</option>
+                            <option name="ciudades" value="5">Boyaca</option>
+                            <option name="ciudades" value="6">Manizales</option>
+                            <option name="ciudades" value="7">Bucaramanga</option>
+                            <option name="ciudades" value="8">Barrancabermeja</option>
+                            <option name="ciudades" value="9">Cartagena</option>
+                        </select>
+                        <select name="raza" id="">
+                            <option name="raza" value="">Raza</option>
+                            <option name="raza" value="">Raza1</option>
+                            <option name="raza" value="">Raza2</option>
+                            <option name="raza" value="">Otra</option>
+                        </select>
+                        <input type="date" id="fecha">
                         <button>Buscar</button>                                      
+                        <button>Limpiar</button>                                      
                     </form>
                 </div>
             </div>
             <!--Especifica que creara un contenedor para los articulos de los servicios-->
             <div class="mw-container-cardsperdidos">
                 <article class="container-cardsperdidos">
+                    <div class="card-perdidos">
+                        <img src="img/banner3-op.png" class="card__img">
+                        <div class="cards__text-perdidos">
+                            <h3 class="card__title-perdido">Nala</h3>
+                            <p class="card-secondtitle">Femenino</p>
+                            <p class="card__copy">Perdido desde el 22/10/2023</p>
+                        </div>
+                    </div>
+                    <div class="card-perdidos">
+                        <img src="img/banner2.png" class="card__img">
+                        <div class="cards__text-perdidos">
+                            <h3 class="card__title-perdido">Nala</h3>
+                            <p class="card-secondtitle">Femenino</p>
+                            <p class="card__copy">Perdido desde el 22/10/2023</p>
+                        </div>
+                    </div>
+                    <div class="card-perdidos">
+                        <img src="img/exi-3-opp.jpg" class="card__img">
+                        <div class="cards__text-perdidos">
+                            <h3 class="card__title-perdido">Nala</h3>
+                            <p class="card-secondtitle">Femenino</p>
+                            <p class="card__copy">Perdido desde el 22/10/2023</p>
+                        </div>
+                    </div>
+                    <div class="card-perdidos">
+                        <img src="img/gatitoo.png" class="card__img">
+                        <div class="cards__text-perdidos">
+                            <h3 class="card__title-perdido">Nala</h3>
+                            <p class="card-secondtitle">Femenino</p>
+                            <p class="card__copy">Perdido desde el 22/10/2023</p>
+                        </div>
+                    </div>                                           
+                    <div class="card-perdidos">
+                        <img src="img/banner3-op.png" class="card__img">
+                        <div class="cards__text-perdidos">
+                            <h3 class="card__title-perdido">Nala</h3>
+                            <p class="card-secondtitle">Femenino</p>
+                            <p class="card__copy">Perdido desde el 22/10/2023</p>
+                        </div>
+                    </div>
+                    <div class="card-perdidos">
+                        <img src="img/banner2.png" class="card__img">
+                        <div class="cards__text-perdidos">
+                            <h3 class="card__title-perdido">Nala</h3>
+                            <p class="card-secondtitle">Femenino</p>
+                            <p class="card__copy">Perdido desde el 22/10/2023</p>
+                        </div>
+                    </div>
+                    <div class="card-perdidos">
+                        <img src="img/exi-3-opp.jpg" class="card__img">
+                        <div class="cards__text-perdidos">
+                            <h3 class="card__title-perdido">Nala</h3>
+                            <p class="card-secondtitle">Femenino</p>
+                            <p class="card__copy">Perdido desde el 22/10/2023</p>
+                        </div>
+                    </div>
+                    <div class="card-perdidos">
+                        <img src="img/gatitoo.png" class="card__img">
+                        <div class="cards__text-perdidos">
+                            <h3 class="card__title-perdido">Nala</h3>
+                            <p class="card-secondtitle">Femenino</p>
+                            <p class="card__copy">Perdido desde el 22/10/2023</p>
+                        </div>
+                    </div>                                           
                     <div class="card-perdidos">
                         <img src="img/banner3-op.png" class="card__img">
                         <div class="cards__text-perdidos">

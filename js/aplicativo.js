@@ -1,6 +1,40 @@
+// SECCIONES
+const seccionPerfilUser = document.getElementById("mw_section-profile");
+const seccionMatchHuman = document.getElementById("mw-sectionMatchHuman");
+const seccionMatchPreferences = document.getElementById("mw_sectionMatchPreferences");
+const seccionMatch = document.getElementById("mw-sectionMatch");
+const seccionChat = document.getElementById("mw_sectionChat");
+const seccionPanelMascota = document.getElementById("mw_panelMascota");
+const seccionMisMascotas = document.getElementById("Entregando_misMascotas");
+const seccionSolicitudes = document.getElementById("Adoptante_solicitudesEnv");
+const seccionHome = document.getElementById("mw_sectionHome");
+
+// BOTONES NAV BAR
+const navBotonPerfil = document.getElementById("mw-navButtonPerfil");
+const navBotonMatch = document.getElementById("mw-navButtonMatch");
+const navBotonChat = document.getElementById("mw-navButtonChat");
+const navBotonSolicitudes = document.getElementById("mw-navButtonMascotas");
+const navBotonHome = document.getElementById("mw-navButtonHome");
+
+
 let mewoofDB = JSON.parse(localStorage.getItem('mewoofDB'));
 let usuarioSesion = mewoofDB.usuarioSesion;
 // let apiUserController;
+
+document.addEventListener('DOMContentLoaded', () => {
+    Swal.fire(
+        {
+        icon: "success",
+        title: "Acceso Exitoso",
+        confirmButtonColor: "#F7ABB2",
+        showConfirmButton: false,
+        // toast: true,
+        // grow: 'fullscreen',
+        timer: '1900'
+        }
+      );
+ 
+})
 
 function fetchAPI(url) {
 
@@ -12,12 +46,14 @@ function fetchAPI(url) {
 }
 
 
+
 console.log(usuarioSesion);
 window.onload  = iniciar();
 
 
 function iniciar () {
     mewoofDB = JSON.parse(localStorage.getItem('mewoofDB'));
+    seccionHome.style.display="flex"
 }
 //     // mewoofDB = JSON.parse(localStorage.getItem('mewoofDB'));
 //     // usuarioSesion = mewoofDB.usuarioSesion;
@@ -144,23 +180,6 @@ class Solicitud {
 
 // ******** INICIO MANIPULACION DOM ******** //
 
-// SECCIONES
-const seccionPerfilUser = document.getElementById("mw_section-profile");
-const seccionMatchHuman = document.getElementById("mw-sectionMatchHuman");
-const seccionMatchPreferences = document.getElementById("mw_sectionMatchPreferences");
-const seccionMatch = document.getElementById("mw-sectionMatch");
-const seccionChat = document.getElementById("mw_sectionChat");
-const seccionPanelMascota = document.getElementById("mw_panelMascota");
-const seccionMisMascotas = document.getElementById("Entregando_misMascotas");
-const seccionSolicitudes = document.getElementById("Adoptante_solicitudesEnv");
-const seccionHome = document.getElementById("mw_sectionHome");
-
-// BOTONES NAV BAR
-const navBotonPerfil = document.getElementById("mw-navButtonPerfil");
-const navBotonMatch = document.getElementById("mw-navButtonMatch");
-const navBotonChat = document.getElementById("mw-navButtonChat");
-const navBotonSolicitudes = document.getElementById("mw-navButtonMascotas");
-const navBotonHome = document.getElementById("mw-navButtonHome");
 
 navBotonPerfil.addEventListener('click', () => {
   ocultarSecciones();
@@ -305,7 +324,19 @@ botonGuardarCambiosPerfil.addEventListener('click', () => {
         console.error('Error al actualizar el usuario:', error);
     });
 
-    alert("Información Actualizada con éxito");
+    Swal.fire(
+        {
+        icon: "success",
+        title: "Información Actualizada con Éxito",
+        confirmButtonColor: "#F7ABB2",
+        showConfirmButton: false,
+        width: '40%',
+        padding:'4%',
+        timer: '1500'
+        // toast: true,
+        // grow: 'fullscreen',
+        }
+      );
 
 })
 
@@ -318,16 +349,28 @@ botonCerrarPassword.addEventListener('click', () => {
 })
 
 botonGuardarPassword.addEventListener('click', () => {
-    alert("1111@11")
+    
     console.log(`UsuarioSesion: ${usuarioSesion.password} - tipo: ${typeof(usuarioSesion.password)}`)
     console.log(`contraseña anterior input: ${inputLastPassword.value} - tipo: ${typeof(inputLastPassword.value)}`)
     console.log(` nueva contraseña: ${inputNewPassword.value} - tipo: ${typeof(inputNewPassword.value)}`);
     console.log(`boolean compare: ${inputLastPassword.value == usuarioSesion.password} - bollean extrict: ${inputLastPassword.value === usuarioSesion.password}`)
     if (usuarioSesion.password === inputLastPassword.value){
-        alert("1111@22")
-        let user= mewoofDB.usuarios.lista.find(x=>x.email===usuarioSesion.email)
+        
+        let user= mewoofDB.usuarioSesion
         user.password = inputNewPassword.value;
-        alert("Contraseña Actualizada con éxito");
+        Swal.fire(
+            {
+            icon: "success",
+            title: "Contraseña Actualizada con Éxito",
+            confirmButtonColor: "#F7ABB2",
+            showConfirmButton: false,
+            width:'40%',
+            padding: '4%',
+            timer: '1500'
+            // toast: true,
+            // grow: 'fullscreen',
+            }
+        );
         seccionCambiarPassword.style.right="150%";
         saveLocaStorage();
     }
@@ -349,22 +392,32 @@ botonPreferencesCat.addEventListener('click', () => {
     ocultarSecciones();
     seccionMatch.style.display="flex";
     imgVariableTarjetaMascota.src = "../img/exi-3-op.jpg"
+    traerMascotas();
 })
 
 botonPreferencesDog.addEventListener('click', () => {
     ocultarSecciones();
     seccionMatch.style.display="flex";
     imgVariableTarjetaMascota.src = "../img/banner2.png"
-
+    traerMascotas();
+    
 })
 
 botonPreferencesCatDog.addEventListener('click', () => {
     ocultarSecciones();
     seccionMatch.style.display="flex";
     imgVariableTarjetaMascota.src = "../img/perrito1.jpg"
+    traerMascotas();
 })
 
 
+function traerMascotas () {
+    url = "http://localhost:8080/mascotas"
+
+    let listaMascotas = fetchAPI(url);
+
+    return listaMascotas;
+}
 
 // FIN SECCION PREFERENCES
 
@@ -456,14 +509,25 @@ function crearMascota() {
         // Maneja cualquier error que pueda ocurrir durante la solicitud
         console.error('Error:', error);
         });
-    };
 
     console.log(mascotasController);
 
-    usuarioSesion.agregarMascota(usuarioSesion, formularioRaza.value, formularioSize.value,formularioNombre.value, formularioEdad.value, formularioSalud.value);
+    // usuarioSesion.agregarMascota(usuarioSesion, formularioRaza.value, formularioSize.value,formularioNombre.value, formularioEdad.value, formularioSalud.value);
+    Swal.fire(
+        {
+        icon: "success",
+        title: "Mascota Creada con Éxito",
+        confirmButtonColor: "#F7ABB2",
+        showConfirmButton: false,
+        width: '40%',
+        padding:'4%',
+        timer: '1500'
+        // toast: true,
+        // grow: 'fullscreen',
+        }
+      );
 
     seccionPanelMascota.style.display="none"
-    alert("Mascota Creada");
     formularioRaza.value = '';
     formularioEdad.value = '';
     formularioNombre.value = '';

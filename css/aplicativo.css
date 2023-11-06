@@ -23,6 +23,7 @@
 
 html {
   width: 100vw;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -230,6 +231,12 @@ body {
   font-size: 20px;
 }
 
+.form-group-about input {
+  height: 100px;
+  border-radius: 30px;
+  text-align: center;
+}
+
 .form-control{
   border: 1px solid var(--beige)
 }
@@ -301,7 +308,7 @@ body {
 .popup {
   /* width: 100vh; */
   position: relative;
-  /* right: 150%; */
+  right: 150%;
   height: 50%;
 }
 .popup input{
@@ -914,12 +921,12 @@ margin-top: 10px;
 /* Inicio Seccion home*/
 .mw-sectionHome {
   /* margin-top: 2%; */
-  display: flex;
+  display: none;
   flex-direction: column;
   width: 100%;
   height: 100vh;
   box-sizing: border-box;
-  overflow: scroll;
+  overflow-y: scroll;
 }
 
 .tittle-comunidad h1{

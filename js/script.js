@@ -25,7 +25,7 @@ botonLoginNav.addEventListener('click', () => {
 });
 
 botonLoginApp.addEventListener('click', () => {
-    loginValidations();
+  loginValidations();
 });
 
 botonCloseLogin.addEventListener('click', () => {
@@ -523,7 +523,6 @@ function newUserAdoptante () {
 
 function loginValidations () {
   
-  
   const usuario = inputUser.value;
   const password = inputPassword.value;
   
@@ -540,14 +539,28 @@ function loginValidations () {
       // const estadoUsuarioEncontrado = usuarioBuscado;
       alertasValidacionIfElse(usuarioBuscado, usuario);
       if (usuarioBuscado.password === password) {
-        alert("Autenticación Exitosa \n ¡Bienvenido!");
+
+        // alert("Autenticación Exitosa \n ¡Bienvenido!");
+        // Swal.fire(
+        //   {
+        //   icon: "success",
+        //   title: "Acceso Exitoso",
+        //   confirmButtonColor: "#F7ABB2",
+        //   toast: true
+
+        //   }
+        // );
+
         mewoofDB.usuarioSesion = usuarioBuscado;
         saveLocaStorage();
-        window.open("aplicativo.html");
+
+
         inputUser.value = '';
         inputPassword.value = '';
-        } else {
-          const elementoHtmlPassword = document.getElementById("mw_loginPassword");
+
+        window.location.href = "aplicativo.html";
+      } else {
+        const elementoHtmlPassword = document.getElementById("mw_loginPassword");
           const estadoPasswordCoincide = usuarioBuscado.password === password;
           alertasValidacionIfElse(estadoPasswordCoincide, elementoHtmlPassword);
           // alert("Contraseña Incorrecta");
