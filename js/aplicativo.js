@@ -204,6 +204,7 @@ const botonCerrarPassword = document.getElementById("close-popup");
 const botonGuardarPassword = document.getElementById("save-password");
 let inputLastPassword = document.getElementById("password");
 let inputNewPassword = document.getElementById("new-password");
+let inputConfirmPassword = document.getElementById("confirm-password");
 
 // FORMULARIO
 let nombreMostrar = document.getElementById("username_user");
@@ -260,11 +261,13 @@ botonGuardarPassword.addEventListener('click', () => {
     console.log(`UsuarioSesion: ${usuarioSesion.password} - tipo: ${typeof(usuarioSesion.password)}`)
     console.log(`contraseña anterior input: ${inputLastPassword.value} - tipo: ${typeof(inputLastPassword.value)}`)
     console.log(` nueva contraseña: ${inputNewPassword.value} - tipo: ${typeof(inputNewPassword.value)}`);
+    console.log(` confirmar contraseña: ${inputConfirmPassword.value} - tipo: ${typeof(inputConfirmPassword.value)}`);
     console.log(`boolean compare: ${inputLastPassword.value == usuarioSesion.password} - bollean extrict: ${inputLastPassword.value === usuarioSesion.password}`)
     if (usuarioSesion.password === inputLastPassword.value){
         alert("1111@22")
         let user= mewoofDB.usuarios.lista.find(x=>x.email===usuarioSesion.email)
         user.password = inputNewPassword.value;
+        user.password = inputConfirmPassword.value;
         alert("Contraseña Actualizada con éxito");
         seccionCambiarPassword.style.right="150%";
         saveLocaStorage();

@@ -489,6 +489,10 @@ body {
     box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.5);
 }
 
+.buttons-return {
+  display: flex;
+}
+
 .card__img{
     width: 95%;
     height: auto;
