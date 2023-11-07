@@ -331,7 +331,7 @@
                         <div class="mw_mascotaCargada-actionButtons">
                             <i class='bx bx-edit'  id="mw_buttonEditarMascota"></i>
                             <i class='bx bx-trash' id="mw_buttonEliminarMascota"></i>
-                        </div>
+                        </div>  
                     </div> -->
                 </div>
                 <div class="mw-addMascota-button mw-mascotaCargada" id="mw_panelMascotaOpen">
@@ -345,8 +345,12 @@
                     <div class="content-titlepanel">
                         <h1 class="mw-panelMascotaH1">Subir Mascotica</h1>
                         <img src="img/DhBX_lUWsAEFdLj.jpg" alt="">
-                        <p>Cambiar imagen</p>
+                        <div>
+                            <label class= "mw_mascotaFormFoto" for=""></label>
+                            <input type="file" id="mw-mascotaFoto">
+                        </div>
                     </div>
+                    <div class="content-form-panel">
                     <form id="mw_mascotaForm" action="">
                         <div>
                             <label class= mw_mascotaFormDiv for="">Raza</label>
@@ -388,15 +392,12 @@
                                 <option value="4">$1.000.000 o +</option>  
                             </select>
                         </div>
-                        <div>
-                            <label class= mw_mascotaFormFoto for="">Foto</label>
-                            <input type="file" id="mw-mascotaFoto">
-                        </div>
                     </form>
                     <div class="mw-cargarMascotaButton">
-                        <!-- <button id="mw_cargarMascotaButton" onclick="crearMascota()">Crear</button> -->
-                        <button id="mw_cargarMascotaButton" class="mw-cargarMascotaButtonn">Crear</button>
-                    </div>
+                            <!-- <button id="mw_cargarMascotaButton" onclick="crearMascota()">Crear</button> -->
+                            <button id="mw_cargarMascotaButton" class="mw-cargarMascotaButtonn">Crear</button>
+                        </div>
+                </div>
                 </div>
             </div>
         <!-- Fin Seccion Cargar Mascota  Interface -->

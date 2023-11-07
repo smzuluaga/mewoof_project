@@ -800,9 +800,20 @@ body {
 
 /* Inicio Seccion Panel Crear Mascota*/
 
-div{
-  box-shadow: 2px 2px 3px white;
+
+
+.content-titlepanel{
+  margin-top: 5%;
+  width: 50%;
+  align-items: center;
+  justify-content: center;
+  
 }
+
+.mw_mascotaFormFoto{
+ margin-right: 15%;
+}
+
 .mw-panelMascota {
     display: flex;
     width: 100%;
@@ -824,16 +835,26 @@ div{
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
 }
 
-.mw-panelMascota-container img{
-  width: 90px;
-  height: 90px;
-  border-radius: 1000px;
-  margin-left: 45%;
+.content-form-panel{
+  width: 100%;
+  margin-top: 5%;
+  text-align: center;  
+  margin-bottom: 20%;
 }
 
 .mw-panelMascota-container p{
-  margin-left: 44%;
+  text-align: center;
 }
+
+.mw-panelMascota-container img{
+  width: 150px;
+  height: 150px;
+  border-radius: 1000px;
+  align-items: center;
+  margin-left: 28%;
+}
+
+
 
 .mw-panelMascota-container form{
     display: flex;
@@ -841,10 +862,8 @@ div{
     font-size: 12px;
     color: var(--red);
     font-weight: bold;
-    overflow-y: auto; 
-}
-
-.mw-panelMascota-container form .mw_mascotaFormFoto{
+    overflow-y: auto;
+     
 }
 
 #mw-mascotaFoto {
@@ -885,6 +904,7 @@ div{
 }
 
 .mw-cargarMascotaButtonn{
+  margin-left: 50%;
   background-color: rgba(247, 171, 178,0.75);
   font-size: 15px;
   border-radius: 20px;
@@ -894,6 +914,7 @@ div{
   padding: 10px 10px;
   margin: 15px;
   width:100px;
+  cursor: pointer;
 }
 /* Fin Seccion Panel Crear Mascota*/
 
