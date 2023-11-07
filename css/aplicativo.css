@@ -366,6 +366,51 @@ body {
     text-align: left;
     display: none;
 }
+
+.cardHuman{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 34%;
+  padding: 5px;
+  height: 70%;
+  overflow: hidden;
+  background: linear-gradient(180deg, var(--pink2) 0%, var(--beige2) 100%);
+  border-radius: 20px;
+  /* position: relative; */
+  text-align: right;
+    /* Aplica una sombra al elemento utilizando la propiedad box-shadow */
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+.buttonsHuman{
+display: flex;
+align-items: center;
+justify-content: space-evenly;
+width: 35%;
+}
+
+.buttonsHuman i{
+  color: #EF4147;
+  font-size: 45px;
+  cursor: pointer;
+  background-color: #fff;
+  width: 80px;
+  height: 80px;
+  background: linear-gradient(180deg, #ecbcee 0%, #e1d2e1 100%); 
+  box-shadow: 0 1px 10px 0 rgba(0, 20, 20, 0.1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 70px;
+  margin: 15px;
+  transition: 0.2s transform;
+}
+
+.buttons i:hover {
+transform: scale(1.1);
+}
+
 /*Fin seccion matches Human*/
 
 
@@ -402,9 +447,20 @@ body {
   justify-content: space-evenly;
 }
 
+
 .mww-inputsFiltrosMAscotas div{
   display: flex;
   flex-direction: column;
+  color: var(--pink2);
+}
+
+.mww-inputsFiltrosMAscotas select{
+  border-color: #E8B77E;
+  margin-top: 10px;
+  border-radius: 10px;
+  color: var(--pink2);
+  width: 100%;
+  padding: 4px;
 }
 
 .buscandoAmor{
@@ -475,9 +531,9 @@ body {
 .card{
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
     align-items: center;
-    width: 35%;
+    margin-right: 50%;
+    width: 50%;
     padding: 5px;
     height: 70%;
     overflow: hidden;
@@ -488,6 +544,7 @@ body {
       /* Aplica una sombra al elemento utilizando la propiedad box-shadow */
     box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.5);
 }
+
 
 .card__img{
     width: 95%;
@@ -551,7 +608,7 @@ body {
   color: var(--pink2);
   font-size: 33px;
 }
-*
+
 
 .card_button {
   font-size: 15px;
@@ -564,12 +621,40 @@ body {
   height: 20%;
 } 
 
+.buttonreturn{
+  display: flex;
+	align-items: center;
+    justify-content: space-evenly;
+    margin-left: 10%;
+    width: 35%;
+}
+
+.buttonreturn i{
+  color: #EF4147;
+    font-size: 45px;
+    cursor: pointer;
+    background-color: #fff;
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(180deg, #ecbcee 0%, #e1d2e1 100%); 
+    box-shadow: 0 1px 10px 0 rgba(0, 20, 20, 0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 70px;
+    transition: 0.2s transform;
+}
+
+.buttonreturn i:hover{
+  transform: scale(1.1);  
+}
 
 .buttons {
 	display: flex;
 	align-items: center;
-    justify-content: space-evenly;
-    width: 35%;
+  justify-content: space-evenly;
+  width: 35%;
+  margin-right: 50%;
     
 }
 
@@ -743,31 +828,61 @@ body {
 /* Fin Seccion mis Mascotas*/
 
 /* Inicio Seccion Panel Crear Mascota*/
+
+.content-titlepanel{
+  margin-top: 5%;
+  width: 50%;
+  align-items: center;
+  justify-content: center;
+  
+}
+
+.mw_mascotaFormFoto{
+ margin-right: 15%;
+}
+
 .mw-panelMascota {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
     width: 100%;
     height: 100vh;
     position: fixed;
     background-color: rgba(0, 0, 0, 0.8);
     display: none;
+    justify-content: center;
 }
 
 .mw-panelMascota-container {
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    min-width: 250px;
-    max-width: 300px;
-    height: 70vh;
-    padding: 20px 20px;
+    min-width: 1200px;
+    height: 90vh;
+    padding: 20px 30px;
     background: rgb(35, 35, 35,0.9);
     color: #fff;
     border-radius: 35px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+.content-form-panel{
+  width: 100%;
+  margin-top: 5%;
+  text-align: center;  
+  margin-bottom: 20%;
+}
+
+.mw-panelMascota-container p{
+  text-align: center;
+}
+
+.mw-panelMascota-container img{
+  width: 150px;
+  height: 150px;
+  border-radius: 1000px;
+  align-items: center;
+  margin-left: 28%;
+}
+
+.content-button{
+  margin-top: 9%;
 }
 
 .mw-panelMascota-container form{
@@ -776,12 +891,9 @@ body {
     font-size: 12px;
     color: var(--red);
     font-weight: bold;
-    margin-bottom: 50px;
-    overflow-y: auto; 
-}
-
-.mw-panelMascota-container form .mw_mascotaFormFoto{
-margin-top: 10px;
+    font-size: 15px;
+    width: 80%;
+    margin-left: 13%;     
 }
 
 #mw-mascotaFoto {
@@ -822,6 +934,7 @@ margin-top: 10px;
 }
 
 .mw-cargarMascotaButtonn{
+  margin-left: 50%;
   background-color: rgba(247, 171, 178,0.75);
   font-size: 15px;
   border-radius: 20px;
@@ -831,6 +944,7 @@ margin-top: 10px;
   padding: 10px 10px;
   margin: 15px;
   width:100px;
+  cursor: pointer;
 }
 /* Fin Seccion Panel Crear Mascota*/
 
