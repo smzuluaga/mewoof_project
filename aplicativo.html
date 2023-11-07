@@ -70,6 +70,9 @@
         <!--Seccion editar información-->
         <section id="mw_section-profile" class="mw-section-profile">
             <div class="profile-container">
+                <div class="closeSesion">
+                    <button class="btn-close">Cerrar Sesión</button>
+                </div>
                 <div class="profile-title">
                     <h1>Editar información</h1>
                 </div>
@@ -78,6 +81,9 @@
                         <div>
                             <img class="image-user" src="./img/user.png" alt="" />
                             <h3 class="username-user" id="username_user"></h3>
+                        </div>
+                        <div class="btn-closeup">
+                            <button type="button" class="btn-close-but" id="">Eliminar Usuario</button>
                         </div>
                         <div class="btn-edit">
                             <button type="button" class="btn-edit-but" id="open-popup">Editar Contraseña</button>
@@ -392,6 +398,14 @@
                                 <option value="4">$1.000.000 o +</option>  
                             </select>
                         </div>
+                        <div>
+                            <label class= mw_mascotaFormDiv for="mw-mascotaNeedsMoney">¿Esterilizado?</label>
+                            <select id="mw-mascotaNeedsMoney">
+                                <option value=""></option>
+                                <option value="1">Si</option>
+                                <option value="2">No</option>
+                            </select>
+                        </div>
                     </form>
                     <div class="content-button">
                     <div class="mw-cargarMascotaButton">
@@ -417,7 +431,7 @@
                         </div>
                         <div class="mw-mascotaCargada-info">
                             <h3 class="card__title">Fiona<span class="point"> 1 año</span></h3>
-                            <p class="card__copy">  Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum nostrum asperiores animi ducimus quod voluptatibus deserunt vero repudiandae consequatur, dolore consequuntur doloremque, qui accusantium repellat placeat aut repellendus. Culpa, eos!</p>
+                            <p class="card__copy"> Sueño con el día en que alguien entre en el refugio, me mire a los ojos y sepa que soy la mascota que han estado esperando. Anhelo los paseos por el parque, los mimos en el sofá y los juguetes para jugar. Sé que tengo tanto amor para dar, y estoy dispuesto a hacer feliz a quien me adopte.</p>
                         </div>
                         <div class="mw-estadoSolicitud">
                             <a class="card_button">Aprobado</a>
