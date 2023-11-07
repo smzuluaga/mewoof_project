@@ -25,6 +25,7 @@ botonLoginNav.addEventListener('click', () => {
 });
 
 botonLoginApp.addEventListener('click', () => {
+  
   loginValidations();
 });
 
@@ -522,7 +523,7 @@ function newUserAdoptante () {
 
 
 function loginValidations () {
-  
+  alert("entre")
   const usuario = inputUser.value;
   const password = inputPassword.value;
   

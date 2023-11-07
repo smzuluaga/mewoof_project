@@ -30,20 +30,21 @@ document.addEventListener('DOMContentLoaded', () => {
         showConfirmButton: false,
         // toast: true,
         // grow: 'fullscreen',
-        timer: '1900'
+        timer: '1900',
+        padding: '10%'
         }
       );
- 
 })
 
-function fetchAPI(url) {
+// function fetchAPI(url) {
 
-    fetch (url)
-    .then(response => response.json())
-    .then(data => {
-        return JSON.parse(data);
-    })
-}
+//     fetch (url, {method: 'GET'})
+//     .then(response => response.json())
+//     .then(data => {
+//         console.log(data.filter(x=>x.especie.id===1));
+//         return data;
+//     })
+// }
 
 
 
@@ -53,7 +54,8 @@ window.onload  = iniciar();
 
 function iniciar () {
     mewoofDB = JSON.parse(localStorage.getItem('mewoofDB'));
-    seccionHome.style.display="flex"
+    seccionHome.style.display="flex";
+     
 }
 //     // mewoofDB = JSON.parse(localStorage.getItem('mewoofDB'));
 //     // usuarioSesion = mewoofDB.usuarioSesion;
@@ -306,9 +308,9 @@ botonGuardarCambiosPerfil.addEventListener('click', () => {
 
     fetch(url, {
         method: 'PUT',
-        headers: {
-            'Content-Type' : 'application/json'
-        },
+        // headers: {
+        //     'Content-Type' : 'application/json'
+        // },
         body: mewoofDB.usuarioSesion
     })
     .then((response) => {
@@ -330,9 +332,12 @@ botonGuardarCambiosPerfil.addEventListener('click', () => {
         title: "Información Actualizada con Éxito",
         confirmButtonColor: "#F7ABB2",
         showConfirmButton: false,
-        width: '40%',
-        padding:'4%',
-        timer: '1500'
+        // width: '40%',
+        padding:'10%',
+        timer: '1500',
+        customClass:{
+            container: 'SwalResponsive'
+        }
         // toast: true,
         // grow: 'fullscreen',
         }
@@ -341,7 +346,18 @@ botonGuardarCambiosPerfil.addEventListener('click', () => {
 })
 
 botonCambiarPassword.addEventListener('click', () => {
-    seccionCambiarPassword.style.right="0%";
+    // seccionCambiarPassword.style.right="0%";
+    // document.getElementById("mw-profile-content_user").style
+    Swal.fire({
+        icon: 'warning',
+        title: 'Cambiar Contraseña',
+        grow: 'column',
+        confirmButtonText: 'Guardar Contraseña',
+        confirmButtonColor: '#F7ABB2',
+        showCloseButton: true,
+        html: '<div><input type="password" id="swalCurrentPassword" class="swalPasswordChange" placeholder="Contraseña Actual"><input type="password" id="swalCurrentPassword" class="swalPasswordChange" placeholder="Nueva Contraseña"><input type="password" id="swalCurrentPassword" class="swalPasswordChange" placeholder="Repetir Nueva Contraseña"></div>',
+
+    })
 })
 
 botonCerrarPassword.addEventListener('click', () => {
@@ -364,9 +380,12 @@ botonGuardarPassword.addEventListener('click', () => {
             title: "Contraseña Actualizada con Éxito",
             confirmButtonColor: "#F7ABB2",
             showConfirmButton: false,
-            width:'40%',
-            padding: '4%',
-            timer: '1500'
+            // width:'40%',
+            padding: '10%',
+            timer: '1500',
+            customClass:{
+                pupup: 'SwalResponsive'
+            }
             // toast: true,
             // grow: 'fullscreen',
             }
@@ -384,6 +403,9 @@ botonGuardarPassword.addEventListener('click', () => {
 const botonPreferencesCat = document.getElementById("mw-preferencesMew");
 const botonPreferencesDog = document.getElementById("mw-preferencesWoof");
 const botonPreferencesCatDog = document.getElementById("mw-preferencesMewoof");
+const inputEspacioDisponible = document.getElementById("mw-preferenceMascotaNeedsSpace")
+const inputTiempoDisponible = document.getElementById("mw-preferencesMascotaNeedsTime")
+const inputDineroDisponible = document.getElementById("mw-preferencesMascotaNeedsMoney")
 const imgVariableTarjetaMascota = document.getElementById("mw-mascotaCardImg");
 
 
@@ -392,14 +414,18 @@ botonPreferencesCat.addEventListener('click', () => {
     ocultarSecciones();
     seccionMatch.style.display="flex";
     imgVariableTarjetaMascota.src = "../img/exi-3-op.jpg"
-    traerMascotas();
+    // let petForMatch  = traerMascotas(1,inputEspacioDisponible.value,inputTiempoDisponible.value, inputDineroDisponible.value)
+    let petForMatch  = traerMascotas(1)
+    console.log(petForMatch);
 })
 
 botonPreferencesDog.addEventListener('click', () => {
     ocultarSecciones();
     seccionMatch.style.display="flex";
     imgVariableTarjetaMascota.src = "../img/banner2.png"
-    traerMascotas();
+    // let petForMatch  = traerMascotas(2,inputEspacioDisponible.value,inputTiempoDisponible.value, inputDineroDisponible.value)
+    let petForMatch  = traerMascotas(2)
+    console.log(petForMatch);
     
 })
 
@@ -407,17 +433,34 @@ botonPreferencesCatDog.addEventListener('click', () => {
     ocultarSecciones();
     seccionMatch.style.display="flex";
     imgVariableTarjetaMascota.src = "../img/perrito1.jpg"
-    traerMascotas();
+    // let petForMatch  = traerMascotas(inputEspacioDisponible.value,inputTiempoDisponible.value, inputDineroDisponible.value)
+    let petForMatch  = traerMascotas(0)
+    console.log(petForMatch);
 })
 
 
-function traerMascotas () {
+// function traerMascotas (especie,espacio,tiempo,dinero) {
+function traerMascotas (especie) {
     url = "http://localhost:8080/mascotas"
 
-    let listaMascotas = fetchAPI(url);
+    // let listaMascotas = JSON.parse(fetchAPI(url));
 
-    return listaMascotas;
+    fetch (url, {method: 'GET'})
+        .then(response => response.json())
+        .then(data => {
+
+            if (especie === 0) {
+                console.log(data);
+                return data
+            } else {
+                console.log(data.filter(x=>x.especie.id===especie));
+                return data.filter(x=>x.especie.id===especie);
+            }
+        })
+    
 }
+
+// console.log(`prueba ${traerMascotas(0)}`);
 
 // FIN SECCION PREFERENCES
 
@@ -520,7 +563,7 @@ function crearMascota() {
         confirmButtonColor: "#F7ABB2",
         showConfirmButton: false,
         width: '40%',
-        padding:'4%',
+        padding:'10%',
         timer: '1500'
         // toast: true,
         // grow: 'fullscreen',
