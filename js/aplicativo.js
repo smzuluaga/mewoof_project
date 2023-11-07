@@ -16,10 +16,42 @@ const navBotonChat = document.getElementById("mw-navButtonChat");
 const navBotonSolicitudes = document.getElementById("mw-navButtonMascotas");
 const navBotonHome = document.getElementById("mw-navButtonHome");
 
+let mewoofDB;
+let usuarioSesion;
 
-let mewoofDB = JSON.parse(localStorage.getItem('mewoofDB'));
-let usuarioSesion = mewoofDB.usuarioSesion;
+// let mewoofDB = JSON.parse(localStorage.getItem('mewoofDB'));
+// let mewoofDB = JSON.parse(localStorage.getItem('mewoofDB'));
+// let usuarioSesion = mewoofDB.usuarioSesion;
 // let apiUserController;
+
+function validarLocalStorage () {
+    if (localStorage.getItem('mewoofDB')){
+
+    console.log("YA EXISTIA")
+    mewoofDB = JSON.parse(localStorage.getItem('mewoofDB'));
+    console.log(mewoofDB);
+
+} else {
+    console.log("NO EXISTIA")
+    newMewoofappLS = 
+    {
+        usuarios: {
+            lista: [],
+            eliminados: [],
+        },
+        mascotas: {
+            lista: [],
+            eliminados: [],
+        },
+        usuarioSesion: null,
+    }
+    
+    localStorage.setItem('mewoofDB', JSON.stringify(newMewoofappLS))
+    mewoofDB = JSON.parse(localStorage.getItem('mewoofDB'));
+
+    console.log(mewoofDB);
+}
+};
 
 document.addEventListener('DOMContentLoaded', () => {
     Swal.fire(
@@ -33,7 +65,7 @@ document.addEventListener('DOMContentLoaded', () => {
         timer: '1900',
         padding: '10%'
         }
-      );
+    );
 })
 
 // function fetchAPI(url) {
@@ -48,14 +80,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-console.log(usuarioSesion);
 window.onload  = iniciar();
 
 
 function iniciar () {
-    mewoofDB = JSON.parse(localStorage.getItem('mewoofDB'));
+    validarLocalStorage();
+    usuarioSesion = mewoofDB.usuarioSesion;
     seccionHome.style.display="flex";
-     
+    console.log(usuarioSesion);
+
 }
 //     // mewoofDB = JSON.parse(localStorage.getItem('mewoofDB'));
 //     // usuarioSesion = mewoofDB.usuarioSesion;
@@ -127,7 +160,7 @@ class Entregando extends Usuario {
         console.log('Cargada');
         let newMascota = new Mascota(currentOwner, raza, size, nombre, edad, estadoSalud);
         let containerMascotas = mewoofDB.usuarios.lista.find(x => {
-           return x.email === usuarioSesion.email
+            return x.email === usuarioSesion.email
         })
         // console.log(containerMascotas);
         // console.log(usuarioSesion);
@@ -184,8 +217,8 @@ class Solicitud {
 
 
 navBotonPerfil.addEventListener('click', () => {
-  ocultarSecciones();
-  seccionPerfilUser.style.display="flex";
+    ocultarSecciones();
+    seccionPerfilUser.style.display="flex";
 })
 
 
@@ -286,6 +319,7 @@ function mensajePerfil(usuario) {
 
 // FALTA QUE ENVIE A BDDDDDDDDDDDDD
 botonGuardarCambiosPerfil.addEventListener('click', () => {
+    
     let perfilCambio = mewoofDB.usuarioSesion;
 
     perfilCambio.nombre = inputNombre.value;
@@ -305,6 +339,13 @@ botonGuardarCambiosPerfil.addEventListener('click', () => {
 
     console.log(mewoofDB.usuarioSesion);
 
+    app.use((req, res, next) => {
+        res.header('Access-Control-Allow-Origin', 'http://127.0.0.1:5505');
+        res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
+        res.header('Access-Control-Allow-Headers', 'Content-Type');
+        next();
+    });
+    
     let url = "http://localhost:8080/usuarios/actualizarUsuario"
 
     fetch(url, {
@@ -312,7 +353,28 @@ botonGuardarCambiosPerfil.addEventListener('click', () => {
         // headers: {
         //     'Content-Type' : 'application/json'
         // },
-        body: mewoofDB.usuarioSesion
+        body: 
+        {
+            "id": usuarioSesion.id,
+            "nombre": usuarioSesion.nombre,
+            "apellido": usuarioSesion.apellido,
+            "pais": {
+                "id": usuarioSesion.pais.id,
+                "nombre": usuarios.pais.nombre
+            },
+            "ciudad": {
+                "id": usuarioSesion.ciudad.id,
+                "nombre": usuarioSesion.ciudad.nombre
+            },
+            "telefono": usuarioSesion.telefono,
+            "email": usuarioSesion.email,
+            "password": usuarioSesion.password,
+            "tipo": {
+                "id": usuarioSesion.tipo.id,
+                "nombre": usuarioSesion.tipo.id
+            },
+            "about": usuarioSesion.about
+        }
     })
     .then((response) => {
         if(!response.ok){
@@ -342,7 +404,7 @@ botonGuardarCambiosPerfil.addEventListener('click', () => {
         // toast: true,
         // grow: 'fullscreen',
         }
-      );
+    );
 
 })
 
@@ -473,7 +535,7 @@ function traerMascotas (especie) {
 
 // BOTONES CREAR MASCOTA
 const botonAbrirPanelMascota = document.getElementById("mw_panelMascotaOpen");
-const botonCerrarPanelMascota = document.getElementById("mw_panelMascotaClose");
+// const botonCerrarPanelMascota = document.getElementById("mw_panelMascotaClose");
 let botonCrearMascota = document.getElementById("mw_cargarMascotaButton");
 
 let formularioRaza = document.getElementById("mw-mascotaRaza");
@@ -488,9 +550,9 @@ botonAbrirPanelMascota.addEventListener('click', () => {
     seccionPanelMascota.style.display="flex";
 });
 
-botonCerrarPanelMascota.addEventListener('click', () => {
-    seccionPanelMascota.style.display="none";
-});
+// botonCerrarPanelMascota.addEventListener('click', () => {
+//     seccionPanelMascota.style.display="none";
+// });
 
 // botonCrearMascota.addEventListener('click', crearMascota());
 
@@ -536,7 +598,7 @@ function crearMascota() {
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify(newMascota)
+            body: newMascota
         }
     )
     .then(response => {
@@ -570,7 +632,7 @@ function crearMascota() {
         // toast: true,
         // grow: 'fullscreen',
         }
-      );
+    );
 
     seccionPanelMascota.style.display="none"
     formularioRaza.value = '';

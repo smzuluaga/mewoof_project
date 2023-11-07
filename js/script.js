@@ -421,7 +421,7 @@ function newUserEntregando () {
       headers: {
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify(newUser)
+      body: newUser
       }
     )
     .then(response => {
@@ -500,7 +500,7 @@ function newUserAdoptante () {
       headers: {
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify(newUser)
+      body: newUser
       }
     )
     .then(response => {
@@ -535,7 +535,7 @@ function newUserAdoptante () {
 
 
 function loginValidations () {
-  alert("entre")
+  
   const usuario = inputUser.value;
   const password = inputPassword.value;
   
