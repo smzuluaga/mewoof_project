@@ -283,8 +283,8 @@ function ocultarSecciones () {
 // FOTO Y CONTRASEÑA
 const seccionCambiarPassword = document.getElementById("password-popup");
 const botonCambiarPassword = document.getElementById("open-popup");
-const botonCerrarPassword = document.getElementById("close-popup");
-const botonGuardarPassword = document.getElementById("save-password");
+// const botonCerrarPassword = document.getElementById("close-popup");
+// const botonGuardarPassword = document.getElementById("save-password");
 let inputLastPassword = document.getElementById("password");
 let inputNewPassword = document.getElementById("new-password");
 let inputConfirmPassword = document.getElementById("confirm-password");
@@ -319,7 +319,7 @@ function mensajePerfil(usuario) {
 
 // FALTA QUE ENVIE A BDDDDDDDDDDDDD
 botonGuardarCambiosPerfil.addEventListener('click', () => {
-    
+    // alert("entre")
     let perfilCambio = mewoofDB.usuarioSesion;
 
     perfilCambio.nombre = inputNombre.value;
@@ -337,44 +337,49 @@ botonGuardarCambiosPerfil.addEventListener('click', () => {
     perfilCambio.tipo.nombre = mewoofDB.usuarioSesion.tipo.nombre;
     saveLocaStorage();
 
+    console.log(perfilCambio.id);
     console.log(mewoofDB.usuarioSesion);
 
-    app.use((req, res, next) => {
-        res.header('Access-Control-Allow-Origin', 'http://127.0.0.1:5505');
-        res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
-        res.header('Access-Control-Allow-Headers', 'Content-Type');
-        next();
-    });
+    // const app = 
+
+    // app.use((req, res, next) => {
+    //     res.header('Access-Control-Allow-Origin', 'http://127.0.0.1:5505');
+    //     res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
+    //     res.header('Access-Control-Allow-Headers', 'Content-Type');
+    //     next();
+    // });
     
     let url = "http://localhost:8080/usuarios/actualizarUsuario"
 
+    let nuevoPerfil = {
+        'id': perfilCambio.id,
+        'nombre': perfilCambio.nombre,
+        'apellido': perfilCambio.apellido,
+        'pais': {
+            'id': perfilCambio.pais.id,
+            'nombre': perfilCambio.pais.nombre
+        },
+        'ciudad': {
+            'id': perfilCambio.ciudad.id,
+            'nombre': perfilCambio.ciudad.nombre
+        },
+        'telefono': perfilCambio.telefono,
+        'email': perfilCambio.email,
+        'password': perfilCambio.password,
+        'tipo': {
+            'id': perfilCambio.tipo.id,
+            'nombre': perfilCambio.tipo.id
+        },
+        'about': perfilCambio.about
+    }
+
     fetch(url, {
         method: 'PUT',
-        // headers: {
-        //     'Content-Type' : 'application/json'
-        // },
-        body: 
-        {
-            "id": usuarioSesion.id,
-            "nombre": usuarioSesion.nombre,
-            "apellido": usuarioSesion.apellido,
-            "pais": {
-                "id": usuarioSesion.pais.id,
-                "nombre": usuarios.pais.nombre
-            },
-            "ciudad": {
-                "id": usuarioSesion.ciudad.id,
-                "nombre": usuarioSesion.ciudad.nombre
-            },
-            "telefono": usuarioSesion.telefono,
-            "email": usuarioSesion.email,
-            "password": usuarioSesion.password,
-            "tipo": {
-                "id": usuarioSesion.tipo.id,
-                "nombre": usuarioSesion.tipo.id
-            },
-            "about": usuarioSesion.about
-        }
+        headers: {
+            'Content-Type' : 'application/json'
+        },
+        body: JSON.stringify(nuevoPerfil)
+        
     })
     .then((response) => {
         if(!response.ok){
@@ -384,27 +389,26 @@ botonGuardarCambiosPerfil.addEventListener('click', () => {
     } )
     .then((data)=>{
         console.log('Respuesta del servidor:', data);
+        Swal.fire(
+            {
+            icon: "success",
+            title: "Información Actualizada con Éxito",
+            confirmButtonColor: "#F7ABB2",
+            showConfirmButton: false,
+            // width: '40%',
+            padding:'10%',
+            timer: '1500',
+            customClass:{
+                container: 'SwalResponsive'
+            }
+            // toast: true,
+            // grow: 'fullscreen',
+            }
+        );
     })
     .catch((error) => {
         console.error('Error al actualizar el usuario:', error);
     });
-
-    Swal.fire(
-        {
-        icon: "success",
-        title: "Información Actualizada con Éxito",
-        confirmButtonColor: "#F7ABB2",
-        showConfirmButton: false,
-        // width: '40%',
-        padding:'10%',
-        timer: '1500',
-        customClass:{
-            container: 'SwalResponsive'
-        }
-        // toast: true,
-        // grow: 'fullscreen',
-        }
-    );
 
 })
 
@@ -423,41 +427,43 @@ botonCambiarPassword.addEventListener('click', () => {
     })
 })
 
-botonCerrarPassword.addEventListener('click', () => {
-    seccionCambiarPassword.style.right="350%";
-})
+// botonCerrarPassword.addEventListener('click', () => {
+//     seccionCambiarPassword.style.right="350%";
+// })
 
-botonGuardarPassword.addEventListener('click', () => {
+// CONFIGURAR DESDE EL POP UP SWAL CAMBIO DE CONTRASEÑAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA**************************************************************************************
+
+// botonGuardarPassword.addEventListener('click', () => {
     
-    console.log(`UsuarioSesion: ${usuarioSesion.password} - tipo: ${typeof(usuarioSesion.password)}`)
-    console.log(`contraseña anterior input: ${inputLastPassword.value} - tipo: ${typeof(inputLastPassword.value)}`)
-    console.log(` nueva contraseña: ${inputNewPassword.value} - tipo: ${typeof(inputNewPassword.value)}`);
-    console.log(` confirmar contraseña: ${inputConfirmPassword.value} - tipo: ${typeof(inputConfirmPassword.value)}`);
-    console.log(`boolean compare: ${inputLastPassword.value == usuarioSesion.password} - bollean extrict: ${inputLastPassword.value === usuarioSesion.password}`)
-    if (usuarioSesion.password === inputLastPassword.value){
+//     console.log(`UsuarioSesion: ${usuarioSesion.password} - tipo: ${typeof(usuarioSesion.password)}`)
+//     console.log(`contraseña anterior input: ${inputLastPassword.value} - tipo: ${typeof(inputLastPassword.value)}`)
+//     console.log(` nueva contraseña: ${inputNewPassword.value} - tipo: ${typeof(inputNewPassword.value)}`);
+//     console.log(` confirmar contraseña: ${inputConfirmPassword.value} - tipo: ${typeof(inputConfirmPassword.value)}`);
+//     console.log(`boolean compare: ${inputLastPassword.value == usuarioSesion.password} - bollean extrict: ${inputLastPassword.value === usuarioSesion.password}`)
+//     if (usuarioSesion.password === inputLastPassword.value){
         
-        let user= mewoofDB.usuarioSesion
-        user.password = inputNewPassword.value;
-        Swal.fire(
-            {
-            icon: "success",
-            title: "Contraseña Actualizada con Éxito",
-            confirmButtonColor: "#F7ABB2",
-            showConfirmButton: false,
-            // width:'40%',
-            padding: '10%',
-            timer: '1500',
-            customClass:{
-                pupup: 'SwalResponsive'
-            }
-            // toast: true,
-            // grow: 'fullscreen',
-            }
-        );
-        seccionCambiarPassword.style.right="150%";
-        saveLocaStorage();
-    }
-})
+//         let user= mewoofDB.usuarioSesion
+//         user.password = inputNewPassword.value;
+//         Swal.fire(
+//             {
+//             icon: "success",
+//             title: "Contraseña Actualizada con Éxito",
+//             confirmButtonColor: "#F7ABB2",
+//             showConfirmButton: false,
+//             // width:'40%',
+//             padding: '10%',
+//             timer: '1500',
+//             customClass:{
+//                 pupup: 'SwalResponsive'
+//             }
+//             // toast: true,
+//             // grow: 'fullscreen',
+//             }
+//         );
+//         seccionCambiarPassword.style.right="150%";
+//         saveLocaStorage();
+//     }
+// })
 // FIN FUNCIONES PERFIL
 
 
@@ -475,6 +481,7 @@ const imgVariableTarjetaMascota = document.getElementById("mw-mascotaCardImg");
 
 
 botonPreferencesCat.addEventListener('click', () => {
+    alert("entre")
     ocultarSecciones();
     seccionMatch.style.display="flex";
     imgVariableTarjetaMascota.src = "../img/exi-3-op.jpg"
@@ -535,7 +542,7 @@ function traerMascotas (especie) {
 
 // BOTONES CREAR MASCOTA
 const botonAbrirPanelMascota = document.getElementById("mw_panelMascotaOpen");
-// const botonCerrarPanelMascota = document.getElementById("mw_panelMascotaClose");
+const botonCerrarPanelMascota = document.getElementById("mw_panelMascotaClose");
 let botonCrearMascota = document.getElementById("mw_cargarMascotaButton");
 
 let formularioRaza = document.getElementById("mw-mascotaRaza");
@@ -550,98 +557,99 @@ botonAbrirPanelMascota.addEventListener('click', () => {
     seccionPanelMascota.style.display="flex";
 });
 
-// botonCerrarPanelMascota.addEventListener('click', () => {
-//     seccionPanelMascota.style.display="none";
-// });
+botonCerrarPanelMascota.addEventListener('click', () => {
+    seccionPanelMascota.style.display="none";
+});
 
 // botonCrearMascota.addEventListener('click', crearMascota());
 
 
-function crearMascota() {
+// function crearMascota() {
+
     
-    let url = "http://localhost:8080/mascotas";
+//     let url = "http://localhost:8080/mascotas";
 
-    let newMascota = {
-        "nombre": "Fifi",
-        "edad": 2,
-        "especie": {
-            "id": 2,
-            "especie": "Caninos"
-        },
-        "raza": {
-            "id": 1,
-            "especie": {
-                "id": 2,
-                "especie": "Caninos"
-            },
-            "raza": "Beagle"
-        },
-        "size": {
-            "id": 2,
-            "nombre": "Pequeño",
-            "dimensionMaximaCm": 40
-        },
-        "usuario": usuarioSesion, // REIVSAR SI FUNCIONA ASI
-        "estadoSalud": {
-            "id": 1,
-            "estado": "Optimo"
-        },
-        "estadoAdopcion": {
-            "id": 1,
-            "estado": "En Adopcion"
-        }
-    }; 
+//     let newMascota = {
+//         "nombre": "Fifi",
+//         "edad": 2,
+//         "especie": {
+//             "id": 2,
+//             "especie": "Caninos"
+//         },
+//         "raza": {
+//             "id": 1,
+//             "especie": {
+//                 "id": 2,
+//                 "especie": "Caninos"
+//             },
+//             "raza": "Beagle"
+//         },
+//         "size": {
+//             "id": 2,
+//             "nombre": "Pequeño",
+//             "dimensionMaximaCm": 40
+//         },
+//         "usuario": usuarioSesion, // REIVSAR SI FUNCIONA ASI
+//         "estadoSalud": {
+//             "id": 1,
+//             "estado": "Optimo"
+//         },
+//         "estadoAdopcion": {
+//             "id": 1,
+//             "estado": "En Adopcion"
+//         }
+//     }; 
 
-    fetch(url, 
-        {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: newMascota
-        }
-    )
-    .then(response => {
-        if (response.ok) {
-            return response.json();
-        } else {
-            throw new Error ('Error al crear el usuario')
-        }
-        })
-        .then(data => {
-        // Maneja los datos de la respuesta aquí
-        console.log('Mascota creada:', data);
-        })
-        .catch(error => {
-        // Maneja cualquier error que pueda ocurrir durante la solicitud
-        console.error('Error:', error);
-        });
+//     fetch(url, 
+//         {
+//             method: 'POST',
+//             headers: {
+//                 'Content-Type': 'application/json'
+//             },
+//             body: newMascota
+//         }
+//     )
+//     .then(response => {
+//         if (response.ok) {
+//             return response.json();
+//         } else {
+//             throw new Error ('Error al crear el usuario')
+//         }
+//         })
+//         .then(data => {
+//         // Maneja los datos de la respuesta aquí
+//         console.log('Mascota creada:', data);
+//         })
+//         .catch(error => {
+//         // Maneja cualquier error que pueda ocurrir durante la solicitud
+//         console.error('Error:', error);
+//         });
 
-    console.log(mascotasController);
+//     // console.log(mascotasController);
 
-    // usuarioSesion.agregarMascota(usuarioSesion, formularioRaza.value, formularioSize.value,formularioNombre.value, formularioEdad.value, formularioSalud.value);
-    Swal.fire(
-        {
-        icon: "success",
-        title: "Mascota Creada con Éxito",
-        confirmButtonColor: "#F7ABB2",
-        showConfirmButton: false,
-        width: '40%',
-        padding:'10%',
-        timer: '1500'
-        // toast: true,
-        // grow: 'fullscreen',
-        }
-    );
+//     // usuarioSesion.agregarMascota(usuarioSesion, formularioRaza.value, formularioSize.value,formularioNombre.value, formularioEdad.value, formularioSalud.value);
+//     // Swal.fire(
+//     //     {
+//     //     icon: "success",
+//     //     title: "Mascota Creada con Éxito",
+//     //     confirmButtonColor: "#F7ABB2",
+//     //     showConfirmButton: false,
+//     //     width: '40%',
+//     //     padding:'10%',
+//     //     timer: '1500'
+//     //     // toast: true,
+//     //     // grow: 'fullscreen',
+//     //     }
+//     // );
 
-    seccionPanelMascota.style.display="none"
-    formularioRaza.value = '';
-    formularioEdad.value = '';
-    formularioNombre.value = '';
-    formularioSalud.value = '';
-    formularioSize.value = '';
-    renderizarSolicitudes(mewoofDB.usuarios.lista[findUser(usuarioSesion)].mascotasCargadas);
-}
+//     seccionPanelMascota.style.display="none"
+//     formularioRaza.value = '';
+//     formularioEdad.value = '';
+//     formularioNombre.value = '';
+//     formularioSalud.value = '';
+//     formularioSize.value = '';
+//     // renderizarSolicitudes(mewoofDB.usuarios.lista[findUser(usuarioSesion)].mascotasCargadas);
+// }
 
 function renderizarSolicitudes(listaMascotas){
     // Tablero donde se van a renderizar las solicitudes en Seccion mis Mascotas

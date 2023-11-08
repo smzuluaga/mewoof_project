@@ -584,7 +584,7 @@ transform: scale(1.1);
   font-size: 18px;
   color: #5d5c5c88;
   font-style: italic;
-  margin-left: 20px;
+  /* margin-left: 20px; */
 }
 
 .mw-impresionesMascota {
@@ -1173,6 +1173,8 @@ transform: scale(1.1);
       box-sizing: content-box;
     }
 
+    /*  INICIO BARRA DE NAVEGACION*/
+
     .sidebar-pagina {
       width: 100%;
       height: 8%;
@@ -1182,19 +1184,21 @@ transform: scale(1.1);
     .sidebar {
       display: flex;
       flex-direction: row;
-      height: 8%;
+      height: 10%;
       position: fixed;
       z-index: 1;
     }
 
+    .sidebar img {
+      width: 27px;
+      height: 27px;
+    }
+    /*  INICIO BARRA DE NAVEGACION*/
+    
+    
     .mw-viewScreen {
       box-sizing: content-box;
       height: 92vh;
-    }
-
-    .sidebar img {
-      width: 35px;
-      height: 35px;
     }
 
     .iconoHover {
@@ -1202,17 +1206,17 @@ transform: scale(1.1);
     }
 
     .iconoHover i{
-      font-size: 35px;
+      font-size: 30px;
     }
 
     .iconoHover:hover {
       font-size: 35px;
     }
-
+    
     #mw-navButtonPerfil {
       order: -2;
     }
-
+    
     #mw-navButtonChat{
       order:0;
     }
@@ -1220,6 +1224,10 @@ transform: scale(1.1);
     #mw-navButtonMascotas{
       order:-1;
     }
+    
+    /*  INICIO VIEW SCREEN*/
+
+    /* SECCION PERFIL*/
 
     .mw_section-profile {
       flex-direction: column;
@@ -1231,6 +1239,10 @@ transform: scale(1.1);
     .popup {
       display: none;
       right:350%;
+    }
+
+    .profile-title{
+      text-align: center;
     }
     
     .profile-information {
@@ -1322,5 +1334,158 @@ transform: scale(1.1);
     .SwalResponsive {
       width: 100%;
     }
+
+    /* SECCION  MIS MASCOTAS*/
+
+    .mw-addMascota-button {
+      width: 45%;
+      height: 6%;
+      border-radius: 20px;
+      margin: 10px 0;
+      
+    } 
+    .mw-misMascotas-container {
+      justify-content: space-between;
+    }
+
+    .mw-misMascotas-container h1{
+      padding: 10px;
+      text-align: center;
+      margin-bottom: 10px;
+    }
+
+    .mw-misMascotas-tablero{
+      height: 90%;
+    }
+
+    .mw-mascotaCargada {
+      height: 15%;
+      border-radius: 60px;
+      width: 90%;
+      justify-content: center;
+    }
+
+    .mw-mascotaCargada div{
+      margin: 0;
+    }
+
+    .card__copy {
+      display: none;
+    }
+
+    .mw-mascotaCargada-info{
+      width: 70%;
+    }
+
+    .mw-impresionesMascota{
+      flex-direction: row;
+
+    }
+    .img-radius img {
+      height: 50px;
+      width: 50px;
+      margin-right: 10px;
+    }
+
+    .card__title{
+      font-size: 22px;
+    }
+
+    .card_button{
+      font-size: 12px;
+      /* margin:5px; */
+    }
+
+    .mw-mascotaCargada-info{
+      padding-left: 8px;
+    }
+
+    .mw_mascotaCargada-actionButtons {
+      margin-left: 5px;
+    }
+    .mw_mascotaCargada-actionButtons i {
+      font-size: 25px;
+      padding: 2px;
+    }
+
+    .mw_mascotaCargada-actionButtons i:hover{
+      color: var(--pink2);
+      font-size: 27px;
+    }
+    
+    .point{
+      /* margin-top: 10px; */
+      width: 100%;
+      font-size: 13px;
+      overflow:hidden;
+
+    }
+    /* SECCION HOME */
+
+    .tittle-comunidad h1 {
+      text-align: center;
+      margin: 40px 0;
+    }
+
+    .card-perdidos {
+      height: 200px;
+      width: 40%;
+      margin: 10px;
+    }
+
+    .content-text{
+      align-items: center;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .content-text p{
+      width: 80%;
+      text-align: justify;
+    }
+
+    .content-all-tittle-text button {
+      margin: 50px ;
+    }
+
+    .mw-mascotaPerdida-atributosMascota {
+      display: flex;
+      flex-wrap: wrap;
+      padding: 10px;
+      justify-content: space-evenly;
+    }
+    
+    .mw-mascotaPerdida-nombreFecha {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .mw-mascotaPerdida-nombreFecha input{
+      text-align: center;
+    }
+  
+    #mw-publicacionesNombre {
+      width: 40%;
+      height: 18px;
+    }
+
+    .mw-mascotaPerdida-atributosMascota select{
+      width:45%;
+      margin: 10px 5px;
+      text-align:center
+    }
+  
+    .mw-mascotaPerdida-atributosMascota input{
+      width:30%;
+      text-align:center
+    }
+
+
+    .mw-mascotaPerdida-acciones{
+      margin: 30px 0;
+    }
   }
+
 
