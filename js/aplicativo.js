@@ -417,8 +417,9 @@ botonPreferencesCat.addEventListener('click', () => {
     seccionMatch.style.display="flex";
     imgVariableTarjetaMascota.src = "../img/exi-3-op.jpg"
     // let petForMatch  = traerMascotas(1,inputEspacioDisponible.value,inputTiempoDisponible.value, inputDineroDisponible.value)
-    let petForMatch  = traerMascotas(1)
-    console.log(petForMatch);
+    // let petForMatch  = traerMascotas(1)
+    // console.log(petForMatch);
+    // imgVariableTarjetaMascota.src = "../img/Gato3.jpg"
 })
 
 botonPreferencesDog.addEventListener('click', () => {
