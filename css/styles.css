@@ -712,7 +712,7 @@ input::placeholder{
   }
   
   .mw-title-banner {
-    color: var(--beige2);
+    color: var(--beige);
     font-size: 45px;
     letter-spacing: 5px;
     font-family:cursive
@@ -720,8 +720,8 @@ input::placeholder{
 
   .mwTitleBan {
     color: white;
-    font-size: 40px;
-    width: 30%;
+    font-size: 30px;
+    width: auto;
     margin-bottom: 5%;
     letter-spacing: 5px;
   }
@@ -824,7 +824,7 @@ input::placeholder{
     display: flex;
     justify-content: center;
     font-size: 14%;
-    color:var(--black2);
+    color:#666565;
     
 }
 
@@ -1038,7 +1038,7 @@ input::placeholder{
 
 /*Responsive para el NAVEGADOR, SOBRE NOSOTROS, TARJETAS*/
 /*1200 900 600 400*/
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 1400px) {
     .mw__buttonBanner{
         width: 200px;
         font-size: 12px; 
@@ -1242,6 +1242,7 @@ input::placeholder{
         justify-content: center;
         align-items: center;
      }
+     
     .contactInf input{
         width: 70%;
         font-size: 1x;
@@ -1534,7 +1535,7 @@ font-size: 11px;
 
         .contactInf label{
             text-align: left;
-            font-size: 15px;
+            font-size: 13px;
             margin-bottom: 5px;
             margin-left: 10px;
         }
@@ -1546,7 +1547,7 @@ font-size: 11px;
             border-radius: 20px;
             border: none;
             border-bottom: 5px solid var(--pink2);
-            font-size: 16px;
+            font-size: 14px;
             padding: 20px;
             color: var(--black2);
             outline: 0;
@@ -1563,6 +1564,11 @@ font-size: 11px;
             margin-left: auto;
             width: 151px;
         }
+
+        #enviarButton {
+            font-size: 15px;
+        }
+
     /*Fin formulario*/
 
     /*Iconos*/
@@ -1582,7 +1588,7 @@ font-size: 11px;
         
         .iconLink {
             font-size: 75px;
-            color: var(--beige2);
+            color: var(--beige);
         }
         
         .socialMediaName {

@@ -140,8 +140,11 @@ body {
 }
 
 .closeSesion{
-  text-align: right;
-  margin: 60px 50px 20px;
+  display: flex;
+  /* padding-right: 30px; */
+  justify-content: flex-end;
+  /* text-align: left; */
+  /* margin: 60px 50px 20px; */
 }
 
 .btn-close{
@@ -228,6 +231,18 @@ body {
   text-align: center;
 }
 
+.form-horizontal input{
+  font-size: 17px;
+}
+
+.form-horizontal label{
+  font-size: 18px;
+}
+
+.form-horizontal .form-control{
+  font-size: 16px;
+}
+
 .flex-wrap{
   display: flex;
   flex-wrap: wrap;
@@ -303,7 +318,7 @@ body {
   width: 150px;
   height: 35px;
   color: aliceblue;
-  font-size: 15px;
+  font-size: 18px;
   border: none;
   cursor: pointer;
 }
@@ -320,6 +335,8 @@ body {
   margin-bottom: 20px;
   margin: 50px 0 0;
 }
+
+
 
 
 .btn-edit-but{
@@ -617,8 +634,8 @@ transform: scale(1.1);
 }
 
 .card__title{
-    font-size: 33px;
-    color:white;
+    font-size: 28px;
+    color:#EF4147;
     margin-bottom: 1px;
 }
 
@@ -646,7 +663,7 @@ transform: scale(1.1);
 }
 
 .mw_mascotaCargada-actionButtons i{
-  color: white;
+  color:#F05376;
   font-size: 30px;
 }
 
@@ -856,7 +873,7 @@ transform: scale(1.1);
     justify-content: center;
     width: 15%;
     background: var(--pink2);
-    font-size: 25px;
+    font-size: 30px;
     color: white;
     border: none;
 }
@@ -1123,7 +1140,7 @@ transform: scale(1.1);
   border: none;
   width: 100px;
   height: 30px;
-  font-size: 15px;
+  font-size: 19px;
   font-weight: bold;
   cursor: pointer;
   margin-top: 2%;
