@@ -140,8 +140,11 @@ body {
 }
 
 .closeSesion{
-  text-align: right;
-  margin: 60px 50px 20px;
+  display: flex;
+  /* padding-right: 30px; */
+  justify-content: flex-end;
+  /* text-align: left; */
+  /* margin: 60px 50px 20px; */
 }
 
 .btn-close{
@@ -320,6 +323,8 @@ body {
   margin-bottom: 20px;
   margin: 50px 0 0;
 }
+
+
 
 
 .btn-edit-but{
