@@ -70,11 +70,12 @@
         <!--Seccion editar información-->
         <section id="mw_section-profile" class="mw-section-profile">
             <div class="profile-container">
-                <div class="closeSesion">
-                    <button class="btn-close">Cerrar Sesión</button>
-                </div>
                 <div class="profile-title">
                     <h1>Editar información</h1>
+                    
+                    <!-- <div class="closeSesion">
+                        <button class="btn-close">Cerrar Sesión</button>
+                    </div> -->
                 </div>
                 <div class="profile-information">
                     <div class="content-user">
@@ -82,11 +83,15 @@
                             <img class="image-user" src="./img/user.png" alt="" />
                             <h3 class="username-user" id="username_user"></h3>
                         </div>
-                        <div class="btn-closeup">
-                            <button type="button" class="btn-close-but" id="">Eliminar Usuario</button>
-                        </div>
+                        
                         <div class="btn-edit">
                             <button type="button" class="btn-edit-but" id="open-popup">Editar Contraseña</button>
+                        </div>
+                        <div class="closeSesion btn-closeup">
+                            <button class="btn-close-but">Cerrar Sesión</button>
+                        </div>
+                        <div class="btn-closeup">
+                            <button type="button" class="btn-close-but" id="">Eliminar Usuario</button>
                         </div>
                         <div class="popup" id="password-popup">
                             <!-- ⛔Esto se comento para que no se desborde⛔ -->
@@ -349,7 +354,7 @@
                     </div> -->
                 </div>
                 <div class="mw-addMascota-button mw-mascotaCargada" id="mw_panelMascotaOpen">
-                    <i class='bx bx-plus-circle'></i>
+                    <i class='bx bx-plus'></i>
                 </div>
             </div>
 
@@ -407,11 +412,19 @@
                             </select>
                         </div>
                         <div>
-                            <label class= mw_mascotaFormDiv for="mw-mascotaNeedsMoney">¿Esterilizado?</label>
-                            <select id="mw-mascotaNeedsMoney">
+                            <label class= mw_mascotaFormDiv for="mw-mascotaNeedsStatus">¿Esterilizado?</label>
+                            <select id="mw-mascotaNeedsStatus">
                                 <option value=""></option>
                                 <option value="1">Si</option>
                                 <option value="2">No</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class= mw_mascotaFormDiv for="mw-mascotaNeedsSex">¿Macho o Hembra?</label>
+                            <select id="mw-mascotaNeedsSex">
+                                <option value=""></option>
+                                <option value="1">Hembra</option>
+                                <option value="2">Macho</option>
                             </select>
                         </div>
                     </form>
@@ -480,13 +493,6 @@
                             <option value="0" name="sexo">Sexo</option>
                             <option value="1" name="sexo">Macho</option>
                             <option value="2" name="sexo">Hembra</option>
-                        </select>
-                        <select name="size" id="size"> 
-                            <option value="0" name="size">Tamaño</option>
-                            <option value="1" name="size">Mini</option>
-                            <option value="2" name="size">Pequeño</option>
-                            <option value="3" name="size">Mediano</option>
-                            <option value="4" name="size">Grande</option>
                         </select>
                         <select title="modalidades" name="ciuades" class="form-control" id="mw-publicaciones_inputCiudad">
                             <option name="ciudades" value="0">Ciudad</option>
