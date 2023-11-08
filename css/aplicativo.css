@@ -910,9 +910,9 @@ transform: scale(1.1);
 
 .mw-panelMascota-container {
     display: flex;
-    min-width: 1200px;
+    min-width: 700px;
     margin-top: 5%;
-    height: 80vh;
+    height: 60vh;
     padding: 20px 30px;
     background: rgb(35, 35, 35,0.9);
     color: #fff;
