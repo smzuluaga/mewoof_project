@@ -140,6 +140,7 @@ body {
 }
 
 .profile-title h1{
+  margin-top: 20px;
   display: flex;
   justify-content: center;
   color: var(--beige);
@@ -387,16 +388,21 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 34%;
+  /* margin-right: 50%; */
+  width: 350px;
   padding: 5px;
   height: 70%;
   overflow: hidden;
-  background: linear-gradient(180deg, var(--pink2) 0%, var(--beige2) 100%);
+  background: linear-gradient(0deg, var(--beige2) 10%, var(--beige) 40%);
   border-radius: 20px;
   /* position: relative; */
-  text-align: right;
+  text-align:justify;
     /* Aplica una sombra al elemento utilizando la propiedad box-shadow */
   box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+.caracteristicasMascota p{
+color: #333333;
 }
 
 .buttonsHuman{
@@ -442,12 +448,20 @@ transform: scale(1.1);
   display: flex;
   flex-direction: column;
   width: 100%;
-  justify-content: space-evenly;
+  /* justify-content: space-evenly; */
   align-items: center;
   height: 100vh;
 }
 
+.mww-inputsFiltrosMAscotas{
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 30vh;
+}
+
 .mw_preMatchContainer h1{
+  margin-top: 20px;
   display: flex;
   justify-content: center;
   color: var(--beige);
@@ -549,24 +563,24 @@ transform: scale(1.1);
     flex-direction: column;
     align-items: center;
     margin-right: 50%;
-    width: 50%;
+    width: 350px;
     padding: 5px;
     height: 70%;
     overflow: hidden;
-    background: linear-gradient(180deg, var(--pink2) 0%, var(--beige2) 100%);
+    background: linear-gradient(0deg, var(--pink2) 10%, var(--pink) 40%);
     border-radius: 20px;
     /* position: relative; */
-    text-align: right;
+    text-align:justify;
       /* Aplica una sombra al elemento utilizando la propiedad box-shadow */
     box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.5);
 }
 
 
 .card__img{
-    width: 95%;
     height: auto;
     object-fit: cover;
     border-radius: 10px;
+    border: 2px solid white;
 }
 
 .cards__text{
@@ -592,8 +606,12 @@ transform: scale(1.1);
 
 .card__title{
     font-size: 33px;
-    color:#EF4147;
+    color:white;
     margin-bottom: 1px;
+}
+
+.card__title span{
+  color:whitesmoke;
 }
 
 .point{
@@ -744,6 +762,7 @@ transform: scale(1.1);
 }
 
 .mw-misMascotas-container{ /* aca estoy editando*/
+    margin-top: 20px;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -978,6 +997,7 @@ transform: scale(1.1);
 }
 
 .mw-solicitudesEnv-container h1 {
+  margin-top: 20px;
   display: flex;
   justify-content: center;
   color: var(--beige);
@@ -1037,6 +1057,7 @@ transform: scale(1.1);
 }
 
 .tittle-comunidad h1{
+  margin-top: 20px;
   display: flex;
   justify-content: center;
   color: var(--beige);
@@ -1048,10 +1069,18 @@ transform: scale(1.1);
 
 
 .content-text{
+  margin-top: 1%;
+  width: 100%;
   font-size: 15px;
   letter-spacing: 0.4px;
   text-align: center;
 }
+
+.content-text p{
+  font-size: 18px;
+  margin: 0% 2%;
+}
+
 
 .content-text button{
   background-color: var(--pink2);
@@ -1095,6 +1124,7 @@ transform: scale(1.1);
 
 .content-form input {
   margin: 5px 10px 20px 20px;
+  border: 1px solid var(--beige);
 }
 
 .content-form form i{
@@ -1122,17 +1152,18 @@ transform: scale(1.1);
 
 .card-perdidos {
   box-shadow: 1px 1px 20px -3px var(--beige2);  
-  height: 200px;
+  height: 250px;
   width: 20%;
   margin: 20px;
   border-radius: 20px;
 }
 
 .card__img{
-  width: 80%;
-  height: 50%;  
+  width: 90%;
+  height: 70%;  
   margin-top: 10px;
   object-fit: cover;
+  border: 1px solid white;
 }
 
 .cards__text-perdidos h3 {
@@ -1146,6 +1177,7 @@ transform: scale(1.1);
 
 .card__copy{
   font-size: 14px;
+  color: #333333;
 }
 
 

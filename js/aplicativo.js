@@ -289,7 +289,7 @@ const imgVariableTarjetaMascota = document.getElementById("mw-mascotaCardImg");
 botonPreferencesCat.addEventListener('click', () => {
     ocultarSecciones();
     seccionMatch.style.display="flex";
-    imgVariableTarjetaMascota.src = "../img/exi-3-op.jpg"
+    imgVariableTarjetaMascota.src = "../img/Gato3.jpg"
 })
 
 botonPreferencesDog.addEventListener('click', () => {
