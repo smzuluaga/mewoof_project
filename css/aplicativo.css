@@ -248,6 +248,12 @@ body {
   font-size: 20px;
 }
 
+.form-group-about input {
+  height: 100px;
+  border-radius: 30px;
+  text-align: center;
+}
+
 .form-control{
   border: 1px solid var(--beige)
 }
@@ -332,7 +338,7 @@ body {
 .popup {
   /* width: 100vh; */
   position: relative;
-  /* right: 150%; */
+  right: 350%;
   height: 50%;
 }
 .popup input{
@@ -378,31 +384,7 @@ body {
   text-align: center;
   font-size: 22px;
 }
-
-@media (max-width: 768px) {
-  .profile-container {
-      max-width: 100%;
-  }
-  .profile-information {
-      flex-direction: column;
-  }
-
-  .content-form {
-      margin-left: 10%;
-  }
-  .content-user {
-      margin-left: 30%;
-      margin-top: 10%;
-      margin-bottom: 10%;
-  }
-  .btn-same{
-      margin-right: 70%;
-      margin-top: 6%;
-  }
-}
-
 /*Fin arreglos editar información*/
-
 
 /*Inicio seccion matches Human*/
 .mw_sectionMatchHuman {

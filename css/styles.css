@@ -493,6 +493,30 @@ input::placeholder{
     margin-bottom: 10px;
 }
 
+.mw-user1Form select{
+    background: none;
+    border: none;
+    border-bottom: 1px solid white;
+    outline: 0;
+    color: white;
+    font-size: 12px;
+    padding: 3px;
+    font-weight:lighter;
+    margin-bottom: 10px;
+}
+
+.mw-user2Form select{
+    background: none;
+    border: none;
+    border-bottom: 1px solid white;
+    outline: 0;
+    color: white;
+    font-size: 12px;
+    padding: 3px;
+    font-weight:lighter;
+    margin-bottom: 10px;
+}
+
 #mw-redireccionaLogin3 {
     background: none;
     color: #959595;
