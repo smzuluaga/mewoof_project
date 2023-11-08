@@ -99,118 +99,148 @@
             <button id="mw-registerTipoCloseButton1"><i class='bx bx-arrow-back'></i></button>
             <button id="mw-registerCloseButton"><i class='bx bx-x'></i></button>
         </div>
-        <h1>Registrar</h1>
-        <div class="mw-registerData">
-            
-            <form action="" class="mw-user1Form" id="mw_user1Form">
-                <div>
-                    <label for="mw_registerUsser">Usuario Mewoof</label>
-                    <input type="text" id="mw_registerUsser" placeholder="Dando en Adopcion" name="Adoptando">
-                </div>
-                <div>
-                    <label for="D-mw_registerId">Documento</label>
-                    <input type="text" id="D-mw_registerId">
-                </div>
-                <div>
-                    <label for="D-mw_registerNombre">Nombre</label>
-                    <input type="text" id="D-mw_registerNombre">
-                </div>
-                <div>
-                    <label for="D-mw_registerApellido">Apellido</label>
-                    <input type="text" id="D-mw_registerApellido">
-                </div>
-                <div>
-                    <label for="D-mw_registerPais">Pais</label>
-                    <input type="text" id="D-mw_registerPais">
-                </div>
-                <div>
-                    <label for="D-mw_registerCiudad">Ciudad</label>
-                    <input type="text" id="D-mw_registerCiudad">
-                </div>
-                <div>
-                    <label for="D-mw_registerCel">Cel</label>
-                    <input type="cel" id="D-mw_registerCel">
-                </div>
-                <div>
-                    <label for="D-mw_registerMail">Email</label>
-                    <input type="email" id="D-mw_registerMail">
-                </div>
-                <div>
-                    <label for="D-mw_registerPassword">Contraseña</label>
-                    <input type="password" id="D-mw_registerPassword">
-                </div>
-                <div>
-                    <label for="D-mw_registerPasswordConfirm">Confirmar Contraseña</label>
-                    <input type="password" id="D-mw_registerPasswordConfirm">
-                </div>
-            </form>
-        </div>
-        <div class="mw-registerButtons">
-            <button id="mw-registerButtonDandoAdopcion" class="mw-mainButtons boton-formulario">Registrarme</button>
-            <button id="mw-redireccionaLogin3">Ya estoy registrado</button>
+        <h1>Registro</h1>
+        <div class="mw-registerData">           
+                <form action="" class="mw-user1Form" id="mw_user1Form">
+                    <div>
+                        <label for="mw_registerUsser">Usuario Mewoof</label>
+                        <input type="text" id="mw_registerUsser" placeholder="Dando en Adopcion" name="Adoptando">
+                    </div>
+                    <div>
+                        <label for="D-mw_registerNombre">Nombre</label>
+                        <input type="text" id="D-mw_registerNombre">
+                    </div>
+                    <div>
+                        <label for="D-mw_registerApellido">Apellido</label>
+                        <input type="text" id="D-mw_registerApellido">
+                    </div>
+                    <div>
+                        <label for="D-mw_registerPais">Pais</label>
+                        <select title="modalidades" name="modalidades[]" class="form-control" id="D-mw_registerPais">
+                            <option value="">Selecciona una Opcion</option>
+                            <option value="COL">Colombia</option>
+                        <!-- <option value="ecuador">Ecuador</option>
+                            <option value="peru">Peru</option>
+                            <option value="chile">Chile</option>
+                            <option value="mexico">México</option>
+                            <option value="brasi">Brasil</option>
+                            <option value="argentina">Argentina</option> -->
+                        </select>
+                    </div>
+                    <div>
+                        <label for="D-mw_registerCiudad">Ciudad</label>
+                        <select title="modalidades" name="modalidades[]" class="form-control" id="D-mw_registerCiudad">
+                            <option value="">Selecciona una Opcion</option> 
+                            <option value="MDE">Medellin</option>
+                            <option value="BGT">Bogota</option>
+                            <option value="SCL">Cali</option>
+                            <!-- <option value="otra">Otra</option>  -->
+                        </select>
+                    </div>
+                    <div>
+                        <label for="D-mw_registerCel">Cel</label>
+                        <input type="cel" id="D-mw_registerCel">
+                    </div>
+                    <div>
+                        <label for="D-mw_registerMail">Email</label>
+                        <input type="email" id="D-mw_registerMail">
+                    </div>
+                    <div>
+                        <label for="D-mw_registerPassword">Contraseña</label>
+                        <input type="password" id="D-mw_registerPassword">
+                    </div>
+                    <div>
+                        <label for="D-mw_registerPasswordConfirm">Confirmar Contraseña</label>
+                        <input type="password" id="D-mw_registerPasswordConfirm">
+                    </div>
+                    <div>
+                        <label for="D-mw_registerId">Foto Usuario</label>
+                        <input type="file" id="D-mw_PicDocument">
+                    </div>
+                </form>
+            </div>
+            <div class="mw-registerButtons">
+                <button id="mw-registerButtonDandoAdopcion" class="mw-mainButtons boton-formulario">Registrarme</button>
+                <button id="mw-redireccionaLogin3">Ya estoy registrado</button>
+            </div>
         </div>
     </div>
 </div>
 <!-- Fin Register Usuario Dando en Adopcion-->
 
 <!-- Inicio Register Usuario Adoptando // FALTA HACER VALIDACIONES DE CAMPOS INPUTS -->
-    <div class="mw-register2" id="mw_register2">
-        <div class="mw-register2Card">
-            <div class="mw-register2Close">
-                <button id="mw-register2TipoCloseButton1"><i class='bx bx-arrow-back'></i></button>
-                <button id="mw-register2CloseButton"><i class='bx bx-x'></i></button>
-            </div>
-            <h1>Registrar</h1>
-            <div class="mw-register2Data">
-                <form action="#" class="mw-user2Form" id="mw_user2Form">
-                    <div>
-                        <label for="mw_register2Usser">Usuario Mewoof</label>
-                        <input type="text" id="mw_register2Usser" placeholder="Adoptando">
-                    </div>
-                    <div>
-                        <label for="A-mw_registerId">Documento</label>
-                        <input type="text" id="A-mw_registerId">
-                    </div>
-                    <div>
-                        <label for="A-mw_registerNombre">Nombre</label>
-                        <input type="text" id="A-mw_registerNombre">
-                    </div>
-                    <div>
-                        <label for="A-mw_registerApellido">Apellido</label>
-                        <input type="text" id="A-mw_registerApellido">
-                    </div>
-                    <div>
-                        <label for="A-mw_registerPais">Pais</label>
-                        <input type="text" id="A-mw_registerPais">
-                    </div>
-                    <div>
-                        <label for="A-mw_registerCiudad">Ciudad</label>
-                        <input type="text" id="A-mw_registerCiudad">
-                    </div>
-                    <div>
-                        <label for="A-mw_registerCel">Cel</label>
-                        <input type="cel" id="A-mw_registerCel">
-                    </div>
-                    <div>
-                        <label for="A-mw_registerMail">Email</label>
-                        <input type="email" id="A-mw_registerMail">
-                    </div>
-                    <div>
-                        <label for="A-mw_registerPassword">Contraseña</label>
-                        <input type="password" id="A-mw_registerPassword">
-                    </div>
-                    <div>
-                        <label for="A-mw_registerPasswordConfirm">Confirmar Contraseña</label>
-                        <input type="password" id="A-mw_registerPasswordConfirm">
-                    </div>
-                </form>
-            </div>
-            <div class="mw-registerButtons">
-                <button id="mw-registerButtonAdoptante" class="mw-mainButtons boton-formulario">Registrarme</button>
-                <button id="mw-redireccionaLogin4">Ya estoy registrado</button>
-            </div>
+<div class="mw-register2" id="mw_register2">
+    <div class="mw-register2Card">
+        <div class="mw-register2Close">
+            <button id="mw-register2TipoCloseButton1"><i class='bx bx-arrow-back'></i></button>
+            <button id="mw-register2CloseButton"><i class='bx bx-x'></i></button>
+        </div>
+        <h1>Registro</h1>
+        <div class="mw-register2Data">
+            <form action="#" class="mw-user2Form" id="mw_user2Form">
+                <div>
+                    <label for="mw_register2Usser">Usuario Mewoof</label>
+                    <input type="text" id="mw_register2Usser" placeholder="Adoptando">
+                </div>
+                <div>
+                    <label for="A-mw_registerNombre">Nombre</label>
+                    <input type="text" id="A-mw_registerNombre">
+                </div>
+                <div>
+                    <label for="A-mw_registerApellido">Apellido</label>
+                    <input type="text" id="A-mw_registerApellido">
+                </div>
+                <div>
+                    <label for="A-mw_registerPais">Pais</label>
+                    <select title="modalidades" name="modalidades[]" class="form-control" id="A-mw_registerPais">
+                        <option value="">Selecciona una Opcion</option>
+                        <option value="COL">Colombia</option>
+                        <!-- <option value="ecuador">Ecuador</option>
+                        <option value="peru">Peru</option>
+                        <option value="chile">Chile</option>
+                        <option value="mexico">México</option>
+                        <option value="brasi">Brasil</option>
+                        <option value="argentina">Argentina</option> -->
+                    </select>
+                </div>
+                <div>
+                    <label for="A-mw_registerCiudad">Ciudad</label>
+                    <select title="modalidades" name="modalidades[]" class="form-control" id="A-mw_registerCiudad">
+                        <option value="">Selecciona una Opcion</option>
+                        <option value="MDE">Medellin</option>
+                        <option value="BGT">Bogota</option>
+                        <option value="SCL">Cali</option>
+                        <!-- <option value="otra">Otra</option>  -->
+                    </select>
+                </div>
+                <div>
+                    <label for="A-mw_registerCel">Cel</label>
+                    <input type="cel" id="A-mw_registerCel">
+                </div>
+                <div>
+                    <label for="A-mw_registerMail">Email</label>
+                    <input type="email" id="A-mw_registerMail">
+                </div>
+                <div>
+                    <label for="A-mw_registerPassword">Contraseña</label>
+                    <input type="password" id="A-mw_registerPassword">
+                </div>
+                <div>
+                    <label for="A-mw_registerPasswordConfirm">Confirmar Contraseña</label>
+                    <input type="password" id="A-mw_registerPasswordConfirm">
+                </div>
+                <div>
+                    <label for="A-mw_registerId">Foto Usuario</label>
+                    <input type="file" id="A-mw_PicDocument">
+                </div>
+            </form>
+        </div>
+        <div class="mw-registerButtons">
+            <button id="mw-registerButtonAdoptante" class="mw-mainButtons boton-formulario">Registrarme</button>
+            <button id="mw-redireccionaLogin4">Ya estoy registrado</button>
         </div>
     </div>
+</div>
 <!-- Fin Register Usuario Adoptando-->
 
 <!-- Inicio barra de navegación -->
@@ -241,18 +271,6 @@
                 <p><span>Sasha<br></span> Estaba buscando una familia y encontré la mejor, me dan comida muy rica, me cuidan y me dan mucho amor.</p>
             </div>
             <div class="petStories">
-<<<<<<< HEAD
-                <img src="img/Gato1.jpg">
-                <p><span>Pelusa:</span> Mi anterior papá me abandonó, pero gracias a mi refugio, una nueva familia me adoptó y me dieron mi nuevo amoroso hogar.</p>
-            </div>
-            <div class="petStories">
-                <img src="img/Gato2.jpg">
-                <p><span>Giggles:</span> Nací y viví en un refugio hasta que vi a Lucy, yo la convencí de que me llevara con ella por medio de besitos, y ahora somos felices.</p>
-            </div>
-            <div class="petStories">
-                <img src="img/Gato3.jpg">
-                <p><span>Bigotes:</span> Era un gato callejero y con miedo a las personas. Pero en la fundación con mi papá me convertí en un gato cariñoso y juguetón. </p>
-=======
                 <img src="img/exi-1.jpg">
                 <p><span>Pelusa<br></span>Mi anterior papá me abandonó, pero gracias a mi refugio, una nueva familia me adoptó y me dieron mi nuevo amoroso hogar.</p>
             </div>
@@ -263,7 +281,6 @@
             <div class="petStories">
                 <img src="img/exi-3-op.jpg">
                 <p><span>Bigotes<br></span> Era un gato callejero y con miedo a las personas. Pero en la fundación con mi papá me convertí en un gato cariñoso y juguetón. </p>
->>>>>>> dfc31c2a792d29612176acab37afb8b854965305
             </div>
             <div class="petStories">
                 <img src="img/exi-4.jpg">
