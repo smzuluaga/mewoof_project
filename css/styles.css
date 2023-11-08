@@ -505,6 +505,10 @@ input::placeholder{
     margin-bottom: 10px;
 }
 
+.mw-user1Form option{
+    background: #000;
+   }
+
 .mw-user2Form select{
     background: none;
     border: none;
@@ -515,6 +519,10 @@ input::placeholder{
     padding: 3px;
     font-weight:lighter;
     margin-bottom: 10px;
+}
+
+.mw-user2Form option{
+ background: #000;
 }
 
 #mw-redireccionaLogin3 {
