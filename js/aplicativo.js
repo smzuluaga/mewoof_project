@@ -396,6 +396,7 @@ function renderizarSolicitudes(listaMascotas){
         nombreMascotaTarjeta.classList.add("card__title");
         edadMascotaTarjeta.classList.add("point");
         descripcionMascotaTarjeta.classList.add("card__copy");
+        descripcionMascotaTarjeta.classList.add("hiden");
 
         mascota.solicitudesRecibidas.length === 1 ? textImpresiones.innerHTML = `${mascota.solicitudesRecibidas.length} like`: textImpresiones.innerHTML = `${mascota.solicitudesRecibidas.length} likes`;
         nombreMascotaTarjeta.innerHTML = mascota.nombre;
