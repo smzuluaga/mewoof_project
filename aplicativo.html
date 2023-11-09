@@ -335,7 +335,7 @@
             <div class="mw-misMascotas-container">
                 <h1>Mis Mascotas en Adopción</h1>
                 <div class="mw-misMascotas-tablero" id="mw_misMascotas-tablero">
-                    <div class="mw-mascotaCargada">
+                    <!-- <div class="mw-mascotaCargada">
                         <div class="img-radius">
                             <img src="img/banner2.png" class="mw-mascotaCargada-img">
                         </div>
@@ -351,9 +351,9 @@
                             <i class='bx bx-edit'  id="mw_buttonEditarMascota"></i>
                             <i class='bx bx-trash' id="mw_buttonEliminarMascota"></i>
                         </div>  
-                    </div>
+                    </div> -->
                 </div>
-                <div class="mw-addMascota-button " id="mw_panelMascotaOpen">
+                <div class="mw-addMascota-button" id="mw_panelMascotaOpen">
                     <i class='bx bx-plus'></i>
                 </div>
             </div>
@@ -361,80 +361,81 @@
             <!-- Inicio Seccion Cargar Mascota  Interface  // FALTA HACER FORMATO -->
             <div class="mw-panelMascota" id="mw_panelMascota">
                 <div class="mw-panelMascota-container">
-                    <div class="content-titlepanel">
-                        <h1 class="mw-panelMascotaH1">Subir Mascotica</h1>
-                        <img src="img/DhBX_lUWsAEFdLj.jpg" alt="">
-                        <div>
-                            <label class= "mw_mascotaFormFoto" for=""></label>
-                            <input type="file" id="mw-mascotaFoto">
-                        </div>
+                    <div class="mw-panelMascotaClose">
+                        <button id="mw_panelMascotaClose"><i class='bx bx-x'></i></button>
                     </div>
                     <div class="content-form-panel">
-                    <form id="mw_mascotaForm" action="">
-                        <div>
-                            <label class= mw_mascotaFormDiv for="">Raza</label>
-                            <input type="text" id="mw-mascotaRaza">
+                        <div class="content-titlepanel">
+                            <h1 class="mw-panelMascotaH1">Subir Mascotica</h1>
+                            <img src="img/bannerr2.png" alt="fotoPerfil" class="mw_mascotaFormFoto">
+                            <div  >
+                                <label for=""></label>
+                                <input type="file" id="mw-mascotaFoto">
+                            </div>
                         </div>
-                        <div>
-                            <label class= mw_mascotaFormDiv for="">Tamaño</label>
-                            <input type="text" id="mw-mascotaSize">
-                        </div>
-                        <div>
-                            <label class= mw_mascotaFormDiv for="">Nombre</label>
-                            <input type="text" id="mw-mascotaNombre">
-                        </div>
-                        <div>
-                            <label class= mw_mascotaFormDiv for="">Edad</label>
-                            <input type="text" id="mw-mascotaEdad">
-                        </div>
-                        <div>
-                            <label class= mw_mascotaFormDiv for="">Estado de Salud</label>
-                            <input type="text" id="mw-mascotaSalud">
-                        </div>
-                        <div>
-                            <label class= mw_mascotaFormDiv for="mw-mascotaNeedsTime">Necesidades de tiempo</label>
-                            <select id="mw-mascotaNeedsTime">
-                                <option value=""></option>
-                                <option value="1">1h - 3h</option>
-                                <option value="2">4h - 6h</option>
-                                <option value="3">7h - 10h</option>
-                                <option value="4">10h o +</option>  
-                            </select>
-                        </div>
-                        <div>
-                            <label class= mw_mascotaFormDiv for="mw-mascotaNeedsMoney">Gastos generales mascota</label>
-                            <select id="mw-mascotaNeedsMoney">
-                                <option value=""></option>
-                                <option value="1">$100.000 - $399.999</option>
-                                <option value="2">$400.000 - $699.999</option>
-                                <option value="3">$700.000 - $999.999</option>
-                                <option value="4">$1.000.000 o +</option>  
-                            </select>
-                        </div>
-                        <div>
-                            <label class= mw_mascotaFormDiv for="mw-mascotaNeedsStatus">¿Esterilizado?</label>
-                            <select id="mw-mascotaNeedsStatus">
-                                <option value=""></option>
-                                <option value="1">Si</option>
-                                <option value="2">No</option>
-                            </select>
-                        </div>
-                        <div>
-                            <label class= mw_mascotaFormDiv for="mw-mascotaNeedsSex">¿Macho o Hembra?</label>
-                            <select id="mw-mascotaNeedsSex">
-                                <option value=""></option>
-                                <option value="1">Hembra</option>
-                                <option value="2">Macho</option>
-                            </select>
-                        </div>
-                    </form>
-                    <div class="content-button">
-                    <div class="mw-cargarMascotaButton">
-                            <!-- <button id="mw_cargarMascotaButton" onclick="crearMascota()">Crear</button> -->
-                            <button id="mw_cargarMascotaButton" class="mw-cargarMascotaButtonn">Crear</button>
-                        </div>
+                        <form class="mw-mascotaForm" id="mw_mascotaForm" action="">
+                            <div>
+                                <label class= mw_mascotaFormDiv for="">Raza</label>
+                                <input type="text" id="mw-mascotaRaza">
+                            </div>
+                            <div>
+                                <label class= mw_mascotaFormDiv for="">Tamaño</label>
+                                <input type="text" id="mw-mascotaSize">
+                            </div>
+                            <div>
+                                <label class= mw_mascotaFormDiv for="">Nombre</label>
+                                <input type="text" id="mw-mascotaNombre">
+                            </div>
+                            <div>
+                                <label class= mw_mascotaFormDiv for="">Edad</label>
+                                <input type="text" id="mw-mascotaEdad">
+                            </div>
+                            <div>
+                                <label class= mw_mascotaFormDiv for="">Estado de Salud</label>
+                                <input type="text" id="mw-mascotaSalud">
+                            </div>
+                            <div>
+                                <label class= mw_mascotaFormDiv for="mw-mascotaNeedsTime">Necesidades de tiempo</label>
+                                <select id="mw-mascotaNeedsTime">
+                                    <option value=""></option>
+                                    <option value="1">1h - 3h</option>
+                                    <option value="2">4h - 6h</option>
+                                    <option value="3">7h - 10h</option>
+                                    <option value="4">10h o +</option>  
+                                </select>
+                            </div>
+                            <div>
+                                <label class= mw_mascotaFormDiv for="mw-mascotaNeedsMoney">Gastos generales mascota</label>
+                                <select id="mw-mascotaNeedsMoney">
+                                    <option value=""></option>
+                                    <option value="1">$100.000 - $399.999</option>
+                                    <option value="2">$400.000 - $699.999</option>
+                                    <option value="3">$700.000 - $999.999</option>
+                                    <option value="4">$1.000.000 o +</option>  
+                                </select>
+                            </div>
+                            <div>
+                                <label class= mw_mascotaFormDiv for="mw-mascotaNeedsStatus">¿Esterilizado?</label>
+                                <select id="mw-mascotaNeedsStatus">
+                                    <option value=""></option>
+                                    <option value="1">Si</option>
+                                    <option value="2">No</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class= mw_mascotaFormDiv for="mw-mascotaNeedsSex">¿Macho o Hembra?</label>
+                                <select id="mw-mascotaNeedsSex">
+                                    <option value=""></option>
+                                    <option value="1">Hembra</option>
+                                    <option value="2">Macho</option>
+                                </select>
+                            </div>
+                        </form>
                     </div>
-                </div>
+                    <div class="mw-cargarMascotaButtonContainer">
+                        <!-- <button id="mw_cargarMascotaButton" onclick="crearMascota()">Crear</button> -->
+                        <button id="mw_cargarMascotaButton" class="mw-cargarMascotaButtonn">Crear</button>
+                    </div>
                 </div>
             </div>
         <!-- Fin Seccion Cargar Mascota  Interface -->

@@ -324,8 +324,8 @@ let formularioNecesidades = document.getElementById("mw-mascotaNeeds");
 let formularioFoto = document.getElementById("mw-mascotaFoto");
 
 botonAbrirPanelMascota.addEventListener('click', () => {
-    alert("entre")
-    seccionPanelMascota.style.display="flex";
+
+seccionPanelMascota.style.display="flex";
 });
 
 botonCerrarPanelMascota.addEventListener('click', () => {
@@ -489,7 +489,7 @@ botonCrearMascota.addEventListener('click', function(event){
     validacionRegister(mwRegisterNombre);
     validacionRegister(mwRegisterEdad);
     validacionRegister(mwRegisterSalud);
-    validacionRegister(mwRegisterNecesidades);
+    // validacionRegister(mwRegisterNecesidades);
 
     if(botonCrearMascota.id =="mw_cargarMascotaButton"){
         const contenedorDeFormularioEntregando = document.getElementById("mw_mascotaForm");

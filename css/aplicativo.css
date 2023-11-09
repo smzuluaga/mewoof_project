@@ -18,7 +18,7 @@
     box-sizing: content-box;
     margin:0;
     padding:0;
-    /* border: 1px solid black; */
+    /* border: 1px solid red; */
 }
 
 html {
@@ -877,6 +877,7 @@ transform: scale(1.1);
     color: white;
     border: none;
     padding: 5px;
+    border-radius: 20px;
 }
 
 .mw-addMascota-button:hover {
@@ -895,10 +896,11 @@ transform: scale(1.1);
 /* Inicio Seccion Panel Crear Mascota*/
 
 .content-titlepanel{
-  margin-top: 5%;
+  /* margin-top: 5%; */
   width: 40%;
   align-items: center;
   justify-content: center;
+  height:100%;
 }
 
 .popup-close{
@@ -907,31 +909,47 @@ transform: scale(1.1);
   justify-content: right;
 }
 
+.content-titlepanel img{
+  width: 50px;
+  height: 50px;
+}
+
 .content-titlepanel h1{
   margin-top: 2px;
   font-size: 30px;
-  margin-bottom: 70px;
+  /* margin-bottom: 70px; */
+}
+
+.content-titlepanel fiv{
+
+}
+
+.mw-mascotaForm {
+  /* display: flex; */
+  overflow-y: scroll;
+  height: 100%;
 }
 
 .mw_mascotaFormFoto{
- margin-right: 15%;
+ margin: 0;
 }
 
 .mw-panelMascota {
     display: flex;
-    width: 100%;
+    width: 94.5%;
     height: 100vh;
     position: fixed;
     background-color: rgba(0, 0, 0, 0.8);
-    display: none;
+    display: flex;
     justify-content: center;
 }
 
 .mw-panelMascota-container {
     display: flex;
+    flex-direction: column;
     min-width: 700px;
-    margin-top: 5%;
-    height: 60vh;
+    margin-top: 2%;
+    height: 80vh;
     padding: 20px 30px;
     background: rgb(35, 35, 35,0.9);
     color: #fff;
@@ -939,11 +957,19 @@ transform: scale(1.1);
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
 }
 
+.mw-panelMascotaClose {
+  width: 100;
+  display: flex;
+  justify-content: flex-end;
+}
+
 .content-form-panel{
+  display: flex;
   width: 100%;
   margin-top: 3%;
   text-align: center;  
-  margin-bottom: 10%;
+  margin-bottom: 3%;
+  height: 75%;
 }
 
 .content-form-panel label{
@@ -951,7 +977,7 @@ transform: scale(1.1);
 }
 
 .content-form-panel input, select{
-  margin: 4px;
+  /* margin: 4px; */
   font-size: 15px;
   border-radius: 20px;
 }
@@ -968,9 +994,6 @@ transform: scale(1.1);
   margin-bottom: 30px;
 }
 
-.content-button{
-  margin-top: 3%;  
-}
 
 .mw-panelMascota-container form{
     display: flex;
@@ -1020,8 +1043,14 @@ transform: scale(1.1);
     color: white;
 }
 
+.mw-cargarMascotaButtonContainer{
+  display: flex;
+  justify-content: center;
+  /* align-items: ; */
+}
+
 .mw-cargarMascotaButtonn{
-  margin-left: 50%;
+  /* margin-left: 50%; */
   background-color: rgba(247, 171, 178,0.75);
   font-size: 20px;
   border-radius: 20px;
@@ -1029,9 +1058,10 @@ transform: scale(1.1);
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.4);
   color: #fff;
   padding: 5px 10px;
-  margin: 15px;
+  /* margin: 15px; */
   width:100px;
   cursor: pointer;
+  
 }
 /* Fin Seccion Panel Crear Mascota*/
 
