@@ -233,46 +233,46 @@ function mensajePerfil(usuario) {
     return `Hola, soy ${usuario.nombre} ${usuario.apellido}, vivo en ${usuario.ciudad}, ${usuario.pais} y soy amante de los animales`
 } 
 
-botonGuardarCambiosPerfil.addEventListener('click', () => {
-    let perfilCambio = mewoofDB.usuarios.lista.find(x=>x.email===usuarioSesion.email)
+// botonGuardarCambiosPerfil.addEventListener('click', () => {
+//     let perfilCambio = mewoofDB.usuarios.lista.find(x=>x.email===usuarioSesion.email)
 
-    perfilCambio.nombre = inputNombre.value;
-    perfilCambio.apellido = inputApellido.value;
-    perfilCambio.cel = inputCelular.value;
-    perfilCambio.pais = inputPais.value;
-    perfilCambio.ciudad = inputCiudad.value;
-    perfilCambio.email = inputEmail.value;
-    perfilCambio.about = inputAbout.value;
-    saveLocaStorage();
-    alert("Información Actualizada con éxito");
+//     perfilCambio.nombre = inputNombre.value;
+//     perfilCambio.apellido = inputApellido.value;
+//     perfilCambio.cel = inputCelular.value;
+//     perfilCambio.pais = inputPais.value;
+//     perfilCambio.ciudad = inputCiudad.value;
+//     perfilCambio.email = inputEmail.value;
+//     perfilCambio.about = inputAbout.value;
+//     saveLocaStorage();
+//     alert("Información Actualizada con éxito");
 
-})
+// })
 
-botonCambiarPassword.addEventListener('click', () => {
-    seccionCambiarPassword.style.right="0%";
-})
+// botonCambiarPassword.addEventListener('click', () => {
+//     seccionCambiarPassword.style.right="0%";
+// })
 
-botonCerrarPassword.addEventListener('click', () => {
-    seccionCambiarPassword.style.right="150%";
-})
+// botonCerrarPassword.addEventListener('click', () => {
+//     seccionCambiarPassword.style.right="150%";
+// })
 
-botonGuardarPassword.addEventListener('click', () => {
-    alert("1111@11")
-    console.log(`UsuarioSesion: ${usuarioSesion.password} - tipo: ${typeof(usuarioSesion.password)}`)
-    console.log(`contraseña anterior input: ${inputLastPassword.value} - tipo: ${typeof(inputLastPassword.value)}`)
-    console.log(` nueva contraseña: ${inputNewPassword.value} - tipo: ${typeof(inputNewPassword.value)}`);
-    console.log(` confirmar contraseña: ${inputConfirmPassword.value} - tipo: ${typeof(inputConfirmPassword.value)}`);
-    console.log(`boolean compare: ${inputLastPassword.value == usuarioSesion.password} - bollean extrict: ${inputLastPassword.value === usuarioSesion.password}`)
-    if (usuarioSesion.password === inputLastPassword.value){
-        alert("1111@22")
-        let user= mewoofDB.usuarios.lista.find(x=>x.email===usuarioSesion.email)
-        user.password = inputNewPassword.value;
-        user.password = inputConfirmPassword.value;
-        alert("Contraseña Actualizada con éxito");
-        seccionCambiarPassword.style.right="150%";
-        saveLocaStorage();
-    }
-})
+// botonGuardarPassword.addEventListener('click', () => {
+//     alert("1111@11")
+//     console.log(`UsuarioSesion: ${usuarioSesion.password} - tipo: ${typeof(usuarioSesion.password)}`)
+//     console.log(`contraseña anterior input: ${inputLastPassword.value} - tipo: ${typeof(inputLastPassword.value)}`)
+//     console.log(` nueva contraseña: ${inputNewPassword.value} - tipo: ${typeof(inputNewPassword.value)}`);
+//     console.log(` confirmar contraseña: ${inputConfirmPassword.value} - tipo: ${typeof(inputConfirmPassword.value)}`);
+//     console.log(`boolean compare: ${inputLastPassword.value == usuarioSesion.password} - bollean extrict: ${inputLastPassword.value === usuarioSesion.password}`)
+//     if (usuarioSesion.password === inputLastPassword.value){
+//         alert("1111@22")
+//         let user= mewoofDB.usuarios.lista.find(x=>x.email===usuarioSesion.email)
+//         user.password = inputNewPassword.value;
+//         user.password = inputConfirmPassword.value;
+//         alert("Contraseña Actualizada con éxito");
+//         seccionCambiarPassword.style.right="150%";
+//         saveLocaStorage();
+//     }
+// })
 // FIN FUNCIONES PERFIL
 
 
@@ -324,6 +324,7 @@ let formularioNecesidades = document.getElementById("mw-mascotaNeeds");
 let formularioFoto = document.getElementById("mw-mascotaFoto");
 
 botonAbrirPanelMascota.addEventListener('click', () => {
+    alert("entre")
     seccionPanelMascota.style.display="flex";
 });
 
